@@ -23,3 +23,4 @@ At the moment, raising money for charity can be quite boring. It boils down to a
   + To help motivate the person training for their event and holding them accountable publicly for it.
   + To make sponsors feel less resentful if there is a concept of achievements or challenges involved.
 
+TEST
