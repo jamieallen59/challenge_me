@@ -1,5 +1,13 @@
 # Challenge Me
 
+### Meet the Team: 
+  + [Nicola Aitken](https://github.com/naitken22)
+  + [Toan Nguyen](https://github.com/yoshdog)
+  + [Jamie Allen](https://github.com/jamieallen59)
+  + [Chloe Donegan](https://github.com/csharpd)
+  + [Nikesh Ashar](https://github.com/nikeshashar)
+  + [Joe Dowdell](https://github.com/joedowdell)
+
 **The Problem**
 
 At the moment, raising money for charity can be quite boring. It boils down to a combination of issues faced by both the participant and sponsor.
