@@ -1,6 +1,7 @@
 # Challenge Me
 
 **The Problem**
+
 At the moment, raising money for charity can be quite boring. It boils down to a combination of issues faced by both the participant and sponsor.
 
 1. Problems:
