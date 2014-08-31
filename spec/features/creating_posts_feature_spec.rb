@@ -6,8 +6,17 @@ describe 'creating posts' do
 		click_link 'New Post'
 		fill_in 'Caption', with: '5k in 30 mins - yay!'
 		click_button 'Create Post'
-		
+
 		expect(page).to have_content '5k in 30 mins - yay!'
 		expect(current_path).to eq '/posts'
 	end	
+
+	it 'can attach an image to a post' do 
+		visit '/posts'
+		click_link 'New Post'
+		attach_file 'Picture', Rails.root.join('app/assets/images/run.jpg')
+		click_button 'Create Post'
+		expect(page).to have_css 'img.uploaded-pic'
+		expect(current_path).to eq '/posts'
+	end
 end

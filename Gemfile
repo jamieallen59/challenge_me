@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'just_giving', github: 'yoshdog/just_giving'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development, :test do
   gem 'rspec-rails'
@@ -19,8 +20,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'hirb'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'launchy'
   gem 'spring'
   gem 'factory_girl_rails'
