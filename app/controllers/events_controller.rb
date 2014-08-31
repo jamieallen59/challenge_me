@@ -9,8 +9,11 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised))
-    @event.save
-    redirect_to event_path(@event)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render 'new'
+    end
   end
 
   def show
