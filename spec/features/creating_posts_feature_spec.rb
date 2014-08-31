@@ -10,7 +10,6 @@ describe 'creating posts' do
 		click_link 'New Post'
 		fill_in 'Caption', with: '5k in 30 mins - yay!'
 		click_button 'Create Post'
-
 		expect(page).to have_content '5k in 30 mins - yay!'
 		expect(current_path).to eq event_path(@event)
 	end	

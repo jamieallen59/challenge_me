@@ -12,11 +12,11 @@ require 'rails_helper'
 		end
 		context 'with posts' do
 			before do
-				Post.create(caption: 'Really long run today!', event: @event)
+				post = create(:post, event: @event)
 			end
 			it ' displays posts if there any' do
 				visit event_path(@event)
-				expect(page).to have_content 'Really long run today!'
+				expect(page).to have_content 'Run Roger'
 			end
 		end
 	end
