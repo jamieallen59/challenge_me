@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :events
-  resources :posts
+  resources :events do
+  	resource :posts
+  end
 end

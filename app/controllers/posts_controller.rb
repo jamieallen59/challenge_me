@@ -4,12 +4,14 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
+		@event = Event.find(params[:event_id])
+		@post = @event.posts.new
 	end
 
 	def create
-		@post = Post.new(params[:post].permit(:caption, :picture))
+		@event = Event.find(params[:event_id])
+		@post = @event.posts.new(params[:post].permit(:caption, :picture))
 		@post.save
-		redirect_to '/posts'
+		redirect_to event_path(@event)
 	end
 end

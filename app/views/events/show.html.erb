@@ -1,5 +1,52 @@
-<h3><%= @event.name %></h3>
-<p><%= @event.event_date.strftime("%d %B %Y") %></p>
-<p>Fundraising for <%= @event.charity %></p>
-<p>Fundraising Target: £<%= @event.target %></p>
-<p>£<%= @event.amount_raised %> raised so far</p>
+<section class='container-left'>
+  <section class='event-details-container'>
+    <p id='event-name'><%= @event.name %></p>
+    <p id='event-date'><%= @event.event_date.strftime("%d %B %Y") %></p>
+    <p id='event-charity'>Fundraising for <%= @event.charity %></p>
+    <p id='event-target'>Fundraising Target: £<%= @event.target %></p>
+    <p id='amount-raised'>£<%= @event.amount_raised %> raised so far</p>
+  </section>
+  <section class='days-remaining'>
+      15 DAYS REMAINING
+    </section>
+    <section class='percentage-completion'>
+      40% complete
+    </section>
+    <section class='training-totals'>
+    </section>
+    <section class='training-calender'>
+    </section>
+    <section class='donation-button'>
+    </section>
+</section>
+
+<section class='update-feed'>
+   <% if @posts.any? %>
+    <% @posts.each do |post| %>
+      <article class='post-container'>
+        <header class='post-header'>
+            <section class='post-title'>
+               <%= post.caption %>
+            </section>
+            <section class='post-date'>
+            <%= post.created_at.strftime("%d %b %Y") %>
+              </section>
+        </header>
+        <section class='post-content'>
+          <object class='uploaded-evidence'>
+          <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+          </object>
+          <article class='evidence-comments'>
+
+          </article>
+        </section>
+        <% end %>
+      </article>
+        <% else %>
+          There are no posts
+        <% end %>
+
+</section>
+
+
+<%= link_to 'New Post', new_event_posts_path(@event) %>
