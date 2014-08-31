@@ -1,4 +1,15 @@
 <%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <article class="error_explaination">
+    <h3><%=pluralize(@event.errors.count, "error") %>
+    prevented this event from being saved:</h3>
+    <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%=message%></li>
+      <%end%>
+    </ul>
+    </article>
+  <%end%>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :event_date, 'Event Date' %>

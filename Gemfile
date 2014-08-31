@@ -19,8 +19,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'hirb'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'launchy'
   gem 'spring'
   gem 'factory_girl_rails'

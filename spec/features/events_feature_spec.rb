@@ -1,12 +1,29 @@
 require 'rails_helper'
 
-describe 'Events' do
+describe 'Displaying events' do
   context 'with no events created' do 
     it 'should say no events' do 
       visit '/events'
       expect(page).to have_content("There are no events at the moment.")
     end
+  end
 
+  context 'with an event' do
+    before do
+      @event = create(:event)
+    end
+
+    it 'should display the event details' do
+      visit '/events'
+      expect(page).to have_content 'Bigfoot Race'
+      expect(page).to have_content '12 September 2014'
+
+    end
+  end
+end
+
+describe 'Creating events' do
+  context 'with valid data' do
     it 'should allow the user to add an event' do 
       visit '/events'
       click_on 'Add Your Event'
@@ -24,19 +41,16 @@ describe 'Events' do
       expect(page).to have_content "Fundraising for Red Cross"
       expect(page).to have_content "Fundraising Target: £1000"
       expect(page).to have_content "£0.0 raised so far"
-    end
+    end    
   end
 
-  context 'with an event' do
-    before do
-      @event = Event.create(name: 'Bigfoot Race', event_date: Date.new(2014, 9, 12), charity: 'Red Cross', target: 1000, amount_raised: 10)
-    end
-
-    it 'should display the event details' do
-      visit '/events'
-      expect(page).to have_content 'Bigfoot Race'
-      expect(page).to have_content '12 September 2014'
-
+  context 'invalid data' do
+    it 'should display an error' do
+      visit new_event_path
+      fill_in 'Name', with: '12Big Foot'
+      click_button 'Create Event'
+      
+      expect(page).to have_content 'error'
     end
   end
 end
