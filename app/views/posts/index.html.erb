@@ -1,0 +1,9 @@
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+			<h3><%= post.caption %></h3>
+	<% end %>
+	<% else %>
+		There are no posts
+	<% end %>
+
+<%= link_to 'New Post', new_post_path %>

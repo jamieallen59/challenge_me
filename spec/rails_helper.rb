@@ -6,6 +6,7 @@ require 'rspec/collection_matchers'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
+require 'launchy'
 Capybara.javascript_driver = :poltergeist
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
@@ -16,6 +17,7 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 RSpec.configure do |config|
+  config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
