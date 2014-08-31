@@ -1,0 +1,5 @@
+<h3><%= @event.name %></h3>
+<p><%= @event.event_date.strftime("%d %B %Y") %></p>
+<p>Fundraising for <%= @event.charity %></p>
+<p>Fundraising Target: £<%= @event.target %></p>
+<p>£<%= @event.amount_raised %> raised so far</p>
