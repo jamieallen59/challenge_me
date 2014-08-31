@@ -7,7 +7,7 @@ body {
 .container-top {
 	display: flex;
 	flex-direction: row;
-	border: 1px solid grey;	
+	border: 1px solid grey;
 	height: 250px;
 }
 	.picture-container {
@@ -48,10 +48,32 @@ body {
 
 	.event-details-container {
 		display: flex;
+		flex-direction: column;
 		border: 1px solid grey;
 		margin: 5px;
-		height: 100px;
+		padding: 10px;
+		height: 200px;
 	}
+		#event-name {
+			display: flex;
+			font-size: 18px;
+		}
+		#event-date {
+			display: flex;
+			font-size: 18px;
+		}
+		#event-charity {
+			display: flex;
+			font-size: 18px;
+		}
+		#event-target {
+			display: flex;
+			font-size: 18px;
+		}
+		#amount-raised {
+			display: flex;
+			font-size: 18px;
+		}
 
 	.days-remaining {
 		display: flex;
@@ -124,15 +146,17 @@ body {
 				border: 1px solid grey;
 				width: 65%;
 				margin: 3px;
-				vertical-align: middle;
-				line-height: 65px;
 				padding-left: 10px;
+				margin-top: auto;
+				margin-bottom: auto;
 			}
 			.post-date {
 				display: flex;
 				border: 1px solid grey;
 				margin: 3px;
 				width: 35%;
+				margin-top: auto;
+				margin-bottom: auto;
 			}
 
 		.post-content {
