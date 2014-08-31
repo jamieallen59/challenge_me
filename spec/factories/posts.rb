@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :post do
-    caption "MyString"
+    caption "Run Roger"
+    picture File.new(Rails.root.join('app/assets/images/run.jpg'))
   end
 end

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class='container-left'>
   <section class='event-details-container'>
     <p id='event-name'><%= @event.name %></p>
@@ -19,3 +20,34 @@
     <section class='donation-button'>
     </section>
 </section>
+
+<section class='update-feed'>
+   <% if @posts.any? %>
+    <% @posts.each do |post| %>
+      <article class='post-container'>
+        <header class='post-header'>
+            <section class='post-title'>
+               <%= post.caption %>
+            </section>
+            <section class='post-date'>
+            <%= post.created_at.strftime("%d %b %Y") %>
+              </section>
+        </header>
+        <section class='post-content'>
+          <object class='uploaded-evidence'>
+          <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+          </object>
+          <article class='evidence-comments'>
+
+          </article>
+        </section>
+        <% end %>
+      </article>
+        <% else %>
+          There are no posts
+        <% end %>
+
+</section>
+
+
+<%= link_to 'New Post', new_event_posts_path(@event) %>

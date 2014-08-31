@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
   validates :amount_raised, presence: true, numericality: true
   validate :not_past_date
 
+  has_many :posts
 
   def not_past_date
     if event_date.present? && event_date < Date.today
