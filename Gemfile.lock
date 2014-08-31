@@ -57,6 +57,9 @@ GEM
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
+    aws-sdk (1.51.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
     builder (3.2.2)
     capybara (2.4.1)
@@ -232,6 +235,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk
   capybara
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
