@@ -6,6 +6,7 @@ require 'rspec/collection_matchers'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
+require 'launchy'
 Capybara.javascript_driver = :poltergeist
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }

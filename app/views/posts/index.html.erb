@@ -1,1 +1,7 @@
-There are no posts
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+			<%= post.caption %>
+	<% end %>
+	<% else %>
+		There are no posts
+	<% end %>
