@@ -1,0 +1,159 @@
+body {
+	font-family: helvetica neue;
+	font-size: 24px;
+}
+
+/*----- Top Container --------*/
+.container-top {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid grey;	
+	height: 250px;
+}
+	.picture-container {
+		display: flex;
+		flex-direction: column;
+		margin: 5px;
+		border: 1px solid grey;
+		width: 240px;
+	}
+
+	.pledge-container {
+		display: flex;
+		margin: 5px;
+		border: 1px solid grey;
+		width: 40%;
+		text-align: center;
+		padding-left: 10px;
+		padding-top: 10px;
+	}
+	.donations-container {
+		display: flex;
+		margin: 5px;
+		border: 1px solid grey;
+		width: 25%;
+	}
+
+
+/*------ Left Container -----*/
+.container-left {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	border: 1px solid grey;
+	width: 250px;
+	height: 500px;
+	float: left;
+}
+
+	.event-details-container {
+		display: flex;
+		border: 1px solid grey;
+		margin: 5px;
+		height: 100px;
+	}
+
+	.days-remaining {
+		display: flex;
+		border: 1px solid grey;
+		margin: 5px;
+		height: 100px;
+		text-align: center;
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+
+	.percentage-completion {
+		display: flex;
+		border: 1px solid grey;
+		margin: 5px;
+		height: 100px;
+		text-align: center;
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+
+	.training-totals {
+		display: flex;
+		border: 1px solid grey;
+		margin: 5px;
+		height: 100px;
+	}
+
+	.training-calendar {
+		display: flex;
+		border: 1px solid grey;
+		margin: 5px;
+		height: 100px;
+	}
+
+	.donations-button {
+		display: flex;
+		border: 1px solid grey;
+		margin: 5px;
+		height: 100px;
+	}
+
+
+
+
+/*------ Feed Container -----*/
+.update-feed {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	border: 1px solid grey;
+	width: 70%;
+	float: right;
+}
+	.post-container {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid grey;
+		width: 100%;
+		height: 300px;
+	}
+		.post-header {
+			display: flex;
+			flex-direction: row;
+			border: 1px solid grey;
+			height: 70px;
+		}
+			.post-title {
+				display: flex;
+				border: 1px solid grey;
+				width: 65%;
+				margin: 3px;
+				vertical-align: middle;
+				line-height: 65px;
+				padding-left: 10px;
+			}
+			.post-date {
+				display: flex;
+				border: 1px solid grey;
+				margin: 3px;
+				width: 35%;
+			}
+
+		.post-content {
+			display: flex;
+			flex-direction: row;
+			border: 1px solid grey;
+			height: 76%;
+		}
+
+			.uploaded-evidence {
+				display: flex;
+				border: 1px solid grey;
+				width: 60%;
+				margin: 3px;
+			}
+
+			.evidence-comments {
+				display: flex;
+				border: 1px solid grey;
+				width: 40%;
+				margin: 3px;
+			}
+
+

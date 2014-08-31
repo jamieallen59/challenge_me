@@ -1,7 +1,7 @@
 <% if @posts.any? %>
 	<% @posts.each do |post| %>
 			<h3><%= post.caption %></h3>    
-		<%= image_tag post.picture.url, class: 'uploaded-pic' %>    
+		<%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>    
 	<% end %>
 	<% else %>
 		There are no posts
