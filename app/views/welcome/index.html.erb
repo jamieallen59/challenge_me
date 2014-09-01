@@ -10,7 +10,7 @@
 			<p class='main-logo'>challenge.me</p>
 			<input type="search" name="search" class='search' placeholder='Search for a friend'>
 			
-			<%= button_to 'Login', new_user_session_path, {class: 'login'} %>
+			<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
 		
 		</section>
 		<section class='hp-cover-image'>
@@ -18,9 +18,9 @@
 			<h5 class='main-image-text'>Complete extra challenged to reach your fundraising targets</h5>
 			<section class='cover-image-button-container'>
 			
-				<%= button_to 'Create challenge', events_path, {class: 'create-challenge'} %>
+				<%= link_to 'Create challenge', events_path, {class: 'create-challenge'} %>
 
-				<%= button_to 'View challenge', new_user_session_path, {class: 'view-challenge'} %>
+				<%= link_to 'View challenge', '#' , {class: 'view-challenge'} %>
 
 			</section>
 		</section>
