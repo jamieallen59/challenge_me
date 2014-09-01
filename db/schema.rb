@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901100847) do
+ActiveRecord::Schema.define(version: 20140901112016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20140901100847) do
     t.float    "amount_raised"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "caption"

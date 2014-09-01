@@ -10,7 +10,8 @@ describe 'Displaying events' do
 
   context 'with an event' do
     before do
-      @event = create(:event)
+      mary = create(:user)
+      @event = create(:event, user: mary)
     end
 
     it 'should display the event details' do

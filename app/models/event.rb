@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   validate :not_past_date
 
   has_many :posts
+  belongs_to :user
 
   def not_past_date
     if event_date.present? && event_date < Date.today

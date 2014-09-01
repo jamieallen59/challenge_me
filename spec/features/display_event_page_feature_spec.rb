@@ -3,7 +3,8 @@ require 'rails_helper'
 describe 'event page' do
   context 'with posts' do
     before do
-      @event = create(:event)
+      mary = create(:user)
+      @event = create(:event, user: mary)
       Post.create(caption: 'Test Post ABC', event_id: @event.id)
     end
     it 'should display posts' do

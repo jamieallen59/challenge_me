@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe 'creating posts' do
 	before do
-		@event = create(:event)
+		mary = create(:user)
+		@event = create(:event, user: mary)
 	end
 
 	it 'adds the post to a form' do
@@ -27,7 +28,8 @@ end
 
 describe 'post validation' do
 	before do
-		@event = create(:event)
+		mary = create(:user)
+		@event = create(:event, user: mary)
 	end
 	it "when info isn't valid the post isn't created " do
 		visit event_path(@event)
