@@ -6,15 +6,15 @@ describe 'creating posts' do
 		@event = create(:event, user: @mary)
 	end
 	context 'as a logged out user' do
-		it 'should redirect you to the sign in page' do 
-			visit event_path(@event)
+		it 'should redirect you to the sign in page' do
+			visigit t event_path(@event)
 			click_link 'New Post'
 			expect(page).to have_content('Log in')
 			expect(current_path).to eq new_user_session_path
 		end
 	end
 
-	context 'as a logged in user' do 
+	context 'as a logged in user' do
 		before do
 			login_as @mary
 		end
