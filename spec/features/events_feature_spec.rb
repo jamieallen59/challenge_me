@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'Displaying events' do
-  context 'with no events created' do 
-    it 'should say no events' do 
+  context 'with no events created' do
+    it 'should say no events' do
       visit events_path
       expect(page).to have_content("There are no events at the moment.")
     end
@@ -24,7 +24,7 @@ end
 
 describe 'Creating events' do
   context 'with valid data' do
-    it 'should allow the user to add an event' do 
+    it 'should allow the user to add an event' do
       visit '/events'
       click_on 'Add Your Event'
       fill_in "Name", with: "Bigfoot Race"
@@ -41,7 +41,7 @@ describe 'Creating events' do
       expect(page).to have_content "Fundraising for Red Cross"
       expect(page).to have_content "Fundraising Target: £1000"
       expect(page).to have_content "£0.0 raised so far"
-    end    
+    end
   end
 
   context 'invalid data' do
@@ -49,21 +49,8 @@ describe 'Creating events' do
       visit new_event_path
       fill_in 'Name', with: '12Big Foot'
       click_button 'Create Event'
-      
-      expect(page).to have_content 'error'
-    end
-  end
-end
 
-describe 'event page' do
-  context 'with posts' do
-    before do
-      @event = create(:event)
-      Post.create(caption: 'Test Post ABC', event_id: @event.id)
-    end
-    it 'should display posts' do 
-      visit event_path(@event)
-      expect(page).to have_content 'Test Post ABC'
+      expect(page).to have_content 'error'
     end
   end
 end
