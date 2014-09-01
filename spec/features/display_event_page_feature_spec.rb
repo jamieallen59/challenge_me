@@ -5,7 +5,7 @@ describe 'event page' do
     before do
       mary = create(:user)
       @event = create(:event, user: mary)
-      Post.create(caption: 'Test Post ABC', event_id: @event.id)
+      Post.create(caption: 'Test Post ABC', event_id: @event.id, user: mary)
     end
     it 'should display posts' do
       visit event_path(@event)

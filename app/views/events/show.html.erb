@@ -37,6 +37,7 @@
           <object class='uploaded-evidence'>
           <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
           </object>
+          posted by <%= post.user.firstname %> <%= post.user.lastname %>
           <article class='evidence-comments'>
 
           </article>
