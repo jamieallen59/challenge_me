@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-	def index
-		@posts = Post.all
-	end
+	before_action :authenticate_user!
 
 	def new
 		@event = Event.find(params[:event_id])
