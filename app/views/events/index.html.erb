@@ -6,6 +6,7 @@
     <br>
     <%= event.user.full_name %>
     </p>
+    <%= link_to 'view event', event_path(event) %>
   <%end%>
 <% else %>
   <h3>There are no events at the moment.</h3>

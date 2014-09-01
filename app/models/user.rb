@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :firstname, presence: true, format: {with: /\A[a-zA-Z]+\Z/ }
+  validates :lastname, presence: true, format: {with: /\A[a-zA-Z]+\Z/ }
   has_many :events
   has_many :posts
+  has_many :comments
 
   def full_name
   	[firstname, lastname].join(' ')

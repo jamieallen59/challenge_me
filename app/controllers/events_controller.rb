@@ -22,6 +22,7 @@ before_action :authenticate_user!, except: [:index, :show]
   def show
     @event = Event.find(params[:id])
     @posts = @event.posts
-
+    @comment = Comment.new
+    @pledges = @event.pledges
   end
 end
