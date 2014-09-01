@@ -18,7 +18,7 @@ gem 'aws-sdk'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
-  # gem 'pry-rails'
+  gem 'pry-rails'
   gem 'awesome_print'
   gem 'hirb'
   gem 'launchy'
