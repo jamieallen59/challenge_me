@@ -9,7 +9,9 @@
 		<section class='navbar'>
 			<p class='main-logo'>challenge.me</p>
 			<input type="search" name="search" class='search' placeholder='Search for a friend'>
-			<button class='login'>Login</button>
+			
+			<%= button_to 'Login', new_user_session_path, {class: 'login'} %>
+		
 		</section>
 		<section class='hp-cover-image'>
 			<h2 class='main-image-header'>Make giving fun.</h2>
