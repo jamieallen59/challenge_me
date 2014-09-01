@@ -13,7 +13,7 @@
     </object>
     <article class='evidence-comments'>
       <% if post.comments.any? %>
-        <% post.comments.each do |comment| %>
+        <% post.comments.reverse_each do |comment| %>
           <p><%= comment.comments %></p>
         <% end %>
       <% end %>

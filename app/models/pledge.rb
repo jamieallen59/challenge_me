@@ -9,4 +9,6 @@ class Pledge < ActiveRecord::Base
     errors.add(:amount, 'you have already raised this ammount')
     end
   end
+
+
 end

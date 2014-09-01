@@ -29,4 +29,7 @@ class Event < ActiveRecord::Base
     ((amount_raised/target)*100).to_i
   end
 
+  def next_pledge
+     pledges.select{ |pledge| pledge.amount > amount_raised }.min_by{|pledge| pledge.amount }
+  end
 end
