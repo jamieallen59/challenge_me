@@ -4,7 +4,7 @@
     <%= event.name%><br>
     <%= event.event_date.strftime("%d %B %Y")%>
     <br>
-    <%= event.user.firstname %> <%= event.user.lastname %>
+    <%= event.user.full_name %>
     </p>
   <%end%>
 <% else %>

@@ -4,14 +4,13 @@
       <%= post.caption %>
     </section>
     <section class='post-date'>
-      <%= post.created_at.strftime("%d %b %Y") %>
+      posted by <%= post.user.full_name%> on <%= post.created_at.strftime("%d %b %Y") %>
     </section>
   </header>
   <section class='post-content'>
     <object class='uploaded-evidence'>
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
     </object>
-      posted by <%= post.user.firstname %> <%= post.user.lastname %>
     <article class='evidence-comments'>
     </article>
   </section>

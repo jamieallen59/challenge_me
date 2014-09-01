@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :posts
+
+  def full_name
+  	[firstname, lastname].join(' ')
+  end
 end
