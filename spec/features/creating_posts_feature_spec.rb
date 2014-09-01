@@ -25,7 +25,7 @@ describe 'creating posts' do
 			click_button 'Create Post'
 			expect(page).to have_content '5k in 30 mins - yay!'
 			expect(current_path).to eq event_path(@event)
-			expect(page).to have_content 'posted by Mary Perfect'
+			expect(page).to have_content 'Posted by Mary Perfect'
 			expect(page).not_to have_css 'img.uploaded-pic'
 		end
 

@@ -4,7 +4,7 @@
       <p class='post-caption'><%= post.caption %></p>
     </section>
     <section class='post-date'>
-      <p class='posted-by'>Posted by <%= post.user.full_name%> on <%= post.created_at.strftime("%d %b %Y") %></p>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
     </section>
   </header>
   <section class='post-content'>
