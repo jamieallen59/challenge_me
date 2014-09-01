@@ -13,4 +13,14 @@ class Event < ActiveRecord::Base
       errors.add(:event_date, 'not in past')
     end
   end
+
+  def days_remaining
+    return "Today's the day!" if event_date == Date.today
+    if event_date > Date.today
+      return "#{(event_date - Date.today).to_i} days to go!"
+    else
+      return "Event completed #{(Date.today - event_date).to_i} days ago!"
+    end
+  end
+
 end

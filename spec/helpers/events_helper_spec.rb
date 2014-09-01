@@ -12,4 +12,32 @@ require 'rails_helper'
 # end
 RSpec.describe EventsHelper, :type => :helper do
 
+	describe 'event countdown' do
+		before(:each) do 
+			@race = create(:event)
+		end
+
+		it 'provides a countdown of the number of days remaining' do 
+			Timecop.freeze(Time.local(2014, 9, 1, 10, 5, 0)) do 
+				visit event_path(@race)
+				expect(page).to have_content("11 days to go!")
+			end
+		end
+
+		it 'displays "Event Day" on day of event' do
+			Timecop.freeze(Time.local(2014, 9, 12, 10, 5, 0)) do 
+				visit event_path(@race)
+				expect(page).to have_content("Today's the day!")
+			end
+		end
+
+		it 'displays "Event Complete" after event date' do
+			Timecop.freeze(Time.local(2014, 9, 14, 10, 5, 0)) do 
+				visit event_path(@race)
+				expect(page).to have_content("Event completed 2 days ago!")
+			end
+		end
+
+	end
+
 end

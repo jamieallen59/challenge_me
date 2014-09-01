@@ -18,7 +18,7 @@ gem 'aws-sdk'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'awesome_print'
   gem 'hirb'
   gem 'launchy'
@@ -28,6 +28,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-collection_matchers'
   gem 'warden'
+  gem 'timecop'
 end
 
 group :production do
