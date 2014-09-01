@@ -1,13 +1,17 @@
   <section class='container-top'>
     <section class='picture-container'>
-
+      <section class='profile-picture' >
+      </section>
+      <p id='event-user-name'>
+        <%= @event.user.firstname %> <%= @event.user.lastname %>
+      </p>
     </section>
+
     <section class='pledge-container'>
     <% if @pledges.any? %>
-      <%@pledges.each do |pledge| %>
-        Once I raise £<%=pledge.amount%>, I will do the <%=pledge.title%><br>
-        <%=pledge.info%>
-      <%end%>
+        Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%><br>
+        <%=@event.next_pledge.info%>
+
     <%else%>
       No pledges yet
     <%end%>
@@ -21,7 +25,6 @@
   </section>
 
 <section class='container-left'>
-    <p id='event-user-name'><%= @event.user.firstname %> <%= @event.user.lastname %></p>
   <section class='event-details-container'>
     <p id='event-name'><%= @event.name %></p>
     <p id='event-date'><%= @event.event_date.strftime("%d %B %Y") %></p>

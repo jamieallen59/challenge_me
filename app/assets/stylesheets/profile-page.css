@@ -13,10 +13,21 @@ body {
 	.picture-container {
 		display: flex;
 		flex-direction: column;
+		position: relative;
 		margin: 5px;
 		border: 1px solid grey;
 		width: 240px;
 	}
+		.profile-picture {
+
+		}
+		#event-user-name {
+			position: absolute;
+			bottom: 0;
+			margin-left: 25%;
+			margin-bottom: 4px;
+			color: #929292;
+		}
 
 	.pledge-container {
 		display: flex;
@@ -177,7 +188,8 @@ body {
 				display: flex;
 				position: relative;
 				flex-direction: column;
-				border: 1px solid grey;
+				border: 1px solid #DEDEDE;
+				border-radius: 4px;
 				width: 40%;
 				margin: 3px;
 				font-size: 14px;
@@ -187,11 +199,38 @@ body {
 					bottom: 0;
 				}
 					#comments-placeholder {
-						font-size: 12px;
+						font-size: 13px;
+						width: 204px;
+						height: 40px;
+						border-bottom-left-radius: 4px;
+						border: 1px solid #DEDEDE;
+						margin-bottom: -1px;
+						margin-left: -1px;
+						padding-left: 5px;
 					}
+					#comments-placeholder:focus {
+				    outline-width: 0;
+					}
+					#comment-submit-button {
+						border: none;
+						background: #DEDEDE;
+						margin-left: -4px;
+						width: 73px;
+						cursor: pointer;
+						font-size: 13px;
+						height: 44px;
+						padding-bottom: 1px;
+						margin-bottom: -1px;
+						border-bottom-right-radius: 4px;
+					}
+					#comment-submit-button:hover {
+						background: #b8b8b8;
+					}
+
 
 				.challenge-comment {
 					font-family: 12px;
+					margin: 4px;
 				}
 
 

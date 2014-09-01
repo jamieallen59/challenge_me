@@ -14,14 +14,16 @@
 
     <article class='evidence-comments'>
       <% if post.comments.any? %>
-        <% post.comments.each do |comment| %>
-          <p class='challenge-comment'><%= comment.comments %></p>
+
+        <% post.comments.reverse_each do |comment| %>
+          <p><%= comment.comments %></p>
+
         <% end %>
       <% end %>
       <section class='post-comments-container'>
         <%= form_for [@event, post, @comment] do |f| %>
-          <%= f.text_area :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
-          <%= f.submit 'Submit' %>
+          <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
+          <%= f.submit 'Submit', id: 'comment-submit-button' %>
         <% end %>
       </section>
     </article>
