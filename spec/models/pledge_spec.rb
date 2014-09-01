@@ -24,4 +24,5 @@ RSpec.describe Pledge, :type => :model do
     end
 
   end
+
 end

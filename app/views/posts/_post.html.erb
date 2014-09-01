@@ -12,6 +12,16 @@
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
     </object>
     <article class='evidence-comments'>
+      <% if post.comments.any? %>
+        <% post.comments.each do |comment| %>
+          <p><%= comment.comments %></p>
+        <% end %>
+      <% end %>
+      <%= form_for [@event, post, @comment] do |f| %>
+        <%= f.label :comments %>
+        <%= f.text_area :comments %>
+        <%= f.submit 'Submit' %>
+      <% end %>
     </article>
   </section>
 </article>
