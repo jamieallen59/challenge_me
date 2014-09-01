@@ -2,7 +2,8 @@ require 'rails_helper'
 
 	describe 'Creating posts on a profile' do
 		before do
-			@event = create(:event)
+			mary = create(:user)
+			@event = create(:event, user: mary)
 		end
 		context 'no posts' do
 			it 'displays a message when there are no posts' do

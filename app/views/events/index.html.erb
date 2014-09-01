@@ -2,6 +2,7 @@
 <%if @events.any?%>
   <% @events.each do |event| %>
     <p>
+    <%= event.user.firstname %> <%= event.user.lastname %>
     <%= event.name%><br>
     <%= event.event_date.strftime("%d %B %Y")%>
     </p>

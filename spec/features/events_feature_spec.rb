@@ -18,7 +18,7 @@ describe 'Displaying events' do
       visit events_path
       expect(page).to have_content 'Bigfoot Race'
       expect(page).to have_content '12 September 2014'
-
+      expect(page).to have_content 'Mary Perfect'
     end
   end
 end
