@@ -137,28 +137,27 @@ body {
 	}
 		.post-header {
 			display: flex;
-			flex-direction: row;
-			border: 1px solid grey;
-			height: 70px;
+			flex-direction: column;
+			height: 60px;
 		}
 			.post-title {
-				display: flex;
-				border: 1px solid grey;
-				width: 65%;
-				margin: 3px;
-				padding-left: 10px;
-				margin-top: auto;
-				margin-bottom: auto;
+				width: 100%;
+				margin-top: 10px;
+				margin-left: 10px;
+				margin-bottom: 3px;
+				height: 35px;
+				text-align: center;
 			}
 			.post-date {
-				display: flex;
-				border: 1px solid grey;
-				margin: 3px;
-				font-size: 16px;
-				width: 35%;
-				margin-top: auto;
-				margin-bottom: auto;
+				font-style: italic;
+				font-size: 14px;
+				width: 100%;
+				height: 25px;
+				text-align: right;
 			}
+				p.posted-by {
+					margin-right: 8px;
+				}
 
 		.post-content {
 			display: flex;
@@ -176,9 +175,23 @@ body {
 
 			.evidence-comments {
 				display: flex;
+				position: relative;
+				flex-direction: column;
 				border: 1px solid grey;
 				width: 40%;
 				margin: 3px;
+				font-size: 14px;
 			}
+				.post-comments-container {
+					position: absolute;
+					bottom: 0;
+				}
+					#comments-placeholder {
+						font-size: 12px;
+					}
+
+				.challenge-comment {
+					font-family: 12px;
+				}
 
 

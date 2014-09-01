@@ -1,27 +1,30 @@
 <article class='post-container'>
   <header class='post-header'>
     <section class='post-title'>
-      <%= post.caption %>
+      <p class='post-caption'><%= post.caption %></p>
     </section>
     <section class='post-date'>
-      posted by <%= post.user.full_name%> on <%= post.created_at.strftime("%d %b %Y") %>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
     </section>
   </header>
   <section class='post-content'>
     <object class='uploaded-evidence'>
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
     </object>
+
     <article class='evidence-comments'>
       <% if post.comments.any? %>
         <% post.comments.each do |comment| %>
-          <p><%= comment.comments %></p>
+          <p class='challenge-comment'><%= comment.comments %></p>
         <% end %>
       <% end %>
-      <%= form_for [@event, post, @comment] do |f| %>
-        <%= f.label :comments %>
-        <%= f.text_area :comments %>
-        <%= f.submit 'Submit' %>
-      <% end %>
+      <section class='post-comments-container'>
+        <%= form_for [@event, post, @comment] do |f| %>
+          <%= f.text_area :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
+          <%= f.submit 'Submit' %>
+        <% end %>
+      </section>
     </article>
+
   </section>
 </article>
