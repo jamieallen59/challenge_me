@@ -1,6 +1,7 @@
-# Challenge Me
+# Challenge Me 
 
 ### Meet the Team: 
+
   + [Nicola Aitken](https://github.com/naitken22)
   + [Toan Nguyen](https://github.com/yoshdog)
   + [Jamie Allen](https://github.com/jamieallen59)
@@ -23,4 +24,15 @@ At the moment, raising money for charity can be quite boring. It boils down to a
   + To help motivate the person training for their event and holding them accountable publicly for it.
   + To make sponsors feel less resentful if there is a concept of achievements or challenges involved.
 
-Test Update
+## How to use it
+
+A working version of the app can be found here: [Challenge Me](http://challenge--me.herokuapp.com/)
+
+## Technologies Used:
+
+  + Rails
+  + Ruby
+  + Postgresql
+  + Capybara
+  + RSpec
+  

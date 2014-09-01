@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Displaying events' do
   context 'with no events created' do 
     it 'should say no events' do 
-      visit '/events'
+      visit events_path
       expect(page).to have_content("There are no events at the moment.")
     end
   end
@@ -14,7 +14,7 @@ describe 'Displaying events' do
     end
 
     it 'should display the event details' do
-      visit '/events'
+      visit events_path
       expect(page).to have_content 'Bigfoot Race'
       expect(page).to have_content '12 September 2014'
 
