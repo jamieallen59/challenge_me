@@ -9,10 +9,9 @@
 
     <section class='pledge-container'>
     <% if @pledges.any? %>
-      <%@pledges.each do |pledge| %>
-        Once I raise £<%=pledge.amount%>, I will do the <%=pledge.title%><br>
-        <%=pledge.info%>
-      <%end%>
+        Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%><br>
+        <%=@event.next_pledge.info%>
+
     <%else%>
       No pledges yet
     <%end%>

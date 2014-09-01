@@ -21,7 +21,7 @@ body {
 			margin-left: 20px;
 			font-size: 40px;
 			vertical-align: middle;
-			line-height: 0;
+			line-height: 2;
 		}
 		.search {
 			display: flex;
@@ -118,20 +118,3 @@ body {
 				margin-top: 20px;
 				text-align: center;
 			}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

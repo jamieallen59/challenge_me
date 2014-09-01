@@ -4,7 +4,7 @@
       <p class='post-caption'><%= post.caption %></p>
     </section>
     <section class='post-date'>
-      <p class='posted-by'>Posted by <%= post.user.full_name%> on <%= post.created_at.strftime("%d %b %Y") %></p>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
     </section>
   </header>
   <section class='post-content'>
@@ -14,8 +14,10 @@
 
     <article class='evidence-comments'>
       <% if post.comments.any? %>
-        <% post.comments.each do |comment| %>
-          <p class='challenge-comment'><%= comment.comments %></p>
+
+        <% post.comments.reverse_each do |comment| %>
+          <p><%= comment.comments %></p>
+
         <% end %>
       <% end %>
       <section class='post-comments-container'>
