@@ -10,4 +10,5 @@ class Post < ActiveRecord::Base
 	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :caption, length: {maximum: 140, minimum: 3, message: "Your caption must be between 3 and 140 characters"}
 	belongs_to :event
+  belongs_to :user
 end
