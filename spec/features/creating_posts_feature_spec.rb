@@ -6,7 +6,7 @@ describe 'creating posts' do
 		@event = create(:event, user: @mary)
 	end
 	context 'as a logged out user' do
-		it 'should redirect you to the sign in page' do 
+		it 'should redirect you to the sign in page' do
 			visit event_path(@event)
 			click_link 'New Post'
 			expect(page).to have_content('Log in')
@@ -14,7 +14,7 @@ describe 'creating posts' do
 		end
 	end
 
-	context 'as a logged in user' do 
+	context 'as a logged in user' do
 		before do
 			login_as @mary
 		end

@@ -1,0 +1,13 @@
+<%= form_for [@event, @pledge] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :amount %>
+<%= f.text_field :amount %>
+
+<%= f.label :info %>
+<%= f.text_field :info %>
+
+<%= f.submit 'Create Pledge'%>
+
+<%end%>
