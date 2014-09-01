@@ -3,8 +3,14 @@
 
     </section>
     <section class='pledge-container'>
-
+    <% if @pledges.any? %>
+      <%@pledges.each do |pledge| %>
+        Once I raise £<%=pledge.amount%>, I will do the <%=pledge.title%><br>
+        <%=pledge.info%>
+      <%end%>
+    <%else%>
       No pledges yet
+    <%end%>
     </section>
     <section class='donations-container'>
 

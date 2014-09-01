@@ -14,7 +14,7 @@ describe ' displaying pledges' do
   context ' with  pledges' do
 
     it 'displays the pledge information' do
-      wet_suit = Pledge.create(title: "Wet Suit Challenge", amount: 300, info: "I will do  a training run in my wetsuit")
+      wet_suit = @nyc_marathon.pledges.create(title: "Wet Suit Challenge", amount: 300, info: "I will do  a training run in my wetsuit")
       visit event_path(@nyc_marathon)
 
       expect(page).to have_content("Once I raise £300, I will do the Wet Suit Challenge")
