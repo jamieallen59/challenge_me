@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-	describe 'creating posts on a profile' do
+	describe 'Creating posts on a profile' do
 		before do
-			@event = create(:event)
+			mary = create(:user)
+			@event = create(:event, user: mary)
 		end
-		context 'no posts' do 
-			it 'displays a message when there are no posts' do 
+		context 'no posts' do
+			it 'displays a message when there are no posts' do
 				visit event_path(@event)
 				expect(page).to have_content 'There are no posts'
 			end

@@ -28,6 +28,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-collection_matchers'
   gem 'warden'
+  gem 'timecop'
 end
 
 group :production do

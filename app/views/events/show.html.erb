@@ -1,4 +1,5 @@
 <section class='container-left'>
+    <p id='event-user-name'><%= @event.user.firstname %> <%= @event.user.lastname %></p>
   <section class='event-details-container'>
     <p id='event-name'><%= @event.name %></p>
     <p id='event-date'><%= @event.event_date.strftime("%d %B %Y") %></p>
@@ -7,10 +8,10 @@
     <p id='amount-raised'>£<%= @event.amount_raised %> raised so far</p>
   </section>
   <section class='days-remaining'>
-      15 DAYS REMAINING
+      <%= @event.days_remaining %>
     </section>
     <section class='percentage-completion'>
-      40% complete
+      <%= @event.percentage_of_target %>% of fundraising target achieved.
     </section>
     <section class='training-totals'>
     </section>
