@@ -21,11 +21,13 @@ describe 'creating pledges' do
       expect(page).to have_content 'I promise to eat a lot of herbs'
     end
   context 'as somebody who didnt create the event' do
-
+    before do
+      logout(:user)
+    end
     it 'you cannot create a pledge' do
       visit event_path(@event)
       expect(page).not_to have_content('New Pledge')
     end
   end
-  end
+end
 end
