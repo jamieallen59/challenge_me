@@ -11,7 +11,7 @@
     <object class='uploaded-evidence'>
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
     </object>
-      posted by <%= post.user.firstname %> <%= post.user.lastname %>
+      posted by <%= post.user.full_name%>
     <article class='evidence-comments'>
     </article>
   </section>
