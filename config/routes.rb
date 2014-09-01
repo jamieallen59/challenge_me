@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   # resources :posts do
   #   resource :comments
   # end
- root 'events#index'
+ root 'welcome#index'
+
 end
