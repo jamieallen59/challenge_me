@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="stylesheet" type="text/css" href="../assets/stylesheets/homepage.css">
+		
 </head>
 
 <body>
@@ -17,8 +17,11 @@
 			<h2 class='main-image-header'>Make giving fun.</h2>
 			<h5 class='main-image-text'>Complete extra challenged to reach your fundraising targets</h5>
 			<section class='cover-image-button-container'>
-				<button class='create-challenge'>Create challenge</button>
-				<button class='view-challenges'>View challenges</button>
+			
+				<%= button_to 'Create challenge', events_path, {class: 'create-challenge'} %>
+
+				<%= button_to 'View challenge', new_user_session_path, {class: 'view-challenge'} %>
+
 			</section>
 		</section>
 	</section>
