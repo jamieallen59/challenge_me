@@ -1,4 +1,15 @@
 <%= form_for [@event,@post], html: { multipart: true } do |f| %>
+  <% if @post.errors.any? %>
+    <article class="error_explaination">
+      <%= pluralize(@post.errors.count, "error") %>
+        prevent this event from being saved:
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%=message%></li>
+          <% end %>
+        </ul>
+    </article>
+  <% end %>
 
 	<%= f.label :caption %>
 	<%= f.text_field :caption %>
