@@ -34,6 +34,6 @@ describe 'post validation' do
 		click_link 'New Post'
 		fill_in 'Caption', with: 'yo'
 		click_button 'Create Post'
-		expect(page).to have_content 'Your caption must be greater than two characters'
+		expect(page).to have_content "Your caption must be between 3 and 140 characters"
 	end
 end
