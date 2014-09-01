@@ -8,9 +8,5 @@ Rails.application.routes.draw do
       resource :comments
     end
   end
-
-  # resources :posts do
-  #   resource :comments
-  # end
  root 'events#index'
 end
