@@ -1,0 +1,104 @@
+body {
+	font-family: Helvetica Neue;
+	font-size: 24px;
+}
+
+/*---- Upper Container ---*/
+.hp-upper-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+	.navbar {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 80px;
+		border: 1px solid gray;
+	}
+		p.main-logo {
+			display: flex;
+			margin-left: 20px;
+			font-size: 40px;
+			vertical-align: middle;
+			line-height: 0;
+		}
+		.search {
+			display: flex;
+			font-size: 16px;
+			padding: 10px;
+			border: 1px solid gray;
+			margin-left: auto;
+			margin-right: auto;
+			height: 40px;
+			width: 25%;
+			margin-top: 19px;
+			margin-left: 40%;
+		}
+		.login {
+			border: 1px solid gray;
+			height: 45px;
+			width: 100px;
+			margin-right: 20px;
+			margin-top: 16px;
+		}
+
+	.hp-cover-image {
+		background-image: url("http://wallpapers.windowsace.com/pics/n/i/nike-run-wallpaper-background-theme-desktop-p-o-ibackgroundz.com.jpg");
+		display: flex;
+		flex-direction: column;
+		background-size: 100%;
+		min-height: 700px;
+	}
+	h2.main-image-header {
+		text-align: center;
+	}
+	h5.main-image-text {
+		text-align: center;
+	}
+	.cover-image-button-container {
+		text-align: center;
+	}
+
+/*---- Middle Container ---*/
+	.hp-middle-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		margin-top: 40px;
+	}
+
+	.hp-extra-info-box {
+		display: flex;
+		flex-direction: column;
+			margin-left: auto; 
+			margin-right: auto;
+	}
+
+		.hp-extra-info {
+			width: 250px;
+			height: 250px;
+			border: 1px solid gray;
+		}
+
+		.info-box-title {
+			font-size: 20px;
+			text-align: center;
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
