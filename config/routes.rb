@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   resources :events do
   	resource :posts
     resource :pledges
+
+    resources :posts do
+      resource :comments
+    end
   end
+
+  # resources :posts do
+  #   resource :comments
+  # end
  root 'events#index'
 end
