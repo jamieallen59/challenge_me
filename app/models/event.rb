@@ -23,4 +23,8 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def percentage_of_target
+    ((amount_raised/target)*100).to_i
+  end
+
 end
