@@ -33,4 +33,14 @@ class PostsController < ApplicationController
 		@post.update(params[:post].permit(:caption, :picture))
 		redirect_to event_path(@event)
 	end
+
+	def destroy
+		@event = Event.find(params[:event_id])
+		@post = Post.find(params[:id])
+			@event.posts.destroy
+			flash[:notice] = 'Deleted Post Successfully'
+		redirect_to events_path
+
+
+	end
 end
