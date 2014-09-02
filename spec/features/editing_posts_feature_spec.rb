@@ -15,7 +15,7 @@ describe 'Editing Posts' do
   	end
 
   	it 'should have a link to edit the post' do
-      expect(page).to have_css 'a.edit-post', text: 'Edit'
+      expect(page).to have_css 'a.edit-post', text: 'Edit Post'
     end
 
     
