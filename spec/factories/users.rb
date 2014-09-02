@@ -7,5 +7,11 @@ FactoryGirl.define do
     email "maryperfect@challengme.com"
     password "littlelamb"
     password_confirmation "littlelamb"
+
+    factory :fred do
+      firstname "Fred"
+      lastname "Finstone"
+      email "fred@challengme.com"
+    end
   end
 end

@@ -31,4 +31,24 @@ RSpec.describe Event, :type => :model do
       expect(event).to have(1).error_on(:event_date)
     end
   end
+
+  context '#is_owner?' do
+    before do
+      @mary = create(:user)
+      @fred = create(:fred)
+      @event = create(:event, user: @mary)
+    end
+    it 'should return true if user is owner of the event' do 
+      expect(@event.is_owner?(@mary)).to be true
+    end
+
+    it 'should return false if user is not the owner of the event' do
+      expect(@event.is_owner?(@fred)).to be false
+    end
+
+    it 'should return false if nil user is passed in' do
+      expect(@event.is_owner?(nil)).to be false
+    end
+
+  end
 end
