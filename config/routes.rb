@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :events do
   	resource :posts
     resource :pledges
+    resource :trainingsessions
 
     resources :posts do
       resource :comments
