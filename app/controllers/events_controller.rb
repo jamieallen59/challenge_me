@@ -10,7 +10,7 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def create
-    @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised))
+    @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised, :training))
     @event.user = current_user
     if @event.save
       redirect_to event_path(@event)
