@@ -25,4 +25,14 @@ before_action :authenticate_user!, except: [:index, :show]
     @comment = Comment.new
     @pledges = @event.pledges
   end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised))
+    redirect_to event_path(@event)
+  end
 end
