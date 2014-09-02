@@ -17,3 +17,4 @@
 /config/secrets.yml
 .DS_Store
 /coverage
+/coverage/.last_run.json
