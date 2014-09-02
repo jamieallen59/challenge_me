@@ -7,7 +7,9 @@
       <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
     </section>
     <section class='post-controls'>
-      <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
+      <% if post.is_owner?(current_user) %>
+        <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
+      <% end %>
     </section>
   </header>
   <section class='post-content'>
