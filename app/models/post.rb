@@ -13,4 +13,9 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   has_many :comments
+
+  def is_owner? user
+    return false if user.nil?
+    self.user_id == user.id
+  end
 end
