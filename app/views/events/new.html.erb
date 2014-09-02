@@ -20,5 +20,18 @@
   <%= f.text_field :target %>
   <%= f.label :amount_raised, 'Amount Raised' %>
   <%= f.text_field :amount_raised %>
+<p>
+  <%= f.label :training, "Workouts per Week"%><br>
+    <%= f.radio_button(:training, 2, id:'2-workouts') %> 
+    <%= f.label(:training, 2)%>
+    <%= f.radio_button(:training, 3, id:'3-workouts') %> 
+    <%= f.label(:training, 3)%>
+    <%= f.radio_button(:training, 4, id:'4-workouts') %> 
+    <%= f.label(:training, 4)%>
+    <%= f.radio_button(:training, 5, id:'5-workouts') %> 
+    <%= f.label(:training, 5)%>
+    <%= f.radio_button(:training, 6, id:'6-workouts') %> 
+    <%= f.label(:training, 6)%>
+</p>
   <%= f.submit 'Create Event' %>
 <% end %>

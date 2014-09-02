@@ -10,8 +10,8 @@ describe 'Displaying events' do
 
   context 'with an event' do
     before do
-      mary = create(:user)
-      @event = create(:event, user: mary)
+      @mary = create(:user)
+      @event = create(:event, user: @mary)
     end
 
     it 'should display the event details' do
@@ -19,6 +19,12 @@ describe 'Displaying events' do
       expect(page).to have_content 'Bigfoot Race'
       expect(page).to have_content '12 September 2014'
       expect(page).to have_content 'Mary Perfect'
+    end
+
+    it 'should display the training goal' do 
+      @my_event = create(:event, user: @mary, training: 4)
+      visit event_path(@my_event)
+      expect(page).to have_content 'Training Goal: 4 sessions per week'
     end
   end
 end
