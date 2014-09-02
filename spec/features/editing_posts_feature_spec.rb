@@ -18,7 +18,13 @@ describe 'Editing Posts' do
       expect(page).to have_css 'a.edit-post', text: 'Edit Post'
     end
 
-    
+    it 'should allow you to edit the post' do
+      click_link 'Edit Post'
+      fill_in 'Caption', with: 'Ka-boom!'
+      click_on 'Update Post'
+      expect(page).to have_content 'Ka-boom!'
+      expect(current_path).to eq event_path(@event) 
+    end
 
   end
 end
