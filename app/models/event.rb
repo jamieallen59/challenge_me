@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
 
   has_many :posts
   has_many :pledges
+  has_many :trainingsessions
   belongs_to :user
 
   def not_past_date
@@ -36,5 +37,9 @@ class Event < ActiveRecord::Base
   def is_owner? user
     return false if user.nil?
     self.user_id == user.id
+  end
+
+  def weekly_training_sessions
+    trainingsessions.count{|session| session.cweek == Date.today.cweek}
   end
 end

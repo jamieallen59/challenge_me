@@ -17,4 +17,26 @@ RSpec.describe Post, :type => :model do
       expect(post).to have(1).error_on(:caption)
     end
   end
+
+  context '#is_owner?' do 
+    before do
+      @mary = create(:user)
+      @fred = create(:fred)
+      @event = create(:event, user: @mary)
+      @post = create(:post, event: @event, user: @mary)
+    end
+
+    it 'should return true if user is owner of the post' do 
+      expect(@post.is_owner?(@mary)).to be true
+    end
+
+    it 'should return false if user is not the owner of the post' do
+      expect(@post.is_owner?(@fred)).to be false
+    end
+
+    it 'should return false if nil user is passed in' do 
+      expect(@post.is_owner?(nil)).to be false
+    end
+  end
 end
+
