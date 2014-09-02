@@ -6,6 +6,9 @@
     <section class='post-date'>
       <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
     </section>
+    <section class='post-controls'>
+      <%= link_to 'Edit', edit_event_posts_path(@event), class: 'edit-post' %>
+    </section>
   </header>
   <section class='post-content'>
     <object class='uploaded-evidence'>
