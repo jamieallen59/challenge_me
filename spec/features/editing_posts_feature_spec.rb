@@ -25,6 +25,20 @@ describe 'Editing Posts' do
       expect(page).to have_content 'Ka-boom!'
       expect(current_path).to eq event_path(@event) 
     end
-
   end
+
+  context 'logged in as another user' do 
+  	before do 
+  		login_as @fred
+  		visit event_path(@event)
+  	end
+
+  	it 'should not have link to edit the post' do 
+  		expect(page).not_to have_css 'a.edit-post', text: 'Edit Post'
+  	end
+
+  	
+  end
+
+
 end

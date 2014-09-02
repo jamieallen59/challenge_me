@@ -13,4 +13,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   has_many :comments
+
+  def is_owner? post
+    true
+  end
 end
