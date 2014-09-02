@@ -1,3 +1,4 @@
+
 <%= form_for @event do |f| %>
   <% if @event.errors.any? %>
     <article class="error_explaination">
@@ -10,30 +11,108 @@
     </ul>
     </article>
   <%end%>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :event_date, 'Event Date' %>
-  <%= f.date_select :event_date %>
-  <%= f.label :charity %>
-  <%= f.text_field :charity %>
-  <%= f.label :target, 'Fundraising Target' %>
-  <%= f.text_field :target %>
-  <%= f.label :amount_raised, 'Amount Raised' %>
-  <%= f.text_field :amount_raised %>
+  <section class="new-event-form">
+
+  <p class='event-form-label'>
+    <%= f.label :name %>
+  </p>
+    <%= f.text_field :name, class: 'event-form-input' %>
+
+  <p class='event-form-label'>
+    <%= f.label :event_date, 'Event Date' %>
+  </p>
+    <%= f.date_select :event_date, class: 'event-form-input' %>
+
+  <p class='event-form-label'>
+    <%= f.label :charity %>
+  </p>
+    <%= f.text_field :charity, class: 'event-form-input' %>
+
+  <p class='event-form-label'>
+    <%= f.label :target, 'Fundraising Target' %>
+  </p>
+
+    <%= f.text_field :target, class: 'event-form-input' %>
+
+  <p class='event-form-label'>
+    <%= f.label :amount_raised, 'Amount Raised' %>
+  </p>
+    <%= f.text_field :amount_raised, class: 'event-form-input' %>
 
   <p>
-  <%= f.label :training, "Workouts per Week"%><br>
-    <%= f.radio_button(:training, 2, id:'2-workouts') %> 
-    <%= f.label(:training, 2)%>
-    <%= f.radio_button(:training, 3, id:'3-workouts') %> 
-    <%= f.label(:training, 3)%>
-    <%= f.radio_button(:training, 4, id:'4-workouts') %> 
-    <%= f.label(:training, 4)%>
-    <%= f.radio_button(:training, 5, id:'5-workouts') %> 
-    <%= f.label(:training, 5)%>
-    <%= f.radio_button(:training, 6, id:'6-workouts') %> 
-    <%= f.label(:training, 6)%>
-</p>
+    <%= f.label :training, "Workouts per Week"%><br>
+      <%= f.radio_button(:training, 2, id:'2-workouts') %> 
+      <%= f.label(:training, 2, id: '2-workouts-label')%>
+      <%= f.radio_button(:training, 3, id:'3-workouts') %> 
+      <%= f.label(:training, 3, id: '3-workouts-label')%>
+      <%= f.radio_button(:training, 4, id:'4-workouts') %> 
+      <%= f.label(:training, 4, id: '4-workouts-label')%>
+      <%= f.radio_button(:training, 5, id:'5-workouts') %> 
+      <%= f.label(:training, 5, id: '5-workouts-label')%>
+      <%= f.radio_button(:training, 6, id:'6-workouts') %> 
+      <%= f.label(:training, 6, id: '6-workouts-label')%>
+  </p>
+    
+
+  <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+  <script>
+    $(document).ready(function(){
+
+      var addAttribute = function(attributeId, type, label) {
+        $(attributeId).attr(type, label);
+      }
+
+      var removeAttribute = function(attributeId, label){
+        $(attributeId).removeAttr(label);
+      }
+
+      var removeClass = function(attributeClass, label) {
+        $(attributeClass).removeClass(label);
+      }
+
+      var addClass = function(attributeClass, label) {
+        $(attributeClass).addClass(label);
+      }
+
+      $('#2-workouts-label').on('click', function(){
+        removeClass('.label-checked', 'label-checked');
+        addClass('#2-workouts-label', 'label-checked');
+        removeAttribute('input[type="radio"]', 'checked')
+        addAttribute('#2-workouts', 'checked', 'checked');
+      });
+
+      $('#3-workouts-label').on('click', function(){
+        removeClass('.label-checked', 'label-checked');
+        addClass('#3-workouts-label', 'label-checked');
+
+        removeAttribute('input[type="radio"]', 'checked');
+        addAttribute('#3-workouts', 'checked', 'checked');
+      });
+
+      $('#4-workouts-label').on('click', function(){
+        removeClass('.label-checked', 'label-checked');
+        addClass('#4-workouts-label', 'label-checked');
+        removeAttribute('input[type="radio"]', 'checked');
+        addAttribute('#4-workouts', 'checked', 'checked');
+      });
+
+      $('#5-workouts-label').on('click', function(){
+        removeClass('.label-checked', 'label-checked');
+        addClass('#5-workouts-label', 'label-checked');
+        removeAttribute('input[type="radio"]', 'checked');
+        addAttribute('#5-workouts', 'checked', 'checked');
+      });
+
+      $('#6-workouts-label').on('click', function(){
+        removeClass('.label-checked', 'label-checked');
+        addClass('#6-workouts-label', 'label-checked');
+        removeAttribute('input[type="radio"]', 'checked');
+        addAttribute('#6-workouts', 'checked', 'checked');
+      });
+
+    });
+  </script>
 
   <%= f.submit %>
+  </section>
 <% end %>
