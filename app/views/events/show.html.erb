@@ -1,6 +1,7 @@
   <section class='container-top'>
     <section class='picture-container'>
       <section class='profile-picture' >
+        <div id='profile-image'></div>
       </section>
       <p id='event-user-name'>
         <%= @event.user.firstname %> <%= @event.user.lastname %>
@@ -45,6 +46,7 @@
       <%= @event.percentage_of_target %>% of fundraising target achieved.
     </section>
     <section class='training-totals'>
+     Training Goal: <%= @event.training %> sessions per week.
     </section>
     <section class='training-calender'>
     </section>
