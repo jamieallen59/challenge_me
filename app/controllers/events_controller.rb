@@ -25,4 +25,17 @@ before_action :authenticate_user!, except: [:index, :show]
     @comment = Comment.new
     @pledges = @event.pledges
   end
+
+  def edit
+    @event = current_user.events.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = 'You are not the owner of the event'
+    redirect_to root_path
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised))
+    redirect_to event_path(@event)
+  end
 end

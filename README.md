@@ -1,4 +1,10 @@
 # Challenge Me 
+[![Code Climate](https://codeclimate.com/github/yoshdog/challenge-me/badges/gpa.svg)](https://codeclimate.com/github/yoshdog/challenge-me)
+[![Test Coverage](https://codeclimate.com/github/yoshdog/challenge-me/badges/coverage.svg)](https://codeclimate.com/github/yoshdog/challenge-me)
+
+## Where to see it
+
+A working version of the app can be found here: [Challenge Me](http://challenge--me.herokuapp.com/)
 
 ### Meet the Team: 
 
@@ -24,9 +30,6 @@ At the moment, raising money for charity can be quite boring. It boils down to a
   + To help motivate the person training for their event and holding them accountable publicly for it.
   + To make sponsors feel less resentful if there is a concept of achievements or challenges involved.
 
-## How to use it
-
-A working version of the app can be found here: [Challenge Me](http://challenge--me.herokuapp.com/)
 
 ## Technologies Used:
 
@@ -36,3 +39,25 @@ A working version of the app can be found here: [Challenge Me](http://challenge-
   + Capybara
   + RSpec
   
+### How to set it up
+```sh
+git clone git@github.com:yoshdog/challenge-me.git
+cd challenge-me
+bin/rake db:create
+bin/rake db:migrate
+bin/rake db:seed
+```
+
+### How to run it
+```sh
+cd challenge-me
+bin/rails s
+```
+
+open your browser and go to [localhost:3000](http://localhost:3000)
+
+### How to test it
+```sh
+cd challenge-me
+rspec
+```

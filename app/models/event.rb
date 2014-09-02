@@ -32,4 +32,9 @@ class Event < ActiveRecord::Base
   def next_pledge
      pledges.select{ |pledge| pledge.amount > amount_raised }.min_by{|pledge| pledge.amount }
   end
+
+  def is_owner? user
+    return false if user.nil?
+    self.user_id == user.id
+  end
 end

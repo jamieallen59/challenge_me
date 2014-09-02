@@ -1,0 +1,24 @@
+<%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <article class="error_explaination">
+    <%=pluralize(@event.errors.count, "error") %>
+    prevented this event from being saved:
+    <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%=message%></li>
+      <%end%>
+    </ul>
+    </article>
+  <%end%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :event_date, 'Event Date' %>
+  <%= f.date_select :event_date %>
+  <%= f.label :charity %>
+  <%= f.text_field :charity %>
+  <%= f.label :target, 'Fundraising Target' %>
+  <%= f.text_field :target %>
+  <%= f.label :amount_raised, 'Amount Raised' %>
+  <%= f.text_field :amount_raised %>
+  <%= f.submit %>
+<% end %>
