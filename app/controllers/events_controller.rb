@@ -41,8 +41,13 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
-    flash[:notice] = 'Deleted Successfully'
-    redirect_to events_path
+    if @event.is_owner? current_user
+      @event.destroy
+      flash[:notice] = 'Deleted Successfully'
+      redirect_to events_path
+    else
+      flash[:alert] = 'You are not the owner of the event'
+      redirect_to root_path
+    end
   end
 end
