@@ -9,7 +9,6 @@
 		<section class='navbar'>
 			<p class='main-logo'>challenge.me</p>
 			<input type="search" name="search" class='search' placeholder='Search for a friend'>
-			
 			<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
 		
 		</section>
@@ -18,9 +17,11 @@
 			<h5 class='main-image-text'>Complete extra challenged to reach your fundraising targets</h5>
 			<section class='cover-image-button-container'>
 			
-				<%= link_to 'Create challenge', events_path, {class: 'create-challenge'} %>
+			
 
-				<%= link_to 'View challenge', '#' , {class: 'view-challenge'} %>
+				<%= link_to 'Add Your Event', new_event_path, {class: 'create-challenge'} %>
+				<%= link_to 'View Challenges', events_path, {class: 'view-challenge'} %>
+
 
 			</section>
 		</section>
