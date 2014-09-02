@@ -35,5 +35,11 @@ describe 'Editing Events' do
     it 'should not have a link to edit the event' do
       expect(page).not_to have_css 'a.edit-event', text: 'Edit'
     end
+
+    it 'should not allow you to edit the event' do
+      visit edit_event_path(@event)
+      expect(page).to have_content 'You are not the owner of the event'
+      expect(current_path).to eq root_path
+    end    
   end
 end

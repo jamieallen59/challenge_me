@@ -27,7 +27,10 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = 'You are not the owner of the event'
+    redirect_to root_path
   end
 
   def update
