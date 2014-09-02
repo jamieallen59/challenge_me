@@ -44,11 +44,12 @@ body {
 		}
 
 	.hp-cover-image {
-		background-image: url("http://wallpapers.windowsace.com/pics/n/i/nike-run-wallpaper-background-theme-desktop-p-o-ibackgroundz.com.jpg");
+		background-image: url("http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528a8fb8a276d_1.JPG");
 		display: flex;
 		flex-direction: column;
 		background-size: 100%;
 		min-height: 700px;
+		background-repeat: no-repeat;
 	}
 	h2.main-image-header {
 		text-align: center;
