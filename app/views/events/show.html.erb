@@ -24,6 +24,7 @@
     </section>
     <section class='event-controls'>
       <%= link_to 'Edit', edit_event_path(@event), class: 'edit-event' if @event.is_owner?(current_user) %>
+      <%= link_to 'Delete', event_path(@event), class: 'delete-event', method: :delete %>
     </section>
   </section>
 
