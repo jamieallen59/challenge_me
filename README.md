@@ -38,6 +38,7 @@ At the moment, raising money for charity can be quite boring. It boils down to a
   + Postgresql
   + Capybara
   + RSpec
+  + CSS
   
 ### How to set it up
 ```sh

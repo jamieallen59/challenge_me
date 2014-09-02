@@ -16,4 +16,16 @@ class PostsController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def edit
+		@event = Event.find(params[:event_id])
+		@post = @event.posts.find(params[:id])
+	end
+
+	def update
+		@event = Event.find(params[:event_id])
+		@post = Post.find(params[:id])
+		@post.update(params[:post].permit(:caption, :picture))
+		redirect_to event_path(@event)
+	end
 end
