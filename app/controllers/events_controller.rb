@@ -38,4 +38,11 @@ before_action :authenticate_user!, except: [:index, :show]
     @event.update(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised))
     redirect_to event_path(@event)
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:notice] = 'Deleted Successfully'
+    redirect_to events_path
+  end
 end
