@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   has_many :comments
 
-  def is_owner? post
-    true
+  def is_owner? user
+    self.user_id == user.id
   end
 end

@@ -30,6 +30,9 @@ RSpec.describe Post, :type => :model do
       expect(@post.is_owner?(@mary)).to be true
     end
 
+    it 'should return false if user is not the owner of the post' do
+      expect(@post.is_owner?(@fred)).to be false
+    end
   end
 end
 
