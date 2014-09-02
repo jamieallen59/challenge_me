@@ -9,6 +9,7 @@
     <section class='post-controls'>
       <% if post.is_owner?(current_user) %>
         <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
+        <%= link_to 'Delete Post', event_post_path(@event, post), class: 'delete-post', method: :delete %>
       <% end %>
     </section>
   </header>

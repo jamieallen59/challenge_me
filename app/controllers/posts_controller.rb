@@ -20,12 +20,33 @@ class PostsController < ApplicationController
 	def edit
 		@event = Event.find(params[:event_id])
 		@post = @event.posts.find(params[:id])
+		unless @post.is_owner? current_user
+			flash[:notice] = 'You are not the owner of the post'
+			redirect_to '/'
+		end
 	end
 
 	def update
 		@event = Event.find(params[:event_id])
 		@post = Post.find(params[:id])
+		# redirect_to '/' unless @post.owner?(current_user)
 		@post.update(params[:post].permit(:caption, :picture))
 		redirect_to event_path(@event)
+	end
+
+	def destroy
+		@event = Event.find(params[:event_id])
+		@post = Post.find(params[:id])
+		if @post.is_owner? current_user
+			@event.posts.destroy
+			flash[:notice] = 'Deleted Post Successfully'
+			redirect_to events_path
+		else
+			flash[:alert] = 'You are not the owner of the post'
+			redirect_to root_path
+		end
+
+
+
 	end
 end
