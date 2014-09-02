@@ -25,4 +25,22 @@ describe 'Deleting Posts' do
 	  	expect(current_path).to eq events_path
 	  end
 	end
+
+	context 'logged in as another user' do 
+		before do
+			login_as @fred
+			visit event_path(@event)
+		end
+
+		it 'it should not have a link to delete the post' do
+			expect(page).not_to have_css 'a.delete-post', text: 'Delete Post'
+		end
+
+		it 'should not allow you to delete the post' do
+      page.driver.submit :delete, event_post_path(@event, @post), {}
+      expect(page).to have_content 'You are not the owner of the post'
+      expect(current_path).to eq root_path
+    end 
+
+	end
 end
