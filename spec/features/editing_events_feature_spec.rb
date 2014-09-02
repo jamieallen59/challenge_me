@@ -25,4 +25,15 @@ describe 'Editing Events' do
       expect(current_path).to eq event_path(@event) 
     end
   end
+
+  context 'logged in as another user' do
+    before do
+      login_as @fred
+      visit event_path(@event)
+    end
+
+    it 'should not have a link to edit the event' do
+      expect(page).not_to have_css 'a.edit-event', text: 'Edit'
+    end
+  end
 end
