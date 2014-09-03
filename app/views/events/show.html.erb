@@ -53,7 +53,10 @@
      Training Goal: <%= @event.training %> sessions per week.
     </section>
     <section class='training-calender'>
-    <%= link_to "Log training session", new_event_trainingsessions_path(@event) %>
+
+
+    <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button' %>
+
    <%= @event.percentage_of_workouts_complete.round %>% of total training sessions completed.
 
     <%= @event.user.firstname %> has completed <%= @event.weekly_training_sessions%> out of <%=@event.training %> workouts planned for this week.
@@ -74,6 +77,34 @@
       There are no posts
   <% end %>
 </section>
+
+<div id="ex1" style="display:none;">
+  <%= form_for [@event, @event.trainingsessions.new ] do |f| %>
+  <section class='modal-header'>
+    <%= f.label :details, "Training details"%>
+  </section>
+  <section class='modal-body'>
+    <%= f.text_area :details %>
+  </section>
+  <section class="modal-footer">
+    <%= f.submit 'Add Workout', class: 'add-workout-button' %>
+    <a class='close-modal' href="#" rel="modal:close">Close</a>
+  </section>
+  <%end%>
+</div>
+
+<script>
+  $(document).ready(function(){
+
+      $(".modal-button").on('click', function(){
+          $('#ex1').modal({
+              fadeDuration: 500,
+              fadeDelay: 0.30
+          });
+          return false;
+      });
+  });
+</script>
 
 
 
