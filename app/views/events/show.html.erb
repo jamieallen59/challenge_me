@@ -21,7 +21,7 @@
     <%end%>
     </section>
     <section class='donations-container'>
-
+    <%= link_to 'New Post', new_event_posts_path(@event), id: "newpostlink" %>
     </section>
     <section class='event-controls'>
       <% if @event.is_owner?(current_user) %>
@@ -61,5 +61,3 @@
       There are no posts
   <% end %>
 </section>
-
-<%= link_to 'New Post', new_event_posts_path(@event) %>
