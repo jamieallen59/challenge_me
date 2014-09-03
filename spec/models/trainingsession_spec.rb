@@ -1,5 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Trainingsession, :type => :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
+  context 'validations' do 
+
+  	before do
+      @mary = create(:user)
+      @event = create(:event, user: @mary)
+      login_as @mary
+    end
+
+  	it 'is not valid if the details part is empty' do 
+  		workout = @event.trainingsessions.create
+  		expect(workout).to have(1).error_on(:details)
+  	end
+
+  end
 end
