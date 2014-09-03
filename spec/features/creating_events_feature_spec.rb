@@ -16,37 +16,63 @@ describe 'Creating events' do
       login_as mary
     end
 
-    context 'with valid data' do
-      it 'should allow the user to add an event' do
+    context 'using the just giving api data' do
+      before do
+
+        #mock the JustGiving::Account API call
+        account = double :account, pages: [{'eventName' => 'Hot Dog Eating Contest', 'targetAmount'=> 10000, 'raisedAmount' => 20, 'charityId' => 1},{'eventName' => 'Say Yo'}]
+        allow(JustGiving::Account).to receive(:new).and_return(account)
+
+        #mock the JustGiving::Charity API call
+        charity = double :charity, get_charity: { 'name' => 'Freedom for makers' }
+        allow(JustGiving::Charity).to receive(:new).and_return(charity)
         visit '/events'
         click_on 'Add Your Event'
-        fill_in "Name", with: "Bigfoot Race"
-        select '2014', from: "event_event_date_1i"
-        select 'September', from: "event_event_date_2i"
-        select '12', from: "event_event_date_3i"
-        fill_in "Charity", with: "Red Cross"
-        fill_in "Fundraising Target", with: 1000
-        fill_in "Amount Raised", with: 0
+      end
+      it 'should show the select page' do
+        expect(page).to have_content 'Choose an Event'
+        expect(current_path).to eq select_events_path
+      end
+
+      it 'should display the users just giving events as options ' do
+        expect(page).to have_content 'Hot Dog Eating Contest'
+        expect(page).to have_content 'Say Yo'
+      end
+
+      it 'selecting a just giving event should auto populate the fields' do
+        visit select_events_path
+        click_on 'Hot Dog Eating Contest'
+        expect(find_field('Name').value).to eq 'Hot Dog Eating Contest'
+        expect(find('#event_target').value).to eq '10000'
+        expect(find('#event_amount_raised').value).to eq '20'
+        expect(find('#event_charity').value).to eq 'Freedom for makers'
+      end
+
+      it 'creating an event from the auto populated data will create the event' do
+        visit select_events_path
+        click_on 'Hot Dog Eating Contest'
         choose "4-workouts"
         click_button "Create Event"
-        expect(page).to have_content "Bigfoot Race"
-        expect(page).to have_content "12 September 2014"
-        expect(page).to have_content "Fundraising for Red Cross"
-        expect(page).to have_content "Fundraising Target: £1000"
-        expect(page).to have_content "£0.0 raised so far"
+        expect(page).to have_content "Hot Dog Eating Contest"
+        expect(page).to have_content "Fundraising for Freedom for makers"
+        expect(page).to have_content "Fundraising Target: £10000"
+        expect(page).to have_content "£20.0 raised so far"
         expect(page).to have_content "Training Goal: 4 sessions per week"
       end
-    end
 
-    context 'invalid data' do
-      it 'should display an error' do
-        visit new_event_path
-        fill_in 'Name', with: '12Big Foot'
-        click_button 'Create Event'
+      context 'invalid data' do
+        it 'should display an error' do
+          visit select_events_path
+          click_on 'Hot Dog Eating Contest'
+          fill_in 'Name', with: '12Big Foot'
+          click_button 'Create Event'
 
-        expect(page).to have_content 'error'
+          expect(page).to have_content 'error'
+        end
       end
     end
+
+
 
   end
 end

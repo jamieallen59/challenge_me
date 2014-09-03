@@ -53,10 +53,16 @@
      Training Goal: <%= @event.training %> sessions per week.
     </section>
     <section class='training-calender'>
+<<<<<<< HEAD
 
 
     <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button' %>
 
+=======
+    <% if @event.is_owner?(current_user) %>
+      <%= link_to "Log training session", new_event_trainingsessions_path(@event) %>
+    <%end%>
+>>>>>>> 85773b7c9dbf5591ff1a3a1735f184791223d69a
    <%= @event.percentage_of_workouts_complete.round %>% of total training sessions completed.
 
     <%= @event.user.firstname %> has completed <%= @event.weekly_training_sessions%> out of <%=@event.training %> workouts planned for this week.

@@ -13,6 +13,5 @@ RSpec.describe Trainingsession, :type => :model do
   		workout = @event.trainingsessions.create
   		expect(workout).to have(1).error_on(:details)
   	end
-
   end
 end
