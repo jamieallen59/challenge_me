@@ -52,20 +52,21 @@
     <section class='training-totals'>
      Training Goal: <%= @event.training %> sessions per week.
     </section>
+
     <section class='training-calender'>
-    <% if @event.is_owner?(current_user) %>
-      <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button' %>
-    <%end%>
-   <%= @event.percentage_of_workouts_complete.round %>% of total training sessions completed.
+      <% if @event.is_owner?(current_user) %>
+       <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button' %>
+      <%end%>
+     <%= @event.percentage_of_workouts_complete.round %>% of total training sessions completed.
 
     <%= @event.user.firstname %> has completed <%= @event.weekly_training_sessions%> out of <%=@event.training %> workouts planned for this week.
     <% if @trainingsessions.any? %>
       <p>Most recent session details<br>
       <%= @trainingsessions.last.details %>
-
       </p>
     <%end%>
     </section>
+    
     <section class='donation-button'>
     </section>
 </section>
