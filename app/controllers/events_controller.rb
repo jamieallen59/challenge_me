@@ -53,6 +53,6 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def select
-    @events = []
+    @events = JustGiving::Account.new(current_user.email).pages
   end
 end

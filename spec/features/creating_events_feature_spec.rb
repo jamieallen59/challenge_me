@@ -17,11 +17,21 @@ describe 'Creating events' do
     end
 
     context 'using the just giving api data' do
-      it 'should show the select page' do
+      before do
+        account = double :account, pages: [{'eventName' => 'Hot Dog Eating Contest'},{'eventName' => 'Say Yo'}]
+        allow(JustGiving::Account).to receive(:new).and_return(account)
         visit '/events'
         click_on 'Add Your Event'
+      end
+      it 'should show the select page' do
         expect(page).to have_content 'Choose an Event'
         expect(current_path).to eq select_events_path
+      end
+
+      it 'should display the users just giving events as options ' do
+        expect(page).to have_content 'Hot Dog Eating Contest'
+        expect(page).to have_content 'Say Yo'
+
       end
     end
 
