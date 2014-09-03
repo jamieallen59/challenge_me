@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 		@event = Event.find(params[:event_id])
 		@post = Post.find(params[:id])
 		if @post.is_owner? current_user
-			@event.posts.destroy
+			 @post.destroy
 			flash[:notice] = 'Deleted Post Successfully'
 			redirect_to events_path
 		else
