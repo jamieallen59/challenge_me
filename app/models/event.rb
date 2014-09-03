@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   validates :target, presence: true, numericality: true
   validates :amount_raised, presence: true, numericality: true
   validate :not_past_date
+  validates :training, presence: true
 
   has_many :posts
   has_many :pledges
@@ -42,4 +43,16 @@ class Event < ActiveRecord::Base
   def weekly_training_sessions
     trainingsessions.count{|session| session.cweek == Date.today.cweek}
   end
+
+  def days_to_event
+    ((event_date.to_time - created_at) / 3600) / 24
+  end
+
+  def percentage_of_workouts_complete
+    workouts_per_week = (days_to_event / 7) * training
+    (trainingsessions.count / workouts_per_week) * 100
+  end
+
+ 
+
 end

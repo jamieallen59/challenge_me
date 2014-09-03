@@ -6,7 +6,8 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def new
-    @event = Event.new
+    @charity = JustGiving::Charity.new.get_charity(params[:data]['charityId'])
+    @event = Event.new(name: params[:data]['eventName'],charity: @charity['name'], target: params[:data]['targetAmount'], amount_raised: params[:data]['raisedAmount'] )
   end
 
   def create
@@ -24,6 +25,7 @@ before_action :authenticate_user!, except: [:index, :show]
     @posts = @event.posts
     @comment = Comment.new
     @pledges = @event.pledges
+    @trainingsessions = @event.trainingsessions
   end
 
   def edit
@@ -49,5 +51,9 @@ before_action :authenticate_user!, except: [:index, :show]
       flash[:alert] = 'You are not the owner of the event'
       redirect_to root_path
     end
+  end
+
+  def select
+    @events = JustGiving::Account.new(current_user.email).pages || []
   end
 end

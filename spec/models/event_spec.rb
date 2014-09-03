@@ -30,6 +30,11 @@ RSpec.describe Event, :type => :model do
       event = Event.new(event_date: Date.new(2014, 8, 1))
       expect(event).to have(1).error_on(:event_date)
     end
+
+    it 'is not valid if no workout goal is set' do 
+      event = Event.new(name: "Bigfoot Race", event_date: Date.new(2014, 9, 12), charity: "Red Cross", target: 1000, amount_raised: 10.0)
+      expect(event).to have(1).error_on(:training)
+    end
   end
 
   context '#is_owner?' do

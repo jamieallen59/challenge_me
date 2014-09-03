@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		
+
 </head>
 
 <body>
@@ -9,18 +9,24 @@
 		<section class='navbar'>
 			<p class='main-logo'>challenge.me</p>
 			<input type="search" name="search" class='search' placeholder='Search for a friend'>
-			<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
-		
+			<% if user_signed_in? %>
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout' %>
+			<% else %>
+				<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
+				<%= link_to 'Signup', new_user_registration_path, {class: 'signup'} %>
+			<% end %>
+
+
 		</section>
 		<section class='hp-cover-image'>
 			<h2 class='main-image-header'>Make giving fun.</h2>
-			<h5 class='main-image-text'>Complete extra challenged to reach your fundraising targets</h5>
+			<h5 class='main-image-text'>Complete extra challenges to reach your fundraising targets</h5>
 			<section class='cover-image-button-container'>
-			
-			
 
-				<%= link_to 'Add Your Event', new_event_path, {class: 'create-challenge'} %>
-				<%= link_to 'View Challenges', events_path, {class: 'view-challenge'} %>
+
+
+				<%= link_to 'Add Your Event', select_events_path, {class: 'create-challenge'} %>
+				<%= link_to 'View Current Events', events_path, {class: 'view-challenge'} %>
 
 
 			</section>
