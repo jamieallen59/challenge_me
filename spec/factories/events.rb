@@ -7,5 +7,6 @@ FactoryGirl.define do
     charity "Red Cross"
     target 1000
     amount_raised 10.0
+    training 4
   end
 end

@@ -4,7 +4,7 @@
         <div id='profile-image'></div>
       </section>
       <p id='event-user-name'>
-        <%= @event.user.firstname %> <%= @event.user.lastname %>
+        <%= @event.user.full_name %>
       </p>
     </section>
 
@@ -21,7 +21,9 @@
     <%end%>
     </section>
     <section class='donations-container'>
+
     <%= link_to 'New Post', new_event_posts_path(@event), id: "newpostlink" %>
+    <%= link_to 'Click to donate', just_giving_fundraising_donation_url('3703589', {exit_url: 'http://localhost:3000'}) %>
     </section>
     <section class='event-controls'>
       <% if @event.is_owner?(current_user) %>
@@ -49,6 +51,7 @@
      Training Goal: <%= @event.training %> sessions per week.
     </section>
     <section class='training-calender'>
+    <%= @event.user.firstname %> has completed <%= @event.weekly_training_sessions%> out of <%=@event.training %> workouts planned for this week.
     </section>
     <section class='donation-button'>
     </section>

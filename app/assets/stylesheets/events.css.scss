@@ -1,3 +1,129 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-form-container {
+	background-color: #00B2FF;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.new-event-form {
+	display: flex;
+	flex-direction:column;
+	width: 40%;
+	border-radius: 8px;
+	background-color: #FFF;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 3%;
+	padding: 15px;
+	box-shadow: 4px 4px 0px 0px rgba(105, 105, 105, 0.75);
+}
+.event-form-label {
+	margin-top: 11px;
+	font-weight: 200;
+}
+	.workout-text {
+		font-weight: 200;
+	}
+	.workout-selection-form {
+		margin-top: 11px;
+		text-align: center;
+	}
+.event-form-input {
+	height: 30px;
+	border: none;
+	padding-left: 8px;
+	padding-bottom: 5px;
+	margin-top: 2px;
+	background-color: #EEEEEE;
+}
+.event-form-input::-webkit-input-placeholder {
+	font-size: 12px;
+}
+.event-form-input:focus {
+	 outline-width: 0;
+	}
+
+.date-select-container {
+	height: 35px;
+}
+	#event_event_date_1i {
+		border: 0;
+		font-size: 16px;
+		width: 30%;
+		height: 35px;
+	}
+		#event_event_date_1i:focus {
+			outline-width: 0;
+		}
+	#event_event_date_2i {
+		border: 0;
+		font-size: 16px;
+		width: 37%;
+		height: 35px;
+	}
+		#event_event_date_2i:focus {
+			outline-width: 0;
+		}
+	#event_event_date_3i {
+		border: 0;
+		font-size: 16px;
+		width: 30%;
+		height: 35px;
+	}
+		#event_event_date_3i:focus {
+			outline-width: 0;
+		}
+
+.workouts-button-container {
+	width: 100%;
+	height: 90px;
+	margin-top: 11px;
+	flex-direction: row;
+	display: flex;
+}
+	input[type="radio"] {
+		display: none;
+	}
+	input[type="radio"] + label {
+		background-color: #e7e7e7;
+		cursor: pointer;
+		margin-left: auto;
+		margin-right: auto;
+		width: 18%;
+		color: #575757;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 90px;
+		box-shadow: 2px 2px 1px 0px #A7A7A7;
+	}
+	input[type="radio"] + label:hover {
+		background-color: #d0d0d0;
+		color: #00B2FF;
+	}
+	.label-checked {
+		background-color: #d0d0d0 !important;
+		color: #00B2FF !important;
+	}
+
+#submit-event {
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	border: 1px solid #C4C4C4;
+	cursor: pointer;
+	font-size: 22px;
+	padding: 8px;
+	border-radius: 5px;
+	background-color: #00B2FF;
+	color: #FFF;
+}
+	#submit-event:hover {
+		background-color: #80D9FF;
+	}
+
