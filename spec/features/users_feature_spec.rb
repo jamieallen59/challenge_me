@@ -22,4 +22,5 @@ describe 'creating user' do
     click_button 'Sign up'
     expect(page).to have_content 'error'
   end
+
 end

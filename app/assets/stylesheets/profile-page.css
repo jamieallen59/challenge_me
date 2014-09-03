@@ -34,7 +34,7 @@ body {
 				height: 92%;
 				margin: 4px;
     		position:relative;
-				background-image: url(profile.jpg);
+				/*background-image: url(profile.jpg);*/
 				background-size: cover;
     		background-position: center;
 			}
