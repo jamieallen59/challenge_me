@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
       @event = @post.event
       @posts = @event.posts
       @pledges = @event.pledges
+      @trainingsessions = @event.trainingsessions
       render 'events/show'
     end
   end

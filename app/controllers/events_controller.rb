@@ -24,6 +24,7 @@ before_action :authenticate_user!, except: [:index, :show]
     @posts = @event.posts
     @comment = Comment.new
     @pledges = @event.pledges
+    @trainingsessions = @event.trainingsessions
   end
 
   def edit
