@@ -9,7 +9,13 @@
 		<section class='navbar'>
 			<p class='main-logo'>challenge.me</p>
 			<input type="search" name="search" class='search' placeholder='Search for a friend'>
-			<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
+			<% if user_signed_in? %>
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout' %>
+			<% else %>
+				<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
+				<%= link_to 'Signup', new_user_registration_path, {class: 'signup'} %>
+			<% end %>
+
 		
 		</section>
 		<section class='hp-cover-image'>
@@ -20,7 +26,7 @@
 			
 
 				<%= link_to 'Add Your Event', new_event_path, {class: 'create-challenge'} %>
-				<%= link_to 'View Challenges', events_path, {class: 'view-challenge'} %>
+				<%= link_to 'View Current Events', events_path, {class: 'view-challenge'} %>
 
 
 			</section>
