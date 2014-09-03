@@ -6,7 +6,8 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def new
-    @event = Event.new
+    @charity = JustGiving::Charity.new.get_charity(params[:data]['charityId'])
+    @event = Event.new(name: params[:data]['eventName'],charity: @charity['name'], target: params[:data]['targetAmount'], amount_raised: params[:data]['raisedAmount'] )
   end
 
   def create
