@@ -168,12 +168,12 @@ body {
 /*------ Feed Container -----*/
 .update-feed {
 	background-color: white;
-	display: flex;
 	flex-direction: column;
 	margin-top: 10px;
 	border: 1px solid grey;
-	width: 70%;
-	float: right;
+	width: 50%;
+	float: left;
+	margin-left: 1%;
 }
 	.post-container {
 		display: flex;
@@ -217,7 +217,7 @@ body {
 			.uploaded-evidence {
 				display: flex;
 				border: 1px solid grey;
-				width: 60%;
+				width: 500px;
 				margin: 3px;
 			}
 
