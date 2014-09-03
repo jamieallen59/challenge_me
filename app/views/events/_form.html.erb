@@ -1,16 +1,21 @@
 <section class='main-form-container'>
   <%= form_for @event do |f| %>
     <% if @event.errors.any? %>
-      <article class="error_explaination">
-      <%=pluralize(@event.errors.count, "error") %>
-      prevented this event from being saved:
-      <ul>
-        <% @event.errors.full_messages.each do |message| %>
-          <li><%=message%></li>
-        <%end%>
-      </ul>
+    <section class='errors-container'>
+      <article class="error-explanation">
+        <p class='errors-title'>
+          <%=pluralize(@event.errors.count, "error") %>
+          prevented this event from being saved:
+        </p>
+        <ul class='error-message'>
+          <% @event.errors.full_messages.each do |message| %>
+            <li>- <%=message%></li>
+          <%end%>
+        </ul>
       </article>
+    </section>
     <%end%>
+
     <section class="new-event-form">
 
     <p class='event-form-label'>

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resource :pledges
     resource :trainingsessions
 
+    collection do
+      get 'select'
+    end
+
     resources :posts do
       resource :comments
     end

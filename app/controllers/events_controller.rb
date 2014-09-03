@@ -51,4 +51,8 @@ before_action :authenticate_user!, except: [:index, :show]
       redirect_to root_path
     end
   end
+
+  def select
+    @events = []
+  end
 end

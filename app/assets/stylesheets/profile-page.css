@@ -34,7 +34,7 @@ body {
 				height: 92%;
 				margin: 4px;
     		position:relative;
-				background-image: url(profile.jpg);
+				/*background-image: url(profile.jpg);*/
 				background-size: cover;
     		background-position: center;
 			}
@@ -80,7 +80,7 @@ body {
 	margin-top: 10px;
 	border: 1px solid grey;
 	width: 250px;
-	height: 500px;
+	height: 2000px;
 	float: left;
 }
 
@@ -92,7 +92,7 @@ body {
 		border: 1px solid grey;
 		margin: 5px;
 		padding: 10px;
-		height: 200px;
+		height: 240px;
 	}
 		#event-name {
 			display: flex;
@@ -121,7 +121,7 @@ body {
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
-		height: 100px;
+		height: 240px;
 		text-align: center;
 		padding-top: 10px;
 		padding-left: 10px;
@@ -133,7 +133,7 @@ body {
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
-		height: 100px;
+		height: 240px;
 		text-align: center;
 		padding-top: 10px;
 		padding-left: 10px;
@@ -145,14 +145,14 @@ body {
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
-		height: 100px;
+		height: 240px;
 	}
 
 	.training-calendar {
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
-		height: 100px;
+		height: 240px;
 	}
 
 	.donations-button {

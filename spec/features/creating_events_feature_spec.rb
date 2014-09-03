@@ -16,10 +16,18 @@ describe 'Creating events' do
       login_as mary
     end
 
-    context 'with valid data' do
-      it 'should allow the user to add an event' do
+    context 'using the just giving api data' do
+      it 'should show the select page' do
         visit '/events'
         click_on 'Add Your Event'
+        expect(page).to have_content 'Choose an Event'
+        expect(current_path).to eq select_events_path
+      end
+    end
+
+    context 'with valid data' do
+      it 'should allow the user to add an event' do
+        visit new_event_path
         fill_in "Name", with: "Bigfoot Race"
         select '2014', from: "event_event_date_1i"
         select 'September', from: "event_event_date_2i"
@@ -47,5 +55,6 @@ describe 'Creating events' do
         expect(page).to have_content 'error'
       end
     end
+
   end
 end
