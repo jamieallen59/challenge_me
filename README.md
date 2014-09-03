@@ -39,7 +39,13 @@ At the moment, raising money for charity can be quite boring. It boils down to a
   + Capybara
   + RSpec
   + CSS
+  + Javascript
+  + jQuery
   
+## APIs Used:
+
+  + JustGiving
+
 ### How to set it up
 ```sh
 git clone git@github.com:yoshdog/challenge-me.git
