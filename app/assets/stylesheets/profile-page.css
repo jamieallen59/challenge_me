@@ -1,6 +1,7 @@
 body {
 	font-family: helvetica neue;
 	font-size: 24px;
+
 }
 
 /*----- Top Container --------*/
@@ -16,6 +17,10 @@ body {
 		position: relative;
 		margin: 5px;
 		width: 240px;
+		font-family: 'Open Sans', sans-serif;
+  	font-weight: 800;
+  	font-size: 20px;
+
 	}
 		.profile-picture {
 			width: 96%;
@@ -45,15 +50,22 @@ body {
 		}
 
 	.pledge-container {
+		background-color: #00b2ff
+		;
 		display: flex;
 		margin: 5px;
-		border: 1px solid grey;
 		width: 40%;
 		text-align: center;
 		padding-left: 10px;
 		padding-top: 10px;
+		font-family: 'Josefin Slab', serif;
+  	font-size: 40px;
+  	font-weight: 100;
+  	color: white;
 	}
 	.donations-container {
+		background-color: #00b2ff;
+		color: white;
 		display: flex;
 		margin: 5px;
 		border: 1px solid grey;
@@ -73,6 +85,8 @@ body {
 }
 
 	.event-details-container {
+		background-color: #00b2ff;
+		color: white;
 		display: flex;
 		flex-direction: column;
 		border: 1px solid grey;
@@ -102,6 +116,8 @@ body {
 		}
 
 	.days-remaining {
+		background-color: #00b2ff;
+		color: white;
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
@@ -112,6 +128,8 @@ body {
 	}
 
 	.percentage-completion {
+		background-color: #00b2ff;
+		color: white;
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
@@ -122,6 +140,8 @@ body {
 	}
 
 	.training-totals {
+		background-color: #00b2ff;
+		color: white;
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
@@ -147,6 +167,7 @@ body {
 
 /*------ Feed Container -----*/
 .update-feed {
+	background-color: white;
 	display: flex;
 	flex-direction: column;
 	margin-top: 10px;
@@ -157,9 +178,10 @@ body {
 	.post-container {
 		display: flex;
 		flex-direction: column;
-		border: 1px solid grey;
+		border: 15px solid black;
 		width: 100%;
 		height: 300px;
+		margin-top: 5px;
 	}
 		.post-header {
 			display: flex;
@@ -249,4 +271,6 @@ body {
 					margin: 4px;
 				}
 
+				#newpostlink {
 
+				}
