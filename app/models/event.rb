@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   validates :target, presence: true, numericality: true
   validates :amount_raised, presence: true, numericality: true
   validate :not_past_date
+  validates :training, presence: true
 
   has_many :posts
   has_many :pledges
