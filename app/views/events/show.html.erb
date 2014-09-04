@@ -12,10 +12,9 @@
      
     <%end%>
     </section>
-
     <section class='donations-container'>
     <%= link_to 'New Post', new_event_posts_path(@event), id: "newpostlink" %>
-    <%= link_to 'Click to donate', just_giving_fundraising_donation_url('3703589', {exit_url: 'http://localhost:3000'}) %>
+    <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}) %>
     </section>
 
     <section class='event-controls'>
@@ -143,7 +142,7 @@
     <%= f.label :details, "Training details"%>
   </section>
   <section class='modal-body'>
-    <%= f.text_area :details %>
+    <%= f.text_field :details %>
   </section>
   <section class="modal-footer">
     <%= f.submit 'Add Workout', class: 'modal-button-create' %>
@@ -169,7 +168,3 @@
       });
   }
 </script>
-
-
-
-

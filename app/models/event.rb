@@ -8,9 +8,9 @@ class Event < ActiveRecord::Base
   validates :training, presence: true
   validates :user_id, uniqueness: {scope: :jg_event_id, message: 'You have already created the same event'}
 
-  has_many :posts
-  has_many :pledges
-  has_many :trainingsessions
+  has_many :posts, dependent: :destroy
+  has_many :pledges, dependent: :destroy
+  has_many :trainingsessions, dependent: :destroy
   belongs_to :user
 
   def not_past_date

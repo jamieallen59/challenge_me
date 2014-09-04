@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   validates :firstname, presence: true, format: {with: /\A[a-zA-Z]+\Z/ }
   validates :lastname, presence: true, format: {with: /\A[a-zA-Z]+\Z/ }
-  has_many :events
-  has_many :posts
-  has_many :comments
+  has_many :events, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def full_name
   	[firstname, lastname].join(' ')
