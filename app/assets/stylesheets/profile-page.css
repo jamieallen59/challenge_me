@@ -57,6 +57,7 @@ body {
 		margin: 5px;
   	font-weight: 800;
   	font-size: 20px;
+  	box-shadow: 2px 2px #535353;
 	}
 		.profile-picture {
 			width: 95%;
@@ -92,8 +93,8 @@ body {
 		flex-direction: column;
 		margin: 5px;
 		padding: 10px;
-		height: 210px;
 		text-shadow: 1px 1px #646464;
+		box-shadow: 2px 2px #535353;
 	}
 		#event-paragraph {
 			font-size: 75%;
@@ -109,6 +110,7 @@ body {
 		height: 180px;
 		text-align: center;
 		padding-top: 10px;
+		box-shadow: 2px 2px #535353;
 	}
 		#event-today-text {
 			text-align: center;
@@ -138,6 +140,7 @@ body {
 		height: 190px;
 		text-align: center;
 		padding-top: 10px;
+		box-shadow: 2px 2px #535353;
 	}
 		#event-percentage-number {
 			font-size: 118px;
@@ -164,6 +167,7 @@ body {
 		display: flex;
 		margin: 5px;
 		height: 240px;
+		box-shadow: 2px 2px #535353;
 	}
 		#training-goal-headline {
 			font-size: 35px;
@@ -224,6 +228,7 @@ body {
 			display: flex;
 			margin: 5px;
 			height: 220px;
+			box-shadow: 2px 2px #535353;
 		}
 			#workouts-completed-percentage-number {
 				font-size: 140px;
@@ -245,6 +250,7 @@ body {
 			display: flex;
 			margin: 5px;
 			height: 240px;
+			box-shadow: 2px 2px #535353;
 		}
 			#workouts-completed-head {
 				font-size: 21px;
@@ -299,6 +305,7 @@ body {
 			display: flex;
 			margin: 5px;
 			height: 170px;
+			box-shadow: 2px 2px #535353;
 		}
 			#recent-workout-details-head {
 				font-size: 21px;
