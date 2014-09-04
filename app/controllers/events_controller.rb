@@ -1,18 +1,17 @@
 class EventsController < ApplicationController
-before_action :authenticate_user!, except: [:index, :show]
+before_action :authenticate_user!, except: [:index, :show, :donations]
 
   def index
     @events = Event.all
   end
 
   def new
-    just_giving_data = params[:data]
-    @charity = JustGiving::Charity.new.get_charity(params[:data]['charityId'])
-    @event = Event.new(name: just_giving_data['eventName'],charity: @charity['name'], target: just_giving_data['targetAmount'], amount_raised: just_giving_data['raisedAmount'], jg_event_id: just_giving_data['eventId'])
+    just_giving_data = JustGiving::Fundraising.new(params[:page_short_name]).page
+    @event = Event.new(format_event_with(just_giving_data))
   end
 
   def create
-    @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised, :training, :jg_event_id))
+    @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised, :training, :jg_event_id, :jg_short_name, :jg_page_id))
     @event.user = current_user
     if @event.save
       redirect_to event_path(@event)
@@ -57,5 +56,29 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def select
     @events = JustGiving::Account.new(current_user.email).pages || []
+  end
+
+  def donations
+    @event = Event.find(params[:id])
+    @fundraising = JustGiving::Fundraising.new(@event.jg_short_name).page
+  end
+
+  private
+  def format_event_with(api_hash)
+    return unless api_hash
+    {name: api_hash['eventName'], 
+    event_date: format(api_hash['eventDate']),
+    charity: api_hash['charity']['name'],
+    target: api_hash['fundraisingTarget'],
+    amount_raised: api_hash['grandTotalRaisedExcludingGiftAid'],
+    jg_event_id: api_hash['eventId'],
+    jg_short_name: api_hash['pageShortName'],
+    jg_page_id: api_hash['pageId'] }
+
+  end
+
+  def format(event_date)
+    date_string = event_date.match(/\(([0-9]+)/)[1]
+    Time.at(date_string.to_i / 1000).to_date
   end
 end

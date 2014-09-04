@@ -8,5 +8,8 @@ FactoryGirl.define do
     target 1000
     amount_raised 10.0
     training 4
+    jg_event_id 1
+    jg_short_name 'bigfoot'
+    jg_page_id 1
   end
 end

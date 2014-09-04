@@ -58,5 +58,4 @@ RSpec.describe EventsHelper, :type => :helper do
 			expect(page).to have_content("110% of fundraising target achieved")
 		end
 	end
-
 end
