@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
     user.password = Devise.friendly_token[0,20]
     user.firstname = auth.info.first_name
     user.lastname = auth.info.last_name
+    #user.mmf_token = auth.info.token
+    
   end
 end
 end

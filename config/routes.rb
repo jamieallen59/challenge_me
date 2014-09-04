@@ -15,6 +15,5 @@ Rails.application.routes.draw do
   end
   
   get 'events/:id/donations', to: 'events#donations', as: :donations
-  get 'fuckit', to: 'events#fuckit', as: :fuckit
   root 'welcome#index'
 end

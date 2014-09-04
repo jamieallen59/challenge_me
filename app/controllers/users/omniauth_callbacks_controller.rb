@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def mapmyfitness
     p "8" * 1000
-    p request.env["omniauth.auth"]
+    p request.env["omniauth.auth"].info
     p "8" * 1000
 
     # You need to implement the method below in your model (e.g. app/models/user.rb)
