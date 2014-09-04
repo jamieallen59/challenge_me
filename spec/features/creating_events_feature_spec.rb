@@ -57,7 +57,6 @@ describe 'Creating events' do
         expect(page).to have_content "Hot Dog Eating Contest"
         expect(page).to have_content "Fundraising for Freedom for makers"
         expect(page).to have_content "Fundraising Target: £10000"
-        expect(page).to have_content "Training Goal: 4 sessions per week"
       end
 
       context 'invalid data' do
