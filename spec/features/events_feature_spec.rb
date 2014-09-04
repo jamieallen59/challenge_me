@@ -24,7 +24,7 @@ describe 'Displaying events' do
     it 'should display the training goal' do 
       
       visit event_path(@event)
-      expect(page).to have_content 'Training Goal: 4 sessions per week'
+      expect(page).to have_content 'Training goal: 4 sessions per week'
     end
   end
 end
