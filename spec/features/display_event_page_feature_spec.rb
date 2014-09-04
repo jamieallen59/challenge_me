@@ -25,7 +25,7 @@ describe 'show event page' do
     allow(JustGiving::Fundraising).to receive(:new).and_return(fundraising)
 
     visit event_path(@event)
-    expect(page).to have_content '10.0 raised so far'
+    expect(page).to have_content 'raised £10.0 so far'
     expect(page).to have_content '1% of fundraising target achieved'
  end
 end
