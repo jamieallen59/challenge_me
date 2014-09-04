@@ -16,7 +16,7 @@ describe 'training sessions' do
 
 		it 'should display the % total of workouts completed' do 
 			visit event_path(@event)
-			expect(page).to have_content("21% of total training sessions completed")
+			expect(page).to have_content("23% of total training sessions completed")
 		end
 
 	end
