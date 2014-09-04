@@ -47,8 +47,8 @@
   .modal-header {
   }
   .modal-body {
-    border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;
+    /*border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;*/
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -92,6 +92,40 @@
       background-color: #fff;
       border-color: #ccc;
     }
-  
 
-}
+  .new-pledge-modal {
+    
+  }
+  
+    .pledge-title-modal{
+      width: 100%;
+      font-size: 20px;
+      border: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+      .pledge-title-modal:hover {
+        background-color: #ededed;
+      }
+
+    .pledge-amount-modal{
+      width: 100%;
+      font-size: 20px;
+      border: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+      .pledge-amount-modal:hover {
+        background-color: #ededed;
+      }
+
+    .pledge-info-modal{
+      width: 100%;
+      font-size: 20px;
+      border: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    .pledge-info-modal:hover {
+        background-color: #ededed;
+    }
