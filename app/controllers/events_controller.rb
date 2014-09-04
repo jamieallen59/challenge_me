@@ -6,9 +6,8 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
   end
 
   def new
-    just_giving_data = params[:data] || event_defaults
-    just_giving_data['charity'] = JustGiving::Charity.new.get_charity(params[:data]['charityId'])['name'] if params[:data]
-    @event = Event.new(name: just_giving_data['eventName'],charity: just_giving_data['charity'], target: just_giving_data['targetAmount'], amount_raised: just_giving_data['raisedAmount'], jg_event_id: just_giving_data['eventId'], jg_short_name: just_giving_data['pageShortName'],jg_page_id: just_giving_data['pageId'])
+    just_giving_data = JustGiving::Fundraising.new(params[:page_short_name]).page
+    @event = Event.new(format_event_with(just_giving_data))
   end
 
   def create
@@ -64,7 +63,21 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
   end
 
   private
-  def event_defaults
-    {name: '', charity: '', target: 0, amount_raised: 0, jg_event_id: 1, jg_short_name: 'challenge-me', jg_page_id: 1}
+  def format_event_with(api_hash)
+    return unless api_hash
+    {name: api_hash['eventName'], 
+    event_date: format(api_hash['eventDate']),
+    charity: api_hash['charity']['name'],
+    target: api_hash['fundraisingTarget'],
+    amount_raised: api_hash['grandTotalRaisedExcludingGiftAid'],
+    jg_event_id: api_hash['eventId'],
+    jg_short_name: api_hash['pageShortName'],
+    jg_page_id: api_hash['pageId'] }
+
+  end
+
+  def format(event_date)
+    date_string = event_date.match(/\(([0-9]+)/)[1]
+    Time.at(date_string.to_i / 1000).to_date
   end
 end

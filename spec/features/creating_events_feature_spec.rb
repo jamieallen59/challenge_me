@@ -23,9 +23,10 @@ describe 'Creating events' do
         account = double :account, pages: [{'eventName' => 'Hot Dog Eating Contest', 'targetAmount'=> 10000, 'raisedAmount' => 20, 'charityId' => 1},{'eventName' => 'Say Yo'}]
         allow(JustGiving::Account).to receive(:new).and_return(account)
 
-        #mock the JustGiving::Charity API call
-        charity = double :charity, get_charity: { 'name' => 'Freedom for makers' }
-        allow(JustGiving::Charity).to receive(:new).and_return(charity)
+        #mock the JustGiving::Fundraising API call
+        fundraising = double :fundraising, 
+                      page: { 'eventName' => 'Hot Dog Eating Contest', 'eventDate' => '/Date(1412031600000+0100)/', 'charity' => { 'name' => 'Freedom for makers'}, 'fundraisingTarget' => 10000, 'grandTotalRaisedExcludingGiftAid' => 20, 'eventId' => 1, 'pageShortName' => 'hot-dawgs', 'pageId' => 1 }
+        allow(JustGiving::Fundraising).to receive(:new).and_return(fundraising)
         visit '/events'
         click_on 'Add Your Event'
       end
