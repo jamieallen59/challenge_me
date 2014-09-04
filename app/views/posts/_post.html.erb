@@ -1,18 +1,4 @@
 <article class='post-container'>
-  <header class='post-header'>
-    <section class='post-title'>
-      <p class='post-caption'><%= post.caption %></p>
-    </section>
-    <section class='post-date'>
-      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
-    </section>
-    <section class='post-controls'>
-      <% if post.is_owner?(current_user) %>
-        <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
-        <%= link_to 'Delete Post', event_post_path(@event, post), class: 'delete-post', method: :delete %>
-      <% end %>
-    </section>
-  </header>
   <section class='post-content'>
     <object class='uploaded-evidence'>
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
@@ -35,4 +21,18 @@
     </article>
 
   </section>
+  <header class='post-header'>
+    <section class='post-title'>
+      <p class='post-caption'><%= post.caption %></p>
+    </section>
+    <section class='post-date'>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
+    </section>
+    <section class='post-controls'>
+      <% if post.is_owner?(current_user) %>
+        <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
+        <%= link_to 'Delete Post', event_post_path(@event, post), class: 'delete-post', method: :delete %>
+      <% end %>
+    </section>
+  </header>
 </article>

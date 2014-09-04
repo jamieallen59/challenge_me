@@ -45,10 +45,9 @@
 
   
   .modal-header {
+    padding-left: 15px;
   }
   .modal-body {
-    /*border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;*/
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -59,8 +58,9 @@
       font-size: 20px;
       background-color: #e5e5e5;
       border: none;
-      margin-top: 15px;
-      margin-bottom: 5px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-radius: 4px;
     }
       #trainingsession_details:focus {
         outline-width: 0;
@@ -78,8 +78,6 @@
     cursor: pointer;
     float: right;
     margin-right: 12px;
-    margin-top: 15px;
-    margin-bottom: 4px;
     padding: 7px 13px;
     font-family: sans-serif;
     font-weight: 300;
@@ -126,6 +124,6 @@
       margin-top: 15px;
       margin-bottom: 5px;
     }
-    .pledge-info-modal:hover {
-        background-color: #ededed;
-    }
+      .pledge-info-modal:hover {
+          background-color: #ededed;
+      }

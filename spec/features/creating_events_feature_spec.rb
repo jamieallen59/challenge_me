@@ -55,8 +55,8 @@ describe 'Creating events' do
         choose "4-workouts"
         click_button "Create Event"
         expect(page).to have_content "Hot Dog Eating Contest"
-        expect(page).to have_content "Fundraising for Freedom for makers"
-        expect(page).to have_content "Fundraising Target: £10000"
+        expect(page).to have_content "fundraising for Freedom for makers"
+        expect(page).to have_content "Their fundraising target is £10000"
       end
 
       context 'invalid data' do
