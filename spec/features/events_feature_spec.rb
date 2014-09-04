@@ -22,9 +22,9 @@ describe 'Displaying events' do
     end
 
     it 'should display the training goal' do 
-      @my_event = create(:event, user: @mary, training: 4)
-      visit event_path(@my_event)
-      expect(page).to have_content 'Training Goal: 4 sessions per week'
+      
+      visit event_path(@event)
+      expect(page).to have_content 'Training goal: 4 sessions per week'
     end
   end
 end

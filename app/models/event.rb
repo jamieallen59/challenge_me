@@ -6,24 +6,16 @@ class Event < ActiveRecord::Base
   validates :amount_raised, presence: true, numericality: true
   validate :not_past_date
   validates :training, presence: true
+  validates :user_id, uniqueness: {scope: :jg_event_id, message: 'You have already created the same event'}
 
-  has_many :posts
-  has_many :pledges
-  has_many :trainingsessions
+  has_many :posts, dependent: :destroy
+  has_many :pledges, dependent: :destroy
+  has_many :trainingsessions, dependent: :destroy
   belongs_to :user
 
   def not_past_date
     if event_date.present? && event_date < Date.today
       errors.add(:event_date, 'not in past')
-    end
-  end
-
-  def days_remaining
-    return "Today's the day!" if event_date == Date.today
-    if event_date > Date.today
-      return "#{(event_date - Date.today).to_i} days to go!"
-    else
-      return "Event completed #{(Date.today - event_date).to_i} days ago!"
     end
   end
 
@@ -52,7 +44,5 @@ class Event < ActiveRecord::Base
     workouts_per_week = (days_to_event / 7) * training
     (trainingsessions.count / workouts_per_week) * 100
   end
-
- 
 
 end

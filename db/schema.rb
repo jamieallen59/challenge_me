@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902164001) do
+ActiveRecord::Schema.define(version: 20140904164921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +32,14 @@ ActiveRecord::Schema.define(version: 20140902164001) do
     t.date     "event_date"
     t.string   "charity"
     t.integer  "target"
-    t.float    "amount_raised"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "training"
+    t.float    "amount_raised"
+    t.integer  "jg_event_id"
+    t.string   "jg_short_name"
+    t.integer  "jg_page_id"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
@@ -91,6 +94,9 @@ ActiveRecord::Schema.define(version: 20140902164001) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
+    t.string   "provider"
+    t.string   "uid"
+    t.text     "mmf_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

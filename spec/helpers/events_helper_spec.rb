@@ -44,11 +44,11 @@ RSpec.describe EventsHelper, :type => :helper do
 	describe 'percentage of fundraising target achieved' do
 		before(:each) do
 			@user = create(:user)
-			@race = create(:event, user: @user)
 		end
 
 		it 'when the target has not been reached it provides a percentage of the amount raised' do
-			visit event_path(@race)
+			@race = create(:event, user: @user)
+      visit event_path(@race)
 			expect(page).to have_content("1% of fundraising target achieved")
 		end
 
@@ -58,5 +58,4 @@ RSpec.describe EventsHelper, :type => :helper do
 			expect(page).to have_content("110% of fundraising target achieved")
 		end
 	end
-
 end

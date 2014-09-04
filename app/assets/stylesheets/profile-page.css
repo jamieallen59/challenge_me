@@ -1,5 +1,5 @@
 body {
-	font-family: helvetica neue;
+	font-family: "Open Sans", sans-serif;
 	font-size: 24px;
 
 }
@@ -10,22 +10,60 @@ body {
 	flex-direction: row;
 	border: 1px solid grey;
 	height: 250px;
+	margin-left: 25%;
+}
+	.pledge-container {
+		background-color: #A8A8A8;
+		display: flex;
+		margin: 5px;
+		width: 40%;
+		text-align: center;
+		padding-left: 10px;
+		padding-top: 10px;
+		font-family: 'Josefin Slab', serif;
+  	font-size: 40px;
+  	font-weight: 100;
+  	color: white;
+	}
+	.donations-container {
+		background-color: #A8A8A8;
+		color: white;
+		display: flex;
+		margin: 5px;
+		border: 1px solid grey;
+		width: 25%;
+	}
+
+
+/*------ Left Container -----*/
+.container-left {
+	font-family: "Open Sans", sans-serif;
+	position: absolute;
+	left: 0;
+	top: 0;
+	flex-direction: column;
+	width: 275px;
+	height: 2000px;
+	float: left;
+	text-align: center;
 }
 	.picture-container {
 		display: flex;
 		flex-direction: column;
 		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #A8A8A8;
 		margin: 5px;
-		width: 240px;
-		font-family: 'Open Sans', sans-serif;
   	font-weight: 800;
   	font-size: 20px;
-
+  	box-shadow: 2px 2px #535353;
 	}
 		.profile-picture {
-			width: 96%;
+			width: 95%;
 			height: 238px;
 			margin: 5px;
+			background-color: #FFF;
 			position: relative;
 			border-radius: 4px;
 			border: 1px solid #ADADAD;
@@ -33,7 +71,6 @@ body {
 			#profile-image {
 				height: 92%;
 				margin: 4px;
-    		position:relative;
 				/*background-image: url(profile.jpg);*/
 				background-size: cover;
     		background-position: center;
@@ -49,136 +86,247 @@ body {
 			color: #FFFFFF;
 		}
 
-	.pledge-container {
-		background-color: #00b2ff
-		;
-		display: flex;
-		margin: 5px;
-		width: 40%;
-		text-align: center;
-		padding-left: 10px;
-		padding-top: 10px;
-		font-family: 'Josefin Slab', serif;
-  	font-size: 40px;
-  	font-weight: 100;
-  	color: white;
-	}
-	.donations-container {
-		background-color: #00b2ff;
-		color: white;
-		display: flex;
-		margin: 5px;
-		border: 1px solid grey;
-		width: 25%;
-	}
-
-
-/*------ Left Container -----*/
-.container-left {
-	display: flex;
-	flex-direction: column;
-	margin-top: 10px;
-	border: 1px solid grey;
-	width: 250px;
-	height: 2000px;
-	float: left;
-}
-
 	.event-details-container {
-		background-color: #00b2ff;
+		background-color: #A8A8A8;
 		color: white;
 		display: flex;
 		flex-direction: column;
-		border: 1px solid grey;
 		margin: 5px;
 		padding: 10px;
-		height: 240px;
+		text-shadow: 1px 1px #646464;
+		box-shadow: 2px 2px #535353;
 	}
-		#event-name {
-			display: flex;
-			font-size: 18px;
+		#event-paragraph {
+			font-size: 75%;
 		}
-		#event-date {
-			display: flex;
-			font-size: 18px;
-		}
-		#event-charity {
-			display: flex;
-			font-size: 18px;
-		}
-		#event-target {
-			display: flex;
-			font-size: 18px;
-		}
-		#amount-raised {
-			display: flex;
-			font-size: 18px;
-		}
+		
 
 	.days-remaining {
-		background-color: #00b2ff;
+		background-color: #A8A8A8;
 		color: white;
 		display: flex;
-		border: 1px solid grey;
+		flex-direction: column;
 		margin: 5px;
-		height: 240px;
+		height: 180px;
 		text-align: center;
 		padding-top: 10px;
-		padding-left: 10px;
+		box-shadow: 2px 2px #535353;
 	}
+		#event-today-text {
+			text-align: center;
+			font-size: 24px;
+		}
+		#days-remaining-head {
+			font-size: 21px;
+		}
+		#days-remaining-number {
+			font-size: 130px;
+			font-weight: 600;
+			margin-top: 45px;
+			margin-bottom: 50px;
+			text-shadow: 2px 2px #646464;
+		}
+		#date-remaining-text {
+			font-size: 21px;
+			text-shadow: 1px 1px #646464;
+		}
 
 	.percentage-completion {
-		background-color: #00b2ff;
+		background-color: #A8A8A8;
+		flex-direction: column;
 		color: white;
 		display: flex;
-		border: 1px solid grey;
 		margin: 5px;
-		height: 240px;
+		height: 190px;
 		text-align: center;
 		padding-top: 10px;
-		padding-left: 10px;
+		box-shadow: 2px 2px #535353;
 	}
+		#event-percentage-number {
+			font-size: 118px;
+			font-weight: 600;
+			margin-top: 45px;
+			margin-bottom: 50px;
+			text-shadow: 2px 2px #646464;
+		}
+		/*#percentage-sign {
+			font-size: 60px;
+		}*/
+		#event-percentage-text {
+			font-size: 21px;
+			line-height: 24px;
+			text-shadow: 1px 1px #646464;
+		}
+
 
 	.training-totals {
-		background-color: #00b2ff;
+		background-color: #A8A8A8;
+		flex-direction: column;
 		color: white;
+		text-align: center;
 		display: flex;
-		border: 1px solid grey;
 		margin: 5px;
 		height: 240px;
+		box-shadow: 2px 2px #535353;
 	}
+		#training-goal-headline {
+			font-size: 35px;
+			font-weight: 600;
+			margin-top: 20px;
+			text-shadow: 1px 1px #646464;
+		}
+		#training-goal-number {
+			font-size: 140px;
+			font-weight: 600;
+			margin-top: 55px;
+			margin-bottom: 50px;
+			text-shadow: 2px 2px #646464;
+		}
+		#training-goal-text {
+			font-size: 21px;
+			text-shadow: 1px 1px #646464;
+		}
 
-	.training-calendar {
-		display: flex;
-		border: 1px solid grey;
-		margin: 5px;
-		height: 240px;
+	.training-stats {
+		text-align: center;
 	}
+		.log-training-button-container {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+			#log-training-button {
+				box-shadow: inset 0px 1px 0px 0px #54a3f7;
+				background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+				background-color: #007dc1;
+				border-radius: 3px;
+				border: 1px solid #124d77;
+				display: inline-block;
+				cursor: pointer;
+				color: #ffffff;
+				font-family: "Open Sans", sans-serif;
+				font-size: 24px;
+				width: 95%;
+				height: 50px;
+				vertical-align: middle;
+				line-height: 50px;
+				text-decoration: none;
+			}
+				#log-training-button:hover {
+					background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+					background-color: #0061a7;
+				}
+				#log-training-button:active {
+					position: relative;
+					top: 1px;
+				}
 
-	.donations-button {
-		display: flex;
-		border: 1px solid grey;
-		margin: 5px;
-		height: 100px;
-	}
+		.percentage-completed-workouts {
+			background-color: #A8A8A8;
+			flex-direction: column;
+			color: white;
+			text-align: center;
+			display: flex;
+			margin: 5px;
+			height: 220px;
+			box-shadow: 2px 2px #535353;
+		}
+			#workouts-completed-percentage-number {
+				font-size: 140px;
+				font-weight: 600;
+				margin-top: 55px;
+				margin-bottom: 50px;
+				text-shadow: 2px 2px #646464;
+			}
+			#workouts-completed-text {
+				font-size: 21px;
+				text-shadow: 1px 1px #646464;
+			}
 
+		.workouts-completed-by-user {
+			background-color: #A8A8A8;
+			flex-direction: column;
+			color: white;
+			text-align: center;
+			display: flex;
+			margin: 5px;
+			height: 240px;
+			box-shadow: 2px 2px #535353;
+		}
+			#workouts-completed-head {
+				font-size: 21px;
+				margin-top: 8px;
+				text-shadow: 1px 1px #646464;
+			}
+			#workouts-completed-number {
+				font-size: 140px;
+				font-weight: 600;
+				margin-top: 42px;
+				margin-bottom: 50px;
+				text-shadow: 2px 2px #646464;
+			}
+			#workouts-completed-footer {
+				font-size: 21px;
+				line-height: 30px;
+				text-shadow: 1px 1px #646464;
+			}
+
+		#donations-button {
+				box-shadow: inset 0px 1px 0px 0px #54a3f7;
+				background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+				background-color: #007dc1;
+				border-radius: 3px;
+				border: 1px solid #124d77;
+				display: inline-block;
+				cursor: pointer;
+				color: #ffffff;
+				font-family: "Open Sans", sans-serif;
+				font-size: 33px;
+				width: 95%;
+				height: 50px;
+				margin-top: 10px;
+				vertical-align: middle;
+				line-height: 48px;
+				text-decoration: none;
+			}
+				#donations-button:hover {
+					background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+					background-color: #0061a7;
+				}
+				#donations-button:active {
+					position: relative;
+					top: 1px;
+				}
+
+		.recent-workout-details {
+			background-color: #A8A8A8;
+			flex-direction: column;
+			color: white;
+			text-align: center;
+			display: flex;
+			margin: 5px;
+			height: 170px;
+			box-shadow: 2px 2px #535353;
+		}
+			#recent-workout-details-head {
+				font-size: 21px;
+				margin-top: 8px;
+				text-shadow: 1px 1px #646464;
+			}
 
 
 
 /*------ Feed Container -----*/
 .update-feed {
 	background-color: white;
-	display: flex;
 	flex-direction: column;
 	margin-top: 10px;
 	border: 1px solid grey;
-	width: 70%;
-	float: right;
+	width: 50%;
+	margin-left: 25%;
 }
 	.post-container {
 		display: flex;
 		flex-direction: column;
-		border: 15px solid black;
 		width: 100%;
 		height: 300px;
 		margin-top: 5px;
@@ -187,6 +335,8 @@ body {
 			display: flex;
 			flex-direction: column;
 			height: 60px;
+			color: white;
+			background-color: #A8A8A8;
 		}
 			.post-title {
 				width: 100%;
@@ -210,14 +360,14 @@ body {
 		.post-content {
 			display: flex;
 			flex-direction: row;
-			border: 1px solid grey;
+			border: 15px solid #A8A8A8;
 			height: 76%;
 		}
 
 			.uploaded-evidence {
 				display: flex;
 				border: 1px solid grey;
-				width: 60%;
+				width: 500px;
 				margin: 3px;
 			}
 
@@ -225,7 +375,7 @@ body {
 				display: flex;
 				position: relative;
 				flex-direction: column;
-				border: 1px solid #DEDEDE;
+				border: 1px solid #A8A8A8;
 				border-radius: 4px;
 				width: 40%;
 				margin: 3px;
@@ -241,7 +391,7 @@ body {
 						width: 69%;
 						height: 40px;
 						border-bottom-left-radius: 4px;
-						border: 1px solid #DEDEDE;
+						border: 1px solid #A8A8A8;
 						margin-bottom: -1px;
 						margin-left: -1px;
 						padding-left: 5px;
@@ -251,7 +401,7 @@ body {
 					}
 					#comment-submit-button {
 						border: none;
-						background: #DEDEDE;
+						background: #A8A8A8;
 						margin-left: -4px;
 						width: 28.7%;
 						cursor: pointer;
@@ -274,3 +424,16 @@ body {
 				#newpostlink {
 
 				}
+
+			p.post-caption {
+				text-align: initial;
+			}
+
+			a.delete-post {
+				font-style: italic;
+				font-size: small;
+			}
+			a.edit-post {
+				font-style: italic;
+				font-size: small;
+			}
