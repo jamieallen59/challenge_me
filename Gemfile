@@ -14,8 +14,7 @@ gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'just_giving', github: 'yoshdog/just_giving'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
-gem 'owlcarousel-rails'
-gem 'omniauth-mapmyfitness-oauth2'
+gem 'oauth2'
 #gem for javascript carousel on homepage
 
 group :development, :test do
