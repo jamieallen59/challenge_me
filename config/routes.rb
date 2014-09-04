@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resource :comments
     end
   end
-
- root 'welcome#index'
-
+  
+  get 'events/:id/donations', to: 'events#donations', as: :donations
+  root 'welcome#index'
 end
