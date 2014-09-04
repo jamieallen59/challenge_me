@@ -63,6 +63,10 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
     @fundraising = JustGiving::Fundraising.new(@event.jg_short_name).page
   end
 
+  def fuckit
+    render json: session["devise.mapmyfitness_data"]
+  end
+
   private
   def format_event_with(api_hash)
     return unless api_hash
@@ -74,7 +78,6 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
     jg_event_id: api_hash['eventId'],
     jg_short_name: api_hash['pageShortName'],
     jg_page_id: api_hash['pageId'] }
-
   end
 
   def format(event_date)
