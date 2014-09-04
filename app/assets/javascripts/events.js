@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   //gets the donation amount
-  var url = document.URL + 'donations.json';
+  var url = document.URL + '/donations.json';
   $.get(url, function(data) {
     var amountRaised = "£" + data.donationTotal + " raised so far"
     var percentageRaised = data.donationPercentage + "% of fundraising target achieved."
