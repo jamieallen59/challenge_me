@@ -12,9 +12,7 @@ describe 'Creating training sessions' do
     it "let's the user fill in details about their session" do
     	visit event_path(@event)
     	click_link 'Log training session'
-    	fill_in 'Training details', with: "I ran through a park"
-    	click_button "Add Workout"
-    	expect(page).to have_content "I ran through a park"
+    	expect(page).to have_css "#new_trainingsession"
     end
 
   end 

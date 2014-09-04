@@ -1,5 +1,5 @@
 body {
-	font-family: helvetica neue;
+	font-family: "Open Sans", sans-serif;
 	font-size: 24px;
 
 }
@@ -10,6 +10,7 @@ body {
 	flex-direction: row;
 	border: 1px solid grey;
 	height: 250px;
+	margin-left: 25%;
 }
 	.picture-container {
 		display: flex;
@@ -17,7 +18,6 @@ body {
 		position: relative;
 		margin: 5px;
 		width: 240px;
-		font-family: 'Open Sans', sans-serif;
   	font-weight: 800;
   	font-size: 20px;
 
@@ -50,8 +50,7 @@ body {
 		}
 
 	.pledge-container {
-		background-color: #00b2ff
-		;
+		background-color: #dedede;
 		display: flex;
 		margin: 5px;
 		width: 40%;
@@ -64,7 +63,7 @@ body {
   	color: white;
 	}
 	.donations-container {
-		background-color: #00b2ff;
+		background-color: #dedede;
 		color: white;
 		display: flex;
 		margin: 5px;
@@ -75,17 +74,20 @@ body {
 
 /*------ Left Container -----*/
 .container-left {
-	display: flex;
+	font-family: "Open Sans", sans-serif;
+	position: absolute;
+	left: 0;
+	top: 0;
 	flex-direction: column;
 	margin-top: 10px;
 	border: 1px solid grey;
-	width: 250px;
+	width: 275px;
 	height: 2000px;
 	float: left;
 }
 
 	.event-details-container {
-		background-color: #00b2ff;
+		background-color: #C4C4C4;
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -116,7 +118,7 @@ body {
 		}
 
 	.days-remaining {
-		background-color: #00b2ff;
+		background-color: #C4C4C4;
 		color: white;
 		display: flex;
 		border: 1px solid grey;
@@ -126,27 +128,68 @@ body {
 		padding-top: 10px;
 		padding-left: 10px;
 	}
+		#days-remaining-head {
+			font-size: 21px;
+		}
+		#days-remaining-number {
+			font-size: 130px;
+			font-weight: 600;
+			margin-top: 40px;
+			margin-bottom: 46px;
+		}
+		#date-remaining-text {
+			font-size: 21px;
+		}
 
 	.percentage-completion {
-		background-color: #00b2ff;
+		background-color: #C4C4C4;
+		flex-direction: column;
 		color: white;
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
-		height: 240px;
+		height: 190px;
 		text-align: center;
 		padding-top: 10px;
-		padding-left: 10px;
 	}
+		#event-percentage-number {
+			font-size: 118px;
+			font-weight: 600;
+			margin-top: 45px;
+			margin-bottom: 50px;
+		}
+		#percentage-sign {
+			font-size: 60px;
+		}
+		#event-percentage-text {
+			font-size: 21px;
+			line-height: 24px;
+		}
 
 	.training-totals {
-		background-color: #00b2ff;
+		background-color: #C4C4C4;
+		flex-direction: column;
 		color: white;
+		text-align: center;
 		display: flex;
 		border: 1px solid grey;
 		margin: 5px;
 		height: 240px;
 	}
+		#training-goal-headline {
+			font-size: 35px;
+			font-weight: 600;
+			margin-top: 20px;
+		}
+		#training-goal-number {
+			font-size: 140px;
+			font-weight: 600;
+			margin-top: 55px;
+			margin-bottom: 50px;
+		}
+		#training-goal-text {
+			font-size: 21px;
+		}
 
 	.training-calendar {
 		display: flex;
@@ -172,8 +215,7 @@ body {
 	margin-top: 10px;
 	border: 1px solid grey;
 	width: 50%;
-	float: left;
-	margin-left: 1%;
+	margin-left: 25%;
 }
 	.post-container {
 		display: flex;
