@@ -70,7 +70,7 @@
 
   .modal-footer {
   }
-   .add-workout-button {
+   .modal-button-create {
     border: 1px solid #C5C5C5;
     background-color: #FFF;
     border-radius: 4px;
@@ -84,7 +84,7 @@
     font-family: sans-serif;
     font-weight: 300;
   }
-  .add-workout-button:hover {
+  .modal-button-create:hover {
     background-color: #ededed;
   }
     .modal-close-button {
@@ -93,3 +93,5 @@
       border-color: #ccc;
     }
   
+
+}

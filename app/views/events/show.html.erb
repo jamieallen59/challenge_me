@@ -18,8 +18,9 @@
     <%else%>
       No pledges yet
     <%end%>
-   <% if current_user == @event.user %>
-      <%=link_to 'New Pledge', new_event_pledges_path(@event)%>
+    <% if current_user == @event.user %>
+      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', data: { :'modal-selector' => '#new-pledge-modal' } %>
+     
     <%end%>
     </section>
     <section class='donations-container'>
@@ -55,7 +56,7 @@
 
     <section class='training-calender'>
       <% if @event.is_owner?(current_user) %>
-       <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button' %>
+       <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', data: { :'modal-selector' => '#ex1' }  %>
       <%end%>
      <%= @event.percentage_of_workouts_complete.round %>% of total training sessions completed.
 
@@ -78,6 +79,28 @@
   <% end %>
 </section>
 
+  <div id="new-pledge-modal" style="display:none;">
+    <%= form_for [@event, @event.pledges.new] do |f| %>
+      <section class='pledge-title-modal'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      </section>
+      <section class='pledge-amount-modal'>
+      <%= f.label :amount %>
+      <%= f.text_field :amount %>
+      </section>
+      <section class='pledge-info-modal'>
+      <%= f.label :info %>
+      <%= f.text_field :info %>
+      </section>
+
+      <section class="pledge-create-modal">
+      <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
+      <a class='close-modal' href="#" rel="modal:close">Close</a>
+      </section>
+    <%end%>
+  </div>
+
 <div id="ex1" style="display:none;">
   <%= form_for [@event, @trainingsession ] do |f| %>
   <section class='modal-header'>
@@ -87,7 +110,7 @@
     <%= f.text_area :details %>
   </section>
   <section class="modal-footer">
-    <%= f.submit 'Add Workout', class: 'add-workout-button' %>
+    <%= f.submit 'Add Workout', class: 'modal-button-create' %>
     <a class='close-modal' href="#" rel="modal:close">Close</a>
   </section>
   <%end%>
@@ -96,14 +119,19 @@
 <script>
   $(document).ready(function(){
 
-      $(".modal-button").on('click', function(){
-          $('#ex1').modal({
-              fadeDuration: 500,
-              fadeDelay: 0.30
-          });
-          return false;
-      });
+      $(".modal-button").on('click', displayModal);
+
+      $(".pledge-modal-button").on('click', displayModal);
   });
+
+  function displayModal(e){
+      e.preventDefault();
+
+      $($(e.target).attr('data-modal-selector')).modal({
+          fadeDuration: 500,
+          fadeDelay: 0.30
+      });
+  }
 </script>
 
 

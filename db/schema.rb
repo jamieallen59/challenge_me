@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20140903182556) do
     t.date     "event_date"
     t.string   "charity"
     t.integer  "target"
+    t.float    "amount_raised"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "training"
-    t.float    "amount_raised"
     t.integer  "jg_event_id"
   end
 
