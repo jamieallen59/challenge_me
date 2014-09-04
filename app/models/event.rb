@@ -19,15 +19,6 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def days_remaining
-    return "Today's the day!" if event_date == Date.today
-    if event_date > Date.today
-      return "#{(event_date - Date.today).to_i} days to go!"
-    else
-      return "Event completed #{(Date.today - event_date).to_i} days ago!"
-    end
-  end
-
   def percentage_of_target
     ((amount_raised/target)*100).to_i
   end
