@@ -30,7 +30,6 @@ describe 'creating pledges' do
     end
     it 'you cannot create a pledge by hacking the routes' do
       visit new_event_pledges_path(@event)
-
       expect(page).to have_content("Only the event creator can add a pledge")
     end
   end
