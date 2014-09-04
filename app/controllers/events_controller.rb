@@ -6,12 +6,13 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def new
+    just_giving_data = params[:data]
     @charity = JustGiving::Charity.new.get_charity(params[:data]['charityId'])
-    @event = Event.new(name: params[:data]['eventName'],charity: @charity['name'], target: params[:data]['targetAmount'], amount_raised: params[:data]['raisedAmount'] )
+    @event = Event.new(name: just_giving_data['eventName'],charity: @charity['name'], target: just_giving_data['targetAmount'], amount_raised: just_giving_data['raisedAmount'], jg_event_id: just_giving_data['eventId'])
   end
 
   def create
-    @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised, :training))
+    @event = Event.new(params[:event].permit(:name, :event_date, :charity, :target, :amount_raised, :training, :jg_event_id))
     @event.user = current_user
     if @event.save
       redirect_to event_path(@event)

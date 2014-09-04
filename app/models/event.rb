@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
   validates :amount_raised, presence: true, numericality: true
   validate :not_past_date
   validates :training, presence: true
+  validates :user_id, uniqueness: {scope: :jg_event_id, message: 'You have already created the same event'}
 
   has_many :posts
   has_many :pledges
@@ -52,7 +53,5 @@ class Event < ActiveRecord::Base
     workouts_per_week = (days_to_event / 7) * training
     (trainingsessions.count / workouts_per_week) * 100
   end
-
- 
 
 end
