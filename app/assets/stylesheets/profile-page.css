@@ -128,6 +128,18 @@ body {
 		padding-top: 10px;
 		padding-left: 10px;
 	}
+		#days-remaining-head {
+			font-size: 21px;
+		}
+		#days-remaining-number {
+			font-size: 130px;
+			font-weight: 600;
+			margin-top: 40px;
+			margin-bottom: 46px;
+		}
+		#date-remaining-text {
+			font-size: 21px;
+		}
 
 	.percentage-completion {
 		background-color: #C4C4C4;
@@ -145,6 +157,9 @@ body {
 			font-weight: 600;
 			margin-top: 45px;
 			margin-bottom: 50px;
+		}
+		#percentage-sign {
+			font-size: 60px;
 		}
 		#event-percentage-text {
 			font-size: 21px;

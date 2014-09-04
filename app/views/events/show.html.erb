@@ -45,9 +45,22 @@
     <p id='event-target'>Fundraising Target: £<%= @event.target %></p>
     <p id='amount-raised'>£<%= @event.amount_raised %> raised so far</p>
   </section>
+
   <section class='days-remaining'>
-      <%= @event.days_remaining %>
+    <% if (@event.event_date == Date.today) %>
+      Today's the day!
+    <% elsif (@event.event_date > Date.today) %>
+      <p id='days-remaining-number'>
+        <%=  "#{(@event.event_date - Date.today).to_i}" %></p> 
+      <p id='date-remaining-text'>days to go!</p>
+    <% else %>
+      <p id='days-remaining-head'>Event completed</p>
+      <p id='days-remaining-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
+      <p id='date-remaining-text'>days ago!</p>
+    <% end %>
+
     </section>
+
     <section class='percentage-completion'>
       <p id="event-percentage-number"><%= @event.percentage_of_target %>%</p>
        <p id='event-percentage-text'>of fundraising target achieved.</p>
