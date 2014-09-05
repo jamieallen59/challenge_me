@@ -15,7 +15,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 include Warden::Test::Helpers
 Warden.test_mode!
-
+OmniAuth.config.test_mode = true
 AWS.stub!
 RSpec.configure do |config|
   config.include Capybara::DSL
