@@ -1,0 +1,306 @@
+/*------ Left Container -----*/
+
+.container-left {
+	font-family: "Helvetica Neue", Helvetica;
+	position: absolute;
+	background-color: #F4F4F4;
+	left: 0;
+	top: 0;
+	flex-direction: column;
+	width: 260px;
+	height: 2000px;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #343434;
+}
+	.picture-container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #F4F4F4;
+		margin: 5px;
+  	font-weight: 800;
+  	font-size: 20px;
+	}
+		.profile-picture {
+			width: 95%;
+			height: 238px;
+			margin: 6px;
+			background-color: #FFF;
+			position: relative;
+			border: 1px solid #343434;
+		}
+			#profile-image {
+				height: 92%;
+				margin: 4px;
+				/*background-image: url(profile.jpg);*/
+				background-size: cover;
+    		background-position: center;
+			}
+			#profile-image:hover {
+			}
+		#event-user-name {
+			position: absolute;
+			bottom: 0;
+			font-size: 28px;
+			margin-left: 24%;
+			margin-bottom: 12px;
+			color: #FFFFFF;
+		}
+
+	.event-details-container {
+		background-color: #F4F4F4;
+		color: #343434;
+		display: flex;
+		line-height: 25px;
+		flex-direction: column;
+		margin: 5px;
+		padding: 10px;
+	}
+
+/*	.ribbon-wrapper {
+		position: relative;z-index:998;
+	}
+	  .ribbon-front {
+		background-color: #cc3333;	height: 50px;
+		width: 285px;
+		position: relative;
+		left: -20px;
+		-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+		z-index: 2; font:20px/50px bold Verdana, Geneva, sans-serif; color:#f8f8f8; text-align:center;text-shadow: 0px 1px 2px #cc6666;
+	}
+
+	  .ribbon-edge-topleft,
+	  .ribbon-edge-topright,
+	  .ribbon-edge-bottomleft,
+	  .ribbon-edge-bottomright {
+			position: absolute;
+			z-index: 1;
+			border-style:solid;
+			height:0px;
+			width:0px;
+		}
+
+	  .ribbon-edge-bottomleft,
+	  .ribbon-edge-bottomright {
+			top: 50px;
+		}
+
+	  .ribbon-edge-topleft {
+			left: -20px;
+			border-color: transparent #9B1724 transparent transparent;
+		}
+
+	  .ribbon-edge-topleft {
+			top: -4px;
+			border-width: 5px 10px 0 0;
+		}
+	  .ribbon-edge-bottomleft {
+		border-width: 0 10px 0px 0;
+	}
+
+	  .ribbon-edge-topright,
+	  .ribbon-edge-bottomright {
+		left: 255px;
+		border-color: transparent transparent transparent #9B1724;
+	}
+
+	  .ribbon-edge-topright {
+		top: 0px;
+		border-width: 0px 0 0 10px;
+	}
+	  .ribbon-edge-bottomright {
+		border-width: 0 0 5px 10px;
+	}*/
+
+
+		#event-paragraph {
+			font-size: 75%;
+		}
+		
+
+	.days-remaining {
+		color: #343434;
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid #343434;
+		height: 180px;
+		text-align: center;
+		padding-top: 20px;
+	}
+		.days-remaining:hover {
+			color: #FFF;
+			background-color: #5a5a5a;
+		}
+		#event-today-text {
+			text-align: center;
+			font-size: 24px;
+		}
+		#days-remaining-head {
+			font-size: 21px;
+		}
+		#days-remaining-number {
+			font-size: 130px;
+			font-weight: 600;
+			margin-top: 45px;
+			margin-bottom: 50px;
+		}
+		#date-remaining-text {
+			font-size: 21px;
+		}
+
+	.percentage-completion {
+		flex-direction: column;
+		color: #343434;
+		display: flex;
+		text-align: center;
+		padding-top: 10px;
+		margin-bottom: 20px;
+		border-top: 1px solid #343434;
+	}
+		#event-percentage-number {
+			font-size: 110px;
+			font-weight: 600;
+			margin-top: 45px;
+			margin-bottom: 50px;
+		}
+		#event-percentage-text {
+			font-size: 21px;
+			line-height: 24px;
+		}
+
+
+	.training-totals {
+		flex-direction: column;
+		color: #343434;
+		text-align: center;
+		display: flex;
+		margin-bottom: 10px;
+		border-top: 1px solid #343434;
+	}
+		#training-goal-headline {
+			font-size: 35px;
+			font-weight: 600;
+			margin-top: 20px;
+		}
+		#training-goal-number {
+			font-size: 140px;
+			font-weight: 600;
+			margin-top: 55px;
+			margin-bottom: 50px;
+		}
+		#training-goal-text {
+			font-size: 21px;
+		}
+
+	.training-stats {
+		text-align: center;
+	}
+		.log-training-button-container {
+			border-bottom: 1px solid #343434;
+			border-top: 1px solid #343434;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			background-color: #343434;
+		}
+			#log-training-button {
+				border-radius: 3px;
+				cursor: pointer;
+				color: #FFF;
+				display: flex;
+				margin-left: 10%;
+				font-family: "Helvetica Neue", Helvetica;
+				font-size: 24px;
+				vertical-align: middle;
+				text-decoration: none;
+			}
+				.log-training-button-container:hover {
+					background-color: #E2790A;
+				}
+				#log-training-button:active {
+					position: relative;
+					top: 1px;
+				}
+
+		.percentage-completed-workouts {
+			flex-direction: column;
+			color: #343434;
+			text-align: center;
+			display: flex;
+			margin: 5px;
+			height: 220px;
+		}
+			#workouts-completed-percentage-number {
+				font-size: 140px;
+				font-weight: 600;
+				margin-top: 55px;
+				margin-bottom: 50px;
+			}
+			#workouts-completed-text {
+				font-size: 21px;
+			}
+
+		.workouts-completed-by-user {
+			flex-direction: column;
+			color: #343434;
+			text-align: center;
+			display: flex;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-top: 1px solid #343434;
+		}
+			#workouts-completed-head {
+				font-size: 21px;
+				margin-top: 8px;
+			}
+			#workouts-completed-number {
+				font-size: 140px;
+				font-weight: 600;
+				margin-top: 42px;
+				margin-bottom: 50px;
+			}
+			#workouts-completed-footer {
+				font-size: 21px;
+				line-height: 30px;
+			}
+
+		.donate-button-container {
+			border-bottom: 1px solid #343434;
+			border-top: 1px solid #343434;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			background-color: #343434;
+		}
+			#donations-button {
+					border-radius: 3px;
+					cursor: pointer;
+					color: #FFF;
+					display: flex;
+					margin-left: 35%;
+					font-family: "Helvetica Neue", Helvetica;
+					font-size: 24px;
+					vertical-align: middle;
+					text-decoration: none;
+				}
+					.donate-button-container:hover {
+						background-color: #E2790A;
+					}
+					#donations-button:active {
+						position: relative;
+						top: 1px;
+					}
+
+		.recent-workout-details {
+			flex-direction: column;
+			color: #343434;
+			text-align: center;
+			display: flex;
+			padding-bottom: 10px;
+			border-top: 1px solid #343434;
+		}
+			#recent-workout-details-head {
+				font-size: 21px;
+				margin-top: 8px;
+			}
