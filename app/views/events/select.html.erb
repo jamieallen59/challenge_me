@@ -1,9 +1,12 @@
-Choose an Event </br>
+
 <%if @events.any?%>
+Which of your events do you want to view? </br>
   <% @events.each do |event| %>
     <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']) %></br>
+
   <% end %>
 <%else %>
-  We checked Just Giving.com and didn't find any events linked to <%= current_user.email %>. Sign in to Challenge.me using your <a href='#'>justgiving email address</a>to see events that you have already created or <%= link_to 'create a new event from scratch', new_event_path %>
+ <%= link_to 'Create Event', new_event_path %>
+
 <% end %>
 

@@ -24,14 +24,14 @@ describe 'Creating events' do
         allow(JustGiving::Account).to receive(:new).and_return(account)
 
         #mock the JustGiving::Fundraising API call
-        fundraising = double :fundraising, 
+        fundraising = double :fundraising,
                       page: { 'eventName' => 'Hot Dog Eating Contest', 'eventDate' => '/Date(1412031600000+0100)/', 'charity' => { 'name' => 'Freedom for makers'}, 'fundraisingTarget' => 10000, 'grandTotalRaisedExcludingGiftAid' => 20, 'eventId' => 1, 'pageShortName' => 'hot-dawgs', 'pageId' => 1 }
         allow(JustGiving::Fundraising).to receive(:new).and_return(fundraising)
         visit '/events'
         click_on 'Add Your Event'
       end
       it 'should show the select page' do
-        expect(page).to have_content 'Choose an Event'
+        expect(page).to have_content 'Which of your events do you want to view?'
         expect(current_path).to eq select_events_path
       end
 
