@@ -14,7 +14,7 @@ describe 'Editing Events' do
     end
 
     it 'should have a link to edit the event' do
-      expect(page).to have_css 'a.edit-event', text: 'Edit'
+      expect(page).to have_css 'a#edit-event', text: 'Edit'
     end
 
     it 'should allow you to edit the event' do
