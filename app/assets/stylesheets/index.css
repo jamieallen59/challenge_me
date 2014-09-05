@@ -80,7 +80,7 @@ body {
 		margin-top: 20px;
 	}
 
-	.create-challenge-button {
+	.lets_go-button {
 		text-decoration: none;
 		color: #2B1B17;
 		font-weight: 800;
@@ -93,7 +93,7 @@ body {
 		letter-spacing: 10px;
 	}
 
-	.create-challenge-button:hover {
+	.lets_go-button:hover {
 		background: white;
 		color: #333;
 		font-weight: 800;
