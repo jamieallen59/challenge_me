@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905093801) do
+ActiveRecord::Schema.define(version: 20140905103500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140905093801) do
     t.integer "uid"
     t.text    "token"
     t.integer "user_id"
+    t.text    "secret"
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
