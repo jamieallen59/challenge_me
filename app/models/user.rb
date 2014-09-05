@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   	[firstname, lastname].join(' ')
   end
 
+  def self.search(query)
+    where("firstname like ?", "%#{query}")
+  end
+
 end
