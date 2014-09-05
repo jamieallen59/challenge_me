@@ -1,0 +1,64 @@
+/*----- Top Container --------*/
+
+.container-top {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #343434;
+	background-color: #F4F4F4;
+}
+	.pledge-container {
+		display: flex;
+		flex-direction: column;
+		margin: 5px;
+  	color: #343434;
+	}
+	.donations-container {
+		color: #343434;
+		display: flex;
+		margin: 5px;
+		border: 1px solid #343434;
+		width: 25%;
+	}
+	.fundraising-stats {
+		flex-direction: row;
+		border-top: 1px solid #343434;
+		height: 95px;
+		display: flex;
+	}
+		.fundraising-stats-percentage-complete {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #343434;
+		}
+		.fundraising-stats-target {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #343434;
+		}
+		.fundraising-stats-raised {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #343434;
+		}
+		.fundraising-stats-training-goal {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+		}
+			#fundraising-stats-percentage-number {
+				font-size: 40px;
+				margin-top: 4px;
+				color: #E2790A;
+			}
+			#fundraising-stats-percentage-text {
+				font-size: 15px;
+				color: #4E4E4E;
+				font-weight: 600;
+			}

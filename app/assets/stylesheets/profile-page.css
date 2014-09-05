@@ -1,11 +1,12 @@
-body {
+/*/*body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 24px;
+	background-color: #E6E6E6;
 
 }
 
 /*----- Top Container --------*/
-.container-top {
+/*.container-top {
 	display: flex;
 	flex-direction: row;
 	border: 1px solid grey;
@@ -33,10 +34,10 @@ body {
 		border: 1px solid grey;
 		width: 25%;
 	}
-
+*/
 
 /*------ Left Container -----*/
-.container-left {
+/*.container-left {
 	font-family: "Open Sans", sans-serif;
 	position: absolute;
 	left: 10;
@@ -72,7 +73,7 @@ body {
 				height: 92%;
 				margin: 4px;
 				/*background-image: url(profile.jpg);*/
-				background-size: cover;
+				/*background-size: cover;
     		background-position: center;
 			}
 			#profile-image:hover {
@@ -95,7 +96,7 @@ body {
 		padding: 10px;
 		text-shadow: 1px 1px #646464;
 		box-shadow: 2px 2px #535353;
-	}
+	}*/
 
 /*	.ribbon-wrapper {
 		position: relative;z-index:998;
@@ -153,7 +154,7 @@ body {
 	}*/
 
 
-		#event-paragraph {
+	/*	#event-paragraph {
 			font-size: 75%;
 		}
 		
@@ -205,11 +206,11 @@ body {
 			margin-top: 45px;
 			margin-bottom: 50px;
 			text-shadow: 2px 2px #646464;
-		}
+		}*/
 		/*#percentage-sign {
 			font-size: 60px;
 		}*/
-		#event-percentage-text {
+		/*#event-percentage-text {
 			font-size: 21px;
 			line-height: 24px;
 			text-shadow: 1px 1px #646464;
@@ -369,11 +370,11 @@ body {
 				margin-top: 8px;
 				text-shadow: 1px 1px #646464;
 			}
-
+*/
 
 
 /*------ Feed Container -----*/
-.update-feed {
+/*.update-feed {
 	background-color: white;
 	flex-direction: column;
 	margin-top: 10px;
@@ -493,4 +494,4 @@ body {
 			a.edit-post {
 				font-style: italic;
 				font-size: small;
-			}
+			}*/
