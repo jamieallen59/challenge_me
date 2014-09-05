@@ -145,7 +145,8 @@
 
   <section class='update-feed'>
     <section class='donations-container'>
-    <%= link_to 'New Post', new_event_posts_path(@event), id: "newpostlink" %>
+    <%= link_to 'New Post', new_event_posts_path(@event), class: 'new-post-modal-button', data: { :'modal-selector' => '#new-post-modal' } %>
+
     <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}) %>
     </section>
     <% if @posts.any? %>
@@ -178,20 +179,46 @@
     <%end%>
   </div>
 
-<div id="ex1" style="display:none;">
-  <%= form_for [ @event, @trainingsession ] do |f| %>
-  <section class='modal-header'>
-    <%= f.label :details, "Training details"%>
-  </section>
-  <section class='modal-body'>
-    <%= f.text_field :details %>
-  </section>
-  <section class="modal-footer">
-    <%= f.submit 'Add Workout', class: 'modal-button-create' %>
-    <a class='close-modal' href="#" rel="modal:close">Close</a>
-  </section>
-  <%end%>
-</div>
+  <div id="new-post-modal" style="display:none;">
+    <% @post = @event.posts.new %>
+    <%= form_for [@event, @post], html: { multipart: true } do |f| %>
+      <% if @post.errors.any? %>
+      <article class="error_explaination">
+        <%= pluralize(@post.errors.count, "error") %>
+        prevent this event from being saved:
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%=message%></li>
+          <% end %>
+        </ul>
+      </article>
+    <% end %>
+
+      <%= f.label :caption %>
+      <%= f.text_field :caption %>
+
+      <%= f.label :picture %>
+      <%= f.file_field :picture %>
+
+      <%= f.submit %>
+
+    <% end %>
+  </div>
+
+  <div id="ex1" style="display:none;">
+    <%= form_for [ @event, @trainingsession ] do |f| %>
+    <section class='modal-header'>
+      <%= f.label :details, "Training details"%>
+    </section>
+    <section class='modal-body'>
+      <%= f.text_field :details %>
+    </section>
+    <section class="modal-footer">
+      <%= f.submit 'Add Workout', class: 'modal-button-create' %>
+      <a class='close-modal' href="#" rel="modal:close">Close</a>
+    </section>
+    <%end%>
+  </div>
 
 <script>
   $(document).ready(function(){
@@ -199,6 +226,8 @@
       $(".modal-button").on('click', displayModal);
 
       $(".pledge-modal-button").on('click', displayModal);
+
+      $(".new-post-modal-button").on('click', displayModal);
   });
 
   function displayModal(e){
