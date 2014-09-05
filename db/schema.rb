@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904164921) do
+ActiveRecord::Schema.define(version: 20140905093801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20140904164921) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
+  create_table "identities", force: true do |t|
+    t.string  "provider"
+    t.integer "uid"
+    t.text    "token"
+    t.integer "user_id"
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "pledges", force: true do |t|
     t.string   "title"
@@ -94,9 +103,6 @@ ActiveRecord::Schema.define(version: 20140904164921) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "provider"
-    t.string   "uid"
-    t.text     "mmf_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
