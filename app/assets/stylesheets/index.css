@@ -21,38 +21,66 @@ body {
 
 	}
 
-		input.find_person {
-		background: black;
-    text-align: left;
+	.main-image-search {
 		display: flex;
-		text-decoration: none;
-		width: 33%;
+		flex-direction: row;
+
+	}
+
+#search_button {
+		color: #2B1B17;
+/*		font-weight: 800;
+		background: rgba(255,255,255,.58);
+		border: 2px solid white;
 		font-size: 16px;
 		padding: 10px;
-		border: 2px solid white;
-		float: right;
-		margin-right: 80px;
-		margin-top: 50px;
-		color: white;
+		padding: 0.4em 1.5em;
+    margin: 0.5em;
+		border-radius: .05em;
+		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
+		letter-spacing: 7px;
+		float: right;*/
+	}
+/*
+		#search_button:hover {
+			display: flex;
+		background: white;
+		color: #333;
+		font-weight: 800;
+	}*/
+
+	input.find_person {
+		background: black;
+    text-align: left;
+		text-decoration: none;
 		font-size: 20px;
 		letter-spacing: 5px;
+		padding: 10px;
+		border: 2px solid white;
+		color: white;
+		/*float: right;
+		margin-right: 80px;
+		margin-top: 50px;
+
+
+		width: 33%;*/
 	}
 
-	::-webkit-input-placeholder {
+/*	::-webkit-input-placeholder {
 	  color: white;
 	}
 
-	:-moz-placeholder { /* Firefox 18- */
+	:-moz-placeholder {  Firefox 18-
 	  color: white;
 	}
 
-	::-moz-placeholder {  /* Firefox 19+ */
+	::-moz-placeholder {  /* Firefox 19+
 	  color: white;
 	}
 
 	:-ms-input-placeholder {
 	  color: white;
-	}
+	}*/
 
 	h2.main-image-header {
 		text-align: center;
@@ -126,19 +154,19 @@ body {
 				background-repeat: no-repeat;
 			}
 				#hp-tracking-training:hover {
-					
+
 				}
 			#hp-setting-challenges {
-				
+
 			}
 				#hp-setting-challenges:hover {
-				
+
 				}
 			#hp-short-term-goals {
-				
+
 			}
 				#hp-short-term-goals:hover {
-				
+
 				}
 
 		.info-box-title {

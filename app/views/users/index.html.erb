@@ -8,12 +8,12 @@
 	<% if @users.any? %>
 		<% @users.each do |user| %>
 			<% user.events.each do |event| %>
-				<%= event.name %>
-			<% end %>	
+				<%= link_to event.name, event_path(event.id) %>
+			<% end %>
 		<% end %>
 	<% end %>
 
-    
+
 
 </body>
 
