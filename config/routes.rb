@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   end
   
   get 'events/:id/donations', to: 'events#donations', as: :donations
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'identities#create'
   root 'welcome#index'
 end

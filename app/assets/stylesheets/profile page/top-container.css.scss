@@ -1,0 +1,138 @@
+/*----- Top Container --------*/
+
+.container-top {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #DFDFDF;
+	background-color: #F4F4F4;
+}
+	.event-controls {
+		color: #343434;
+		display: flex;
+		margin: 5px;
+		height: 40px;
+	}
+		#edit-event {
+			text-align: center;
+			vertical-align: middle;
+			line-height: 40px;
+			text-decoration: none;
+			color: #2B1B17;
+			width: 50%;
+			font-weight: 800;
+			background: rgba(255,255,255,.58);
+			border: 2px solid white;
+			border-radius: .05em;
+			box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
+			letter-spacing: 5px;
+		}
+			#edit-event:hover {
+				background-color: #FFF;
+				color: #000;
+			}
+		.eventcontrols-separator {
+			width: 1%;
+			background-color: #F4F4F4;
+		}
+		#delete-event {
+			text-align: center;
+			vertical-align: middle;
+			line-height: 40px;
+			text-decoration: none;
+			color: #2B1B17;
+			width: 50%;
+			font-weight: 800;
+			background: rgba(255,255,255,.58);
+			border: 2px solid white;
+			border-radius: .05em;
+			box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
+			letter-spacing: 5px;
+		}
+			#delete-event:hover {
+				background-color: #FFF;
+				color: #000;
+			}
+
+	.pledge-container {
+		display: flex;
+		flex-direction: row;
+		margin: 20px;
+		border-radius: 8px;
+		font-size: 21px;
+		color: #343434;
+		border: 1px solid #DFDFDF;
+	}
+		.pledge-title {
+			padding: 10px;
+			width: 185px;
+		}
+		.pledge-information {
+			border-left: 1px solid #DFDFDF;
+			border-right: 1px solid #DFDFDF;
+			padding: 10px;
+			background-color: #FFF;
+			text-align: center;
+		}
+		.pledge-modal-button {
+			padding: 10px;
+			width: 185px;
+			cursor: pointer;
+			text-decoration: none;
+			vertical-align: middle;
+			line-height: 40px;
+			color: #FFF;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			background: linear-gradient(#CEE8FA, #8EBAD6)
+		}
+		.pledge-modal-button:hover {
+			background: linear-gradient(#ECF8FF, #65A6D1)
+		}
+
+
+	.fundraising-stats {
+		flex-direction: row;
+		border-top: 1px solid #DFDFDF;
+		display: flex;
+		background: linear-gradient(#F4F4F4, #ECECEC);
+	}
+		.fundraising-stats-percentage-complete {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #DFDFDF;
+		}
+		.fundraising-stats-target {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #DFDFDF;
+		}
+		.fundraising-stats-raised {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #DFDFDF;
+		}
+		.fundraising-stats-training-goal {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			text-align: center;
+		}
+			#fundraising-stats-percentage-number {
+				font-size: 40px;
+				margin-top: 4px;
+				color: #E2790A;
+				padding-bottom: 10px;
+			}
+			#fundraising-stats-percentage-text {
+				font-size: 15px;
+				color: #8A8A8A;
+				font-weight: 600;
+				margin-top: 8px;
+				margin-bottom: 5px;
+			}
