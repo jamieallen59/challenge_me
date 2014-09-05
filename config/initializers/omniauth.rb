@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'oauth2'
 
 client = OAuth2::Client.new('client_id', 'client_secret', :site => 'https://example.org')
@@ -14,3 +15,10 @@ token = client.password.get_token('username', 'password')
 token = client.client_credentials.get_token
 
 token = client.assertion.get_token(assertion_params)
+=======
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :mapmyfitness, Rails.application.secrets.map_my_api_key, Rails.application.secrets.map_my_api_secret
+#  provider :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_secret
+#  provider :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
+end
+>>>>>>> 57deae8f42fe0803a2dd91799c7d514e2b39468c

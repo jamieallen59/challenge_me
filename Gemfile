@@ -15,7 +15,9 @@ gem 'just_giving', github: 'yoshdog/just_giving'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 gem 'oauth2'
-#gem for javascript carousel on homepage
+gem 'owlcarousel-rails'
+gem 'omniauth-mapmyfitness'
+
 
 group :development, :test do
   gem 'rspec-rails'

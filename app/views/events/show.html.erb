@@ -38,16 +38,19 @@
     </section>
     
   <section class='event-details-container'>
-    <p id='event-name'><%= @event.name %></p>
-    <p id='event-date'><%= @event.event_date.strftime("%d %B %Y") %></p>
-    <p id='event-charity'>Fundraising for <%= @event.charity %></p>
-    <p id='event-target'>Fundraising Target: £<%= @event.target %></p>
-    <p id='amount-raised'>£<%= @event.amount_raised %> raised so far</p>
+    <!-- <div class='ribbon-wrapper'>
+      <div class='ribbon-front'><%= @event.name %></div>
+      <div class='ribbon-edge-topleft'></div>
+      <div class='ribbon-edge-topright'></div>
+      <div class='ribbon-edge-bottomleft'></div>
+      <div class='ribbon-edge-bottomright'></div>
+    </div> -->
+    <p id='event-paragraph'><%= @event.name %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
   </section>
 
   <section class='days-remaining'>
     <% if (@event.event_date == Date.today) %>
-      Today's the day!
+      <p id='event-today-text'>Today's the day!</p>
     <% elsif (@event.event_date > Date.today) %>
       <p id='days-remaining-number'>
         <%=  "#{(@event.event_date - Date.today).to_i}" %></p> 
@@ -70,22 +73,45 @@
     <p id='training-goal-text'>sessions per week.</p>
     </section>
 
-    <section class='training-calender'>
-      <% if @event.is_owner?(current_user) %>
-       <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', data: { :'modal-selector' => '#ex1' }  %>
-      <%end%>
-     <%= @event.percentage_of_workouts_complete.round %>% of total training sessions completed.
-
-    <%= @event.user.firstname %> has completed <%= @event.weekly_training_sessions%> out of <%=@event.training %> workouts planned for this week.
-    <% if @trainingsessions.any? %>
-      <p>Most recent session details<br>
-      <%= @trainingsessions.last.details %>
+    <section class='training-stats'>
+      <p class='log-training-button-container'>
+        <% if @event.is_owner?(current_user) %>
+         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
+        <%end%>
       </p>
-    <%end%>
+
+      <section class='percentage-completed-workouts'>
+        <p id='workouts-completed-percentage-number'>
+          <%= @event.percentage_of_workouts_complete.round %>%</p>
+        <p id='workouts-completed-text'>
+         of total training sessions completed.
+        </p>
+      </section>
+
+      <section class='workouts-completed-by-user'>
+        <p id='workouts-completed-head'>
+          <%= @event.user.firstname %> has completed
+        </p>
+        <p id='workouts-completed-number'>
+          <%= @event.weekly_training_sessions%>
+        </p>
+        <p id='workouts-completed-footer'>
+          out of <%=@event.training %> workouts<br> planned for this week.
+        </p>
+      </section>
+
+      <section class='recent-workout-details'>
+        <% if @trainingsessions.any? %>
+          <p id='recent-workout-details-head'>Most recent session details<br>
+            <%= @trainingsessions.last.details %>
+          </p>
+       <%end%>
+     </section>
     </section>
     
-    <section class='donation-button'>
+    <section id='donations-button' >Donate
     </section>
+
 </section>
 <section class='update-feed'>
   <% if @posts.any? %>
@@ -123,7 +149,7 @@
     <%= f.label :details, "Training details"%>
   </section>
   <section class='modal-body'>
-    <%= f.text_area :details %>
+    <%= f.text_field :details %>
   </section>
   <section class="modal-footer">
     <%= f.submit 'Add Workout', class: 'modal-button-create' %>
