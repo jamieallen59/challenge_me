@@ -1,8 +1,9 @@
 
 <%if @events.any?%>
-Choose an Event </br>
+Which of your events do you want to view? </br>
   <% @events.each do |event| %>
     <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']) %></br>
+
   <% end %>
 <%else %>
  <%= link_to 'Create Event', new_event_path %>
