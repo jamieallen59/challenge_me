@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users
   resources :events do
   	resource :posts
     resource :pledges
@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   end
   
   get 'events/:id/donations', to: 'events#donations', as: :donations
+  get '/auth/:provider/callback', to: 'identities#create'
   root 'welcome#index'
 end
