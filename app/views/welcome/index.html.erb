@@ -5,35 +5,20 @@
 </head>
 
 <body>
-	<section class='hp-upper-container'>
-		<section class='navbar'>
-			<p class='main-logo'>challenge.me</p>
-			<input type="search" name="search" class='search' placeholder='Search for a friend'>
-			<% if user_signed_in? %>
-				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout' %>
-			<% else %>
-				<%= link_to 'Login', new_user_session_path, {class: 'login'} %>
-				<%= link_to 'Signup', new_user_registration_path, {class: 'signup'} %>
-			<% end %>
-
-
+<section class='hp-upper-container'>
+	<section class='hp-cover-image'>
+		<section class="main-image-search">
+			<input type="search" name="search" class='find_person' placeholder='LOOKING FOR SOMEONE..?'>
 		</section>
-		<section class='hp-cover-image'>
-			<h2 class='main-image-header'>Make giving fun.</h2>
-			<h5 class='main-image-text'>Complete extra challenges to reach your fundraising targets</h5>
+			<h2 class='main-image-header'>WE MAKE GIVING FUN</h2>
+			<h5 class='main-image-text'>COMPLETE CHALLENGES. SMASH TARGETS. </h5>
 			<section class='cover-image-button-container'>
-
-
-
-				<%= link_to 'Add Your Event', select_events_path, {class: 'create-challenge'} %>
-				<%= link_to 'View Current Events', events_path, {class: 'view-challenge'} %>
-
-
+				<%= link_to "LET'S GO", select_events_path, {class: 'create-challenge-button'} %>
 			</section>
 		</section>
 	</section>
 
-	<section class='hp-middle-container'>
+	<!-- <section class='hp-middle-container'>
 		<section class="hp-extra-info-box">
 			<article class="hp-extra-info"></article>
 			<p class="info-box-title">Show your sponsors commitment</p>
@@ -82,9 +67,9 @@
 
 
 	</section>
-
-	<section class='footer'>
-	</section>
+ -->
+<!-- 	<section class='footer'>
+	</section> -->
 
 
 </body>
