@@ -39,7 +39,7 @@ body {
 .container-left {
 	font-family: "Open Sans", sans-serif;
 	position: absolute;
-	left: 0;
+	left: 10;
 	top: 0;
 	flex-direction: column;
 	width: 275px;
@@ -62,7 +62,7 @@ body {
 		.profile-picture {
 			width: 95%;
 			height: 238px;
-			margin: 5px;
+			margin: 6px;
 			background-color: #FFF;
 			position: relative;
 			border-radius: 4px;
@@ -96,6 +96,63 @@ body {
 		text-shadow: 1px 1px #646464;
 		box-shadow: 2px 2px #535353;
 	}
+
+/*	.ribbon-wrapper {
+		position: relative;z-index:998;
+	}
+	  .ribbon-front {
+		background-color: #cc3333;	height: 50px;
+		width: 285px;
+		position: relative;
+		left: -20px;
+		-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+		z-index: 2; font:20px/50px bold Verdana, Geneva, sans-serif; color:#f8f8f8; text-align:center;text-shadow: 0px 1px 2px #cc6666;
+	}
+
+	  .ribbon-edge-topleft,
+	  .ribbon-edge-topright,
+	  .ribbon-edge-bottomleft,
+	  .ribbon-edge-bottomright {
+			position: absolute;
+			z-index: 1;
+			border-style:solid;
+			height:0px;
+			width:0px;
+		}
+
+	  .ribbon-edge-bottomleft,
+	  .ribbon-edge-bottomright {
+			top: 50px;
+		}
+
+	  .ribbon-edge-topleft {
+			left: -20px;
+			border-color: transparent #9B1724 transparent transparent;
+		}
+
+	  .ribbon-edge-topleft {
+			top: -4px;
+			border-width: 5px 10px 0 0;
+		}
+	  .ribbon-edge-bottomleft {
+		border-width: 0 10px 0px 0;
+	}
+
+	  .ribbon-edge-topright,
+	  .ribbon-edge-bottomright {
+		left: 255px;
+		border-color: transparent transparent transparent #9B1724;
+	}
+
+	  .ribbon-edge-topright {
+		top: 0px;
+		border-width: 0px 0 0 10px;
+	}
+	  .ribbon-edge-bottomright {
+		border-width: 0 0 5px 10px;
+	}*/
+
+
 		#event-paragraph {
 			font-size: 75%;
 		}
