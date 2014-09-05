@@ -11,7 +11,7 @@
 	height: 2000px;
 	float: left;
 	text-align: center;
-	border-right: 1px solid #343434;
+	border-right: 1px solid #B4B4B4;
 }
 	.picture-container {
 		display: flex;
@@ -30,7 +30,7 @@
 			margin: 6px;
 			background-color: #FFF;
 			position: relative;
-			border: 1px solid #343434;
+			border: 1px solid #B4B4B4;
 		}
 			#profile-image {
 				height: 92%;
@@ -60,62 +60,6 @@
 		padding: 10px;
 	}
 
-/*	.ribbon-wrapper {
-		position: relative;z-index:998;
-	}
-	  .ribbon-front {
-		background-color: #cc3333;	height: 50px;
-		width: 285px;
-		position: relative;
-		left: -20px;
-		-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
-		z-index: 2; font:20px/50px bold Verdana, Geneva, sans-serif; color:#f8f8f8; text-align:center;text-shadow: 0px 1px 2px #cc6666;
-	}
-
-	  .ribbon-edge-topleft,
-	  .ribbon-edge-topright,
-	  .ribbon-edge-bottomleft,
-	  .ribbon-edge-bottomright {
-			position: absolute;
-			z-index: 1;
-			border-style:solid;
-			height:0px;
-			width:0px;
-		}
-
-	  .ribbon-edge-bottomleft,
-	  .ribbon-edge-bottomright {
-			top: 50px;
-		}
-
-	  .ribbon-edge-topleft {
-			left: -20px;
-			border-color: transparent #9B1724 transparent transparent;
-		}
-
-	  .ribbon-edge-topleft {
-			top: -4px;
-			border-width: 5px 10px 0 0;
-		}
-	  .ribbon-edge-bottomleft {
-		border-width: 0 10px 0px 0;
-	}
-
-	  .ribbon-edge-topright,
-	  .ribbon-edge-bottomright {
-		left: 255px;
-		border-color: transparent transparent transparent #9B1724;
-	}
-
-	  .ribbon-edge-topright {
-		top: 0px;
-		border-width: 0px 0 0 10px;
-	}
-	  .ribbon-edge-bottomright {
-		border-width: 0 0 5px 10px;
-	}*/
-
-
 		#event-paragraph {
 			font-size: 75%;
 		}
@@ -125,10 +69,9 @@
 		color: #343434;
 		display: flex;
 		flex-direction: column;
-		border-top: 1px solid #343434;
-		height: 180px;
+		border-top: 1px solid #B4B4B4;
 		text-align: center;
-		padding-top: 20px;
+		padding-bottom: 15px;
 	}
 		.days-remaining:hover {
 			color: #FFF;
@@ -144,8 +87,8 @@
 		#days-remaining-number {
 			font-size: 130px;
 			font-weight: 600;
-			margin-top: 45px;
-			margin-bottom: 50px;
+			margin-top: 15px;
+			margin-bottom: 15px;
 		}
 		#date-remaining-text {
 			font-size: 21px;
@@ -158,13 +101,11 @@
 		text-align: center;
 		padding-top: 10px;
 		margin-bottom: 20px;
-		border-top: 1px solid #343434;
+		border-top: 1px solid #B4B4B4;
 	}
 		#event-percentage-number {
 			font-size: 110px;
 			font-weight: 600;
-			margin-top: 45px;
-			margin-bottom: 50px;
 		}
 		#event-percentage-text {
 			font-size: 21px;
@@ -178,7 +119,7 @@
 		text-align: center;
 		display: flex;
 		margin-bottom: 10px;
-		border-top: 1px solid #343434;
+		border-top: 1px solid #B4B4B4;
 	}
 		#training-goal-headline {
 			font-size: 35px;
@@ -188,8 +129,6 @@
 		#training-goal-number {
 			font-size: 140px;
 			font-weight: 600;
-			margin-top: 55px;
-			margin-bottom: 50px;
 		}
 		#training-goal-text {
 			font-size: 21px;
@@ -199,8 +138,8 @@
 		text-align: center;
 	}
 		.log-training-button-container {
-			border-bottom: 1px solid #343434;
-			border-top: 1px solid #343434;
+			border-bottom: 1px solid #B4B4B4;
+			border-top: 1px solid #B4B4B4;
 			padding-top: 10px;
 			padding-bottom: 10px;
 			background-color: #343434;
@@ -230,16 +169,14 @@
 			text-align: center;
 			display: flex;
 			margin: 5px;
-			height: 220px;
 		}
 			#workouts-completed-percentage-number {
-				font-size: 140px;
+				font-size: 120px;
 				font-weight: 600;
-				margin-top: 55px;
-				margin-bottom: 50px;
 			}
 			#workouts-completed-text {
 				font-size: 21px;
+				line-height: 25px;
 			}
 
 		.workouts-completed-by-user {
@@ -249,7 +186,7 @@
 			display: flex;
 			padding-top: 10px;
 			padding-bottom: 10px;
-			border-top: 1px solid #343434;
+			border-top: 1px solid #B4B4B4;
 		}
 			#workouts-completed-head {
 				font-size: 21px;
@@ -258,8 +195,6 @@
 			#workouts-completed-number {
 				font-size: 140px;
 				font-weight: 600;
-				margin-top: 42px;
-				margin-bottom: 50px;
 			}
 			#workouts-completed-footer {
 				font-size: 21px;
@@ -267,8 +202,8 @@
 			}
 
 		.donate-button-container {
-			border-bottom: 1px solid #343434;
-			border-top: 1px solid #343434;
+			border-bottom: 1px solid #B4B4B4;
+			border-top: 1px solid #B4B4B4;
 			padding-top: 10px;
 			padding-bottom: 10px;
 			background-color: #343434;
@@ -298,7 +233,7 @@
 			text-align: center;
 			display: flex;
 			padding-bottom: 10px;
-			border-top: 1px solid #343434;
+			border-top: 1px solid #B4B4B4;
 		}
 			#recent-workout-details-head {
 				font-size: 21px;

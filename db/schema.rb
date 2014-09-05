@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20140905103500) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
+    t.text     "mmf_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
