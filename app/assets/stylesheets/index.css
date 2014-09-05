@@ -108,7 +108,6 @@ body {
 	}
 
 	.hp-extra-info-box {
-		display: flex;
 		flex-direction: column;
 		margin-left: auto;
 		margin-right: auto;
@@ -117,8 +116,30 @@ body {
 		.hp-extra-info {
 			width: 250px;
 			height: 250px;
-			border: 1px solid gray;
+			background-color: #FFF;
+			margin-left: auto;
+			margin-right: auto;
 		}
+			#hp-tracking-training {
+				background-image: url('http://outsourceworkers.com.au/wp-content/uploads/2014/07/icon_29030.png');
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+				#hp-tracking-training:hover {
+					
+				}
+			#hp-setting-challenges {
+				
+			}
+				#hp-setting-challenges:hover {
+				
+				}
+			#hp-short-term-goals {
+				
+			}
+				#hp-short-term-goals:hover {
+				
+				}
 
 		.info-box-title {
 			font-size: 20px;
