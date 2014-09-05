@@ -15,6 +15,12 @@ describe 'Creating training sessions' do
     	expect(page).to have_css "#new_trainingsession"
     end
 
+    it 'gives the option to log workouts automatically from mapmyfitness' do 
+      visit event_path(@event)
+      click_link 'Log training session'
+      expect(page).to have_content('Sync your workouts from Map My Fitness')
+    end
+
   end 
 
   context 'not as the event creator' do 
