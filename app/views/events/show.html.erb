@@ -110,7 +110,7 @@
       No pledges yet
     <%end%>
     <% if current_user == @event.user %>
-      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', data: { :'modal-selector' => '#new-pledge-modal' } %>
+      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', id: "new-pledge-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
     <%end%>
     </section>
 
@@ -168,20 +168,20 @@
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
       <section class='pledge-title-modal'>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
       </section>
       <section class='pledge-amount-modal'>
-      <%= f.label :amount %>
-      <%= f.text_field :amount %>
+        <%= f.label :amount %>
+        <%= f.text_field :amount %>
       </section>
       <section class='pledge-info-modal'>
-      <%= f.label :info %>
-      <%= f.text_field :info %>
+        <%= f.label :info %>
+        <%= f.text_field :info %>
       </section>
 
       <section class="pledge-create-modal">
-      <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
+        <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
@@ -202,13 +202,19 @@
       </article>
     <% end %>
 
-      <%= f.label :caption %>
-      <%= f.text_field :caption %>
+      <section class="post-caption-modal">
+        <%= f.label :caption %>
+        <%= f.text_field :caption %>
+      </section>
 
-      <%= f.label :picture %>
-      <%= f.file_field :picture %>
+      <section class="post-picture-modal">
+        <%= f.label :picture %>
+        <%= f.file_field :picture %>
+      </section>
 
-      <%= f.submit %>
+      <section  class="post-create-modal">
+        <%= f.submit 'Create post', class: 'modal-button-create' %>
+      </section>
 
     <% end %>
   </div>
