@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :events, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :identities, dependent: :destroy
 
   def full_name
   	[firstname, lastname].join(' ')

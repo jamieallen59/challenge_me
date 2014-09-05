@@ -16,7 +16,10 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 gem 'oauth2'
 gem 'owlcarousel-rails'
-gem 'omniauth-mapmyfitness'
+# gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-mapmyapi-mmf-oauth2', github: 'yoshdog/omniauth-mapmyapi-mmf-oauth2'
+gem 'mmf'
 
 
 group :development, :test do
