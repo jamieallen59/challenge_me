@@ -6,6 +6,8 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
   end
 
   def new
+    existing_event = Event.find_by(jg_short_name: params[:page_short_name])
+    redirect_to event_path(existing_event) if existing_event
     just_giving_data = JustGiving::Fundraising.new(params[:page_short_name]).page
     @event = Event.new(format_event_with(just_giving_data))
   end
