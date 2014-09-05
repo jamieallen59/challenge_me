@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20140905103500) do
     t.date     "event_date"
     t.string   "charity"
     t.integer  "target"
+    t.float    "amount_raised"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "training"
-    t.float    "amount_raised"
     t.integer  "jg_event_id"
     t.string   "jg_short_name"
     t.integer  "jg_page_id"
@@ -104,6 +104,11 @@ ActiveRecord::Schema.define(version: 20140905103500) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
+<<<<<<< HEAD
+=======
+    t.string   "provider"
+    t.string   "uid"
+>>>>>>> 6c5fc7f0b1b18cfb287f2374db3d241ba5808dff
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
