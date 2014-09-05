@@ -45,6 +45,7 @@ At the moment, raising money for charity can be quite boring. It boils down to a
 ## APIs Used:
 
   + JustGiving
+  + MapMyFitness
 
 ### How to set it up
 ```sh

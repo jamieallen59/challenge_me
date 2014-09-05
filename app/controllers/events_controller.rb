@@ -74,7 +74,6 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
     jg_event_id: api_hash['eventId'],
     jg_short_name: api_hash['pageShortName'],
     jg_page_id: api_hash['pageId'] }
-
   end
 
   def format(event_date)
