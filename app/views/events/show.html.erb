@@ -1,33 +1,5 @@
-  <section class='container-top'>
-
-    <section class='pledge-container'>
-    <% if @pledges.any? %>
-        Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%><br>
-        <%=@event.next_pledge.info%>
-    <%else%>
-      No pledges yet
-    <%end%>
-    <% if current_user == @event.user %>
-      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', data: { :'modal-selector' => '#new-pledge-modal' } %>
-     
-    <%end%>
-    </section>
-    <section class='donations-container'>
-    <%= link_to 'New Post', new_event_posts_path(@event), id: "newpostlink" %>
-    <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}) %>
-    </section>
-
-    <section class='event-controls'>
-      <% if @event.is_owner?(current_user) %>
-        <%= link_to 'Edit', edit_event_path(@event), class: 'edit-event' %>
-        <%= link_to 'Delete', event_path(@event), class: 'delete-event', method: :delete %>
-      <% end %>
-    </section>
-
-  </section>
-
-<section class='container-left'>
-  <section class='picture-container'>
+  <section class='container-left'>
+    <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
         </div>
@@ -36,41 +8,40 @@
         <%= @event.user.full_name %>
       </p>
     </section>
-    
-  <section class='event-details-container'>
-    <!-- <div class='ribbon-wrapper'>
-      <div class='ribbon-front'><%= @event.name %></div>
-      <div class='ribbon-edge-topleft'></div>
-      <div class='ribbon-edge-topright'></div>
-      <div class='ribbon-edge-bottomleft'></div>
-      <div class='ribbon-edge-bottomright'></div>
-    </div> -->
-    <p id='event-paragraph'><%= @event.name %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
-  </section>
+  
+    <section class='event-details-container'>
+      <!-- <div class='ribbon-wrapper'>
+        <div class='ribbon-front'><%= @event.name %></div>
+        <div class='ribbon-edge-topleft'></div>
+        <div class='ribbon-edge-topright'></div>
+        <div class='ribbon-edge-bottomleft'></div>
+        <div class='ribbon-edge-bottomright'></div>
+      </div> -->
+      <p id='event-paragraph'><%= @event.name %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
+    </section>
 
-  <section class='days-remaining'>
-    <% if (@event.event_date == Date.today) %>
-      <p id='event-today-text'>Today's the day!</p>
-    <% elsif (@event.event_date > Date.today) %>
-      <p id='days-remaining-number'>
-        <%=  "#{(@event.event_date - Date.today).to_i}" %></p> 
-      <p id='date-remaining-text'>days to go!</p>
-    <% else %>
-      <p id='days-remaining-head'>Event completed</p>
-      <p id='days-remaining-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
-      <p id='date-remaining-text'>days ago!</p>
-    <% end %>
-
+    <section class='days-remaining'>
+      <% if (@event.event_date == Date.today) %>
+        <p id='event-today-text'>Today's the day!</p>
+      <% elsif (@event.event_date > Date.today) %>
+        <p id='days-remaining-number'>
+          <%=  "#{(@event.event_date - Date.today).to_i}" %></p> 
+        <p id='date-remaining-text'>days to go!</p>
+      <% else %>
+        <p id='days-remaining-head'>Event completed</p>
+        <p id='days-remaining-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
+        <p id='date-remaining-text'>days ago!</p>
+      <% end %>
     </section>
 
     <section class='percentage-completion'>
       <p id="event-percentage-number"><%= @event.percentage_of_target %>%</p>
-       <p id='event-percentage-text'>of fundraising target achieved.</p>
+      <p id='event-percentage-text'>of fundraising target achieved.</p>
     </section>
     <section class='training-totals'>
      <p id='training-goal-headline'>Training goal:</p>
      <p id='training-goal-number'><%= @event.training %></p>
-    <p id='training-goal-text'>sessions per week.</p>
+      <p id='training-goal-text'>sessions per week.</p>
     </section>
 
     <section class='training-stats'>
@@ -108,55 +79,160 @@
        <%end%>
      </section>
     </section>
-    
-    <section id='donations-button' >Donate
+
+    <section class='donate-button-container'>
+      <p id='donations-button' >Donate
+      </p>
+    </section>
+</section>
+
+<section class='main-content-container'>
+  <section class='container-top'>
+
+    <section class='event-controls'>
+      <% if @event.is_owner?(current_user) %>
+        <%= link_to 'Edit details', edit_event_path(@event), id: 'edit-event' %>
+        <div class='eventcontrols-separator'></div>
+        <%= link_to 'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+      <% end %>
     </section>
 
-</section>
-<section class='update-feed'>
-  <% if @posts.any? %>
-      <%= render @posts %>
-  <% else %>
-      There are no posts
-  <% end %>
+    <section class='pledge-container'>
+    <% if @pledges.any? %>
+      <p class='pledge-title'>
+        <%= @event.name %>'s pledge:
+      </p>
+      <p class='pledge-information'>
+        "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
+        <%=@event.next_pledge.info%>"
+      </p>
+    <%else%>
+      No pledges yet
+    <%end%>
+    <% if current_user == @event.user %>
+      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', id: "new-pledge-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+    <%end%>
+    </section>
+
+    <section class='fundraising-stats'>
+      <section class='fundraising-stats-percentage-complete'>
+        <p id='fundraising-stats-percentage-text'>
+         Percentage complete:
+        </p>
+        <p id='fundraising-stats-percentage-number'>
+          <%= @event.percentage_of_target %>%
+        </p>
+      </section>
+      <section class='fundraising-stats-target'>
+        <p id='fundraising-stats-percentage-text'>
+         Fundraising target:
+        </p>
+        <p id='fundraising-stats-percentage-number'>
+          £<%= @event.target %>
+        </p>
+      </section>
+      <section class='fundraising-stats-raised'>
+        <p id='fundraising-stats-percentage-text'>
+         Raised so far:
+        </p>
+        <p id='fundraising-stats-percentage-number'>
+          £<%= @event.amount_raised %>
+        </p>
+      </section>
+      <section class='fundraising-stats-training-goal'>
+        <p id='fundraising-stats-percentage-text'>
+         Training sessions completed:
+        </p>
+        <p id='fundraising-stats-percentage-number'>
+          <%= @event.percentage_of_workouts_complete.round %>%
+        </p>
+      </section>
+    </section>
+
+  </section>
+
+  <section class='update-feed'>
+    <section class='donations-container'>
+    <%= link_to 'New Post', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
+     <div class='newpost-separator'></div>
+    <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
+    </section>
+    <% if @posts.any? %>
+        <%= render @posts %>
+    <% else %>
+        There are no posts
+    <% end %>
+  </section>
 </section>
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
       <section class='pledge-title-modal'>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
       </section>
       <section class='pledge-amount-modal'>
-      <%= f.label :amount %>
-      <%= f.text_field :amount %>
+        <%= f.label :amount %>
+        <%= f.text_field :amount %>
       </section>
       <section class='pledge-info-modal'>
-      <%= f.label :info %>
-      <%= f.text_field :info %>
+        <%= f.label :info %>
+        <%= f.text_field :info %>
       </section>
 
       <section class="pledge-create-modal">
-      <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
+        <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
   </div>
 
-<div id="ex1" style="display:none;">
-  <%= form_for [ @event, @trainingsession ] do |f| %>
-  <section class='modal-header'>
-    <%= f.label :details, "Training details"%>
-  </section>
-  <section class='modal-body'>
-    <%= f.text_field :details %>
-  </section>
-  <section class="modal-footer">
-    <%= f.submit 'Add Workout', class: 'modal-button-create' %>
-    <a class='close-modal' href="#" rel="modal:close">Close</a>
-  </section>
-  <%end%>
-</div>
+  <div id="new-post-modal" style="display:none;">
+    <% @post = @event.posts.new %>
+    <%= form_for [@event, @post], html: { multipart: true } do |f| %>
+      <% if @post.errors.any? %>
+      <article class="error_explaination">
+        <%= pluralize(@post.errors.count, "error") %>
+        prevent this event from being saved:
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%=message%></li>
+          <% end %>
+        </ul>
+      </article>
+    <% end %>
+
+      <section class="post-caption-modal">
+        <%= f.label :caption %>
+        <%= f.text_field :caption %>
+      </section>
+
+      <section class="post-picture-modal">
+        <%= f.label :picture %>
+        <%= f.file_field :picture %>
+      </section>
+
+      <section  class="post-create-modal">
+        <%= f.submit 'Create post', class: 'modal-button-create' %>
+      </section>
+
+    <% end %>
+  </div>
+
+  <div id="ex1" style="display:none;">
+    <%= form_for [ @event, @trainingsession ] do |f| %>
+    <section class='modal-header'>
+      <%= f.label :details, "Training details"%>
+    </section>
+    <section class='modal-body'>
+      <%= f.text_field :details %>
+    </section>
+    <section class="modal-footer">
+      <%= f.submit 'Add Workout', class: 'modal-button-create' %>
+      <a class='close-modal' href="#" rel="modal:close">Close</a>
+    </section>
+    <%end%>
+  </div>
 
 <script>
   $(document).ready(function(){
@@ -164,6 +240,8 @@
       $(".modal-button").on('click', displayModal);
 
       $(".pledge-modal-button").on('click', displayModal);
+
+      $(".new-post-modal-button").on('click', displayModal);
   });
 
   function displayModal(e){
