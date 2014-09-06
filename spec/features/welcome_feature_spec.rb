@@ -4,13 +4,14 @@ describe 'users experience' do
 
 	it 'when visiting challenge.me index page users see homepage' do
 		visit '/'
-		expect(page).to have_content "WE MAKE GIVING FUN COMPLETE CHALLENGES. SMASH TARGETS. LET'S GO"
+		expect(page).to have_content "WE MAKE GIVING FUN COMPLETE CHALLENGES. SMASH TARGETS"
 	end
 
 	it 'when landing on homepage expect to see search box' do
 		visit '/'
 		expect(page).to have_css 'input.find_person'
 	end
+
 
 	context 'when users is logged out' do
 
