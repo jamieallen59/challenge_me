@@ -10,7 +10,7 @@
 		<section class="main-image-search">
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
   			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "LOOKING FOR SOMEONE..?" %>
-  			<%= submit_tag "Search", id:'search_button' %>
+  			<%= submit_tag "GO", id:'search_button' %>
 			<% end %>
 		</section>
 			<h2 class='main-image-header'>WE MAKE GIVING FUN</h2>
