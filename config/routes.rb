@@ -13,8 +13,14 @@ Rails.application.routes.draw do
       resource :comments
     end
   end
+
+  resources :trainingsessions do 
+    post :mmf
+  end
+  
   
   get 'events/:id/donations', to: 'events#donations', as: :donations
   get '/auth/:provider/callback', to: 'identities#create'
   root 'welcome#index'
+
 end
