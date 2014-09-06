@@ -107,10 +107,11 @@
         <%=@event.next_pledge.info%>"
       </p>
     <%else%>
-    <p class='pledge-title'>
-      No pledges yet
+    <p class='pledge-title-empty'>
+      ...
     </p>
-    <p class='pledge-information'>
+    <p class='pledge-information-empty'>
+      No pledges yet
     </p>
     <%end%>
     <% if current_user == @event.user %>
@@ -154,17 +155,14 @@
     </section>
 
   </section>
-  <section class='map-my-fitness'>
+
   <!-- sync with mapmyfitness -->
-
   <% if current_user == @event.user %>
-
+  <section class='map-my-fitness'>
   <%= image_tag("MapMyFitness.png", id: 'mmf-logo') %>
     <p class='mapmyfitness-sync-text'>
       Sync your workouts from Map My Fitness:
     </p>
-
-    <!-- <img src="http://cdn.flaticon.com/png/256/2745.png"> -->
     <section class='mmf-button'>
       <%= image_tag("sync.png", id: 'sync-icon') %>
       <%= link_to "Sync", trainingsession_mmf_path(@event), id: 'map-my-fitness-button-text', method: :post %>
@@ -247,9 +245,11 @@
       <%= f.label :details, "Training details"%>
     </section>
     <section class='modal-body'>
-      <%= f.text_field :details %>
+      <%= f.text_area :details %>
        <%= f.label :sessiondate, 'Training Session Date' %>
-      <%= f.date_select :sessiondate %>
+      <article class='training-date-selector'>
+        <%= f.date_select :sessiondate, :order => [:day, :month, :year] %>
+      </article>
     </section>
     <section class="modal-footer">
       <%= f.submit 'Add Workout', class: 'modal-button-create' %>
