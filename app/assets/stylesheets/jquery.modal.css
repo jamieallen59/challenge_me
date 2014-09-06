@@ -45,10 +45,9 @@
 
   
   .modal-header {
+    padding-left: 15px;
   }
   .modal-body {
-    border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -59,8 +58,9 @@
       font-size: 20px;
       background-color: #e5e5e5;
       border: none;
-      margin-top: 15px;
-      margin-bottom: 5px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-radius: 4px;
     }
       #trainingsession_details:focus {
         outline-width: 0;
@@ -70,7 +70,7 @@
 
   .modal-footer {
   }
-   .add-workout-button {
+   .modal-button-create {
     border: 1px solid #C5C5C5;
     background-color: #FFF;
     border-radius: 4px;
@@ -78,13 +78,11 @@
     cursor: pointer;
     float: right;
     margin-right: 12px;
-    margin-top: 15px;
-    margin-bottom: 4px;
     padding: 7px 13px;
     font-family: sans-serif;
     font-weight: 300;
   }
-  .add-workout-button:hover {
+  .modal-button-create:hover {
     background-color: #ededed;
   }
     .modal-close-button {
@@ -92,4 +90,40 @@
       background-color: #fff;
       border-color: #ccc;
     }
+
+  .new-pledge-modal {
+    
+  }
   
+    .pledge-title-modal{
+      width: 100%;
+      font-size: 20px;
+      border: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+      .pledge-title-modal:hover {
+        background-color: #ededed;
+      }
+
+    .pledge-amount-modal{
+      width: 100%;
+      font-size: 20px;
+      border: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+      .pledge-amount-modal:hover {
+        background-color: #ededed;
+      }
+
+    .pledge-info-modal{
+      width: 100%;
+      font-size: 20px;
+      border: none;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+      .pledge-info-modal:hover {
+          background-color: #ededed;
+      }

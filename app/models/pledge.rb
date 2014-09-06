@@ -6,7 +6,7 @@ class Pledge < ActiveRecord::Base
 
   def pledge_check
     if amount.present? && amount <= event.amount_raised
-    errors.add(:amount, 'you have already raised this ammount')
+    errors.add(:amount, 'you have already raised this amount')
     end
   end
 
