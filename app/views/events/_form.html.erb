@@ -46,8 +46,10 @@
     </p>
       <%= f.text_field :amount_raised, class: 'event-form-input', placeholder: '(leave empty if nothing)' %>
 
+    <p class='workout-selection-text'>
+      Workout target p/week
+    </p>
     <p class='workout-selection-form'>
-      
       <section class='workouts-button-container'>
         <%= f.radio_button(:training, 2, id:'2-workouts') %> 
         <%= f.label(:training, 2, id: '2-workouts-label') %>

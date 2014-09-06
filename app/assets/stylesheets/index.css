@@ -92,11 +92,17 @@ body {
 		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
 		letter-spacing: 10px;
 	}
-
 	.lets_go-button:hover {
 		background: white;
 		color: #333;
 		font-weight: 800;
+	}
+	.lets_go-button:active {
+    position: relative;
+		top: 1px;
+	}
+	.lets_go-button:focus {
+    outline-width: 0;
 	}
 
 /*---- Middle Container ---*/

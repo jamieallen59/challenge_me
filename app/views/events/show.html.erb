@@ -45,11 +45,11 @@
     </section>
 
     <section class='training-stats'>
-      <p class='log-training-button-container'>
         <% if @event.is_owner?(current_user) %>
+        <p class='log-training-button-container'>
          <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
+         </p>
         <%end%>
-      </p>
 
       <section class='percentage-completed-workouts'>
         <p id='workouts-completed-percentage-number'>
@@ -110,7 +110,7 @@
       No pledges yet
     <%end%>
     <% if current_user == @event.user %>
-      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', data: { :'modal-selector' => '#new-pledge-modal' } %>
+      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', id: "new-pledge-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
     <%end%>
     </section>
 
@@ -155,8 +155,8 @@
 
   <section class='update-feed'>
     <section class='donations-container'>
-    <%= link_to 'New Post', new_event_posts_path(@event), id: "new-post-link" %>
-    <div class='newpost-separator'></div>
+    <%= link_to 'New Post', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
+     <div class='newpost-separator'></div>
     <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
     </section>
     <% if @posts.any? %>
@@ -170,39 +170,71 @@
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
       <section class='pledge-title-modal'>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
       </section>
       <section class='pledge-amount-modal'>
-      <%= f.label :amount %>
-      <%= f.text_field :amount %>
+        <%= f.label :amount %>
+        <%= f.text_field :amount %>
       </section>
       <section class='pledge-info-modal'>
-      <%= f.label :info %>
-      <%= f.text_field :info %>
+        <%= f.label :info %>
+        <%= f.text_field :info %>
       </section>
 
       <section class="pledge-create-modal">
-      <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
+        <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
   </div>
 
-<div id="ex1" style="display:none;">
-  <%= form_for [ @event, @trainingsession ] do |f| %>
-  <section class='modal-header'>
-    <%= f.label :details, "Training details"%>
-  </section>
-  <section class='modal-body'>
-    <%= f.text_field :details %>
-  </section>
-  <section class="modal-footer">
-    <%= f.submit 'Add Workout', class: 'modal-button-create' %>
-    <a class='close-modal' href="#" rel="modal:close">Close</a>
-  </section>
-  <%end%>
-</div>
+  <div id="new-post-modal" style="display:none;">
+    <% @post = @event.posts.new %>
+    <%= form_for [@event, @post], html: { multipart: true } do |f| %>
+      <% if @post.errors.any? %>
+      <article class="error_explaination">
+        <%= pluralize(@post.errors.count, "error") %>
+        prevent this event from being saved:
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%=message%></li>
+          <% end %>
+        </ul>
+      </article>
+    <% end %>
+
+      <section class="post-caption-modal">
+        <%= f.label :caption %>
+        <%= f.text_field :caption %>
+      </section>
+
+      <section class="post-picture-modal">
+        <%= f.label :picture %>
+        <%= f.file_field :picture %>
+      </section>
+
+      <section  class="post-create-modal">
+        <%= f.submit 'Create post', class: 'modal-button-create' %>
+      </section>
+
+    <% end %>
+  </div>
+
+  <div id="ex1" style="display:none;">
+    <%= form_for [ @event, @trainingsession ] do |f| %>
+    <section class='modal-header'>
+      <%= f.label :details, "Training details"%>
+    </section>
+    <section class='modal-body'>
+      <%= f.text_field :details %>
+    </section>
+    <section class="modal-footer">
+      <%= f.submit 'Add Workout', class: 'modal-button-create' %>
+      <a class='close-modal' href="#" rel="modal:close">Close</a>
+    </section>
+    <%end%>
+  </div>
 
 <script>
   $(document).ready(function(){
@@ -210,6 +242,8 @@
       $(".modal-button").on('click', displayModal);
 
       $(".pledge-modal-button").on('click', displayModal);
+
+      $(".new-post-modal-button").on('click', displayModal);
   });
 
   function displayModal(e){
