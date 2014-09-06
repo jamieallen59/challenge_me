@@ -9,8 +9,10 @@
 	.event-controls {
 		color: #343434;
 		display: flex;
-		margin: 5px;
+		margin-top: 9px;
 		height: 40px;
+		padding-left: 7px;
+		padding-right: 12px;
 	}
 		#edit-event {
 			text-align: center;
@@ -76,6 +78,25 @@
 			background-color: #FFF;
 			text-align: center;
 		}
+			.pledge-title-empty {
+				padding: 10px;
+				width: 185px;
+				vertical-align: middle;
+				line-height: 30px;
+				color: #343434;
+				text-align: center;
+			}
+			.pledge-information-empty {
+				border-left: 1px solid #DFDFDF;
+				border-right: 1px solid #DFDFDF;
+				box-shadow: inset 1px 1px 3px #DEDEDE;
+				padding: 10px;
+				vertical-align: middle;
+				line-height: 40px;
+				color: #343434;
+				width: 75%;
+				text-align: center;
+			}
 		.pledge-modal-button {
 			padding: 10px;
 			width: 185px;
