@@ -19,7 +19,7 @@ describe 'Creating training sessions' do
 
     it 'gives the option to log workouts automatically from mapmyfitness' do 
       visit event_path(@event)
-      click_link 'Sync your workouts from Map My Fitness'
+      click_link 'Sync'
       expect(@event.trainingsessions.count).to eq 1
       expect(@event.trainingsessions.first.details).to eq("Im running")
       expect(@event.trainingsessions.first.sessiondate.to_s).to eq("2014-09-05")
@@ -36,7 +36,7 @@ describe 'Creating training sessions' do
   	it 'should not have a log Workout button or a sync link' do 
   		visit event_path(@event)
     	expect(page).not_to have_content 'Log training session'
-      expect(page).not_to have_content 'Sync your workouts from Map My Fitness'
+      expect(page).not_to have_content 'Sync'
   	end
 
   	 it 'you cannot create a workout by hacking the routes' do

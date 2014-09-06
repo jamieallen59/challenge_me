@@ -42,7 +42,7 @@ class Event < ActiveRecord::Base
 
   def percentage_of_workouts_complete
     workouts_per_week = (days_to_event / 7) * training
-    (trainingsessions.count / workouts_per_week) * 100
+    ((trainingsessions.count / workouts_per_week) * 100)
   end
 
   def validate_mmf_data

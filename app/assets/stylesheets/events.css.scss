@@ -29,7 +29,7 @@
 .event-form-label {
 	margin-top: 15px;
 	margin-bottom: 5px;
-	font-weight: 200;
+	font-weight: 400;
 	color: #343434;
 }
 
@@ -45,7 +45,7 @@
 .event-form-input::-webkit-input-placeholder {
 	font-size: 18px;
 	font-weight: 100;
-	color: #646464;
+	color: #B3B3B3;
 }
 .event-form-input:focus {
 	 outline-width: 0;
@@ -57,6 +57,7 @@
 	#event_event_date_1i {
 		border: 0;
 		font-size: 16px;
+		background-color: #e7e7e7;
 		width: 30%;
 		height: 35px;
 	}
@@ -66,6 +67,7 @@
 	#event_event_date_2i {
 		border: 0;
 		font-size: 16px;
+		background-color: #e7e7e7;
 		width: 37%;
 		height: 35px;
 	}
@@ -75,6 +77,7 @@
 	#event_event_date_3i {
 		border: 0;
 		font-size: 16px;
+		background-color: #e7e7e7;
 		width: 30%;
 		height: 35px;
 	}
@@ -85,7 +88,7 @@
 /*--- Number of workouts buttons ---*/
 .workout-selection-text {
 	margin-top: 11px;
-	font-weight: 200;
+	font-weight: 400;
 	color: #343434;
 	text-align: center;
 }
@@ -126,13 +129,13 @@
 	}
 
 		#submit-event {
-			text-align: center;
 			vertical-align: middle;
 			cursor: pointer;
 			line-height: 40px;
 			margin-top: 20px;
 			margin-right: auto;
 			margin-left: auto;
+			background-color: #e7e7e7;
 			text-decoration: none;
 			font-size: 22px;
 			padding: 6px;
