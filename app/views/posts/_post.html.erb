@@ -5,13 +5,17 @@
     </object>
 
     <article class='evidence-comments'>
+    <section class="comments-list">
       <% if post.comments.any? %>
 
         <% post.comments.reverse_each do |comment| %>
-          <p><%= comment.user.full_name %> - <%= time_ago_in_words(comment.created_at) %></p>
+          <article class="comment">
+          <p><strong><%= comment.user.full_name %></strong> - <%= time_ago_in_words(comment.created_at) %></p>
           <p><%= comment.comments %></p>
+          </article>
         <% end %>
       <% end %>
+      </section>
       <section class='post-comments-container'>
         <%= form_for [@event, post, @comment] do |f| %>
           <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
@@ -25,14 +29,16 @@
     <section class='post-title'>
       <p class='post-caption'><%= post.caption %></p>
     </section>
-    <section class='post-date'>
-      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
-    </section>
-    <section class='post-controls'>
+
+    <span class='post-controls'>
       <% if post.is_owner?(current_user) %>
         <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
         <%= link_to 'Delete Post', event_post_path(@event, post), class: 'delete-post', method: :delete %>
       <% end %>
-    </section>
+    </span>
+     <span class='post-date'>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
+    </span>
+
   </header>
 </article>

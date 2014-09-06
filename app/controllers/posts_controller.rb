@@ -40,10 +40,10 @@ class PostsController < ApplicationController
 		if @post.is_owner? current_user
 			 @post.destroy
 			flash[:notice] = 'Deleted Post Successfully'
-			redirect_to events_path
+			redirect_to redirect_to event_path(@event)
 		else
 			flash[:alert] = 'You are not the owner of the post'
-			redirect_to root_path
+			redirect_to redirect_to event_path(@event)
 		end
 
 
