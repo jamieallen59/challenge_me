@@ -33,21 +33,21 @@ RSpec.describe Trainingsession, :type => :model do
       end
 
     it 'will save workouts created after the event is created' do 
-      client = double :client, :workouts => [{:name => 'Im running', :start_datetime => "2014-09-05T17:00:00+00:00"}]
+      client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00"}]
       allow(Mmf::Client).to receive(:new).and_return(client)
       @event.validate_mmf_data
       expect(@event.trainingsessions.count).to eq 1
     end
 
     it 'will not save workouts logged before the date the event was created' do 
-      client = double :client, :workouts => [{:name => 'Im running', :start_datetime => "2014-07-05T17:00:00+00:00"}]
+      client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-07-05T17:00:00+00:00"}]
       allow(Mmf::Client).to receive(:new).and_return(client)
       @event.validate_mmf_data
       expect(@event.trainingsessions.count).to eq 0
     end
 
     it 'will not create duplicate records' do 
-      client = double :client, :workouts => [{:name => 'Im running', :start_datetime => "2014-09-05T17:00:00+00:00"}, {:name => 'Im walking', :start_datetime => "2014-09-03T17:00:00+00:00"}]
+      client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00"}, {"name" => 'Im walking', "start_datetime" => "2014-09-03T17:00:00+00:00"}]
       allow(Mmf::Client).to receive(:new).and_return(client)
       @event.validate_mmf_data
       @event.validate_mmf_data
