@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906102724) do
+ActiveRecord::Schema.define(version: 20140906151253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20140906102724) do
     t.datetime "picture_updated_at"
     t.integer  "event_id"
     t.integer  "user_id"
+    t.text     "video"
   end
 
   add_index "posts", ["event_id"], name: "index_posts_on_event_id", using: :btree

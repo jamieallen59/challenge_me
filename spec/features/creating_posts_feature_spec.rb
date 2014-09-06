@@ -38,6 +38,15 @@ describe 'creating posts' do
 			expect(page).to have_css 'img.uploaded-pic'
 			expect(current_path).to eq event_path(@event)
 		end
+
+		it 'can attach a video link to a post' do 
+			visit event_path(@event)
+			click_link 'New Post'
+			fill_in 'Caption', with: 'This is me doing the cinnamon challenge'
+			fill_in 'Video', with: "https://www.youtube.com/watch?v=GJ3xR_oqeEQ"
+			click_button 'Create Post'
+			expect(page).to have_css '.video-post'
+		end
 	end
 
 end

@@ -232,6 +232,11 @@
         <%= f.file_field :picture %>
       </section>
 
+      <section class="post-video-modal">
+        <%= f.label :video %>
+        <%= f.text_field :video %>
+      </section>
+
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
       </section>
@@ -257,6 +262,8 @@
     </section>
     <%end%>
   </div>
+
+
 
 <script>
   $(document).ready(function(){

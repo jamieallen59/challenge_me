@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
 	def create
 		@event = Event.find(params[:event_id])
-		@post = @event.posts.new(params[:post].permit(:caption, :picture))
+		@post = @event.posts.new(params[:post].permit(:caption, :picture, :video))
 		@post.user = current_user
 		if @post.save
 			redirect_to event_path(@event)
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 		@event = Event.find(params[:event_id])
 		@post = Post.find(params[:id])
 		# redirect_to '/' unless @post.owner?(current_user)
-		@post.update(params[:post].permit(:caption, :picture))
+		@post.update(params[:post].permit(:caption, :picture, :video))
 		redirect_to event_path(@event)
 	end
 
@@ -40,10 +40,10 @@ class PostsController < ApplicationController
 		if @post.is_owner? current_user
 			 @post.destroy
 			flash[:notice] = 'Deleted Post Successfully'
-			redirect_to redirect_to event_path(@event)
+			redirect_to events_path
 		else
 			flash[:alert] = 'You are not the owner of the post'
-			redirect_to redirect_to event_path(@event)
+			redirect_to root_path
 		end
 
 
