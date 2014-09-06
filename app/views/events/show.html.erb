@@ -187,17 +187,17 @@
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
-      <section class='pledge-title-modal'>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+      <section class='pledge-modal-container'>
+        <%= f.label :title, "Pledge title", id: 'pledge-modal-label' %>
+        <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'give your pledge a name' %>
       </section>
-      <section class='pledge-amount-modal'>
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
+      <section class='pledge-modal-container'>
+        <%= f.label :amount, "Target", id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a target to hit' %>
       </section>
-      <section class='pledge-info-modal'>
-        <%= f.label :info %>
-        <%= f.text_field :info %>
+      <section class='pledge-modal-container'>
+        <%= f.label :info, "Information", id: 'pledge-modal-label' %>
+        <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "say what you're going to do" %>
       </section>
 
       <section class="pledge-create-modal">
