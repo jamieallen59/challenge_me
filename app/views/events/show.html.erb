@@ -248,6 +248,8 @@
     </section>
     <section class='modal-body'>
       <%= f.text_field :details %>
+       <%= f.label :sessiondate, 'Training Session Date' %>
+      <%= f.date_select :sessiondate %>
     </section>
     <section class="modal-footer">
       <%= f.submit 'Add Workout', class: 'modal-button-create' %>
