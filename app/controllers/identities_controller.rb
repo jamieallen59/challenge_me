@@ -1,4 +1,5 @@
 class IdentitiesController < ApplicationController
+
   def create
     if user_signed_in?
       current_user.identities.where(user_id: current_user.id, provider: auth_hash['provider'], uid: auth_hash['uid']).inspect

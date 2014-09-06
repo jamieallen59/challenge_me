@@ -18,4 +18,8 @@ class Post < ActiveRecord::Base
     return false if user.nil?
     self.user_id == user.id
   end
+
+  def video_id
+    video.partition('=').last
+  end
 end
