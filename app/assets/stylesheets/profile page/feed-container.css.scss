@@ -62,6 +62,7 @@
 				width: 100%;
 				height: 25px;
 				text-align: right;
+				line-height: 1px
 			}
 				p.posted-by {
 					margin-right: 8px;
@@ -74,10 +75,20 @@
 			height: 76%;
 		}
 
+		.post-controls {
+			padding-left: 10px;
+			a {
+				line-height: 1px;
+				color: white;
+				text-decoration: none;
+
+			}
+		}
+
 			.uploaded-evidence {
 				display: flex;
 				border: 1px solid grey;
-				width: 500px;
+				width: 300px;
 				margin: 3px;
 			}
 
@@ -87,24 +98,33 @@
 				flex-direction: column;
 				border: 1px solid #A8A8A8;
 				border-radius: 4px;
-				width: 40%;
+				width: 60%;
 				margin: 3px;
 				font-size: 14px;
+				overflow: hidden;
 			}
+				.comments-list{
+					height: 162px;
+					overflow: scroll;
+					padding: 5px;
+				}
 				.post-comments-container {
 					position: absolute;
 					bottom: 0;
 					width: 100%;
+					height: 44px;
 				}
 					#comments-placeholder {
 						font-size: 13px;
-						width: 69%;
+						width: 68%;
 						height: 40px;
 						border-bottom-left-radius: 4px;
 						border: 1px solid #A8A8A8;
 						margin-bottom: -1px;
 						margin-left: -1px;
 						padding-left: 5px;
+						display: inline-block;
+						float: left;
 					}
 					#comments-placeholder:focus {
 				    outline-width: 0;
@@ -113,9 +133,9 @@
 						border: none;
 						background: #A8A8A8;
 						margin-left: -4px;
-						width: 28.7%;
+						width: 30%;
 						cursor: pointer;
-						font-size: 13px;
+						font-size: 20px;
 						height: 44px;
 						padding-bottom: 1px;
 						margin-bottom: -1px;
@@ -123,6 +143,14 @@
 					}
 					#comment-submit-button:hover {
 						background: #b8b8b8;
+					}
+
+					.comment{
+						padding: 2.5px;
+						line-height: 14px;
+						strong{
+							font-weight: bold;
+						}	
 					}
 
 
