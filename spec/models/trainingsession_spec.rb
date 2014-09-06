@@ -14,4 +14,5 @@ RSpec.describe Trainingsession, :type => :model do
   		expect(workout).to have(1).error_on(:details)
   	end
   end
+
 end

@@ -51,6 +51,7 @@ At the moment, raising money for charity can be quite boring. It boils down to a
 ```sh
 git clone git@github.com:yoshdog/challenge-me.git
 cd challenge-me
+bundle
 bin/rake db:create
 bin/rake db:migrate
 bin/rake db:seed
