@@ -1,7 +1,17 @@
 <article class='post-container'>
   <section class='post-content'>
     <object class='uploaded-evidence'>
-      <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
+      <% if post.picture.present? %>
+      <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
+      <% elsif post.video.present? %>
+        <%= javascript_tag do %>
+          videoRef = "<%=j post.video_id %>";
+        <% end %>
+       <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player" class="video-post" ></div>
+    <% javascript_include_tag "posts"%>
+    <%end%>
+
     </object>
 
     <article class='comments-container'>
