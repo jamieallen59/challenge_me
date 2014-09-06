@@ -33,7 +33,7 @@ class Event < ActiveRecord::Base
   end
 
   def weekly_training_sessions
-    trainingsessions.count{|session| session.cweek == Date.today.cweek}
+    trainingsessions.count{|session| session.sessiondate.cweek == Date.today.cweek}
   end
 
   def days_to_event
@@ -49,13 +49,15 @@ class Event < ActiveRecord::Base
     client = Mmf::Client.new do |config|
       config.client_key    = Rails.application.secrets.map_my_api_key
       config.client_secret = Rails.application.secrets.map_my_api_secret
-      config.access_token  = current_user.id.identities.find_by(provider: 'mapmyfitness').token
+      config.access_token  = user.identities.find_by(provider: 'mapmyfitness').token
     end
-    client.workouts.each do |workout|
-        workout_date =  workout[:start_datetime].slice(0..(workout[:start_datetime].index('T'))).chop
-        if workout_date >= created_at && !previously_logged?(workout)
-          trainingsessions.create(details: workout[:name], sessiondate: workout_date )
-        end
+    if client.workouts.any?
+      client.workouts.each do |workout|
+          workout_date =  workout["start_datetime"].slice(0..(workout["start_datetime"].index('T'))).chop
+          if workout_date >= created_at && !previously_logged?(workout)
+            trainingsessions.create(details: workout["name"], sessiondate: workout_date )
+          end
+      end
     end
   end
 
@@ -63,7 +65,7 @@ private
 
   def previously_logged?(workout)
     logged_workouts = trainingsessions.all
-    logged_workouts.any?{|logged| logged.details == workout[:name]}
+    logged_workouts.any?{|logged| logged.details == workout["name"]}
   end
 
 end
