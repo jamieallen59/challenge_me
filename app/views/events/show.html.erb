@@ -53,7 +53,7 @@
 
       <section class='percentage-completed-workouts'>
         <p id='workouts-completed-percentage-number'>
-          <%= @event.percentage_of_workouts_complete.round %>%</p>
+          <%= @event.percentage_of_workouts_complete.to_f.round %>%</p>
         <p id='workouts-completed-text'>
          of total training sessions completed.
         </p>
@@ -107,7 +107,11 @@
         <%=@event.next_pledge.info%>"
       </p>
     <%else%>
+    <p class='pledge-title'>
       No pledges yet
+    </p>
+    <p class='pledge-information'>
+    </p>
     <%end%>
     <% if current_user == @event.user %>
       <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', id: "new-pledge-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
@@ -150,8 +154,18 @@
     </section>
 
   </section>
+  <section class='map-my-fitness'>
   <!-- sync with mapmyfitness -->
-  <%= link_to "Sync your workouts from Map My Fitness", trainingsession_mmf_path(@event), method: :post%>
+  <%= image_tag("MapMyFitness.png", id: 'mmf-logo') %>
+    <p class='mapmyfitness-sync-text'>
+      Sync your workouts from Map My Fitness:
+    </p>
+    <!-- <img src="http://cdn.flaticon.com/png/256/2745.png"> -->
+    <section class='mmf-button'>
+      <%= image_tag("sync.png", id: 'sync-icon') %>
+      <%= link_to "Sync", trainingsession_mmf_path(@event), id: 'map-my-fitness-button-text', method: :post %>
+      </section>
+  </section>
 
   <section class='update-feed'>
     <section class='donations-container'>
