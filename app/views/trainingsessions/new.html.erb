@@ -1,6 +1,7 @@
 <%= form_for [@event, @trainingsession] do |f| %>
 <%= f.label :details, "Training details"%>
 <%= f.text_field :details %>
-
+ <%= f.label :sessiondate, 'Training Session Date' %>
+ <%= f.date_select :sessiondate %>
 <%= f.submit 'Add Workout' %>
 <%end%>

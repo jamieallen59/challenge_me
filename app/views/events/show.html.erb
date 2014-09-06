@@ -151,7 +151,9 @@
 
   </section>
   <!-- sync with mapmyfitness -->
+  <% if current_user == @event.user %>
   <%= link_to "Sync your workouts from Map My Fitness", trainingsession_mmf_path(@event), method: :post%>
+  <%end%>
 
   <section class='update-feed'>
     <section class='donations-container'>
