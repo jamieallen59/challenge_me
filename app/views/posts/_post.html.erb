@@ -4,19 +4,18 @@
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
     </object>
 
-    <article class='evidence-comments'>
-    <section class="comments-list">
-      <% if post.comments.any? %>
-
-        <% post.comments.reverse_each do |comment| %>
-          <article class="comment">
-          <p><strong><%= comment.user.full_name %></strong> - <%= time_ago_in_words(comment.created_at) %></p>
-          <p><%= comment.comments %></p>
-          </article>
+    <article class='comments-container'>
+      <section class="comments-list">
+        <% if post.comments.any? %>
+          <% post.comments.reverse_each do |comment| %>
+            <article class="comment">
+              <p><strong><%= comment.user.full_name %></strong> - <%= time_ago_in_words(comment.created_at) %></p>
+              <p><%= comment.comments %></p>
+            </article>
+          <% end %>
         <% end %>
-      <% end %>
       </section>
-      <section class='post-comments-container'>
+      <section class='comments-input-container'>
         <%= form_for [@event, post, @comment] do |f| %>
           <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
           <%= f.submit 'Submit', id: 'comment-submit-button' %>

@@ -63,7 +63,7 @@
 		font-size: 21px;
 		color: #343434;
 		border: 1px solid #DFDFDF;
-		box-shadow: 1px 1px 2px 1px #DEDEDE;
+		box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
 	}
 		.pledge-title {
 			padding: 10px;
@@ -73,7 +73,7 @@
 		.pledge-information {
 			border-left: 1px solid #DFDFDF;
 			border-right: 1px solid #DFDFDF;
-			box-shadow: inset 1px 1px 3px #DEDEDE;
+			box-shadow: inset 0.6px 0.6px 5px #DEDEDE;
 			padding: 10px;
 			width: 75%;
 			font-style: italic;
@@ -103,17 +103,19 @@
 		.pledge-modal-button {
 			padding: 10px;
 			width: 185px;
+			font-weight: 800;
 			cursor: pointer;
 			text-decoration: none;
 			vertical-align: middle;
 			line-height: 40px;
 			color: #FFF;
+			text-align: center;
 			border-top-right-radius: 7px;
 			border-bottom-right-radius: 7px;
-			background: linear-gradient(#CEE8FA, #8EBAD6)
+			background: linear-gradient(#0073BE, #004A7B);
 		}
 		.pledge-modal-button:hover {
-			background: linear-gradient(#ECF8FF, #65A6D1)
+			background: linear-gradient(#4AA7E4, #146092);
 		}
 
 

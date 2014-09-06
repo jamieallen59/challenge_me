@@ -115,7 +115,7 @@
     </p>
     <%end%>
     <% if current_user == @event.user %>
-      <%= link_to "New Pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', id: "new-pledge-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+      <%= link_to "New pledge", new_event_pledges_path(@event), class: 'pledge-modal-button', id: "new-pledge-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
     <%end%>
     </section>
 
@@ -170,6 +170,7 @@
   </section>
    <%end%>
 
+   <div class='page-divider'></div>
 
   <section class='update-feed'>
     <section class='donations-container'>
