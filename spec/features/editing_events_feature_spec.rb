@@ -60,6 +60,12 @@ describe 'Editing Events' do
 
     it 'should not display a link to add a profile picture' do
       expect(page).not_to have_css '#profile-image a', text: 'Add Profile Pic'
-    end  
+    end
+
+    it 'should not be able to edit someone elses profile' do
+      visit profile_path(@mary)
+      expect(current_path).not_to eq profile_path(@mary)
+      expect(page).to have_content 'This is not your profile'
+    end
   end
 end

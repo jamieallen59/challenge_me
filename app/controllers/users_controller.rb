@@ -5,6 +5,10 @@ class UsersController < ApplicationController
 	def profile
 		@user = User.find(params[:user_id])
 		@event_id = params[:event_id]
+		unless @user == current_user
+			flash[:notice] = 'This is not your profile'
+			redirect_to '/'
+		end
 	end
 
 	def update
