@@ -4,6 +4,7 @@
       <% if post.picture.present? %>
         <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
       <% elsif post.video.present? %>
+        <section class="video-post">
         <object width="297" height="206">
           <param name="movie"
                  value="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"></param>
@@ -13,8 +14,11 @@
                  allowscriptaccess="always"
                  width="297" height="206"></embed>
         </object>
+         </section>
       <% elsif post.text.present? %>
+      <article class="text-post">
         <%= post.text %>
+      </article>
       <%end%>
    </object>
 
