@@ -23,7 +23,7 @@ describe 'users experience' do
 		end
 			it 'when visiting challenge.me users can log out' do
 				visit '/'
-				expect(page).to have_link(rsp'Sign Out', href: destroy_user_session)
+				expect(page).to have_link('Sign Out', href: destroy_user_session)
 			end
 	end
 end
