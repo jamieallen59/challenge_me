@@ -68,7 +68,7 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
   private
   def format_event_with(api_hash)
     return if api_hash.nil? || api_hash.is_a?(Array)
-    {name: api_hash['eventName'], 
+    {name: api_hash['eventName'],
     event_date: format(api_hash['eventDate']),
     charity: api_hash['charity']['name'],
     target: api_hash['fundraisingTarget'],

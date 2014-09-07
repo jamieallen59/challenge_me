@@ -7,10 +7,17 @@
 <body>
 <section class='hp-upper-container'>
 	<section class='hp-cover-image'>
+
 		<section class="main-image-search">
+      <section class="user_management">
+      <% if user_signed_in? %>
+          Logged in as <%= current_user.email %>
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'lets_go-button', id:'sign_out'%>
+      <% end %>
+      </section>
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
   			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "LOOKING FOR SOMEONE..?" %>
-  			<%= submit_tag "Search", :name => nil %>
+  			<%= submit_tag "GO", id:'search_button' %>
 			<% end %>
 		</section>
 			<h2 class='main-image-header'>WE MAKE GIVING FUN</h2>
