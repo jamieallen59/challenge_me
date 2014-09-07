@@ -31,7 +31,7 @@ describe 'Creating events' do
         click_on 'Add Your Event'
       end
       it 'should show the select page' do
-        expect(page).to have_content 'Which of your events do you want to view?'
+        expect(page).to have_content 'Which of your justgiving events do you want to view?'
         expect(current_path).to eq select_events_path
       end
 
