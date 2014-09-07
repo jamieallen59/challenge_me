@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   	resource :posts
     resource :pledges
     resource :trainingsessions
+    # resource :challenges
 
     collection do
       get 'select'
@@ -14,11 +15,14 @@ Rails.application.routes.draw do
     resources :posts do
       resource :comments
     end
+
+    resources :challenges
   end
 
   resources :trainingsessions do 
     post :mmf
   end
+
   
   
   get 'events/:id/donations', to: 'events#donations', as: :donations

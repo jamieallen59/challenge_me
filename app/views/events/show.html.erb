@@ -8,15 +8,13 @@
         <%= @event.user.full_name %>
       </p>
     </section>
+
+    <section class="challenge-me">
+      <%= link_to "Challenge Me", new_event_challenge_path(@event), class: 'challenge-me-button' %>
+    </section>
   
     <section class='event-details-container'>
-      <!-- <div class='ribbon-wrapper'>
-        <div class='ribbon-front'><%= @event.name %></div>
-        <div class='ribbon-edge-topleft'></div>
-        <div class='ribbon-edge-topright'></div>
-        <div class='ribbon-edge-bottomleft'></div>
-        <div class='ribbon-edge-bottomright'></div>
-      </div> -->
+    
       <p id='event-paragraph'><%= @event.name %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
     </section>
 
@@ -178,6 +176,13 @@
      <div class='newpost-separator'></div>
     <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
     </section>
+
+    <% if @challenges.any? %>
+    <section class='challenge-count'>
+      <%= @challenges.count %> challenge pending
+    </section>
+    <% end %>
+
     <% if @posts.any? %>
         <%= render @posts.reverse %>
     <% else %>

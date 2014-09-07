@@ -1,0 +1,13 @@
+<%= form_for [@event, @challenge] do |f| %>
+<%= f.label :creator, 'What is your name?' %>
+<%= f.text_field :creator %>
+
+<%= f.label :name, 'Describe the challange' %>
+<%= f.text_field :name %>
+
+<%= f.label :amount, 'How much will you donate for completing this challenge?' %>
+<%= f.text_field :amount %>
+
+<%= f.submit 'Create challenge'%>
+
+<%end%>
