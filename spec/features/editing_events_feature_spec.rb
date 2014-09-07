@@ -24,6 +24,18 @@ describe 'Editing Events' do
       expect(page).to have_content 'Virgin London Marathon'
       expect(current_path).to eq event_path(@event) 
     end
+
+    it 'should show a link to add a profile picture' do
+      expect(page).to have_css '#profile-image a', text: 'Add Profile Pic'
+    end
+
+    it 'can attach an image to a profile' do
+      click_link 'Add Profile Picture'
+      attach_file 'Avatar', Rails.root.join('app/assets/images/run.jpg')
+      click_button 'Update User'
+      expect(page).to have_css 'img.profile-pic'
+      expect(current_path).to eq event_path(@event)
+    end
   end
 
   context 'logged in as another user' do
@@ -40,6 +52,10 @@ describe 'Editing Events' do
       visit edit_event_path(@event)
       expect(page).to have_content 'You are not the owner of the event'
       expect(current_path).to eq root_path
-    end    
+    end  
+
+    it 'should not display a link to add a profile picture' do
+      expect(page).not_to have_css '#profile-image a', text: 'Add Profile Pic'
+    end  
   end
 end

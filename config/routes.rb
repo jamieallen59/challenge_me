@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     post :mmf
   end
   
-  
+  get 'users/:user_id/profile', to: 'users#profile', as: :profile
   get 'events/:id/donations', to: 'events#donations', as: :donations
   get '/auth/:provider/callback', to: 'identities#create'
   root 'welcome#index'
