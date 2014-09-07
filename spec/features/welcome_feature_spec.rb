@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'users experience' do
-
+context 'when users is logged out' do
 	it 'when visiting challenge.me index page users see homepage' do
 		visit '/'
 		expect(page).to have_content "WE MAKE GIVING FUN COMPLETE CHALLENGES. SMASH TARGETS"
@@ -10,6 +10,11 @@ describe 'users experience' do
 	it 'when landing on homepage expect to see search box' do
 		visit '/'
 		expect(page).to have_css 'input.find_person'
+	end
+
+	it "they don't see a sign out button" do
+		visit '/'
+		expect(page).not_to have_link 'SIGN OUT'
 	end
 
 
