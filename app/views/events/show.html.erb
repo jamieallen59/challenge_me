@@ -166,17 +166,17 @@
 
   <!-- sync with mapmyfitness -->
   <% if current_user == @event.user %>
-  <section class='map-my-fitness'>
-  <%= image_tag("MapMyFitness.png", id: 'mmf-logo') %>
-    <p class='mapmyfitness-sync-text'>
-      Sync your workouts from Map My Fitness:
-    </p>
-    <section class='mmf-button'>
-      <%= image_tag("sync.png", id: 'sync-icon') %>
-      <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
+    <section class='map-my-fitness'>
+        <%= image_tag("MapMyFitness.png", id: 'mmf-logo') %>
+      <p class='mapmyfitness-sync-text'>
+        Sync your workouts from Map My Fitness:
+      </p>
+      <section class='mmf-button'>
+        <%= image_tag("sync.png", id: 'sync-icon') %>
+        <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
       </section>
-  </section>
-   <%end%>
+    </section>
+  <%end%>
 
    <div class='page-divider'></div>
 
@@ -256,24 +256,19 @@
         <%= f.label :video %>
         <%= f.text_field :video %>
       </section>
-
       or </br>
-
       <section class="post-text-modal">
         <%= f.label :text %>
         <%= f.text_field :text %>
       </section>
-
-
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
       </section>
-
     <% end %>
   </div>
 
   <div id="ex1" style="display:none;">
-    <%= form_for [ @event, @trainingsession ] do |f| %>
+    <%= form_for [@event, @trainingsession] do |f| %>
     <section class='modal-header'>
       <%= f.label :details, "Training details"%>
     </section>
@@ -291,21 +286,15 @@
     <%end%>
   </div>
 
-
-
 <script>
   $(document).ready(function(){
-
       $(".modal-button").on('click', displayModal);
-
       $(".pledge-modal-button").on('click', displayModal);
-
       $(".new-post-modal-button").on('click', displayModal);
   });
 
   function displayModal(e){
       e.preventDefault();
-
       $($(e.target).attr('data-modal-selector')).modal({
           fadeDuration: 500,
           fadeDelay: 0.30

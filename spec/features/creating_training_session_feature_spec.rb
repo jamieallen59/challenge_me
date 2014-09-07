@@ -9,16 +9,15 @@ describe 'Creating training sessions' do
     	login_as @mary
       client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00"}]
       allow(Mmf::Client).to receive(:new).and_return(client)
+    	visit event_path(@event)
     end
 
     it "let's the user fill in details about their session" do
-    	visit event_path(@event)
     	click_link 'Log training session'
     	expect(page).to have_css "#new_trainingsession"
     end
 
     it 'gives the option to log workouts automatically from mapmyfitness' do 
-      visit event_path(@event)
       click_link 'Sync'
       expect(@event.trainingsessions.count).to eq 1
       expect(@event.trainingsessions.first.details).to eq("Im running")
