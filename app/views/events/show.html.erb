@@ -179,7 +179,7 @@
     <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
     </section>
     <% if @posts.any? %>
-        <%= render @posts %>
+        <%= render @posts.reverse %>
     <% else %>
         There are no posts
     <% end %>
