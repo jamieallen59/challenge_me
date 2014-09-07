@@ -7,7 +7,7 @@
 }
 
 	.hp-cover-image {
-		background-image: url("click.jpg");
+		background-image: url(asset_path ("click.jpg"));
 		display: flex;
 		flex-direction: column;
 		background-size: 100%;
