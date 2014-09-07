@@ -16,6 +16,7 @@ context 'when users is logged out' do
 		visit '/'
 		expect(page).not_to have_link 'SIGN OUT'
 	end
+end
 
 
 
@@ -30,7 +31,7 @@ context 'when users is logged out' do
 		end
 			it 'when visiting challenge.me users can log out' do
 				visit '/'
-				expect(page).to have_link('SIGN OUT', href: destroy_user_session)
+				expect(page).to have_link 'SIGN OUT'
 			end
 	end
 end
