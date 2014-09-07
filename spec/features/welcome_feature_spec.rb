@@ -12,14 +12,16 @@ describe 'users experience' do
 		expect(page).to have_css 'input.find_person'
 	end
 
-	it "when landing on homepage expect to see LET'S GO button" do
-		expect(page).to have_link("LET'S GO", href: select_events_path)
-	end
+
 
 	context 'when users is logged in' do
 		before do
 			@mary = create(:user)
 			login_as @mary
+		end
+		it "when landing on homepage expect to see LET'S GO button, takes them to select an event" do
+				visit '/'
+				expect(page).to have_link("LET'S GO", href: select_events_path)
 		end
 			it 'when visiting challenge.me users can log out' do
 				visit '/'

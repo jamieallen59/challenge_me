@@ -13,7 +13,7 @@
         <%= link_to event.name.capitalize, event_path(event.id) %>
         <%= event.charity %>
         <%=  (event.event_date - Date.today).to_i %> days to go!
-        <%= event.percentage_of_target %>% Complete
+        <%= event.percentage_of_target %>% complete
 			<% end %>
 		<% end %>
 	<% end %>
