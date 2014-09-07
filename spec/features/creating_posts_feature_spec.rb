@@ -21,6 +21,7 @@ describe 'creating posts' do
 			click_link 'New Post'
 			fill_in 'Caption', with: '5k in 30 mins - yay!'
 		end
+
 		it 'adds a text post to a form' do
 			click_button 'Create Post'
 			expect(page).to have_content '5k in 30 mins - yay!'

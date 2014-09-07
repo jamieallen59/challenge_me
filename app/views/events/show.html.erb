@@ -17,7 +17,7 @@
         <div class='ribbon-edge-bottomleft'></div>
         <div class='ribbon-edge-bottomright'></div>
       </div> -->
-      <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
+      <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %>. They've raised £<%= @event.amount_raised %> so far.</p>
     </section>
 
     <section class='days-remaining'>
