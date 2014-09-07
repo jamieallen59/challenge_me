@@ -2,13 +2,19 @@
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
+          <% if @event.user.avatar.present? %>
+            <%= image_tag @event.user.avatar.url(:medium), class: 'profile-pic'  %>
+          <% end %>
+          <% if @event.is_owner?(current_user) %>
+            <%= link_to 'Add Profile Picture', profile_path(current_user, event_id: @event.id) %>
+          <% end %>
         </div>
       </section>
       <p id='event-user-name'>
         <%= @event.user.full_name %>
       </p>
     </section>
-  
+
     <section class='event-details-container'>
       <!-- <div class='ribbon-wrapper'>
         <div class='ribbon-front'><%= @event.name %></div>
@@ -17,7 +23,7 @@
         <div class='ribbon-edge-bottomleft'></div>
         <div class='ribbon-edge-bottomright'></div>
       </div> -->
-      <p id='event-paragraph'><%= @event.name %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
+      <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %>. They've raised £<%= @event.amount_raised %> so far.</p>
     </section>
 
     <section class='days-remaining'>
@@ -25,7 +31,7 @@
         <p id='event-today-text'>Today's the day!</p>
       <% elsif (@event.event_date > Date.today) %>
         <p id='days-remaining-number'>
-          <%=  "#{(@event.event_date - Date.today).to_i}" %></p> 
+          <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
         <p id='date-remaining-text'>days to go!</p>
       <% else %>
         <p id='days-remaining-head'>Event completed</p>
@@ -100,7 +106,7 @@
     <section class='pledge-container'>
     <% if @pledges.any? %>
       <p class='pledge-title'>
-        <%= @event.name %>'s pledge:
+        <%= @event.user.firstname %>'s pledge:
       </p>
       <p class='pledge-information'>
         "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
@@ -165,7 +171,7 @@
     </p>
     <section class='mmf-button'>
       <%= image_tag("sync.png", id: 'sync-icon') %>
-      <%= link_to "Sync", trainingsession_mmf_path(@event), id: 'map-my-fitness-button-text', method: :post %>
+      <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
       </section>
   </section>
    <%end%>
@@ -237,6 +243,12 @@
         <%= f.label :video %>
         <%= f.text_field :video %>
       </section>
+
+      <section class="post-text-modal">
+        <%= f.label :text %>
+        <%= f.text_field :text %>
+      </section>
+
 
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>

@@ -2,17 +2,25 @@
   <section class='post-content'>
     <object class='uploaded-evidence'>
       <% if post.picture.present? %>
-      <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
+        <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
       <% elsif post.video.present? %>
-        <%= javascript_tag do %>
-          videoRef = "<%=j post.video_id %>";
-        <% end %>
-       <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player" class="video-post" ></div>
-    <% javascript_include_tag "posts"%>
-    <%end%>
-
-    </object>
+        <section class="video-post">
+        <object width="297" height="206">
+          <param name="movie"
+                 value="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"></param>
+          <param name="allowScriptAccess" value="always"></param>
+          <embed src="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"
+                 type="application/x-shockwave-flash"
+                 allowscriptaccess="always"
+                 width="297" height="206"></embed>
+        </object>
+         </section>
+      <% elsif post.text.present? %>
+      <article class="text-post">
+        <%= post.text %>
+      </article>
+      <%end%>
+   </object>
 
     <article class='comments-container'>
       <section class="comments-list">
@@ -30,7 +38,9 @@
           <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
           <%= f.submit 'Submit', id: 'comment-submit-button' %>
         <% end %>
+
       </section>
+
     </article>
 
   </section>
