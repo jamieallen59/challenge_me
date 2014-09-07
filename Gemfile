@@ -20,6 +20,7 @@ gem 'omniauth-mapmyapi-mmf-oauth2', github: 'yoshdog/omniauth-mapmyapi-mmf-oauth
 gem 'mmf'
 
 
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'

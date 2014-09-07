@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_attached_file :picture, styles: { medium: "300x300>" },
+  has_attached_file :picture, styles: { medium: "300x300#" },
     storage: :s3,
     s3_credentials: {
       bucket: 'challengeme',
