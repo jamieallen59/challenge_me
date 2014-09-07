@@ -5,6 +5,7 @@ describe 'creating posts' do
 		@mary = create(:user)
 		@event = create(:event, user: @mary)
 	end
+	
 	context 'as a logged out user' do
 		it 'should redirect you to the sign in page' do
 			visit event_path(@event)
@@ -62,6 +63,7 @@ describe 'post validation' do
 		@event = create(:event, user: mary)
 		login_as mary
 	end
+
 	it "when info isn't valid the post isn't created " do
 		visit event_path(@event)
 		click_link 'New Post'
