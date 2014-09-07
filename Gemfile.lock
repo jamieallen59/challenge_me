@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: git://github.com/yoshdog/omniauth-mapmyapi-mmf-oauth2.git
-  revision: 6a77b289da2a97c6bab7d58bea314b6cd86bec70
+  revision: 544231d0a345550e36ef623f24fb6b3c36b45711
   specs:
     omniauth-mapmyapi-mmf-oauth2 (0.3.0)
       json
@@ -206,7 +206,7 @@ GEM
       json (~> 1.4)
     rspec-collection_matchers (1.0.0)
       rspec-expectations (>= 2.99.0.beta1)
-    rspec-core (3.1.0)
+    rspec-core (3.1.1)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.0)
       diff-lcs (>= 1.2.0, < 2.0)
