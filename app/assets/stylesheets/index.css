@@ -42,12 +42,12 @@
 		background: black;
     text-align: left;
 		text-decoration: none;
-		font-size: 20px;
+		font-size: 1.2em;
 		letter-spacing: 5px;
 		padding: 10px;
 		border: 2px solid white;
 		color: white;
-		margin-right: 2px;
+		margin-right: 4px;
 		margin-top: 50px;
 		width: 70%;
 	}
@@ -72,6 +72,7 @@
 		letter-spacing: 10px;
 		word-spacing: 10px;
 		text-shadow: 0 1px 0 rgba(255,255,255,.8);
+		font-size: 1.5em;
 	}
 
 	.cover-image-button-container {
@@ -83,9 +84,10 @@
 		text-decoration: none;
 		color: #2B1B17;
 		font-weight: 800;
+		font-size: 1.2em;
 		background: rgba(255,255,255,.58);
 		border: 2px solid white;
-		padding: 0.4em 1.5em;
+		padding: 0.5em 1.5em;
     margin: 0.5em;
 		border-radius: .05em;
 		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
