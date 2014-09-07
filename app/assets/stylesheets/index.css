@@ -13,7 +13,6 @@
 		background-size: 100%;
 		min-height: 900px;
 		background-repeat: no-repeat;
-
 	}
 
 	.main-image-search {
@@ -37,7 +36,6 @@
 	#search_button:hover {
 		color: #2B1B17;
 		background: rgba(255,255,255,.58);
-
 	}
 
 	input.find_person {
@@ -52,24 +50,8 @@
 		margin-right: 2px;
 		margin-top: 50px;
 		width: 70%;
-
 	}
 
-	::-webkit-input-placeholder {
-	  color: white;
-	}
-
-	:-moz-placeholder {  Firefox 18-
-	  color: white;
-	}
-
-	::-moz-placeholder {   Firefox 19+
-	  color: white;
-	}
-
-	:-ms-input-placeholder {
-	  color: white;
-	}
 
 	h2.main-image-header {
 		text-align: center;
@@ -168,17 +150,17 @@
 			font-size: 20px;
 		}
 
-/*---- Lower Container ---*/
-	.hp-lower-container {
+/*---- Lower Container ---
+/*	.hp-lower-container {
 		width: 100%;
 		display: flex;
 		margin-top: 40px;
-	}
+	}*/
 
 
 /*---- Lower Container ---*/
 
-		.hp-lower-right {
+	/*	.hp-lower-right {
 			display: flex;
 			width: 100%;
 			height: 500px;
