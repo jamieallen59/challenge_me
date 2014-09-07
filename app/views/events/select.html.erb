@@ -1,12 +1,12 @@
 
 <%if @events.any?%>
-Which of your events do you want to view? </br>
+Hello USER.USERNAME
+Which of your justgiving events do you want to view? </br>
   <% @events.each do |event| %>
     <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']) %></br>
-
+    <%= link_to 'Create new event', new_event_path %>
   <% end %>
 <%else %>
- <%= link_to 'Create Event', new_event_path %>
-
+  <%= link_to 'Create new event', new_event_path %>
 <% end %>
 
