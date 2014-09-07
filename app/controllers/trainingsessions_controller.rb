@@ -20,8 +20,7 @@ class TrainingsessionsController < ApplicationController
 	end
 
   def mmf
-  	#This needs fixing, I cant pass the event params through on the route
-  	@event = current_user.events.first
+  	@event = Event.find(params[:event_id])
   	@event.validate_mmf_data
   	redirect_to event_path(@event)
   end
