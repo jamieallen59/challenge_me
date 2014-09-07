@@ -20,6 +20,13 @@
 		margin-left: 58%;
 	}
 
+#sign_out {
+	width: 37%;
+	float:right;
+	margin-right: 35px;
+	padding: 0.5em 0.8em;
+}
+
 #search_button {
 		color: #333;
 		font-weight: 800;
@@ -48,7 +55,6 @@
 		border: 2px solid white;
 		color: white;
 		margin-right: 4px;
-		margin-top: 50px;
 		width: 70%;
 	}
 
@@ -84,7 +90,7 @@
 		text-decoration: none;
 		color: #2B1B17;
 		font-weight: 800;
-		font-size: 1.2em;
+		font-size: 1.4em;
 		background: rgba(255,255,255,.58);
 		border: 2px solid white;
 		padding: 0.5em 1.5em;
