@@ -18,13 +18,6 @@
     </section>
 
     <section class='event-details-container'>
-      <!-- <div class='ribbon-wrapper'>
-        <div class='ribbon-front'><%= @event.name %></div>
-        <div class='ribbon-edge-topleft'></div>
-        <div class='ribbon-edge-topright'></div>
-        <div class='ribbon-edge-bottomleft'></div>
-        <div class='ribbon-edge-bottomright'></div>
-      </div> -->
       <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %>. They've raised £<%= @event.amount_raised %> so far.</p>
     </section>
 
@@ -102,6 +95,8 @@
         <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
         <div class='eventcontrols-separator'></div>
         <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+        <div class='eventcontrols-separator'></div>
+         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
       <% end %>
     </section>
 
@@ -236,15 +231,21 @@
         <%= f.text_field :caption %>
       </section>
 
+      Choose the type of post : </br>
+
       <section class="post-picture-modal">
         <%= f.label :picture %>
         <%= f.file_field :picture %>
       </section>
 
+      or </br>
+
       <section class="post-video-modal">
         <%= f.label :video %>
         <%= f.text_field :video %>
       </section>
+
+      or </br>
 
       <section class="post-text-modal">
         <%= f.label :text %>
