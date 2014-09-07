@@ -27,6 +27,7 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
     @posts = @event.posts
     @comment = Comment.new
     @pledges = @event.pledges
+    @challenges = @event.challenges
     @trainingsession = @event.trainingsessions.new
     @trainingsessions = @event.trainingsessions
   end
