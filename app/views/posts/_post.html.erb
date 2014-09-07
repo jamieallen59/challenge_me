@@ -1,16 +1,19 @@
 <article class='post-container'>
   <section class='post-content'>
     <object class='uploaded-evidence'>
+
       <% if post.picture.present? %>
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
       <% elsif post.video.present? %>
         <%= javascript_tag do %>
           videoRef = "<%=j post.video_id %>";
+
         <% end %>
        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player" class="video-post" ></div>
     <% javascript_include_tag "posts"%>
     <%end%>
+
 
     </object>
 
@@ -30,7 +33,9 @@
           <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
           <%= f.submit 'Submit', id: 'comment-submit-button' %>
         <% end %>
+
       </section>
+
     </article>
 
   </section>
