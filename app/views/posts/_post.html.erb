@@ -4,12 +4,15 @@
       <% if post.picture.present? %>
       <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
       <% elsif post.video.present? %>
-        <%= javascript_tag do %>
-          videoRef = "<%=j post.video_id %>";
-        <% end %>
-       <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player" class="video-post" ></div>
-    <% javascript_include_tag "posts"%>
+    <object width="297" height="206">
+  <param name="movie"
+         value="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"></param>
+  <param name="allowScriptAccess" value="always"></param>
+  <embed src="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"
+         type="application/x-shockwave-flash"
+         allowscriptaccess="always"
+         width="297" height="206"></embed>
+</object>
     <%end%>
 
     </object>

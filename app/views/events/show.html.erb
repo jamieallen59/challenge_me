@@ -169,7 +169,7 @@
     </p>
     <section class='mmf-button'>
       <%= image_tag("sync.png", id: 'sync-icon') %>
-      <%= link_to "Sync", trainingsession_mmf_path(@event), id: 'map-my-fitness-button-text', method: :post %>
+      <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
       </section>
   </section>
    <%end%>
