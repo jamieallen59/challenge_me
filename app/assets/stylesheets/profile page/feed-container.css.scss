@@ -91,7 +91,6 @@
 		padding-left: 10px;
 	}
 		a.delete-post {
-				font-style: italic;
 				font-size: small;
 				color: #3B5998;
 				cursor: pointer;
@@ -100,7 +99,6 @@
 					text-decoration: underline;
 				}
 			a.edit-post {
-				font-style: italic;
 				font-size: small;
 				color: #3B5998;
 				cursor: pointer;
@@ -151,10 +149,7 @@
 					height: 40px;
 					border-bottom-left-radius: 4px;
 					border: 1px solid #dfdfdf;
-					/* margin-bottom: -1px; */
-					/* margin-left: -1px; */
 					padding-left: 5px;
-					/* display: inline-block; */
 					float: left;
 				}
 				#comments-placeholder:focus {

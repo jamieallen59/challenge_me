@@ -91,9 +91,9 @@
 
     <section class='event-controls'>
       <% if @event.is_owner?(current_user) %>
-        <%= link_to 'Edit details', edit_event_path(@event), id: 'edit-event' %>
+        <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
         <div class='eventcontrols-separator'></div>
-        <%= link_to 'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
       <% end %>
     </section>
 
