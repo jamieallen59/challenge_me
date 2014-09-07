@@ -17,7 +17,7 @@ gem 'aws-sdk'
 gem 'oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-mapmyapi-mmf-oauth2', github: 'yoshdog/omniauth-mapmyapi-mmf-oauth2'
-gem 'mmf'
+gem 'mmf' 
 
 
 

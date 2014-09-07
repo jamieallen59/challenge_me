@@ -2,6 +2,12 @@
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
+          <% if @event.user.avatar.present? %>
+            <%= image_tag @event.user.avatar.url(:medium), class: 'profile-pic'  %>
+          <% end %>
+          <% if @event.is_owner?(current_user) %>
+            <%= link_to 'Add Profile Picture', profile_path(current_user, event_id: @event.id) %>
+          <% end %>
         </div>
       </section>
       <p id='event-user-name'>
