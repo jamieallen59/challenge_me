@@ -17,11 +17,11 @@ describe 'creating posts' do
 	context 'as a logged in user' do
 		before do
 			login_as @mary
-		end
-		it 'adds a text post to a form' do
 			visit event_path(@event)
 			click_link 'New Post'
 			fill_in 'Caption', with: '5k in 30 mins - yay!'
+		end
+		it 'adds a text post to a form' do
 			click_button 'Create Post'
 			expect(page).to have_content '5k in 30 mins - yay!'
 			expect(current_path).to eq event_path(@event)
@@ -30,9 +30,6 @@ describe 'creating posts' do
 		end
 
 		it 'can attach an image to a post' do
-			visit event_path(@event)
-			click_link 'New Post'
-			fill_in 'Caption', with: '5k in 30 mins - yay!'
 			attach_file 'Picture', Rails.root.join('app/assets/images/run.jpg')
 			click_button 'Create Post'
 			expect(page).to have_css 'img.uploaded-pic'
@@ -40,8 +37,6 @@ describe 'creating posts' do
 		end
 
 		it 'can attach a video link to a post' do 
-			visit event_path(@event)
-			click_link 'New Post'
 			fill_in 'Caption', with: 'This is me doing the cinnamon challenge'
 			fill_in 'Video', with: "https://www.youtube.com/watch?v=GJ3xR_oqeEQ"
 			click_button 'Create Post'
