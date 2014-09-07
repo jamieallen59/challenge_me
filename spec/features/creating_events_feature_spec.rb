@@ -45,7 +45,7 @@ describe 'Creating events' do
           visit select_events_path
           click_on 'Hot Dog Eating Contest'
         end
-        
+
         it 'selecting a just giving event should auto populate the fields' do
           expect(find_field('Name').value).to eq 'Hot Dog Eating Contest'
           expect(find('#event_target').value).to eq '10000'
@@ -58,7 +58,7 @@ describe 'Creating events' do
           click_button "Create Event"
           expect(page).to have_content "Hot Dog Eating Contest"
           expect(page).to have_content "fundraising for Freedom for makers"
-          expect(page).to have_content "Their fundraising target is £10000"
+          expect(page).to have_content " Fundraising target: £10000"
         end
       end
 

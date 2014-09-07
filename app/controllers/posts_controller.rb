@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
 	def create
 		@event = Event.find(params[:event_id])
-		@post = @event.posts.new(params[:post].permit(:caption, :picture, :video))
+		@post = @event.posts.new(params[:post].permit(:caption, :picture, :video, :text))
 		@post.user = current_user
 		if @post.save
 			redirect_to event_path(@event)
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 		@event = Event.find(params[:event_id])
 		@post = Post.find(params[:id])
 		# redirect_to '/' unless @post.owner?(current_user)
-		@post.update(params[:post].permit(:caption, :picture, :video))
+		@post.update(params[:post].permit(:caption, :picture, :video, :text))
 		redirect_to event_path(@event)
 	end
 

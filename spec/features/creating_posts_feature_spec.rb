@@ -21,6 +21,7 @@ describe 'creating posts' do
 			click_link 'New Post'
 			fill_in 'Caption', with: '5k in 30 mins - yay!'
 		end
+
 		it 'adds a text post to a form' do
 			click_button 'Create Post'
 			expect(page).to have_content '5k in 30 mins - yay!'
@@ -36,11 +37,20 @@ describe 'creating posts' do
 			expect(current_path).to eq event_path(@event)
 		end
 
-		it 'can attach a video link to a post' do 
+		it 'can attach a video link to a post' do
 			fill_in 'Caption', with: 'This is me doing the cinnamon challenge'
 			fill_in 'Video', with: "https://www.youtube.com/watch?v=GJ3xR_oqeEQ"
 			click_button 'Create Post'
 			expect(page).to have_css '.video-post'
+		end
+
+		it 'can create a text post' do
+			fill_in 'Caption', with: 'September Update'
+			fill_in 'Text', with: 'Hi guys, training is going really well'
+			click_button 'Create Post'
+			expect(page).to have_css '.text-post'
+			expect(page).to have_content 'September Update'
+			expect(page).to have_content 'Hi guys, training is going really well'
 		end
 	end
 
