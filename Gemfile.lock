@@ -163,8 +163,6 @@ GEM
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
-    owlcarousel-rails (1.1.3.3)
-      jquery-rails
     pg (0.17.1)
     poltergeist (1.5.1)
       capybara (~> 2.1)
@@ -290,7 +288,6 @@ DEPENDENCIES
   oauth2
   omniauth-mapmyapi-mmf-oauth2!
   omniauth-twitter
-  owlcarousel-rails
   paperclip!
   pg
   poltergeist

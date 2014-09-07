@@ -12,7 +12,7 @@ describe 'leaving comments' do
         login_as @mary
       end
 
-      it 'allows me to comment on a post' do
+      it 'allows me to comment on a post'  do
         visit event_path(@event)
         fill_in 'comments-placeholder', with: 'Great challenge!!'
         click_button('Submit')

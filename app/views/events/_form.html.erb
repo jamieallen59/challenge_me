@@ -24,7 +24,7 @@
       <%= f.text_field :name, class: 'event-form-input', placeholder: 'full name' %>
 
     <p class='event-form-label'>
-      <%= f.label :event_date, 'Event Date' %>
+      <%= f.label :event_date, 'Event Date', :order => [:day, :month, :year] %>
     </p>
     <section class='date-select-container'>
       <%= f.date_select :event_date, class: 'event-form-input' %>
@@ -46,8 +46,10 @@
     </p>
       <%= f.text_field :amount_raised, class: 'event-form-input', placeholder: '(leave empty if nothing)' %>
 
+    <p class='workout-selection-text'>
+      Workout target p/week
+    </p>
     <p class='workout-selection-form'>
-      
       <section class='workouts-button-container'>
         <%= f.radio_button(:training, 2, id:'2-workouts') %> 
         <%= f.label(:training, 2, id: '2-workouts-label') %>

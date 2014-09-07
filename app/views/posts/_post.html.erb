@@ -1,18 +1,31 @@
 <article class='post-container'>
   <section class='post-content'>
     <object class='uploaded-evidence'>
-      <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' if post.picture.present? %>
+      <% if post.picture.present? %>
+      <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
+      <% elsif post.video.present? %>
+        <%= javascript_tag do %>
+          videoRef = "<%=j post.video_id %>";
+        <% end %>
+       <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player" class="video-post" ></div>
+    <% javascript_include_tag "posts"%>
+    <%end%>
+
     </object>
 
-    <article class='evidence-comments'>
-      <% if post.comments.any? %>
-
-        <% post.comments.reverse_each do |comment| %>
-          <p><%= comment.user.full_name %> - <%= time_ago_in_words(comment.created_at) %></p>
-          <p><%= comment.comments %></p>
+    <article class='comments-container'>
+      <section class="comments-list">
+        <% if post.comments.any? %>
+          <% post.comments.reverse_each do |comment| %>
+            <article class="comment">
+              <p><strong><%= comment.user.full_name %></strong> - <%= time_ago_in_words(comment.created_at) %></p>
+              <p><%= comment.comments %></p>
+            </article>
+          <% end %>
         <% end %>
-      <% end %>
-      <section class='post-comments-container'>
+      </section>
+      <section class='comments-input-container'>
         <%= form_for [@event, post, @comment] do |f| %>
           <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
           <%= f.submit 'Submit', id: 'comment-submit-button' %>
@@ -25,14 +38,16 @@
     <section class='post-title'>
       <p class='post-caption'><%= post.caption %></p>
     </section>
-    <section class='post-date'>
-      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
-    </section>
-    <section class='post-controls'>
+
+    <span class='post-controls'>
       <% if post.is_owner?(current_user) %>
         <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
         <%= link_to 'Delete Post', event_post_path(@event, post), class: 'delete-post', method: :delete %>
       <% end %>
-    </section>
+    </span>
+     <span class='post-date'>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
+    </span>
+
   </header>
 </article>

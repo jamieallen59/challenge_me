@@ -11,7 +11,7 @@ describe 'creating pledges' do
     end
     it 'you can create a pledge' do
       visit event_path(@event)
-      click_link 'New Pledge'
+      click_link 'New pledge'
       fill_in 'Title', with: 'Herb challenge'
       fill_in 'Amount', with: '1000'
       fill_in 'Info', with: 'I promise to eat a lot of herbs'

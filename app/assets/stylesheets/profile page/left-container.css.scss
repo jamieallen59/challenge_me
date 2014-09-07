@@ -12,6 +12,7 @@
 	float: left;
 	text-align: center;
 	border-right: 1px solid #DFDFDF;
+	box-shadow: 0px 0px 5px 0px #DEDEDE;
 }
 	.picture-container {
 		display: flex;
@@ -134,25 +135,27 @@
 		text-align: center;
 	}
 		.log-training-button-container {
-			border-bottom: 1px solid #DFDFDF;
-			border-top: 1px solid #DFDFDF;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			background-color: #343434;
+			border: none;
+			width: 100%;
+			cursor: pointer;
+			font-size: 20px;
+			font-weight: 800;
+			height: 50px;
+			background: linear-gradient(#0073be, #004a7b);
+			color: white;
+			padding-bottom: 1px;
+			vertical-align: middle;
+			line-height: 48px;
 		}
 			#log-training-button {
-				border-radius: 3px;
 				cursor: pointer;
 				color: #FFF;
-				display: flex;
-				margin-left: 10%;
-				font-family: "Helvetica Neue", Helvetica;
 				font-size: 24px;
 				vertical-align: middle;
 				text-decoration: none;
 			}
 				.log-training-button-container:hover {
-					background-color: #E2790A;
+					background: linear-gradient(#4AA7E4, #146092);
 				}
 				#log-training-button:active {
 					position: relative;
@@ -164,7 +167,8 @@
 			color: #343434;
 			text-align: center;
 			display: flex;
-			margin: 5px;
+			margin-bottom: 10px;
+			border-top: 1px solid #DFDFDF;
 		}
 			#workouts-completed-percentage-number {
 				font-size: 4em;
@@ -199,25 +203,27 @@
 			}
 
 		.donate-button-container {
-			border-bottom: 1px solid #DFDFDF;
-			border-top: 1px solid #DFDFDF;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			background-color: #343434;
+			border: none;
+			width: 100%;
+			cursor: pointer;
+			font-size: 20px;
+			font-weight: 800;
+			height: 50px;
+			background: linear-gradient(#0073be, #004a7b);
+			color: white;
+			padding-bottom: 1px;
+			vertical-align: middle;
+			line-height: 50px;
 		}
 			#donations-button {
-					border-radius: 3px;
 					cursor: pointer;
 					color: #FFF;
-					display: flex;
-					margin-left: 35%;
-					font-family: "Helvetica Neue", Helvetica;
 					font-size: 24px;
 					vertical-align: middle;
 					text-decoration: none;
 				}
 					.donate-button-container:hover {
-						background-color: #E2790A;
+						background: linear-gradient(#4AA7E4, #146092);
 					}
 					#donations-button:active {
 						position: relative;

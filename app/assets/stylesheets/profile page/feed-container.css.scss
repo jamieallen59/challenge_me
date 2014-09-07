@@ -1,9 +1,17 @@
 /*------ Feed Container -----*/
+.page-divider {
+	width: 88%;
+	height: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	background-color: #EBEBEB;
+}
+
 .update-feed {
-	background-color: white;
+	background-color: #fbfbfb;;
 	flex-direction: column;
-	margin-top: 50px;
-	border: 1px solid #343434;
+	margin-top: 25px;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -13,19 +21,30 @@
 		display: flex;
 		margin: 5px;
 		height: 40px;
+		margin-bottom: 25px;
 	}
 		#new-post-link {
-			text-decoration: none;
-			width: 50%;
-			color: #FFF;
-			background-color: #000000;
 			text-align: center;
 			vertical-align: middle;
 			line-height: 40px;
+			text-decoration: none;
+			color: #2B1B17;
+			width: 50%;
+			font-weight: 800;
+			background-color: #E9E9E9;
+			/* background: rgba(255, 255, 255, 0.58); */
+			border: 2px solid white;
+			border-radius: .05em;
+			box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+			letter-spacing: 5px;
 		}
 			#new-post-link:hover {
-				background-color: #8CD1FF;
+				background-color: #f9f9f9;
 				color: #000;
+			}
+			#new-post-link:active {
+				position: relative;
+				top: 1px;
 			}
 		.newpost-separator {
 			background-color: #FFF;
@@ -34,116 +53,141 @@
 		#click-donate-link {
 		}
 
-	.post-container {
+
+/*--- Individual Posts ---*/
+.post-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 300px;
+	margin-top: 8px;
+	margin-bottom: 30px;
+	border: 1px solid #DFDFDF;
+	box-shadow: 0px 0px 8px 0px #DEDEDE;
+}
+	.post-content {
+		display: flex;
+		flex-direction: row;
+		padding: 10px;
+		height: 80%;
+	}
+
+	.post-header {
 		display: flex;
 		flex-direction: column;
-		width: 100%;
-		height: 300px;
-		margin-top: 5px;
+		height: 60px;
+		color: #343434;
 	}
-		.post-header {
-			display: flex;
-			flex-direction: column;
-			height: 60px;
-			color: white;
-			background-color: #A8A8A8;
-		}
-			.post-title {
-				width: 100%;
-				margin-top: 10px;
-				margin-left: 10px;
-				margin-bottom: 3px;
-				height: 35px;
-				text-align: center;
-			}
-			.post-date {
-				font-style: italic;
-				font-size: 14px;
-				width: 100%;
-				height: 25px;
-				text-align: right;
-			}
-				p.posted-by {
-					margin-right: 8px;
-				}
-
-		.post-content {
-			display: flex;
-			flex-direction: row;
-			border: 15px solid #A8A8A8;
-			height: 76%;
+		.post-title {
+			width: 100%;
+			margin-top: 10px;
+			margin-left: 10px;
+			margin-bottom: 3px;
+			height: 35px;
+			text-align: center;
 		}
 
-			.uploaded-evidence {
-				display: flex;
-				border: 1px solid grey;
-				width: 500px;
-				margin: 3px;
-			}
-
-			.evidence-comments {
-				display: flex;
-				position: relative;
-				flex-direction: column;
-				border: 1px solid #A8A8A8;
-				border-radius: 4px;
-				width: 40%;
-				margin: 3px;
-				font-size: 14px;
-			}
-				.post-comments-container {
-					position: absolute;
-					bottom: 0;
-					width: 100%;
-				}
-					#comments-placeholder {
-						font-size: 13px;
-						width: 69%;
-						height: 40px;
-						border-bottom-left-radius: 4px;
-						border: 1px solid #A8A8A8;
-						margin-bottom: -1px;
-						margin-left: -1px;
-						padding-left: 5px;
-					}
-					#comments-placeholder:focus {
-				    outline-width: 0;
-					}
-					#comment-submit-button {
-						border: none;
-						background: #A8A8A8;
-						margin-left: -4px;
-						width: 28.7%;
-						cursor: pointer;
-						font-size: 13px;
-						height: 44px;
-						padding-bottom: 1px;
-						margin-bottom: -1px;
-						border-bottom-right-radius: 4px;
-					}
-					#comment-submit-button:hover {
-						background: #b8b8b8;
-					}
-
-
-				.challenge-comment {
-					font-family: 12px;
-					margin: 4px;
-				}
-
-				#newpostlink {
-
-				}
-
-			p.post-caption {
-				text-align: initial;
-			}
-
-			a.delete-post {
-				font-style: italic;
+	.post-controls {
+		padding-left: 10px;
+	}
+		a.delete-post {
 				font-size: small;
+				color: #3B5998;
+				cursor: pointer;
 			}
+				.delete-post:hover {
+					text-decoration: underline;
+				}
 			a.edit-post {
-				font-style: italic;
 				font-size: small;
+				color: #3B5998;
+				cursor: pointer;
 			}
+				.edit-post:hover {
+					text-decoration: underline;
+				}
+
+		.post-date {
+			font-style: italic;
+			font-size: 14px;
+			width: 100%;
+			height: 25px;
+			text-align: right;
+			line-height: 1px
+		}
+			p.posted-by {
+				margin-right: 8px;
+			}
+
+
+		.uploaded-evidence {
+			display: flex;
+			border: 1px solid #DFDFDF;
+			width: 300px;
+			margin: 3px;
+		}
+
+		.comments-container {
+			font-size: 14px;
+			width: 60%;
+			height: 91%;
+			margin-top: 3px;
+		}
+			.comments-list{
+				border: 1px solid #dfdfdf;
+				height: 74%;
+				overflow: scroll;
+				padding: 5px;
+			}
+			.comments-input-container {
+				width: 100%;
+				height: 43px;
+			}
+				#comments-placeholder {
+					font-size: 15px;
+					width: 68%;
+					height: 40px;
+					border-bottom-left-radius: 4px;
+					border: 1px solid #dfdfdf;
+					padding-left: 5px;
+					float: left;
+				}
+				#comments-placeholder:focus {
+			    outline-width: 0;
+				}
+				#comment-submit-button {
+					border: none;
+					width: 30.1%;
+					cursor: pointer;
+					font-size: 20px;
+					font-weight: 800;
+					height: 45px;
+					background: linear-gradient(#0073be, #004a7b);
+					color: white;
+					padding-bottom: 1px;
+					border-bottom-right-radius: 4px;
+				}
+				#comment-submit-button:hover {
+					background: linear-gradient(#4AA7E4, #146092);
+				}
+
+				.comment{
+					padding: 2.5px;
+					line-height: 14px;
+					strong{
+						font-weight: bold;
+					}	
+				}
+
+			.challenge-comment {
+				font-family: 12px;
+				margin: 4px;
+			}
+
+			#newpostlink {
+
+			}
+
+		p.post-caption {
+			text-align: initial;
+		}
