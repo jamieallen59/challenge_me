@@ -1,9 +1,9 @@
 
 <%if @events.any?%>
-Hello USER.USERNAME
+Hello <%= current_user.firstname %></br>
 Which of your justgiving events do you want to view? </br>
-  <% @events.each do |event| %>
-    <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']) %></br>
+  <% @events.each_with_index do |event, index| %>
+    <%="#{index + 1}."%><%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']) %></br>
 
   <% end %>
     <%= link_to 'Create new event', new_event_path %>
