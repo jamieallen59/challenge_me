@@ -4,8 +4,9 @@ Hello USER.USERNAME
 Which of your justgiving events do you want to view? </br>
   <% @events.each do |event| %>
     <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']) %></br>
-    <%= link_to 'Create new event', new_event_path %>
+
   <% end %>
+    <%= link_to 'Create new event', new_event_path %>
 <%else %>
   <%= link_to 'Create new event', new_event_path %>
 <% end %>
