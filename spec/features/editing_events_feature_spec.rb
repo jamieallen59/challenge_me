@@ -29,6 +29,10 @@ describe 'Editing Events' do
       expect(page).to have_css '#profile-image a', text: 'Add Profile Pic'
     end
 
+    it 'should not display an image if no profile image is selected' do
+      expect(page).not_to have_css 'img.profile-pic'
+    end
+
     it 'can attach an image to a profile' do
       click_link 'Add Profile Picture'
       attach_file 'Avatar', Rails.root.join('app/assets/images/run.jpg')
