@@ -40,23 +40,26 @@ describe 'Creating events' do
         expect(page).to have_content 'Say Yo'
       end
 
-      it 'selecting a just giving event should auto populate the fields' do
-        visit select_events_path
-        click_on 'Hot Dog Eating Contest'
-        expect(find_field('Name').value).to eq 'Hot Dog Eating Contest'
-        expect(find('#event_target').value).to eq '10000'
-        expect(find('#event_amount_raised').value).to eq '20'
-        expect(find('#event_charity').value).to eq 'Freedom for makers'
-      end
+      describe 'creating a justgiving event' do
+        before do
+          visit select_events_path
+          click_on 'Hot Dog Eating Contest'
+        end
+        
+        it 'selecting a just giving event should auto populate the fields' do
+          expect(find_field('Name').value).to eq 'Hot Dog Eating Contest'
+          expect(find('#event_target').value).to eq '10000'
+          expect(find('#event_amount_raised').value).to eq '20'
+          expect(find('#event_charity').value).to eq 'Freedom for makers'
+        end
 
-      it 'creating an event from the auto populated data will create the event' do
-        visit select_events_path
-        click_on 'Hot Dog Eating Contest'
-        choose "4-workouts"
-        click_button "Create Event"
-        expect(page).to have_content "Hot Dog Eating Contest"
-        expect(page).to have_content "fundraising for Freedom for makers"
-        expect(page).to have_content "Their fundraising target is £10000"
+        it 'creating an event from the auto populated data will create the event' do
+          choose "4-workouts"
+          click_button "Create Event"
+          expect(page).to have_content "Hot Dog Eating Contest"
+          expect(page).to have_content "fundraising for Freedom for makers"
+          expect(page).to have_content "Their fundraising target is £10000"
+        end
       end
 
       context 'invalid data' do
@@ -65,7 +68,6 @@ describe 'Creating events' do
           click_on 'Hot Dog Eating Contest'
           fill_in 'Name', with: '12Big Foot'
           click_button 'Create Event'
-
           expect(page).to have_content 'error'
         end
       end
