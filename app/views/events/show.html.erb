@@ -8,7 +8,7 @@
         <%= @event.user.full_name %>
       </p>
     </section>
-  
+
     <section class='event-details-container'>
       <!-- <div class='ribbon-wrapper'>
         <div class='ribbon-front'><%= @event.name %></div>
@@ -17,7 +17,7 @@
         <div class='ribbon-edge-bottomleft'></div>
         <div class='ribbon-edge-bottomright'></div>
       </div> -->
-      <p id='event-paragraph'><%= @event.name %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
+      <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %>. Their fundraising target is £<%= @event.target %>. The big event is on <%= @event.event_date.strftime("%d %B %Y") %> and they've raised £<%= @event.amount_raised %> so far.</p>
     </section>
 
     <section class='days-remaining'>
@@ -25,7 +25,7 @@
         <p id='event-today-text'>Today's the day!</p>
       <% elsif (@event.event_date > Date.today) %>
         <p id='days-remaining-number'>
-          <%=  "#{(@event.event_date - Date.today).to_i}" %></p> 
+          <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
         <p id='date-remaining-text'>days to go!</p>
       <% else %>
         <p id='days-remaining-head'>Event completed</p>
@@ -100,7 +100,7 @@
     <section class='pledge-container'>
     <% if @pledges.any? %>
       <p class='pledge-title'>
-        <%= @event.name %>'s pledge:
+        <%= @event.user.firstname %>'s pledge:
       </p>
       <p class='pledge-information'>
         "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
