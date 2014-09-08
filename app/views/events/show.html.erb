@@ -53,35 +53,36 @@
     </section>
 
 
-   <!--  <section class='percentage-completion'>
-      <p id="event-percentage-number"><%= @event.percentage_of_target %>%</p>
-      <p id='event-percentage-text'>of fundraising target achieved.</p>
-    </section> -->
+    <section class='training-stats'>
+      <section class='training-headline'>
+        <p id='training-section-headline'><%= @event.user.firstname.capitalize %>'s training</p>
+      </section>
+
+      <section class='percentage-completed-workouts'>
+        <p id='workouts-completed-number'>
+           <%= @event.trainingsessions.count%></p>
+        <p id='workouts-completed-text'>
+         workouts completed
+        </p>
+      </section>
 
     <section class='training-totals'>
-     <p id='training-goal-headline'>Training goal:</p>
+     <p id='training-goal-headline'>Goal</p>
      <p id='training-goal-number'><%= @event.training %></p>
       <p id='training-goal-text'>sessions per week.</p>
     </section>
 
-    <section class='training-stats'>
-      <section class='percentage-completed-workouts'>
-        <p id='workouts-completed-percentage-number'>
-          <%= @event.percentage_of_workouts_complete.to_f.round %>%</p>
-        <p id='workouts-completed-text'>
-         of total training sessions completed.
-        </p>
-      </section>
+
 
       <section class='workouts-completed-by-user'>
         <p id='workouts-completed-head'>
-          <%= @event.user.firstname %> has completed
+          <%= @event.user.firstname %> has worked out
         </p>
         <p id='workouts-completed-number'>
           <%= @event.weekly_training_sessions%>
         </p>
         <p id='workouts-completed-footer'>
-           workouts this week.
+            times this week.
         </p>
       </section>
 
