@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
   //gets the donation amount
@@ -60,12 +61,17 @@ $(document).ready(function(){
     addAttribute('#6-workouts', 'checked', 'checked');
   });
 
-
-  $(".modal-button").on('click', function(){
-      $('#ex1').modal({
-          fadeDuration: 500,
-          fadeDelay: 0.30
-      });
-      return false;
+  function displayModal(e){
+  e.preventDefault();
+  $($(e.target).attr('data-modal-selector')).modal({
+      fadeDuration: 500,
+      fadeDelay: 0.30
   });
+}
+
+  $(".modal-button").on('click', displayModal);
+  $(".pledge-modal-button").on('click', displayModal);
+  $(".new-post-modal-button").on('click', displayModal);
+  $(".menu-modal-button").on('click', displayModal);
+
 });
