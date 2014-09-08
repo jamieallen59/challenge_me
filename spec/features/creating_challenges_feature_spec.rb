@@ -52,4 +52,27 @@ describe 'Setting your friends a challenge' do
 		end
 
 	end
+
+	context 'when logged in' do
+		it  'Challenge Me link is not displayed' do
+			login_as @mary
+			visit event_path(@event)
+			expect(page).not_to have_content 'Challenge Me'
+		end
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

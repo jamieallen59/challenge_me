@@ -16,11 +16,6 @@
         <%= @event.user.full_name %>
       </p>
     </section>
-
-
-    <section class="challenge-me">
-      <%= link_to "Challenge Me", new_event_challenge_path(@event), class: 'challenge-me-button' %>
-    </section>
   
     <section class='event-details-container'>
       <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %>. They've raised £<%= @event.amount_raised %> so far.</p>
@@ -178,8 +173,11 @@
     </section>
   <%end%>
 
-   <div class='page-divider'></div>
+<% if current_user == @event.user %>
+  <%= link_to "Challenge Me", new_event_challenge_path(@event), class: 'challenge-me-button', id: "new-post-link" %>
+<% end %>
 
+   <div class='page-divider'></div>
   <section class='update-feed'>
     <section class='donations-container'>
     <%= link_to 'New Post', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
