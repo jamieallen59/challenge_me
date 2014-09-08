@@ -48,8 +48,8 @@
               <% end %>
       <section class='comments-input-container'>
         <%= form_for [@event, post, @comment] do |f| %>
-          <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
-          <%= f.submit 'Submit', id: 'comment-submit-button' %>
+          <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Thoughts..?' %>
+          <%= f.submit 'Comment', id: 'comment-submit-button' %>
         <% end %>
       </section>
     </section>
