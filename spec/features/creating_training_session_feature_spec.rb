@@ -7,7 +7,7 @@ describe 'Creating training sessions' do
  	  	@mary = create(:user)
     	@event = create(:event, created_at: Date.new(2014, 9, 1), user: @mary)
     	login_as @mary
-      client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00"}]
+      client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00", "_links" => {"not_route" => [{"id" => "381958558"}]}}]
       allow(Mmf::Client).to receive(:new).and_return(client)
     	visit event_path(@event)
     end

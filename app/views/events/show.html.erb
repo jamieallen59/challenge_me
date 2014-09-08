@@ -79,8 +79,8 @@
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
-          <p id='recent-workout-details-head'>Most recent session details<br>
-            <%= @trainingsessions.last.details %>
+          <p id='recent-workout-details-head'>Most recent session details:<br>
+            <%= @trainingsessions.last.details %> on <%=@trainingsessions.last.sessiondate %>
           </p>
        <%end%>
      </section>
@@ -301,3 +301,4 @@
       });
   }
 </script>
+

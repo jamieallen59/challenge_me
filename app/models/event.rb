@@ -47,18 +47,18 @@ class Event < ActiveRecord::Base
   end
 
   def validate_mmf_data
-    client = Mmf::Client.new do |config|
-      config.client_key    = Rails.application.secrets.map_my_api_key
-      config.client_secret = Rails.application.secrets.map_my_api_secret
-      config.access_token  = user.identities.find_by(provider: 'mapmyfitness').token
-    end
-    if client.workouts.any?
-      client.workouts.each do |workout|
-          workout_date =  workout["start_datetime"].slice(0..(workout["start_datetime"].index('T'))).chop
-          if workout_date >= created_at && !previously_logged?(workout)
-            trainingsessions.create(details: workout["name"], sessiondate: workout_date )
-          end
+
+    client = connect_to_api
+    client.workouts.each do |workout|
+    
+      workout_date, workout_name = assign_from_hash(workout)
+      return unless valid_new_workout?(workout_date, workout)
+      trainingsession = trainingsessions.new(details: workout_name, sessiondate: workout_date)
+      if route_logged?(workout)
+        trainingsession.mmf_updated_datetime = workout["updated_datetime"]
+        trainingsession.mmf_route_id = (workout['_links']['route'][0]["id"]).to_s
       end
+      trainingsession.save    
     end
   end
 
@@ -67,6 +67,27 @@ private
   def previously_logged?(workout)
     logged_workouts = trainingsessions.all
     logged_workouts.any?{|logged| logged.details == workout["name"]}
+  end
+
+  def route_logged?(workout)
+    workout['_links'].include?("route")
+  end
+
+  def connect_to_api
+   Mmf::Client.new do |config|
+      config.client_key    = Rails.application.secrets.map_my_api_key
+      config.client_secret = Rails.application.secrets.map_my_api_secret
+      config.access_token  = user.identities.find_by(provider: 'mapmyfitness').token
+    end
+  end
+
+  def assign_from_hash(workout)
+      workout_date =  workout["start_datetime"].slice(0..(workout["start_datetime"].index('T'))).chop
+      [workout_date, workout['name'].empty? ? "Workout on #{workout_date}" : workout['name'] ]
+  end
+
+  def valid_new_workout?(workout_date, workout)
+    workout_date >= created_at && !previously_logged?(workout)
   end
 
 end
