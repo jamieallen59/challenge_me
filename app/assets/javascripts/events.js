@@ -1,10 +1,3 @@
-function displayModal(e){
-  e.preventDefault();
-  $($(e.target).attr('data-modal-selector')).modal({
-      fadeDuration: 500,
-      fadeDelay: 0.30
-  });
-}
 
 $(document).ready(function(){
 
@@ -67,9 +60,18 @@ $(document).ready(function(){
     removeAttribute('input[type="radio"]', 'checked');
     addAttribute('#6-workouts', 'checked', 'checked');
   });
-  
+
+  function displayModal(e){
+  e.preventDefault();
+  $($(e.target).attr('data-modal-selector')).modal({
+      fadeDuration: 500,
+      fadeDelay: 0.30
+  });
+}
+
   $(".modal-button").on('click', displayModal);
   $(".pledge-modal-button").on('click', displayModal);
   $(".new-post-modal-button").on('click', displayModal);
+  $(".menu-modal-button").on('click', displayModal);
 
 });
