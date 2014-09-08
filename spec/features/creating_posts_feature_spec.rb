@@ -7,11 +7,9 @@ describe 'creating posts' do
 	end
 
 	context 'as a logged out user' do
-		it 'should redirect you to the sign in page' do
+		it 'you cannot post' do
 			visit event_path(@event)
-			click_link 'UPDATE SPONSORS'
-			expect(page).to have_content('Log in')
-			expect(current_path).to eq new_user_session_path
+			expect(page).not_to have_link('UPDATE SPONSORS')
 		end
 	end
 
