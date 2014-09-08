@@ -27,7 +27,7 @@
      <% else %>
 
       <section class='challenge-me'>
-        <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
+        <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button', id: "challenge-me-link", data: { :'modal-selector' => '#new-challenge-modal' } %>
         </section>
       <% end %>
     </section>
@@ -274,7 +274,32 @@
 
   </div>
 
-   <div id="menu-modal" style="display:none;">
+  <div id="new-challenge-modal" style="display:none;">
+    <%= form_for [@event, @event.challenges.new] do |f| %>
+
+      <section class="challenge-creator-modal">
+        <%= f.label :creator, 'What is your name?' %>
+        <%= f.text_field :creator %>
+      </section>
+      
+      <section class="challenge-name-modal">
+        <%= f.label :name, 'Describe the challange' %>
+        <%= f.text_field :name %>
+      </section>
+      <section class="challenge-amount-modal">
+        <%= f.label :amount, 'How much will you donate for completing this challenge?' %>
+        <%= f.text_field :amount %>
+      </section>
+      <section  class="challenge-create-modal">
+        <%= f.submit 'Create challenge', class: 'modal-button-create' %>
+      </section>
+
+    <%end%>
+  </div>
+
+
+
+  <div id="menu-modal" style="display:none;">
     <section class='modal-body'>
       <p class='log-training-button-container'>
          <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
@@ -290,7 +315,7 @@
          <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
     </section>
 
-  <section class="modal-footer">
+    <section class="modal-footer">
      <a class='close-modal' href="#" rel="modal:close">Close</a>
     </section>
   </div>
