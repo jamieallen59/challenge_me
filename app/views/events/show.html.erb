@@ -27,7 +27,7 @@
      <% else %>
 
       <section class='challenge-me'>
-        <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
+        <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button', id: "challenge-me-link", data: { :'modal-selector' => '#new-challenge-modal' } %>
         </section>
       <% end %>
     </section>
@@ -152,7 +152,7 @@
         </div>
         </div>
 
-        
+
     </section>
 
    <div class='page-divider'></div>
@@ -274,23 +274,44 @@
 
   </div>
 
-   <div id="menu-modal" style="display:none;">
-    <section class='modal-body'>
-      <p class='log-training-button-container'>
-         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
-      </p>
-      <section class='mmf-button'>
-        <%= image_tag("sync.png", id: 'sync-icon') %>
-        <%= link_to "Sync with Map my Fitness", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
-      </section>
-              <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
-        <div class='eventcontrols-separator'></div>
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
-        <div class='eventcontrols-separator'></div>
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
-    </section>
+  <div id="new-challenge-modal" style="display:none;">
+    <%= form_for [@event, @event.challenges.new] do |f| %>
 
-  <section class="modal-footer">
-     <a class='close-modal' href="#" rel="modal:close">Close</a>
+      <section class="challenge-creator-modal">
+        <%= f.label :creator, 'What is your name?' %>
+        <%= f.text_field :creator %>
+      </section>
+
+      <section class="challenge-name-modal">
+        <%= f.label :name, 'Describe the challange' %>
+        <%= f.text_field :name %>
+      </section>
+      <section class="challenge-amount-modal">
+        <%= f.label :amount, 'How much will you donate for completing this challenge?' %>
+        <%= f.text_field :amount %>
+      </section>
+      <section  class="challenge-create-modal">
+        <%= f.submit 'Create challenge', class: 'modal-button-create' %>
+      </section>
+
+    <%end%>
+  </div>
+
+
+
+  <div id="menu-modal" style="display:none;">
+    <section class='modal-body'>
+        <%= link_to image_tag("sync.png", id: 'delete-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
+
+         <%= link_to image_tag("log.png", id: 'delete-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+
+        <%= link_to image_tag("edit.png", id: 'delete-logo')+ "Edit #{@event.name}", edit_event_path(@event), class:"menu-event" %><br>
+
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), class:"menu-event", method: :delete %><br>
+
+         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, class:"menu-event"%><br>
+
+        <%= link_to image_tag("signout.png", id: 'delete-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
+
     </section>
   </div>

@@ -11,7 +11,7 @@ describe 'Setting your friends a challenge' do
 
 		it 'displays a button to set a challenge' do
 			visit event_path(@event)
-			expect(page).to have_css '.challenge-me-button'
+			expect(page).to have_css '#challenge-me-link'
     end
 
 		it 'when the button is pressed, directs them to the new challenge page' do

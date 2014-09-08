@@ -73,6 +73,8 @@ $(document).ready(function(){
   $(".pledge-modal-button").on('click', displayModal);
   $(".new-post-modal-button").on('click', displayModal);
   $(".menu-modal-button").on('click', displayModal);
+  $(".challenge-me-button").on('click', displayModal);
+
 
 moveProgressBar();
         $(window).resize(function() {
