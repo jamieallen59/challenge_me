@@ -26,11 +26,11 @@ RSpec.describe Trainingsession, :type => :model do
   end
 
   context 'when using mmf syncing' do
-      before(:each) do 
-        @mary = create(:user)
-        @event = create(:event, created_at: Date.new(2014, 9, 1), user: @mary)
-        login_as @mary
-      end
+    before(:each) do 
+      @mary = create(:user)
+      @event = create(:event, created_at: Date.new(2014, 9, 1), user: @mary)
+      login_as @mary
+    end
 
     it 'will save workouts created after the event is created' do 
       client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00"}]
