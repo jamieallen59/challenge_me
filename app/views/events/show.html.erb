@@ -1,7 +1,4 @@
   <section class='container-left'>
-
-
-
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -20,26 +17,21 @@
       </p>
     </section>
 
-
-
-
     <section class='event-details-container'>
       <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <%= @event.charity %> by <%= @event.name %> on <%= @event.event_date.strftime("%d %B '%y") %></p>
     </section>
-
-
 
     <section class='donate-button-container'>
       <% if current_user == @event.user %>
           <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a></p>
      <% else %>
+
       <section class='challenge-me'>
         <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
-        <% end %>
-      </section>
+        </section>
+      <% end %>
 
     </section>
-
 
     <section class='training-stats'>
       <section class='training-headline'>
@@ -55,42 +47,37 @@
       </section>
 
     <section class='training-totals'>
-
-     <p id='training-goal-headline'>GOAL</p>
-     <p id='training-goal-number'><%= @event.training %></p>
+      <p id='training-goal-headline'>GOAL</p>
+      <p id='training-goal-number'><%= @event.training %></p>
       <p id='training-goal-text'>sessions per week.</p>
     </section>
 
-
-
-      <section class='workouts-completed-by-user'>
-        <p id='workouts-completed-head'>
-          <%= @event.user.firstname.capitalize %> has worked out
-        </p>
-        <p id='workouts-completed-number'>
-          <%= @event.weekly_training_sessions%>
-        </p>
-        <p id='workouts-completed-footer'>
-            times this week.
-        </p>
-      </section>
+    <section class='workouts-completed-by-user'>
+      <p id='workouts-completed-head'>
+        <%= @event.user.firstname.capitalize %> has worked out
+      </p>
+      <p id='workouts-completed-number'>
+        <%= @event.weekly_training_sessions%>
+      </p>
+      <p id='workouts-completed-footer'>
+          times this week.
+      </p>
+    </section>
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
+
           <p id='recent-workout-details-head'>LAST <br> WORKOUT
             <%= @trainingsessions.last.details %>
+
           </p>
        <%end%>
-     </section>
     </section>
-
+  </section>
 </section>
 
 <section class='main-content-container'>
   <section class='container-top'>
-
-
-
     <section class='fundraising-stats'>
       <section class='fundraising-stats-percentage-complete'>
         <p id='fundraising-stats-percentage-text'>
@@ -139,7 +126,7 @@
     <section class='pledge-container'>
         <% if @pledges.any? %>
           <p class='pledge-title'>
-            <%= @event.user.firstname.upcase %> swears:
+            <%= @event.user.firstname.capitalize %> swears:
           </p>
           <p class='pledge-information'>
             "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
@@ -156,20 +143,19 @@
     </section>
   </section>
 
+   <div class='page-divider'></div>
 
-  <div class='page-divider'></div>
+    <section class='donations-container'>
+    <% if current_user == @event.user %>
+        <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
+        <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+    <% else %>
+    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donate-button" %>
+      <%end%>
+   </section>
+
   <section class='update-feed'>
 
-  <section class='donations-container'>
-    <% if current_user == @event.user %>
-        <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
-     <div class='newpost-separator'></div>
-        <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
-    <% else %>
-    <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
-      <%end%>
-
-  </section>
 
     <% if @challenges.any? %>
     <section class='challenge-count'>
@@ -276,6 +262,24 @@
 
   </div>
 
+<<<<<<< HEAD
+<script>
+  $(document).ready(function(){
+      $(".modal-button").on('click', displayModal);
+      $(".pledge-modal-button").on('click', displayModal);
+      $(".new-post-modal-button").on('click', displayModal);
+  });
+
+  function displayModal(e){
+      e.preventDefault();
+      $($(e.target).attr('data-modal-selector')).modal({
+          fadeDuration: 500,
+          fadeDelay: 0.30
+      });
+  }
+</script>
+
+=======
   <div id="menu-modal" style="display:none;">
     <section class='modal-body'>
       <p class='log-training-button-container'>
@@ -296,3 +300,4 @@
      <a class='close-modal' href="#" rel="modal:close">Close</a>
     </section>
   </div>
+>>>>>>> e2262f00cfd53532d8af6ed1c57c5bd704a63221
