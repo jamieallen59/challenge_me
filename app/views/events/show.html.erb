@@ -142,6 +142,19 @@
     </section>
   </section>
 
+  <section class="target-bar-container">
+     <%= javascript_tag do %>
+          amountRaised = "<%=j @event.amount_raised.to_s %>";
+          targetAmount = "<%=j @event.target.to_s %>";
+      <% end %>
+        <div class="target-wrap progress" data-progress-percent="">
+        <div class="target-bar progress">
+        </div>
+        </div>
+
+        
+    </section>
+
    <div class='page-divider'></div>
 
     <section class='donations-container'>
@@ -259,4 +272,25 @@
     </section>
     <%end%>
 
+  </div>
+
+   <div id="menu-modal" style="display:none;">
+    <section class='modal-body'>
+      <p class='log-training-button-container'>
+         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
+      </p>
+      <section class='mmf-button'>
+        <%= image_tag("sync.png", id: 'sync-icon') %>
+        <%= link_to "Sync with Map my Fitness", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
+      </section>
+              <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
+        <div class='eventcontrols-separator'></div>
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+        <div class='eventcontrols-separator'></div>
+         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
+    </section>
+
+  <section class="modal-footer">
+     <a class='close-modal' href="#" rel="modal:close">Close</a>
+    </section>
   </div>
