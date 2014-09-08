@@ -7,19 +7,18 @@
         <div id='profile-image'>
             <% if @event.is_owner?(current_user) %>
               <%= link_to profile_path(current_user, event_id: @event.id) do %>
-              <%= icon('camera', '',class:'icon-camera') %>
+                <%= icon('camera', '',class:'icon-camera') %>
+              <% end %>
             <% end %>
-          <% end %>
           <% if @event.user.avatar.present? %>
             <%= image_tag @event.user.avatar.url(:medium), class: 'profile-pic'  %>
           <% end %>
         </div>
       </section>
       <p id='event-user-name'>
-        <%= @event.user.full_name %>
+        <%= @event.user.firstname.capitalize %> <%= @event.user.lastname.capitalize %>
       </p>
     </section>
-
 
 
 
@@ -28,20 +27,18 @@
       <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <%= @event.charity %> by <%= @event.name %> on <%= @event.event_date.strftime("%d %B '%y") %></p>
     </section>
 
-    <% if current_user == @event.user %>
-          <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a></p>
-     <% end %>
+
 
     <section class='donate-button-container'>
-          <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donations-button" %>
+      <% if current_user == @event.user %>
+          <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a></p>
+     <% else %>
+      <section class='challenge-me'>
+        <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
+        <% end %>
+      </section>
+
     </section>
-
-
-    <section class="donate-button-container">
-      <%= link_to "Challenge Me", new_event_challenge_path(@event), id: "donations-button" %>
-    </section>
-
-
 
 
     <section class='training-stats'>
@@ -153,22 +150,25 @@
 
           </p>
           <p class='pledge-information-empty'>
-            <%= @event.user.firstname.upcase %> hasn't promised to do anything yet...
+            <%= @event.user.firstname.capitalize %> hasn't promised to do anything yet...
           </p>
         <%end%>
     </section>
   </section>
 
-   <div class='page-divider'></div>
 
+  <div class='page-divider'></div>
   <section class='update-feed'>
-    <section class='donations-container'>
-      <% if current_user == @event.user %>
-          <%= link_to 'UPDATE', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
-       <div class='newpost-separator'></div>
-          <%= link_to "SWEAR", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
-        <%end%>
-    </section>
+
+  <section class='donations-container'>
+    <% if current_user == @event.user %>
+        <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
+     <div class='newpost-separator'></div>
+        <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+    <% else %>
+    <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
+      <%end%>
+
   </section>
 
     <% if @challenges.any? %>
@@ -273,9 +273,8 @@
       <a class='close-modal' href="#" rel="modal:close">Close</a>
     </section>
     <%end%>
-  </div>
 
-  iv>
+  </div>
 
   <div id="menu-modal" style="display:none;">
     <section class='modal-body'>
