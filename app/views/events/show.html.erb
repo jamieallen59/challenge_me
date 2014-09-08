@@ -65,8 +65,10 @@
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
+
           <p id='recent-workout-details-head'>LAST <br> WORKOUT
             <%= @trainingsessions.last.details %>
+
           </p>
        <%end%>
     </section>
@@ -140,20 +142,19 @@
     </section>
   </section>
 
+   <div class='page-divider'></div>
 
-  <div class='page-divider'></div>
+    <section class='donations-container'>
+    <% if current_user == @event.user %>
+        <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
+        <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+    <% else %>
+    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donate-button" %>
+      <%end%>
+   </section>
+
   <section class='update-feed'>
 
-  <section class='donations-container'>
-    <% if current_user == @event.user %>
-        <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
-     <div class='newpost-separator'></div>
-        <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
-    <% else %>
-    <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
-      <%end%>
-
-  </section>
 
     <% if @challenges.any? %>
     <section class='challenge-count'>
@@ -258,25 +259,4 @@
     </section>
     <%end%>
 
-  </div>
-
-  <div id="menu-modal" style="display:none;">
-    <section class='modal-body'>
-      <p class='log-training-button-container'>
-         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
-      </p>
-      <section class='mmf-button'>
-        <%= image_tag("sync.png", id: 'sync-icon') %>
-        <%= link_to "Sync with Map my Fitness", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
-      </section>
-              <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
-        <div class='eventcontrols-separator'></div>
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
-        <div class='eventcontrols-separator'></div>
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
-    </section>
-
-  <section class="modal-footer">
-     <a class='close-modal' href="#" rel="modal:close">Close</a>
-    </section>
   </div>
