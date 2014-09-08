@@ -11,6 +11,31 @@
   overflow: scroll;
 }
 
+.event-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border-radius: 3px;
+  background-color: #F4F4F4;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 15px;
+  border: 2px solid #FFF;
+
+  h2 {
+    color: #343434;
+    font-size: 23px;
+  }
+
+  p {
+    color: #666666;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
 /*---- The Create Event form ---*/
 
 .new-event-form {
