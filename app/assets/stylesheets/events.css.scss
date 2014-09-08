@@ -202,6 +202,34 @@
 		border: 3px solid rgb(199, 86, 86);
 	}
 
-
+		.menu-event {
+			vertical-align: middle;
+			cursor: pointer;
+			line-height: 40px;
+			margin-top: 20px;
+			margin-right: auto;
+			margin-left: auto;
+			background-color: #FFF;
+			color: #000;
+			text-decoration: none;
+			font-size: 22px;
+			padding: 6px;
+			width: 60%;
+			font-weight: 800;
+			border: 2px solid white;
+			border-radius: .05em;
+			letter-spacing: 5px;
+		}
+			.menu-event:hover {
+				background-color: #e7e7e7;
+				color:white;
+			}
+			.menu-event:active {
+				position: relative;
+				top: 1px;
+			}
+			.menu-event:focus {
+		    outline-width: 0;
+			}
 
 
