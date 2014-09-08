@@ -1,9 +1,6 @@
   <section class='container-left'>
 
-     <% if current_user == @event.user %>
-          <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button'><%= image_tag("menu48.png", id: 'delete-logo') %></a></p>
 
-     <% end %>
 
     <section class='picture-container'>
       <section class='profile-picture' >
@@ -33,6 +30,10 @@
     <section class='event-details-container'>
       <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <%= @event.charity %> by <%= @event.name %> on <%= @event.event_date.strftime("%d %B '%y") %></p>
     </section>
+
+    <% if current_user == @event.user %>
+          <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a></p>
+     <% end %>
 
     <section class='donate-button-container'>
           <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donations-button" %>
@@ -204,7 +205,7 @@
       </section>
 
       <section class="pledge-create-modal">
-        <%= f.submit 'Swear you will do this', class: 'modal-button-create' %>
+        <%= f.submit 'PROMISE', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
