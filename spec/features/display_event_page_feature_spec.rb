@@ -18,8 +18,8 @@ describe 'show event page' do
     allow(JustGiving::Fundraising).to receive(:new).and_return(fundraising)
 
     visit event_path(@event)
-    expect(page).to have_content 'raised £10.0 so far'
-    expect(page).to have_content '1% of fundraising target achieved'
+    expect(page).to have_content 'Raised so far: £10.0'
+    expect(page).to have_content 'Percentage complete: 1%'
   end
 
  context 'creators can access their other events from profile page' do
@@ -28,6 +28,7 @@ describe 'show event page' do
   end
   it 'by clicking my events button' do
     visit event_path(@event)
+    click_link 'MENU'
     click_link 'My Events'
     expect(current_path).to eq select_events_path
   end

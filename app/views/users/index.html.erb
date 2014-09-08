@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
-
-<body>
-	<% if @users.any? %>
-		<% @users.each do |user| %>
-    <%= user.firstname.capitalize %> event's </br>
-			<% user.events.each do |event| %>
-
-        <%= link_to event.name.capitalize, event_path(event.id) %>
-        <%= event.charity %>
-        <%=  (event.event_date - Date.today).to_i %> days to go!
-        <%= event.percentage_of_target %>% complete
-			<% end %>
-		<% end %>
-	<% end %>
-
-
-
-</body>
-
-</html>
+<% if @users.any? %>
+  <section class="main-form-container">
+  	<% @users.each do |user| %>
+      <%= user.firstname.capitalize %> event's </br>
+      <%= render user.events %>
+  	<% end %>
+  </section>
+<% end %>

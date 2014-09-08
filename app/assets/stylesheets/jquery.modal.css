@@ -76,3 +76,7 @@
       background-color: #fff;
       border-color: #ccc;
     }
+
+  #menu-modal {
+    width: 35%;
+  }

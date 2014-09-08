@@ -7,6 +7,9 @@ require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
 require 'launchy'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
+end
 Capybara.javascript_driver = :poltergeist
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }

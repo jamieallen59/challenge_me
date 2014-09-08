@@ -11,6 +11,52 @@
   overflow: scroll;
 }
 
+.event-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border-radius: 3px;
+  background-color: #F4F4F4;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 15px;
+  border: 2px solid #FFF;
+
+  h2 {
+    color: #343434;
+    font-size: 23px;
+  }
+
+  p {
+    color: #666666;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .event-states {
+    ul {
+      padding-top: 5%;
+      li {
+        padding-left: 10px;
+        margin-right: 10px;
+        float: left;
+        display: inline-block;
+
+        strong {
+          padding-bottom: 5px;
+          margin-left: 5%;
+          color: #343434;
+          font-size: 18px;
+          font-weight: bold;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
 /*---- The Create Event form ---*/
 
 .new-event-form {
@@ -31,6 +77,24 @@
 	margin-bottom: 5px;
 	font-weight: 400;
 	color: #343434;
+}
+
+.event-select-button {
+	vertical-align: middle;
+	cursor: pointer;
+	line-height: 40px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #e7e7e7;
+	font-size: 20px;
+	padding: 6px;
+	width: 60%;
+	font-weight: 800;
+	border: 2px solid white;
+	border-radius: .05em;
+	letter-spacing: 4px;
+	text-decoration: none;
 }
 
 .event-form-input {
@@ -184,6 +248,34 @@
 		border: 3px solid rgb(199, 86, 86);
 	}
 
-
+		.menu-event {
+			vertical-align: middle;
+			cursor: pointer;
+			line-height: 40px;
+			margin-top: 20px;
+			margin-right: auto;
+			margin-left: auto;
+			background-color: #FFF;
+			color: #000;
+			text-decoration: none;
+			font-size: 22px;
+			padding: 6px;
+			width: 60%;
+			font-weight: 800;
+			border: 2px solid white;
+			border-radius: .05em;
+			letter-spacing: 5px;
+		}
+			.menu-event:hover {
+				background-color: #e7e7e7;
+				color:white;
+			}
+			.menu-event:active {
+				position: relative;
+				top: 1px;
+			}
+			.menu-event:focus {
+		    outline-width: 0;
+			}
 
 

@@ -9,8 +9,8 @@ describe 'Setting your friends a challenge' do
 	context 'challenge creator not signed in' do
 		it 'displays a button to set a challenge' do
 			visit event_path(@event)
-			expect(page).to have_css 'a.challenge-me-button'
-		end
+			expect(page).to have_css '#challenge-me-link'
+    end
 
 		it 'directs them to the new challenge page' do
 			visit event_path(@event)
@@ -51,5 +51,13 @@ describe 'Setting your friends a challenge' do
 			expect(page).to have_content '1 challenge pending'
 		end
 
+	end
+
+	context 'when logged in' do
+		it  'Challenge Me link is not displayed' do
+			login_as @mary
+			visit event_path(@event)
+			expect(page).not_to have_link 'Challenge Me'
+		end
 	end
 end

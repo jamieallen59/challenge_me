@@ -14,10 +14,12 @@ describe 'Editing Events' do
     end
 
     it 'should have a link to edit the event' do
-      expect(page).to have_css '#edit-event', text: 'Edit'
+      click_link 'MENU'
+      expect(page).to have_css '#edit-event'
     end
 
     it 'should allow you to edit the event' do
+      click_link 'MENU'
       click_link 'Edit'
       fill_in 'Name', with: 'Virgin London Marathon'
       click_on 'Update Event'
@@ -49,7 +51,7 @@ describe 'Editing Events' do
     end
 
     it 'should not have a link to edit the event' do
-      expect(page).not_to have_css 'a.edit-event', text: 'Edit'
+      expect(page).not_to have_css '#edit-event'
     end
 
     it 'should not allow you to edit the event' do

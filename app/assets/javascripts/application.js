@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.modal.min
+//= require modernizr
+//= require main
 //= require_tree .
