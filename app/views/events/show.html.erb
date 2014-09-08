@@ -25,13 +25,13 @@
       <% if current_user == @event.user %>
           <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a></p>
      <% else %>
+
       <section class='challenge-me'>
         <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
-        <% end %>
-      </section>
+        </section>
+      <% end %>
 
     </section>
-
 
     <section class='training-stats'>
       <section class='training-headline'>
@@ -47,25 +47,22 @@
       </section>
 
     <section class='training-totals'>
-
-     <p id='training-goal-headline'>GOAL</p>
-     <p id='training-goal-number'><%= @event.training %></p>
+      <p id='training-goal-headline'>GOAL</p>
+      <p id='training-goal-number'><%= @event.training %></p>
       <p id='training-goal-text'>sessions per week.</p>
     </section>
 
-
-
-      <section class='workouts-completed-by-user'>
-        <p id='workouts-completed-head'>
-          <%= @event.user.firstname.capitalize %> has worked out
-        </p>
-        <p id='workouts-completed-number'>
-          <%= @event.weekly_training_sessions%>
-        </p>
-        <p id='workouts-completed-footer'>
-            times this week.
-        </p>
-      </section>
+    <section class='workouts-completed-by-user'>
+      <p id='workouts-completed-head'>
+        <%= @event.user.firstname.capitalize %> has worked out
+      </p>
+      <p id='workouts-completed-number'>
+        <%= @event.weekly_training_sessions%>
+      </p>
+      <p id='workouts-completed-footer'>
+          times this week.
+      </p>
+    </section>
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
@@ -73,16 +70,12 @@
             <%= @trainingsessions.last.details %>
           </p>
        <%end%>
-     </section>
     </section>
-
+  </section>
 </section>
 
 <section class='main-content-container'>
   <section class='container-top'>
-
-
-
     <section class='fundraising-stats'>
       <section class='fundraising-stats-percentage-complete'>
         <p id='fundraising-stats-percentage-text'>
