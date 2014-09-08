@@ -16,7 +16,7 @@
       <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
       </section>
   </section> -->
-   <%end%>
+ <!--   <%end%> -->
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -39,7 +39,6 @@
     <section class='donate-button-container'>
           <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donations-button" %>
     </section>
-
 
 
     <section class="challenge-me">
@@ -78,8 +77,6 @@
     </section>
 
     <section class='training-stats'>
-
-
       <section class='percentage-completed-workouts'>
         <p id='workouts-completed-percentage-number'>
           <%= @event.percentage_of_workouts_complete.to_f.round %>%</p>
@@ -109,7 +106,6 @@
      </section>
     </section>
 
-
 </section>
 
 <section class='main-content-container'>
@@ -124,8 +120,6 @@
          <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
       <% end %>
     </section>
-
-
 
     <section class='fundraising-stats'>
       <section class='fundraising-stats-percentage-complete'>
@@ -164,42 +158,36 @@
 
 
     <section class='pledge-container'>
-    <% if @pledges.any? %>
-      <p class='pledge-title'>
-        <%= @event.user.firstname.upcase %> SWEARS:
-      </p>
-      <p class='pledge-information'>
-        "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
-        <%=@event.next_pledge.info%>"
-      </p>
-    <%else%>
-    <p class='pledge-title-empty'>
-      ...
-    </p>
-    <p class='pledge-information-empty'>
-      No pledges yet
-    </p>
-    <%end%>
-
+        <% if @pledges.any? %>
+          <p class='pledge-title'>
+            <%= @event.user.firstname.upcase %> swears:
+          </p>
+          <p class='pledge-information'>
+            "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
+            <%=@event.next_pledge.info%>"
+          </p>
+        <%else%>
+          <p class='pledge-title-empty'>
+            ...
+          </p>
+          <p class='pledge-information-empty'>
+            No pledges yet
+          </p>
+        <%end%>
     </section>
-
   </section>
-
-
-
 
    <div class='page-divider'></div>
 
   <section class='update-feed'>
-
-  <section class='donations-container'>
-    <% if current_user == @event.user %>
-        <%= link_to 'UPDATE', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
-     <div class='newpost-separator'></div>
-        <%= link_to "SWEAR", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
-      <%end%>
+    <section class='donations-container'>
+      <% if current_user == @event.user %>
+          <%= link_to 'UPDATE', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
+       <div class='newpost-separator'></div>
+          <%= link_to "SWEAR", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+        <%end%>
+    </section>
   </section>
-</section>
 
     <% if @challenges.any? %>
     <section class='challenge-count'>
@@ -214,26 +202,27 @@
     <% end %>
   </section>
 </section>
-</section>
+
 
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
       <section class='pledge-modal-container'>
-        <%= f.label :title, "Pledge title", id: 'pledge-modal-label' %>
-        <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'give your pledge a name' %>
+        <%= f.label :title, "What challenge do you promise to do next?", id: 'pledge-modal-label' %>
+        <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'give your challenge a name' %>
+      </section>
+
+      <section class='pledge-modal-container'>
+        <%= f.label :info, "More info", id: 'pledge-modal-label' %>
+        <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "tell us more!" %>
       </section>
       <section class='pledge-modal-container'>
-        <%= f.label :amount, "Target", id: 'pledge-modal-label' %>
-        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a target to hit' %>
-      </section>
-      <section class='pledge-modal-container'>
-        <%= f.label :info, "Information", id: 'pledge-modal-label' %>
-        <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "say what you're going to do" %>
+        <%= f.label :amount, "When will you do this challenge?", id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £££ target to hit' %>
       </section>
 
       <section class="pledge-create-modal">
-        <%= f.submit 'Create Pledge', class: 'modal-button-create' %>
+        <%= f.submit 'Swear you will do this', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
