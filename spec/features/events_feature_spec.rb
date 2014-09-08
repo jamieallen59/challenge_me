@@ -21,9 +21,9 @@ describe 'Displaying events' do
       expect(page).to have_content 'Mary Perfect'
     end
 
-    it 'should display the training goal' do 
+    it 'should display the training goal' do
       visit event_path(@event)
-      expect(page).to have_content 'Training goal: 4 sessions per week'
+      expect(page).to have_content ' GOAL 4 sessions per week'
     end
   end
 end
