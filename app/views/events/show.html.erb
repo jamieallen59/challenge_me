@@ -30,7 +30,6 @@
         <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
         </section>
       <% end %>
-
     </section>
 
     <section class='training-stats'>
@@ -142,6 +141,19 @@
         <%end%>
     </section>
   </section>
+
+  <section class="target-bar-container">
+     <%= javascript_tag do %>
+          amountRaised = "<%=j @event.amount_raised.to_s %>";
+          targetAmount = "<%=j @event.target.to_s %>";
+      <% end %>
+        <div class="target-wrap progress" data-progress-percent="">
+        <div class="target-bar progress">
+        </div>
+        </div>
+
+        
+    </section>
 
    <div class='page-divider'></div>
 
@@ -282,4 +294,3 @@
      <a class='close-modal' href="#" rel="modal:close">Close</a>
     </section>
   </div>
-

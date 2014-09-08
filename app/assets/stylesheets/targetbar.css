@@ -4,11 +4,11 @@
 
 .progress {
   width: 100%;
-  height: 60px;
+  height: 40px;
 }
 
 .target-wrap {
-  margin: 20px 0;
+  border-bottom: 1px solid #DEDEDE;
   overflow: hidden;
   position: relative;
 }
@@ -28,4 +28,7 @@
 }
 .great {
   background: #2D8735;
+}
+.legendary {
+  background: #ccac00;
 }
