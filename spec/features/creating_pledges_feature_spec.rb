@@ -46,6 +46,5 @@ describe 'creating pledges' do
       visit new_event_pledges_path(@event)
       expect(page).to have_content("Only the event creator can add a pledge")
     end
-
-end
+  end
 end
