@@ -15,14 +15,19 @@
           <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'lets_go-button', id:'sign_out'%>
       <% end %>
       </section>
+      
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
   			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "LOOKING FOR SOMEONE..?" %>
   			<%= submit_tag "GO", id:'search_button' %>
 			<% end %>
 		</section>
+
 			<h2 class='main-image-header'>WE MAKE GIVING FUN</h2>
 			<h5 class='main-image-text'>COMPLETE CHALLENGES. SMASH TARGETS. </h5>
 			<section class='cover-image-button-container'>
+      <video autoplay muted loop poster="<%= asset_path('click.jpg')%>" id="bgvid">
+        <source src="<%= asset_path('ldn_360.mp4') %>" type="video/mp4">
+      </video>
 				<%= link_to "LET'S GO", select_events_path, class: 'lets_go-button' %>
 			</section>
 		</section>

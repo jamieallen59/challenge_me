@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def index
-		@users = User.where(firstname: params['search'])
+    @users = User.where('firstname ILIKE ?', '%' + params['search'] + '%')
 	end
 	def profile
 		@user = User.find(params[:user_id])

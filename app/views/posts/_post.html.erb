@@ -7,9 +7,9 @@
         <section class="video-post">
         <object width="297" height="206">
           <param name="movie"
-                 value="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"></param>
+                 value="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=0"></param>
           <param name="allowScriptAccess" value="always"></param>
-          <embed src="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"
+          <embed src="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=0"
                  type="application/x-shockwave-flash"
                  allowscriptaccess="always"
                  width="297" height="206"></embed>
@@ -35,8 +35,8 @@
       </section>
       <section class='comments-input-container'>
         <%= form_for [@event, post, @comment] do |f| %>
-          <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
-          <%= f.submit 'Submit', id: 'comment-submit-button' %>
+          <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Thoughts..?' %>
+          <%= f.submit 'Comment', id: 'comment-submit-button' %>
         <% end %>
 
       </section>

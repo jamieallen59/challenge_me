@@ -10,6 +10,7 @@ class Event < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
   has_many :pledges, dependent: :destroy
+  has_many :challenges
   has_many :trainingsessions, dependent: :destroy
   belongs_to :user
 

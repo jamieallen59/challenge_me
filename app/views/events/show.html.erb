@@ -35,10 +35,17 @@
       </p>
     </section>
 
+
     <section class='donate-button-container'>
-      <p id='donations-button' >Donate
-      </p>
+          <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donations-button" %>
     </section>
+
+
+
+    <section class="challenge-me">
+      <%= link_to "Challenge Me", new_event_challenge_path(@event), class: 'challenge-me-button' %>
+    </section>
+
 
     <section class='event-details-container'>
       <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %></p>
@@ -155,6 +162,7 @@
       </section>
     </section>
 
+
     <section class='pledge-container'>
     <% if @pledges.any? %>
       <p class='pledge-title'>
@@ -179,18 +187,26 @@
 
 
 
+
    <div class='page-divider'></div>
 
   <section class='update-feed'>
 
-    <section class='donations-container'>
+  <section class='donations-container'>
     <% if current_user == @event.user %>
-      <%= link_to 'UPDATE', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
+        <%= link_to 'UPDATE', new_event_posts_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-post-modal' } %>
      <div class='newpost-separator'></div>
-           <%= link_to "SWEAR", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+        <%= link_to "SWEAR", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "new-post-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+      <%end%>
+  </section>
+</section>
 
- <%end%>
- </section>
+    <% if @challenges.any? %>
+    <section class='challenge-count'>
+      <%= @challenges.count %> challenge pending
+    </section>
+    <% end %>
+
     <% if @posts.any? %>
         <%= render @posts.reverse %>
     <% else %>
@@ -198,6 +214,8 @@
     <% end %>
   </section>
 </section>
+</section>
+
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
@@ -254,24 +272,19 @@
         <%= f.label :video %>
         <%= f.text_field :video %>
       </section>
-
       or </br>
-
       <section class="post-text-modal">
         <%= f.label :text %>
         <%= f.text_field :text %>
       </section>
-
-
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
       </section>
-
     <% end %>
   </div>
 
   <div id="ex1" style="display:none;">
-    <%= form_for [ @event, @trainingsession ] do |f| %>
+    <%= form_for [@event, @trainingsession] do |f| %>
     <section class='modal-header'>
       <%= f.label :details, "Training details"%>
     </section>
@@ -289,21 +302,15 @@
     <%end%>
   </div>
 
-
-
 <script>
   $(document).ready(function(){
-
       $(".modal-button").on('click', displayModal);
-
       $(".pledge-modal-button").on('click', displayModal);
-
       $(".new-post-modal-button").on('click', displayModal);
   });
 
   function displayModal(e){
       e.preventDefault();
-
       $($(e.target).attr('data-modal-selector')).modal({
           fadeDuration: 500,
           fadeDelay: 0.30
