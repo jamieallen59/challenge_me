@@ -142,19 +142,17 @@
     </section>
   </section>
 
-<!-- jA - Bar Graph -->
+<!-- Targetbar -->
   <section class="target-bar-container">
-     <%= javascript_tag do %>
-          amountRaised = "<%=j @event.amount_raised.to_s %>";
-          targetAmount = "<%=j @event.target.to_s %>";
-      <% end %>
+          <%= javascript_tag do %>
+            amountRaised = "<%=j @event.amount_raised.to_s %>";
+            targetAmount = "<%=j @event.target.to_s %>";
+          <% end %>
         <div class="target-wrap progress" data-progress-percent="">
-        <div class="target-bar progress">
-        </div>
-        </div>
-
-
-    </section>
+      <div class="target-bar progress">
+    </div>
+  </div>
+</section>
 
    <div class='page-divider'></div>
 

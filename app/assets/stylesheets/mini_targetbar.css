@@ -1,0 +1,35 @@
+.mini-target-bar-container {
+  width: 100%;
+}
+
+.mini-progress {
+  width: 100%;
+  height: 20px;
+  background: green;
+}
+
+.mini-target-wrap {
+  border-bottom: 1px solid #DEDEDE;
+  overflow: hidden;
+  position: relative;
+}
+
+.mini-target-bar {
+    background: #B4B4B4;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+  }
+
+.struggling {
+  background: #CC3333;
+}
+.steady {
+  background: #E2790A;
+}
+.great {
+  background: #2D8735;
+}
+.legendary {
+  background: #ccac00;
+}

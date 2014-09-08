@@ -6,4 +6,17 @@
   <section class="event-states">
     
   </section>
+
+  <!-- Targetbar -->
+  <section class="mini-target-bar-container">
+          <%= javascript_tag do %>
+            amountRaised = "<%=j event.amount_raised.to_s %>";
+            targetAmount = "<%=j event.target.to_s %>";
+          <% end %>
+        <div class="mini-target-wrap mini-progress" data-progress-percent="">
+      <div class="mini-target-bar mini-progress">
+    </div>
+  </div>
+</section>
+
 <% end %>
