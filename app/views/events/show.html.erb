@@ -24,6 +24,13 @@
     </section>
 
 
+
+
+
+    <section class='event-details-container'>
+      <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <%= @event.charity %> by <%= @event.name %> on <%= @event.event_date.strftime("%d %B '%y") %></p>
+    </section>
+
     <section class='donate-button-container'>
           <%= link_to 'Donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donations-button" %>
     </section>
@@ -34,23 +41,6 @@
     </section>
 
 
-    <section class='event-details-container'>
-      <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %></p>
-    </section>
-
-     <section class='days-remaining'>
-      <% if (@event.event_date == Date.today) %>
-        <p id='event-today-text'>Today's the day!</p>
-      <% elsif (@event.event_date > Date.today) %>
-        <p id='days-remaining-number'>
-          <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
-        <p id='date-remaining-text'>days to go!</p>
-      <% else %>
-        <p id='days-remaining-head'>Event completed</p>
-        <p id='days-remaining-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
-        <p id='date-remaining-text'>days ago!</p>
-      <% end %>
-    </section>
 
 
     <section class='training-stats'>
@@ -67,6 +57,7 @@
       </section>
 
     <section class='training-totals'>
+
      <p id='training-goal-headline'>GOAL</p>
      <p id='training-goal-number'><%= @event.training %></p>
       <p id='training-goal-text'>sessions per week.</p>
@@ -128,12 +119,20 @@
         </p>
       </section>
       <section class='fundraising-stats-training-goal'>
-        <p id='fundraising-stats-percentage-text'>
-         Training sessions completed:
-        </p>
-        <p id='fundraising-stats-percentage-number'>
-          <%= @event.percentage_of_workouts_complete.round %>%
-        </p>
+
+         <section class='days-remaining'>
+      <% if (@event.event_date == Date.today) %>
+        <p id='event-today-text'>Today's the day!</p>
+      <% elsif (@event.event_date > Date.today) %>
+        <p id='days-remaining-number'>
+          <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
+        <p id='date-remaining-text'>days to go!</p>
+      <% else %>
+        <p id='days-remaining-head'>Event completed</p>
+        <p id='days-remaining-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
+        <p id='date-remaining-text'>days ago!</p>
+      <% end %>
+    </section>
       </section>
     </section>
 
@@ -149,10 +148,10 @@
           </p>
         <%else%>
           <p class='pledge-title-empty'>
-            ...
+
           </p>
           <p class='pledge-information-empty'>
-            <%= @event.user.firstname.upcase %> hasn't promised to do anything yet. . . lazy
+            <%= @event.user.firstname.upcase %> hasn't promised to do anything yet...
           </p>
         <%end%>
     </section>
