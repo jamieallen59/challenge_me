@@ -34,6 +34,27 @@
     padding-top: 5px;
     padding-bottom: 5px;
   }
+
+  .event-states {
+    ul {
+      padding-top: 5%;
+      li {
+        padding-left: 10px;
+        margin-right: 10px;
+        float: left;
+        display: inline-block;
+
+        strong {
+          padding-bottom: 5px;
+          margin-left: 5%;
+          color: #343434;
+          font-size: 18px;
+          font-weight: bold;
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 /*---- The Create Event form ---*/

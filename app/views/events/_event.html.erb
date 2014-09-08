@@ -4,7 +4,20 @@
   <p><%= icon('calendar', event.event_date.strftime("%d %B %Y")) %></p>
   <p><%= icon('gift', event.charity) %></p>
   <section class="event-states">
-    
+    <ul>
+      <li>
+        <strong><%= event.percentage_of_target %> %</strong>
+        Funded
+      </li>
+      <li>
+        <strong>£<%= event.amount_raised.round %></strong>
+        Donated
+      </li>
+      <li>
+        <strong><%= (event.event_date - Date.today).to_i %></strong>
+        days to go
+      </li>
+    </ul>
   </section>
 
   <!-- Targetbar -->

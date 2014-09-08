@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'Creating training sessions' do
 
-	context 'as the event creator' do 
-	before(:each) do 
+	context 'as the event creator' do
+	before(:each) do
  	  	@mary = create(:user)
     	@event = create(:event, created_at: Date.new(2014, 9, 1), user: @mary)
     	login_as @mary
@@ -12,27 +12,28 @@ describe 'Creating training sessions' do
     	visit event_path(@event)
     end
 
-    it "let's the user fill in details about their session" do
+    it "let's the user fill in details about their session", :js => true do
+      click_link 'MENU'
       click_link 'Log training session'
-    	expect(page).to have_css "#new_trainingsession"
+    	expect(page).to have_content "Training details"
     end
 
-    it 'gives the option to log workouts automatically from mapmyfitness' do 
+    it 'gives the option to log workouts automatically from mapmyfitness' do
       click_link 'Sync'
       expect(@event.trainingsessions.count).to eq 1
       expect(@event.trainingsessions.first.details).to eq("Im running")
       expect(@event.trainingsessions.first.sessiondate.to_s).to eq("2014-09-05")
     end
 
-  end 
+  end
 
-  context 'not as the event creator' do 
-  	before(:each) do 
+  context 'not as the event creator' do
+  	before(:each) do
 			@mary = create(:user)
     	@event = create(:event, user: @mary)
   	end
 
-  	it 'should not have a log Workout button or a sync link' do 
+  	it 'should not have a log Workout button or a sync link' do
   		visit event_path(@event)
     	expect(page).not_to have_content 'Log training session'
       expect(page).not_to have_content 'Sync'
