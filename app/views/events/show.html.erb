@@ -36,8 +36,8 @@
     </section>
 
 
-    <section class="challenge-me">
-      <%= link_to "Challenge Me", new_event_challenge_path(@event), class: 'challenge-me-button' %>
+    <section class="donate-button-container">
+      <%= link_to "Challenge Me", new_event_challenge_path(@event), id: "donations-button" %>
     </section>
 
 
@@ -120,18 +120,19 @@
       </section>
       <section class='fundraising-stats-training-goal'>
 
-         <section class='days-remaining'>
-      <% if (@event.event_date == Date.today) %>
-        <p id='event-today-text'>Today's the day!</p>
-      <% elsif (@event.event_date > Date.today) %>
-        <p id='days-remaining-number'>
-          <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
-        <p id='date-remaining-text'>days to go!</p>
-      <% else %>
-        <p id='days-remaining-head'>Event completed</p>
-        <p id='days-remaining-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
-        <p id='date-remaining-text'>days ago!</p>
-      <% end %>
+
+         <section class='fundraising-stats-percentage-number'>
+            <% if (@event.event_date == Date.today) %>
+              <p id='event-today-text'>Today's the day!</p>
+            <% elsif (@event.event_date > Date.today) %>
+              <p id='fundraising-stats-percentage-text'>Days to go:</p>
+              <p id='fundraising-stats-percentage-number'>
+                <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
+            <% else %>
+              <p id='fundraising-stats-percentage-text'>Event completed</p>
+              <p id='fundraising-stats-percentage-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
+              <p id='fundraising-stats-percentage-text'>days ago!</p>
+            <% end %>
     </section>
       </section>
     </section>
