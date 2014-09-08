@@ -1,0 +1,18 @@
+<% if @event.is_owner?(current_user) %>
+        <p class='log-training-button-container'>
+         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
+         </p>
+        <%end%>
+          <!-- sync with mapmyfitness -->
+<% if current_user == @event.user %>
+  <section class='map-my-fitness'>
+
+    <p class='mapmyfitness-sync-text'>
+      Map<br> My<br> Fitness:
+    </p>
+    <section class='mmf-button'>
+      <%= image_tag("sync.png", id: 'sync-icon') %>
+      <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
+      </section>
+  </section>
+   <%end%>
