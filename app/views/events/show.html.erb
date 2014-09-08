@@ -194,7 +194,9 @@
     <% end %>
 
     <% if @posts.any? %>
+    <section id="cd-timeline" class="cd-container">
         <%= render @posts.reverse %>
+    </section>
     <% else %>
         There are no posts
     <% end %>
