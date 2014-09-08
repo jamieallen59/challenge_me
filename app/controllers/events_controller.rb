@@ -29,7 +29,7 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
     @pledges = @event.pledges
     @challenges = @event.challenges
     @trainingsession = @event.trainingsessions.new
-    @trainingsessions = @event.trainingsessions
+    @trainingsessions = @event.trainingsessions.all
   end
 
   def edit

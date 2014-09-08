@@ -66,8 +66,10 @@
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
+
           <p id='recent-workout-details-head'>LAST <br> WORKOUT
             <%= @trainingsessions.last.details %>
+
           </p>
        <%end%>
     </section>
@@ -260,6 +262,24 @@
 
   </div>
 
+<<<<<<< HEAD
+<script>
+  $(document).ready(function(){
+      $(".modal-button").on('click', displayModal);
+      $(".pledge-modal-button").on('click', displayModal);
+      $(".new-post-modal-button").on('click', displayModal);
+  });
+
+  function displayModal(e){
+      e.preventDefault();
+      $($(e.target).attr('data-modal-selector')).modal({
+          fadeDuration: 500,
+          fadeDelay: 0.30
+      });
+  }
+</script>
+
+=======
   <div id="menu-modal" style="display:none;">
     <section class='modal-body'>
       <p class='log-training-button-container'>
@@ -280,3 +300,4 @@
      <a class='close-modal' href="#" rel="modal:close">Close</a>
     </section>
   </div>
+>>>>>>> e2262f00cfd53532d8af6ed1c57c5bd704a63221
