@@ -28,6 +28,7 @@ describe 'show event page' do
   end
   it 'by clicking my events button' do
     visit event_path(@event)
+    click_link 'MENU'
     click_link 'My Events'
     expect(current_path).to eq select_events_path
   end
