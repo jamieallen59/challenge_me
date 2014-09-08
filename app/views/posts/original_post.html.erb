@@ -1,0 +1,63 @@
+<article class='post-container'>
+  <section class='post-content'>
+    <object class='uploaded-evidence'>
+      <% if post.picture.present? %>
+        <%= image_tag post.picture.url(:medium), class: 'uploaded-pic'  %>
+      <% elsif post.video.present? %>
+        <section class="video-post">
+        <object width="297" height="206">
+          <param name="movie"
+                 value="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"></param>
+          <param name="allowScriptAccess" value="always"></param>
+          <embed src="https://www.youtube.com/v/<%=post.video_id%>?version=3&autoplay=1"
+                 type="application/x-shockwave-flash"
+                 allowscriptaccess="always"
+                 width="297" height="206"></embed>
+        </object>
+         </section>
+      <% elsif post.text.present? %>
+      <article class="text-post">
+        <%= post.text %>
+      </article>
+      <%end%>
+   </object>
+
+    <article class='comments-container'>
+      <section class="comments-list">
+        <% if post.comments.any? %>
+          <% post.comments.reverse_each do |comment| %>
+            <article class="comment">
+              <p><strong><%= comment.user.full_name %></strong> - <%= time_ago_in_words(comment.created_at) %></p>
+              <p><%= comment.comments %></p>
+            </article>
+          <% end %>
+        <% end %>
+      </section>
+      <section class='comments-input-container'>
+        <%= form_for [@event, post, @comment] do |f| %>
+          <%= f.text_field :comments, id: 'comments-placeholder', placeholder: 'Leave a comment...' %>
+          <%= f.submit 'Submit', id: 'comment-submit-button' %>
+        <% end %>
+
+      </section>
+
+    </article>
+
+  </section>
+  <header class='post-header'>
+    <section class='post-title'>
+      <p class='post-caption'><%= post.caption %></p>
+    </section>
+
+    <span class='post-controls'>
+      <% if post.is_owner?(current_user) %>
+        <%= link_to 'Edit Post', edit_event_post_path(@event, post), class: 'edit-post' %>
+        <%= link_to 'Delete Post', event_post_path(@event, post), class: 'delete-post', method: :delete %>
+      <% end %>
+    </span>
+     <span class='post-date'>
+      <p class='posted-by'>Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago</p>
+    </span>
+
+  </header>
+</article>

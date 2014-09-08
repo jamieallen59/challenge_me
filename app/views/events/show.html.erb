@@ -1,22 +1,10 @@
   <section class='container-left'>
-<!--   <% if @event.is_owner?(current_user) %>
-        <p class='log-training-button-container'>
-         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
-         </p>
-        <%end%> -->
-          <!-- sync with mapmyfitness -->
- <!--  <% if current_user == @event.user %>
-  <section class='map-my-fitness'>
 
-    <p class='mapmyfitness-sync-text'>
-      Map<br> My<br> Fitness:
-    </p>
-    <section class='mmf-button'>
-      <%= image_tag("sync.png", id: 'sync-icon') %>
-      <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
-      </section>
-  </section> -->
- <!--   <%end%> -->
+     <% if current_user == @event.user %>
+          <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button'><%= image_tag("menu48.png", id: 'delete-logo') %></a></p>
+
+     <% end %>
+
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -65,35 +53,36 @@
     </section>
 
 
-   <!--  <section class='percentage-completion'>
-      <p id="event-percentage-number"><%= @event.percentage_of_target %>%</p>
-      <p id='event-percentage-text'>of fundraising target achieved.</p>
-    </section> -->
+    <section class='training-stats'>
+      <section class='training-headline'>
+        <p id='training-section-headline'><%= @event.user.firstname.capitalize %>'s training</p>
+      </section>
+
+      <section class='percentage-completed-workouts'>
+        <p id='workouts-completed-number'>
+           <%= @event.trainingsessions.count%></p>
+        <p id='workouts-completed-text'>
+         workouts completed
+        </p>
+      </section>
 
     <section class='training-totals'>
-     <p id='training-goal-headline'>Training goal:</p>
+     <p id='training-goal-headline'>Goal</p>
      <p id='training-goal-number'><%= @event.training %></p>
       <p id='training-goal-text'>sessions per week.</p>
     </section>
 
-    <section class='training-stats'>
-      <section class='percentage-completed-workouts'>
-        <p id='workouts-completed-percentage-number'>
-          <%= @event.percentage_of_workouts_complete.to_f.round %>%</p>
-        <p id='workouts-completed-text'>
-         of total training sessions completed.
-        </p>
-      </section>
+
 
       <section class='workouts-completed-by-user'>
         <p id='workouts-completed-head'>
-          <%= @event.user.firstname %> has completed
+          <%= @event.user.firstname %> has worked out
         </p>
         <p id='workouts-completed-number'>
           <%= @event.weekly_training_sessions%>
         </p>
         <p id='workouts-completed-footer'>
-           workouts this week.
+            times this week.
         </p>
       </section>
 
@@ -111,15 +100,6 @@
 <section class='main-content-container'>
   <section class='container-top'>
 
-    <section class='event-controls'>
-      <% if @event.is_owner?(current_user) %>
-        <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
-        <div class='eventcontrols-separator'></div>
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete, confirm: "Are you sure?" %>
-        <div class='eventcontrols-separator'></div>
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
-      <% end %>
-    </section>
 
     <section class='fundraising-stats'>
       <section class='fundraising-stats-percentage-complete'>
@@ -196,7 +176,9 @@
     <% end %>
 
     <% if @posts.any? %>
+    <section id="cd-timeline" class="cd-container">
         <%= render @posts.reverse %>
+    </section>
     <% else %>
         There are no posts
     <% end %>
@@ -289,4 +271,27 @@
       <a class='close-modal' href="#" rel="modal:close">Close</a>
     </section>
     <%end%>
+  </div>
+
+  iv>
+
+  <div id="menu-modal" style="display:none;">
+    <section class='modal-body'>
+      <p class='log-training-button-container'>
+         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
+      </p>
+      <section class='mmf-button'>
+        <%= image_tag("sync.png", id: 'sync-icon') %>
+        <%= link_to "Sync with Map my Fitness", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
+      </section>
+              <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
+        <div class='eventcontrols-separator'></div>
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+        <div class='eventcontrols-separator'></div>
+         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
+    </section>
+
+  <section class="modal-footer">
+     <a class='close-modal' href="#" rel="modal:close">Close</a>
+    </section>
   </div>
