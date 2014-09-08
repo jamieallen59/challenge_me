@@ -1,7 +1,4 @@
   <section class='container-left'>
-
-
-
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -19,10 +16,6 @@
         <%= @event.user.full_name %>
       </p>
     </section>
-
-
-
-
 
     <section class='event-details-container'>
       <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <%= @event.charity %> by <%= @event.name %> on <%= @event.event_date.strftime("%d %B '%y") %></p>
