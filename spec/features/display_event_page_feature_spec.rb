@@ -19,7 +19,7 @@ describe 'show event page' do
 
     visit event_path(@event)
     expect(page).to have_content 'Raised so far: £10.0'
-    expect(page).to have_content '1% of fundraising target achieved'
+    expect(page).to have_content 'Percentage complete: 1%'
   end
 
  context 'creators can access their other events from profile page' do

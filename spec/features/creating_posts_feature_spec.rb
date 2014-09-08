@@ -5,11 +5,11 @@ describe 'creating posts' do
 		@mary = create(:user)
 		@event = create(:event, user: @mary)
 	end
-	
+
 	context 'as a logged out user' do
 		it 'should redirect you to the sign in page' do
 			visit event_path(@event)
-			click_link 'New Post'
+			click_link 'UPDATE SPONSORS'
 			expect(page).to have_content('Log in')
 			expect(current_path).to eq new_user_session_path
 		end
@@ -19,7 +19,7 @@ describe 'creating posts' do
 		before do
 			login_as @mary
 			visit event_path(@event)
-			click_link 'New Post'
+			click_link 'UPDATE SPONSORS'
 			fill_in 'Caption', with: '5k in 30 mins - yay!'
 		end
 
@@ -66,7 +66,7 @@ describe 'post validation' do
 
 	it "when info isn't valid the post isn't created " do
 		visit event_path(@event)
-		click_link 'New Post'
+		click_link 'UPDATE SPONSORS'
 		fill_in 'Caption', with: 'yo'
 		click_button 'Create Post'
 		expect(page).to have_content "Your caption must be between 3 and 140 characters"
