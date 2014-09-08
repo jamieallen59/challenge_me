@@ -21,15 +21,17 @@
 		display: flex;
 		margin: 5px;
 		height: 40px;
+		margin-top: 1.5em;
 		margin-bottom: 25px;
 	}
-		#new-post-link {
+		#update-sponsers-link {
 			text-align: center;
 			vertical-align: middle;
 			line-height: 40px;
 			text-decoration: none;
 			color: #2B1B17;
-			width: 50%;
+			width: 35%;
+			margin-left: auto;
 			font-weight: 800;
 			background-color: #E9E9E9;
 			/* background: rgba(255, 255, 255, 0.58); */
@@ -38,11 +40,62 @@
 			box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
 			letter-spacing: 5px;
 		}
-			#new-post-link:hover {
+			#update-sponsers:hover {
 				background-color: #f9f9f9;
 				color: #000;
 			}
-			#new-post-link:active {
+			#update-sponsers:active {
+				position: relative;
+				top: 1px;
+			}
+
+			#make-a-promise-link {
+			text-align: center;
+			vertical-align: middle;
+			line-height: 40px;
+			text-decoration: none;
+			color: #2B1B17;
+			width: 35%;
+			margin-right: auto;
+			font-weight: 800;
+			background-color: #E9E9E9;
+			/* background: rgba(255, 255, 255, 0.58); */
+			border: 2px solid white;
+			border-radius: .05em;
+			box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+			letter-spacing: 5px;
+		}
+			#make-a-promise:hover {
+				background-color: #f9f9f9;
+				color: #000;
+			}
+			#make-a-promise:active {
+				position: relative;
+				top: 1px;
+			}
+
+			#donate-button {
+			text-align: center;
+			vertical-align: middle;
+			line-height: 40px;
+			text-decoration: none;
+			color: #2B1B17;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
+			font-weight: 800;
+			background-color: #E9E9E9;
+			/* background: rgba(255, 255, 255, 0.58); */
+			border: 2px solid white;
+			border-radius: .05em;
+			box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+			letter-spacing: 5px;
+		}
+			#donate-button:hover {
+				background-color: #f9f9f9;
+				color: #000;
+			}
+			#donate-button:active {
 				position: relative;
 				top: 1px;
 			}
