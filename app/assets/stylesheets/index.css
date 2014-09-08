@@ -14,7 +14,6 @@ video#bgvid {
 }
 
 	.hp-cover-image {
-		/*background-image: url("click.jpg");*/
 		display: flex;
 		flex-direction: column;
 		background-size: 100%;
