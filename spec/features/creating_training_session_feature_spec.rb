@@ -12,9 +12,11 @@ describe 'Creating training sessions' do
     	visit event_path(@event)
     end
 
-    it "let's the user fill in details about their session", js: true do
+    it "let's the user fill in details about their session" do
       click_link 'MENU'
-      click_link 'Log training session'
+      within('#menu-modal') do
+        click_link 'Log training session'
+      end
     	expect(page).to have_content "Training details"
     end
 
