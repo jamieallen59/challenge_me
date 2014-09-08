@@ -152,7 +152,7 @@
         </div>
         </div>
 
-        
+
     </section>
 
    <div class='page-divider'></div>
@@ -281,7 +281,7 @@
         <%= f.label :creator, 'What is your name?' %>
         <%= f.text_field :creator %>
       </section>
-      
+
       <section class="challenge-name-modal">
         <%= f.label :name, 'Describe the challange' %>
         <%= f.text_field :name %>
@@ -301,21 +301,17 @@
 
   <div id="menu-modal" style="display:none;">
     <section class='modal-body'>
-      <p class='log-training-button-container'>
-         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
-      </p>
-      <section class='mmf-button'>
-        <%= image_tag("sync.png", id: 'sync-icon') %>
-        <%= link_to "Sync with Map my Fitness", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
-      </section>
-              <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
-        <div class='eventcontrols-separator'></div>
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
-        <div class='eventcontrols-separator'></div>
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
-    </section>
+        <%= link_to image_tag("sync.png", id: 'delete-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
 
-    <section class="modal-footer">
-     <a class='close-modal' href="#" rel="modal:close">Close</a>
+         <%= link_to image_tag("log.png", id: 'delete-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+
+        <%= link_to image_tag("edit.png", id: 'delete-logo')+ "Edit #{@event.name}", edit_event_path(@event), class:"menu-event" %><br>
+
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), class:"menu-event", method: :delete %><br>
+
+         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, class:"menu-event"%><br>
+
+        <%= link_to image_tag("signout.png", id: 'delete-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
+
     </section>
   </div>
