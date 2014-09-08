@@ -297,24 +297,19 @@
     <%end%>
   </div>
 
-
-<% if Rails.env.test? %>
-  <div id="menu-modal">
-<% else %>
-  <div id="menu-modal" style="display:none;">
-<% end %>
+  <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
     <section class='modal-body'>
-        <%= link_to image_tag("sync.png", id: 'delete-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
+        <%= link_to image_tag("sync.png", id: 'sync-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
 
-         <%= link_to image_tag("log.png", id: 'delete-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+         <%= link_to image_tag("log.png", id: 'log-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
 
-        <%= link_to image_tag("edit.png", id: 'delete-logo')+ "Edit #{@event.name}", edit_event_path(@event), class:"menu-event" %><br>
+        <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit #{@event.name}", edit_event_path(@event), id: 'edit-event', class:"menu-event" %><br>
 
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), class:"menu-event", method: :delete %><br>
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), id: 'delete-event',class:"menu-event", method: :delete %><br>
 
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, class:"menu-event"%><br>
+         <%= link_to image_tag("my_events.png", id: 'event-logo')+'My Events', select_events_path, class:"menu-event"%><br>
 
-        <%= link_to image_tag("signout.png", id: 'delete-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
+        <%= link_to image_tag("signout.png", id: 'signout-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
 
     </section>
   </div>

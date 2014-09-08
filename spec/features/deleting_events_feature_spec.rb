@@ -32,7 +32,7 @@ describe 'Deleting Events' do
     end
 
     it 'should not have a link to edit the event' do
-      expect(page).not_to have_css 'a.delete-event', text: 'Delete'
+      expect(page).not_to have_css '#delete-event', text: 'Delete'
     end
 
     it 'should not allow you to delete the event' do
