@@ -124,7 +124,7 @@
     <section class='pledge-container'>
         <% if @pledges.any? %>
           <p class='pledge-title'>
-            <%= @event.user.firstname.upcase %> swears:
+            <%= @event.user.firstname.capitalize %> swears:
           </p>
           <p class='pledge-information'>
             "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
