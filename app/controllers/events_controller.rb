@@ -64,6 +64,9 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
   def donations
     @event = Event.find(params[:id])
     @fundraising = JustGiving::Fundraising.new(@event.jg_short_name).page
+    @event.amount_raised = @fundraising['grandTotalRaisedExcludingGiftAid'].to_f
+    @event.save
+    redirect_to event_path(@event)
   end
 
   private
