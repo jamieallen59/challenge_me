@@ -30,7 +30,6 @@
         <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button' %>
         </section>
       <% end %>
-
     </section>
 
     <section class='training-stats'>
@@ -274,43 +273,3 @@
     <%end%>
 
   </div>
-
-<<<<<<< HEAD
-<script>
-  $(document).ready(function(){
-      $(".modal-button").on('click', displayModal);
-      $(".pledge-modal-button").on('click', displayModal);
-      $(".new-post-modal-button").on('click', displayModal);
-  });
-
-  function displayModal(e){
-      e.preventDefault();
-      $($(e.target).attr('data-modal-selector')).modal({
-          fadeDuration: 500,
-          fadeDelay: 0.30
-      });
-  }
-</script>
-
-=======
-  <div id="menu-modal" style="display:none;">
-    <section class='modal-body'>
-      <p class='log-training-button-container'>
-         <%= link_to "Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-training-button', data: { :'modal-selector' => '#ex1' }  %>
-      </p>
-      <section class='mmf-button'>
-        <%= image_tag("sync.png", id: 'sync-icon') %>
-        <%= link_to "Sync with Map my Fitness", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
-      </section>
-              <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
-        <div class='eventcontrols-separator'></div>
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
-        <div class='eventcontrols-separator'></div>
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
-    </section>
-
-  <section class="modal-footer">
-     <a class='close-modal' href="#" rel="modal:close">Close</a>
-    </section>
-  </div>
->>>>>>> e2262f00cfd53532d8af6ed1c57c5bd704a63221
