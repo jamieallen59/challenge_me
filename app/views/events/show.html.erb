@@ -23,7 +23,7 @@
 
     <section class='donate-button-container'>
       <% if current_user == @event.user %>
-          <p><a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a></p>
+          <a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a>
      <% else %>
 
       <section class='challenge-me'>
@@ -162,7 +162,7 @@
         <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
         <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
     <% else %>
-    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donate-button" %>
+    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}/donations"}), id: "donate-button" %>
       <%end%>
    </section>
 
@@ -297,21 +297,19 @@
     <%end%>
   </div>
 
-
-
-  <div id="menu-modal" style="display:none;">
+  <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
     <section class='modal-body'>
-        <%= link_to image_tag("sync.png", id: 'delete-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
+        <%= link_to image_tag("sync.png", id: 'sync-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
 
-         <%= link_to image_tag("log.png", id: 'delete-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+         <%= link_to image_tag("log.png", id: 'log-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
 
-        <%= link_to image_tag("edit.png", id: 'delete-logo')+ "Edit #{@event.name}", edit_event_path(@event), class:"menu-event" %><br>
+        <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit #{@event.name}", edit_event_path(@event), id: 'edit-event', class:"menu-event" %><br>
 
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), class:"menu-event", method: :delete %><br>
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), id: 'delete-event',class:"menu-event", method: :delete %><br>
 
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, class:"menu-event"%><br>
+         <%= link_to image_tag("my_events.png", id: 'event-logo')+'My Events', select_events_path, class:"menu-event"%><br>
 
-        <%= link_to image_tag("signout.png", id: 'delete-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
+        <%= link_to image_tag("signout.png", id: 'signout-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
 
     </section>
   </div>
