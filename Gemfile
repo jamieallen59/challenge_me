@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'warden'
   gem 'timecop'
+  gem 'jasmine-rails'
 end
 
 group :production do
