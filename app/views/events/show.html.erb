@@ -115,7 +115,7 @@
       <% if @event.is_owner?(current_user) %>
         <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
         <div class='eventcontrols-separator'></div>
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+        <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete, confirm: "Are you sure?" %>
         <div class='eventcontrols-separator'></div>
          <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
       <% end %>

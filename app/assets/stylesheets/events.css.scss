@@ -33,6 +33,24 @@
 	color: #343434;
 }
 
+.event-select-button {
+	vertical-align: middle;
+	cursor: pointer;
+	line-height: 40px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #e7e7e7;
+	font-size: 20px;
+	padding: 6px;
+	width: 60%;
+	font-weight: 800;
+	border: 2px solid white;
+	border-radius: .05em;
+	letter-spacing: 4px;
+	text-decoration: none;
+}
+
 .event-form-input {
 	height: 38px;
 	border: none;
