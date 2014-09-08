@@ -43,12 +43,14 @@ At the moment, raising money for charity can be quite boring. It boils down to a
   + jQuery
   + Heroku
   + Devise
+  + Amazon S3
+  + Paperclip
+  + Imagemagick
   
 ## APIs Used:
 
   + JustGiving
   + MapMyFitness
-  + Youtube
 
 ### How to set it up
 ```sh
