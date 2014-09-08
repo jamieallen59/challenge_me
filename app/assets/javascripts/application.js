@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require jquery.modal.min
 //= require modernizr
-//= require main
+//= require timeline
 //= require_tree .
