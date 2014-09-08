@@ -1,3 +1,25 @@
+function moveProgressBar() {
+    var targetbar = new TargetBar(amountRaised, targetAmount);
+
+    var getPercent = (targetbar.percentage()) / 100;
+    var getTargetWrapWidth = $('.target-wrap').width();
+    var progressTotal = getPercent * getTargetWrapWidth;
+    var animationLength = 2500;
+
+    // Display target amount
+    $('.target-amount').text(targetbar.targetAmount);
+    // Display money raised so far
+    $('.money-raised').text(targetbar.amount);
+    // Add current progress as a class to indicate colour of the bar
+    $('.target-wrap').addClass(targetbar.progress())
+    
+
+    // on page load, animate percentage bar to current donation percentage
+    // .stop() used to prevent animation queueing
+    $('.target-bar').stop().animate({
+        left: progressTotal
+    }, animationLength);
+}
 
 $(document).ready(function(){
   
@@ -67,32 +89,9 @@ $(document).ready(function(){
   $(".challenge-me-button").on('click', displayModal);
 
 
-moveProgressBar();
-        $(window).resize(function() {
-            moveProgressBar();
-        });
+  moveProgressBar();
+});
 
-        function moveProgressBar() {
-            var targetbar = new TargetBar(amountRaised, targetAmount);
-
-            var getPercent = (targetbar.percentage()) / 100;
-            var getTargetWrapWidth = $('.target-wrap').width();
-            var progressTotal = getPercent * getTargetWrapWidth;
-            var animationLength = 2500;
-
-            // Display target amount
-            $('.target-amount').text(targetbar.targetAmount);
-            // Display money raised so far
-            $('.money-raised').text(targetbar.amount);
-            // Add current progress as a class to indicate colour of the bar
-            $('.target-wrap').addClass(targetbar.progress())
-            
-
-            // on page load, animate percentage bar to current donation percentage
-            // .stop() used to prevent animation queueing
-            $('.target-bar').stop().animate({
-                left: progressTotal
-            }, animationLength);
-        }
-
+$(window).resize(function() {
+    moveProgressBar();
 });
