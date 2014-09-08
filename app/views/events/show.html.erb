@@ -55,19 +55,19 @@
 
     <section class='training-stats'>
       <section class='training-headline'>
-        <p id='training-section-headline'><%= @event.user.firstname.capitalize %>'s training</p>
+        <p id='training-section-headline'>TRAINING</p>
       </section>
 
-      <section class='percentage-completed-workouts'>
-        <p id='workouts-completed-number'>
+      <section class='total-completed-workouts'>
+        <p id='workouts-completed-total-number'>
            <%= @event.trainingsessions.count%></p>
-        <p id='workouts-completed-text'>
+        <p id='workouts-completed-total-text'>
          workouts completed
         </p>
       </section>
 
     <section class='training-totals'>
-     <p id='training-goal-headline'>Goal</p>
+     <p id='training-goal-headline'>GOAL</p>
      <p id='training-goal-number'><%= @event.training %></p>
       <p id='training-goal-text'>sessions per week.</p>
     </section>
@@ -76,7 +76,7 @@
 
       <section class='workouts-completed-by-user'>
         <p id='workouts-completed-head'>
-          <%= @event.user.firstname %> has worked out
+          <%= @event.user.firstname.capitalize %> has worked out
         </p>
         <p id='workouts-completed-number'>
           <%= @event.weekly_training_sessions%>
@@ -88,7 +88,7 @@
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
-          <p id='recent-workout-details-head'>Most recent session details<br>
+          <p id='recent-workout-details-head'>LAST <br> WORKOUT
             <%= @trainingsessions.last.details %>
           </p>
        <%end%>

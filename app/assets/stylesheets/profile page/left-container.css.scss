@@ -123,14 +123,17 @@
 		margin-bottom: 10px;
 		border-top: 1px solid #DFDFDF;
 	}
-		#training-goal-headline, #training-section-headline {
+		#training-goal-headline, #training-section-headline, #recent-workout-details-head {
 			font-size: 35px;
 			font-weight: 600;
 			margin-top: 20px;
+			letter-spacing: 4px;
+			line-height: 40px;
 		}
 		#training-goal-number {
 			font-size: 140px;
 			font-weight: 600;
+			color: red;
 		}
 		#training-goal-text {
 			font-size: 21px;
@@ -167,7 +170,7 @@
 					top: 1px;
 				}
 
-		.percentage-completed-workouts {
+		.total-completed-workouts {
 			flex-direction: column;
 			color: #343434;
 			text-align: center;
@@ -175,12 +178,12 @@
 			margin-bottom: 10px;
 			border-top: 1px solid #DFDFDF;
 		}
-			#workouts-completed-number {
-				font-size: 4em;
+			#workouts-completed-total-number {
+				font-size: 140px;
 				font-weight: 600;
 				margin-top: 10px;
 			}
-			#workouts-completed-text {
+			#workouts-completed-total-text {
 				font-size: 21px;
 				line-height: 25px;
 			}
@@ -199,7 +202,7 @@
 				margin-top: 8px;
 			}
 			#workouts-completed-number {
-				font-size: 4em;
+				font-size: 140px;
 				font-weight: 600;
 			}
 			#workouts-completed-footer {
@@ -244,6 +247,6 @@
 			border-top: 1px solid #DFDFDF;
 		}
 			#recent-workout-details-head {
-				font-size: 21px;
+
 				margin-top: 8px;
 			}
