@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
   context 'Validations' do
-    it ' is valid when the caption is greater than two characters' do
+    it 'is valid when the caption is greater than two characters' do
       post = Post.create(caption: "I'm so speedy")
       expect(post).to be_valid
     end
@@ -12,7 +12,7 @@ RSpec.describe Post, :type => :model do
       expect(post).to have(1).error_on(:caption)
     end
 
-    it 'it is not valid when the caption is longer than 140 characters' do
+    it 'is not valid when the caption is longer than 140 characters' do
       post = Post.create(caption: 'C'*141)
       expect(post).to have(1).error_on(:caption)
     end
@@ -21,9 +21,6 @@ RSpec.describe Post, :type => :model do
       post = Post.create(caption: "I'm so speedy", video: "www.facebook.com")
       expect(post).to have(1).error_on(:video)
     end
-
-
-
   end
 
   context '#is_owner?' do
