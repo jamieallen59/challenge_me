@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'training sessions' do 
+	
 	context 'when a user has done a training session' do 
-
 		it 'should display that one of that weeks workouts has been logged' do 
 			@mary = create(:user)
 	    @event = create(:event, user: @mary)
@@ -20,7 +20,5 @@ describe 'training sessions' do
 			visit event_path(@event)
 			expect(page).to have_content("4% of total training sessions completed")
 		end
-
 	end
-
 end
