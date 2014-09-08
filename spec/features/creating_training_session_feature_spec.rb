@@ -13,7 +13,7 @@ describe 'Creating training sessions' do
     end
 
     it "let's the user fill in details about their session" do
-    	click_link 'Log training session'
+      click_link 'Log training session'
     	expect(page).to have_css "#new_trainingsession"
     end
 

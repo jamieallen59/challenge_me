@@ -14,13 +14,15 @@ describe 'Editing Events' do
     end
 
     it 'should have a link to edit the event' do
-      expect(page).to have_css '#edit-event', text: 'Edit'
+      click_link 'MENU'
+      expect(page).to have_css '#edit-event', text: 'Edit details'
     end
 
     it 'should allow you to edit the event' do
+      click_link 'MENU'
       click_link 'Edit'
       fill_in 'Name', with: 'Virgin London Marathon'
-      click_on 'Update Event'
+      click_on 'Edit details'
       expect(page).to have_content 'Virgin London Marathon'
       expect(current_path).to eq event_path(@event) 
     end

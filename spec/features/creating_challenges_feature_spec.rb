@@ -9,7 +9,7 @@ describe 'Setting your friends a challenge' do
 	context 'challenge creator not signed in' do
 		it 'displays a button to set a challenge' do
 			visit event_path(@event)
-			expect(page).to have_css 'a.challenge-me-button'
+			expect(page).to have_css '#donations-button'
 		end
 
 		it 'directs them to the new challenge page' do

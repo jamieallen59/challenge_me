@@ -9,7 +9,7 @@ describe 'creating pledges' do
     before do
       login_as @mary
       visit event_path(@event)
-      click_link 'New pledge'
+      click_link 'SWEAR'
       fill_in 'Title', with: 'Herb challenge'
       fill_in 'Amount', with: '1000'
       fill_in 'Info', with: 'I promise to eat a lot of herbs'
@@ -22,7 +22,7 @@ describe 'creating pledges' do
     end
 
     it 'it will be created as a post in your post feed' do
-      click_link 'New pledge'
+      click_link 'SWEAR'
       fill_in 'Title', with: 'Wetsuit challenge'
       fill_in 'Amount', with: '50'
       fill_in 'Info', with: 'Ill run in a wetsuit'

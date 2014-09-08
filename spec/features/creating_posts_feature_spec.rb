@@ -7,11 +7,9 @@ describe 'creating posts' do
 	end
 	
 	context 'as a logged out user' do
-		it 'should redirect you to the sign in page' do
+		it 'you should not be able to see the update button' do
 			visit event_path(@event)
-			click_link 'New Post'
-			expect(page).to have_content('Log in')
-			expect(current_path).to eq new_user_session_path
+			expect(page).not_to have_link('UPDATE')
 		end
 	end
 
@@ -19,7 +17,7 @@ describe 'creating posts' do
 		before do
 			login_as @mary
 			visit event_path(@event)
-			click_link 'New Post'
+			click_link 'UPDATE'
 			fill_in 'Caption', with: '5k in 30 mins - yay!'
 		end
 
@@ -66,7 +64,7 @@ describe 'post validation' do
 
 	it "when info isn't valid the post isn't created " do
 		visit event_path(@event)
-		click_link 'New Post'
+		click_link 'UPDATE'
 		fill_in 'Caption', with: 'yo'
 		click_button 'Create Post'
 		expect(page).to have_content "Your caption must be between 3 and 140 characters"
