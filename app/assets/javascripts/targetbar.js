@@ -26,6 +26,7 @@ TargetBar.prototype.percentage = function() {
 
 TargetBar.prototype.progress = function() {
 	if(this.percentage() < 30) return "struggling";
+	if(this.percentage() >= 100) return "legendary";
 	if(this.percentage() > 75) return "great";
 	return "steady"
 };
