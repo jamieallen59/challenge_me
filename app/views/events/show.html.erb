@@ -2,11 +2,13 @@
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
+            <% if @event.is_owner?(current_user) %>
+              <%= link_to profile_path(current_user, event_id: @event.id) do %>
+              <%= icon('camera', '',class:'icon-camera') %>
+            <% end %>
+          <% end %>
           <% if @event.user.avatar.present? %>
             <%= image_tag @event.user.avatar.url(:medium), class: 'profile-pic'  %>
-          <% end %>
-          <% if @event.is_owner?(current_user) %>
-            <%= link_to 'Add Profile Picture', profile_path(current_user, event_id: @event.id) %>
           <% end %>
         </div>
       </section>
@@ -15,14 +17,12 @@
       </p>
     </section>
 
+
+    <section class="challenge-me">
+      <%= link_to "Challenge Me", new_event_challenge_path(@event), class: 'challenge-me-button' %>
+    </section>
+  
     <section class='event-details-container'>
-      <!-- <div class='ribbon-wrapper'>
-        <div class='ribbon-front'><%= @event.name %></div>
-        <div class='ribbon-edge-topleft'></div>
-        <div class='ribbon-edge-topright'></div>
-        <div class='ribbon-edge-bottomleft'></div>
-        <div class='ribbon-edge-bottomright'></div>
-      </div> -->
       <p id='event-paragraph'><%= @event.user.firstname %> is fundraising for <%= @event.charity %> by doing the  <%= @event.name %> on <%= @event.event_date.strftime("%d %B %Y") %>. They've raised £<%= @event.amount_raised %> so far.</p>
     </section>
 
@@ -100,6 +100,8 @@
         <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit details", edit_event_path(@event), id: 'edit-event' %>
         <div class='eventcontrols-separator'></div>
         <%= link_to image_tag("delete.png", id: 'delete-logo') +'Delete event', event_path(@event), id: 'delete-event', method: :delete %>
+        <div class='eventcontrols-separator'></div>
+         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, id: 'edit-event'%>
       <% end %>
     </section>
 
@@ -164,17 +166,17 @@
 
   <!-- sync with mapmyfitness -->
   <% if current_user == @event.user %>
-  <section class='map-my-fitness'>
-  <%= image_tag("MapMyFitness.png", id: 'mmf-logo') %>
-    <p class='mapmyfitness-sync-text'>
-      Sync your workouts from Map My Fitness:
-    </p>
-    <section class='mmf-button'>
-      <%= image_tag("sync.png", id: 'sync-icon') %>
-      <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
+    <section class='map-my-fitness'>
+        <%= image_tag("MapMyFitness.png", id: 'mmf-logo') %>
+      <p class='mapmyfitness-sync-text'>
+        Sync your workouts from Map My Fitness:
+      </p>
+      <section class='mmf-button'>
+        <%= image_tag("sync.png", id: 'sync-icon') %>
+        <%= link_to "Sync", mmf_training_path(@event.id), id: 'map-my-fitness-button-text', method: :post %>
       </section>
-  </section>
-   <%end%>
+    </section>
+  <%end%>
 
    <div class='page-divider'></div>
 
@@ -184,6 +186,13 @@
      <div class='newpost-separator'></div>
     <%= link_to 'Click to donate', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "new-post-link" %>
     </section>
+
+    <% if @challenges.any? %>
+    <section class='challenge-count'>
+      <%= @challenges.count %> challenge pending
+    </section>
+    <% end %>
+
     <% if @posts.any? %>
         <%= render @posts.reverse %>
     <% else %>
@@ -234,31 +243,32 @@
         <%= f.text_field :caption %>
       </section>
 
+      Choose the type of post : </br>
+
       <section class="post-picture-modal">
         <%= f.label :picture %>
         <%= f.file_field :picture %>
       </section>
 
+      or </br>
+
       <section class="post-video-modal">
         <%= f.label :video %>
         <%= f.text_field :video %>
       </section>
-
+      or </br>
       <section class="post-text-modal">
         <%= f.label :text %>
         <%= f.text_field :text %>
       </section>
-
-
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
       </section>
-
     <% end %>
   </div>
 
   <div id="ex1" style="display:none;">
-    <%= form_for [ @event, @trainingsession ] do |f| %>
+    <%= form_for [@event, @trainingsession] do |f| %>
     <section class='modal-header'>
       <%= f.label :details, "Training details"%>
     </section>
@@ -276,21 +286,15 @@
     <%end%>
   </div>
 
-
-
 <script>
   $(document).ready(function(){
-
       $(".modal-button").on('click', displayModal);
-
       $(".pledge-modal-button").on('click', displayModal);
-
       $(".new-post-modal-button").on('click', displayModal);
   });
 
   function displayModal(e){
       e.preventDefault();
-
       $($(e.target).attr('data-modal-selector')).modal({
           fadeDuration: 500,
           fadeDelay: 0.30

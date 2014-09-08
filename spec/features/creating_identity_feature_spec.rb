@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'Linking an api identity' do
   before do
     @user = create(:user)
-    
   end
 
   context 'as a logged out user' do
