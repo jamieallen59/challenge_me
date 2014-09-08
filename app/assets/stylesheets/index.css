@@ -1,3 +1,10 @@
+video#bgvid {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background-size: cover;
+}
+
 /*---- Upper Container ---*/
 .hp-upper-container {
 	display: flex;
@@ -7,7 +14,6 @@
 }
 
 	.hp-cover-image {
-		background-image: url("click.jpg");
 		display: flex;
 		flex-direction: column;
 		background-size: 100%;
