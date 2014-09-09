@@ -21,16 +21,15 @@
   </section>
 
   <!-- Targetbar -->
-  <section class="mini-target-bar-container" data-event-id='<%= event.id %>'>
-
-   	<div class="mini-target-wrap mini-progress" data-progress-percent="">
-      <div class="mini-target-bar mini-progress">
+<section class="mini-target-bar-container" data-event-id='<%= event.id %>'>
+  <div class="mini-target-wrap mini-progress" data-progress-percent="">
+    <div class="mini-target-bar mini-progress">
     </div>
   </div>
 </section>
 
-  <%= javascript_tag do %>
-    showMiniProgressBar("<%=j event.amount_raised.to_s %>", "<%=j event.target.to_s %>", <%= event.id %>);
-  <% end %>
+<%= javascript_tag do %>
+  showMiniProgressBar("<%=j event.amount_raised.to_s %>", "<%=j event.target.to_s %>", <%= event.id %>);
+<% end %>
 
 <% end %>

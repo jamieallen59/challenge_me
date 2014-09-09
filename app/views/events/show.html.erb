@@ -104,7 +104,6 @@
       </section>
       <section class='fundraising-stats-training-goal'>
 
-
          <section class='fundraising-stats-percentage-number'>
             <% if (@event.event_date == Date.today) %>
               <p id='event-today-text'>Today's the day!</p>
@@ -117,10 +116,9 @@
               <p id='fundraising-stats-percentage-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
               <p id='fundraising-stats-percentage-text'>days ago!</p>
             <% end %>
+          </section>
+        </section>
     </section>
-      </section>
-    </section>
-
 
     <section class='pledge-container'>
         <% if @pledges.any? %>
@@ -166,11 +164,12 @@
             Challenge: <%= challenge.name %>
           </p>
         </section>
-        <section class='challenge-button-container'>
+        <section class='challenge-button-container', data-challenge="<%= challenge.id %>">
           <button class='accept-challenge'><i class="fa fa-check"></i></button>
           <button class='decline-challenge'><i class="fa fa-times"></i></button>
         </section>
       </section>
+
     <% end %>
 
    <div class='page-divider'></div>
@@ -185,38 +184,17 @@
    </section>
 
   <section class='update-feed'>
-
     <% if @posts.any? %>
     <section id="cd-timeline" class="cd-container">
-        <%= render @posts.reverse %>
+      <%= render @posts.reverse %>
     </section>
     <% else %>
-        There are no posts
+      There are no posts
     <% end %>
   </section>
 </section>
 
-  <div id="new-pledge-modal" style="display:none;">
-    <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
-    <p id="menu-header">I PROMISE</p>
-      <section class='pledge-modal-container'>
-          <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
-      </section>
-      <section class='pledge-modal-container'>
-            <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
-             <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
-      </section>
-      <section class='pledge-modal-container'>
-                 <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
-                <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
-       </section>
-
-      <section class="pledge-create-modal">
-        <%= f.submit 'GO', class: 'modal-button-create' %>
-      <a class='close-modal' href="#" rel="modal:close">Close</a>
-      </section>
-    <%end%>
-  </div>
+  <%= render 'pledge_modal' %>
 
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
@@ -285,19 +263,18 @@
 
   <div id="new-challenge-modal" style="display:none;">
     <%= form_for [@event, @event.challenges.new] do |f| %>
-
+<p id="menu-header">SET A CHALLENGE</p>
       <section class="challenge-creator-modal">
-        <%= f.label :creator, 'What is your name?' %>
-        <%= f.text_field :creator %>
+        <%= f.text_field :creator, id: 'pledge-modal-input', placeholder: "What's your name?" %>
       </section>
 
       <section class="challenge-name-modal">
-        <%= f.label :name, 'Describe the challenge' %>
-        <%= f.text_field :name %>
+        <%= f.label :name, 'Describe your challenge', id: 'pledge-modal-label' %>
+        <%= f.text_field :name, id: 'pledge-modal-input', placeholder: "what do you want them to do?" %>
       </section>
       <section class="challenge-amount-modal">
-        <%= f.label :amount, 'How much will you donate for completing this challenge?' %>
-        <%= f.text_field :amount %>
+        <%= f.label :amount, 'How much would you donate?',id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: "£££" %>
       </section>
       <section  class="challenge-create-modal">
         <%= f.submit 'Create challenge', class: 'modal-button-create' %>
@@ -312,9 +289,11 @@
      -      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
 -      <%= link_to "EDIT EVENT", edit_event_path(@event), class:"menu-event" %><br>
 -      <%= link_to "DELETE EVENT", event_path(@event),class:"menu-event", method: :delete %><br>
+-      <%= link_to "CREATE EVENT", new_event_path,class:"menu-event" %><br>
 -      <%= link_to "LOG TRAINING", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
 -      <%= link_to "SYNC MAPMYFITNESS", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
 -      <%= link_to'SIGN OUT', destroy_user_session_path, method: :delete, class:"menu-event" %>
 
+>>>>>>> 26533152037fd6c49c16c414f59c4ffc7c7ff089
     </section>
   </div>

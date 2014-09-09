@@ -8,10 +8,17 @@ $(document).ready(function(){
 	$('.accept-challenge').on('click', function(){
 		$('.challenge-display').removeClass('challenge-declined-highlighting');
 		$('.challenge-display').addClass('challenge-accepted-highlighting');
+		var challenge = $(this).parent().data('challenge');
+		$.post("/challenge/" + challenge + "/accept", function(response){
+			console.log(response);
+		});
 	});
 
 	$('.decline-challenge').on('click', function(){
 		$ ('.challenge-display').removeClass('challenge-accepted-highlighting');
 		$('.challenge-display').addClass('challenge-declined-highlighting');
+		var challenge = $(this).parent().data('challenge');
+		$.post("/challenge/" + challenge + "/decline", function(response){
+		});
 	});
 });
