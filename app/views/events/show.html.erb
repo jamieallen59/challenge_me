@@ -199,17 +199,16 @@
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
       <section class='pledge-modal-container'>
-       <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
+          <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
       </section>
-
       <section class='pledge-modal-container'>
             <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
-   <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
+             <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
       </section>
       <section class='pledge-modal-container'>
-       <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
-      <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
-      </section>
+                 <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
+                <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
+       </section>
 
       <section class="pledge-create-modal">
         <%= f.submit 'PROMISE', class: 'modal-button-create' %>
@@ -234,27 +233,27 @@
     <% end %>
 
       <section class="post-caption-modal">
-        <%= f.label :caption %>
-        <%= f.text_field :caption %>
+        <%= f.label :caption, id: 'pledge-modal-label' %>
+        <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: "write a title for your post here..."%>
       </section>
 
-      Choose the type of post : </br>
+
 
       <section class="post-picture-modal">
-        <%= f.label :picture %>
+        <%= f.label :picture, id: 'pledge-modal-label' %>
         <%= f.file_field :picture %>
       </section>
 
-      or </br>
+
 
       <section class="post-video-modal">
-        <%= f.label :video %>
-        <%= f.text_field :video %>
+        <%= f.label :video, id: 'pledge-modal-label' %>
+        <%= f.text_field :video, id: 'pledge-modal-input',id: 'pledge-modal-input', placeholder: "paste a youtube URL here..." %>
       </section>
-      or </br>
+
       <section class="post-text-modal">
-        <%= f.label :text %>
-        <%= f.text_field :text %>
+        <%= f.label :text, id: 'pledge-modal-label' %>
+        <%= f.text_field :text, id: 'pledge-modal-input', id: 'pledge-modal-input', placeholder: "write some hilarious content here..." %>
       </section>
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
