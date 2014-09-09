@@ -292,7 +292,7 @@
 
    <% if @event.is_owner?(current_user) %>
       <section class='modal-body'>
-       -      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
+  -      <%= link_to 'MY EVENTS', user_events_path(current_user), class:"menu-event"%><br>
   -      <%= link_to "EDIT EVENT", edit_event_path(@event), id: "edit-link", class:"menu-event" %><br>
   -      <%= link_to "DELETE EVENT", event_path(@event), class:"menu-event", id: "delete-event", method: :delete %><br>
   -      <%= link_to "CREATE EVENT", new_event_path,class:"menu-event" %><br>

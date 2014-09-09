@@ -20,4 +20,9 @@ class UsersController < ApplicationController
 			redirect_to event_path(params[:event_id])
 		end
 	end
+
+	def events
+		@events = Event.where(user_id: params[:user_id])
+		render 'events/index'
+	end
 end
