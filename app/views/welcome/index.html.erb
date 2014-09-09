@@ -11,7 +11,6 @@
 		<section class="main-image-search">
       <section class="user_management">
       <% if user_signed_in? %>
-          Logged in as <%= current_user.email %>
           <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'lets_go-button', id:'sign_out'%>
       <% end %>
       </section>
