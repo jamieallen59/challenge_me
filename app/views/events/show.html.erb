@@ -151,9 +151,31 @@
         <div class="target-bar progress">
         </div>
         </div>
-
-
     </section>
+
+    <% @challenges.each do |challenge| %>
+
+      <section class='challenge-display'>
+        <section class='challenge-text'>
+          <p class='challenger-creator'>
+            You've been challenged by <%= challenge.creator %>!
+          </p>
+          <p class='challenger-description'>
+            Challenge: <%= challenge.name %>
+          </p>
+        </section>
+        <section class='challenge-button-container'>
+          <button class='accept-challenge'><i class="fa fa-check"></i></button>
+          <button class='decline-challenge'><i class="fa fa-times"></i></button>
+        </section>
+      </section>
+    <% end %>
+
+<!--     <% if @challenges.any? %>
+    <section class='challenge-count'>
+      <%= @challenges.count %> challenge pending
+    </section>
+    <% end %> -->
 
    <div class='page-divider'></div>
 
@@ -167,13 +189,6 @@
    </section>
 
   <section class='update-feed'>
-
-
-    <% if @challenges.any? %>
-    <section class='challenge-count'>
-      <%= @challenges.count %> challenge pending
-    </section>
-    <% end %>
 
     <% if @posts.any? %>
     <section id="cd-timeline" class="cd-container">
