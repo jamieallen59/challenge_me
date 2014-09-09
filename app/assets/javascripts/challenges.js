@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$('.challenge-display').addClass('challenge-accepted-highlighting');
 		var challenge = $(this).parent().data('challenge');
 		$.post("/challenge/" + challenge + "/accept", function(response){
-			console.log(response);
+			//refresh
 		});
 	});
 
@@ -19,6 +19,7 @@ $(document).ready(function(){
 		$('.challenge-display').addClass('challenge-declined-highlighting');
 		var challenge = $(this).parent().data('challenge');
 		$.post("/challenge/" + challenge + "/decline", function(response){
+			//refresh
 		});
 	});
 });
