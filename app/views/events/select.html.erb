@@ -1,18 +1,18 @@
 <section class='main-form-container'>
-	 <section class="new-event-form">
+	
 		<%if @events.any?%>
 		Hello <%= current_user.firstname %>!
 		<br>
 		<br>
 		Which of your justgiving events do you want to view? 
 		  <% @events.each_with_index do |event, index| %>
-
-		    <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']), class: 'event-select-button' %></br>
-
+		    <%= link_to "#{event['eventName']}", new_event_path(page_short_name: event['pageShortName']), class: 'event-container' %>
 		  <% end %>
+		  <section class="event-container">
 		    <%= link_to 'Create new event', new_event_path %>
+		    </section>
 		<%else %>
 		  <%= link_to 'Create new event', new_event_path %>
 		<% end %>
-	</section>
+
 </section>
