@@ -35,10 +35,9 @@ describe 'Creating training sessions' do
     	@event = create(:event, user: @mary)
   	end
 
-  	it 'should not have a log Workout button or a sync link' do
+  	it 'should not have a MENU link to log Workout button or a sync link' do
   		visit event_path(@event)
-    	expect(page).not_to have_content 'Log training session'
-      expect(page).not_to have_content 'Sync'
+    	expect(page).not_to have_content 'MENU'
   	end
 
   	 it 'you cannot create a workout by hacking the routes' do
