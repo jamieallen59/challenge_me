@@ -16,7 +16,7 @@
       </section>
       
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-  			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "LOOKING FOR SOMEONE..?" %>
+  			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "Looking for a friend..?" %>
   			<%= submit_tag "GO", id:'search_button' %>
 			<% end %>
 		</section>

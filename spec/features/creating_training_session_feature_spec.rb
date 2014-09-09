@@ -14,9 +14,7 @@ describe 'Creating training sessions' do
 
     it "let's the user fill in details about their session" do
       click_link 'MENU'
-      within('#menu-modal') do
         click_link 'Log training session'
-      end
     	expect(page).to have_content "Training details"
     end
 
