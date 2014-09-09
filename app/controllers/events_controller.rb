@@ -24,6 +24,8 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
 
   def show
     @event = Event.find(params[:id])
+    @event_id = @event.id
+    @user = @event.user
     @posts = @event.posts
     @comment = Comment.new
     @pledges = @event.pledges

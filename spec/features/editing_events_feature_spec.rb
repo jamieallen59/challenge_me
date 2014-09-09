@@ -38,7 +38,7 @@ describe 'Editing Events' do
     it 'can attach an image to a profile' do
       find('#profile-image a').click
       attach_file 'Avatar', Rails.root.join('app/assets/images/run.jpg')
-      click_button 'Update User'
+      click_button 'Change profile picture'
       expect(page).to have_css 'img.profile-pic'
       expect(current_path).to eq event_path(@event)
     end
