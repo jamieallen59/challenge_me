@@ -37,13 +37,7 @@
         <p id='training-section-headline'>TRAINING</p>
       </section>
 
-      <section class='total-completed-workouts'>
-        <p id='workouts-completed-total-number'>
-           <%= @event.trainingsessions.count%></p>
-        <p id='workouts-completed-total-text'>
-         workouts completed
-        </p>
-      </section>
+
 
     <section class='training-totals'>
       <p id='training-goal-headline'>GOAL</p>
@@ -53,26 +47,34 @@
 
     <section class='workouts-completed-by-user'>
       <p id='workouts-completed-head'>
-       This Week
+        This week
       </p>
       <p id='workouts-completed-number'>
-
-        <div class="progress-radial progress-<%= @event.percentage_of_weekly_workouts_complete %>">
-          <div class="overlay"><%= @event.percentage_of_weekly_workouts_complete %>%</div>
-
+      <div class="progress-radial progress-<%= @event.percentage_of_weekly_workouts_complete %>">
+        <div class="overlay"><%= @event.percentage_of_weekly_workouts_complete %>%</div>
       </div>
       </p>
       <p id='workouts-completed-footer'>
-          complete
+          done
       </p>
 
     </section>
+
+
+
+     <section class='total-completed-workouts'>
+        <p id='workouts-completed-total-number'>
+           <%= @event.trainingsessions.count%></p>
+        <p id='workouts-completed-total-text'>
+         workouts completed
+        </p>
+      </section>
 
       <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
 
           <p id='recent-workout-details-head'>LAST <br> WORKOUT
-            <%= @trainingsessions.last.details %>
+            <p id='workouts-completed-footer'><%= @trainingsessions.last.details %></p>
 
           </p>
        <%end%>
