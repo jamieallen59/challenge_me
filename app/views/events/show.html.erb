@@ -166,11 +166,12 @@
             Challenge: <%= challenge.name %>
           </p>
         </section>
-        <section class='challenge-button-container'>
+        <section class='challenge-button-container', data-challenge="<%= challenge.id %>">
           <button class='accept-challenge'><i class="fa fa-check"></i></button>
           <button class='decline-challenge'><i class="fa fa-times"></i></button>
         </section>
       </section>
+
     <% end %>
 
    <div class='page-divider'></div>
