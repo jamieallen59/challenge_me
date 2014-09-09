@@ -128,8 +128,8 @@
             <%= @event.user.firstname.capitalize %> promises:
           </p>
           <p class='pledge-information'>
-            "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.caption%>
-            <%=@event.next_pledge.text%>"
+            Once I raise £<%= @event.next_pledge.amount %>, I will do the <%= @event.next_pledge.caption %>
+            <%= @event.next_pledge.text %>
           </p>
         <%else%>
           <p class='pledge-title-empty'>
@@ -185,10 +185,8 @@
   </section>
 </section>
 
-
-
   <div id="new-pledge-modal" style="display:none;">
-    <%= form_for [@event, @event.pledges.new], as: :pledge, url: event_pledges_path(@event) do |f| %>
+    <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
       <section class='pledge-modal-container'>
         <%= f.label  :caption, "What challenge do you promise to do next?", id: 'pledge-modal-label' %>
         <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: 'give your challenge a name' %>

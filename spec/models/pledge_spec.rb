@@ -13,7 +13,7 @@ RSpec.describe Pledge, :type => :model do
     end
     it 'is not valid unless title and amount are filled in' do
       pledge = Pledge.new(text: "I'm so pschyed to do this challenge")
-      expect(pledge).to have(1).error_on(:caption)
+      expect(pledge).to have(2).error_on(:caption)
       expect(pledge).to have(2).error_on(:amount)
     end
 

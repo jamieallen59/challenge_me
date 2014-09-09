@@ -25,7 +25,7 @@ class Event < ActiveRecord::Base
   end
 
   def next_pledge
-     pledges.select{ |pledge| pledge.amount > amount_raised }.min_by{|pledge| pledge.amount }
+     pledges.select{ |pledge| pledge.amount.to_f > amount_raised }.min_by{|pledge| pledge.amount }
   end
 
   def is_owner? user
@@ -90,7 +90,7 @@ private
   end
 
   def valid_new_workout?(workout_date, workout)
-    workout_date.to_date >= created_at.to_date 
+    workout_date.to_date >= created_at.to_date && !previously_logged?(workout)
   end
 
 end

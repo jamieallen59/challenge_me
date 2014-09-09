@@ -35,5 +35,10 @@ describe 'users experience' do
 			visit '/'
 			expect(page).to have_link 'SIGN OUT'
 		end
+
+		it 'does not display any sort of welcome message' do
+			visit '/'
+			expect(page).not_to have_content 'Logged in as maryperfect@challengme.com'
+		end
 	end
 end

@@ -31,7 +31,6 @@ video#bgvid {
 			margin-right: 35%;
 		}
 			#sign_out {
-				margin-left: -200px;
 			}
 		#search-form {
 			margin-top: -15px;
@@ -46,7 +45,7 @@ video#bgvid {
 				text-decoration: none;
 				font-size: 1.2em;
 				width: 79%;
-				height: 29px;
+				height: 52px;
 				letter-spacing: 5px;
 				padding: 10px;
 				border: 2px solid white;
