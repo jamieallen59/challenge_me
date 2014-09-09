@@ -234,18 +234,25 @@
       </article>
     <% end %>
 
+
+
+
+
+
       <section class="post-caption-modal">
         <%= f.label :caption, id: 'pledge-modal-label' %>
         <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: "write a title for your post here..."%>
       </section>
-
+<br>
+<button id="post-picture" class="modal-button-create"><%= icon('file-image-o ')%>  PICTURE</button>
+<button id="post-video" class="modal-button-create"><%= icon('youtube')%>  VIDEO</button>
+<button id="post-text" class="modal-button-create"><%= icon('pencil')%>  TEXT</button>
 
 
       <section class="post-picture-modal">
         <%= f.label :picture, id: 'pledge-modal-label' %>
         <%= f.file_field :picture %>
       </section>
-
 
 
       <section class="post-video-modal">
@@ -257,11 +264,25 @@
         <%= f.label :text, id: 'pledge-modal-label' %>
         <%= f.text_field :text, id: 'pledge-modal-input', id: 'pledge-modal-input', placeholder: "write some hilarious content here..." %>
       </section>
+      <br>
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
       </section>
     <% end %>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div id="ex1" style="display:none;">
     <%= form_for [@event, @trainingsession] do |f| %>

@@ -114,8 +114,37 @@ $(document).ready(function(){
 
 
   moveProgressBar();
+
+  $("#post-picture").click(function(event){
+    event.preventDefault();
+    $(".post-video-modal").hide();
+    $(".post-text-modal").hide();
+    $(".post-picture-modal").show();
+
+  });
+   $("#post-video").click(function(event){
+    event.preventDefault();
+    $(".post-video-modal").show();
+    $(".post-text-modal").hide();
+    $(".post-picture-modal").hide();
+
+  });
+
+  $("#post-text").click(function(event){
+    event.preventDefault();
+    $(".post-video-modal").hide();
+    $(".post-text-modal").show();
+    $(".post-picture-modal").hide();
+
+  });
+
 });
+
 
 $(window).resize(function() {
     moveProgressBar();
 });
+
+
+
+
