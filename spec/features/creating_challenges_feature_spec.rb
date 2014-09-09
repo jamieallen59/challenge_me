@@ -1,18 +1,20 @@
 require 'rails_helper'
 
 describe 'Setting your friends a challenge' do
+
 	before do
 			@mary = create(:user)
 			@event = create(:event, user: @mary)
 		end
 
 	context 'challenge creator not signed in' do
+
 		it 'displays a button to set a challenge' do
 			visit event_path(@event)
 			expect(page).to have_css '#challenge-me-link'
     end
 
-		it 'directs them to the new challenge page' do
+		it 'when the button is pressed, directs them to the new challenge page' do
 			visit event_path(@event)
 			click_link 'Challenge Me'
 			expect(page).to have_content 'What is your name?'
@@ -35,7 +37,6 @@ describe 'Setting your friends a challenge' do
 	end
 
 	context 'after challenge is set, and mary signs in' do
-
 		before do
 			visit event_path(@event)
 			click_link 'Challenge Me'
@@ -53,7 +54,7 @@ describe 'Setting your friends a challenge' do
 
 	end
 
-	context 'when logged in' do
+	context 'when a user is logged in to their own page' do
 		it  'Challenge Me link is not displayed' do
 			login_as @mary
 			visit event_path(@event)
