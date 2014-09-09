@@ -10,7 +10,7 @@ describe 'Deleting Events' do
   context 'logged in as the event owner' do
     before do
       login_as @mary
-      visit event_path(@event)  
+      visit event_path(@event)
     end
 
     it 'should have a link to delete the event' do
@@ -21,7 +21,7 @@ describe 'Deleting Events' do
       click_link 'Delete'
       expect(page).to have_content 'Deleted Successfully'
       expect(page).not_to have_content 'Bigfoot Race'
-      expect(current_path).to eq events_path 
+      expect(current_path).to eq events_path
     end
   end
 
@@ -39,6 +39,6 @@ describe 'Deleting Events' do
       page.driver.submit :delete, event_path(@event), {}
       expect(page).to have_content 'You are not the owner of the event'
       expect(current_path).to eq root_path
-    end    
+    end
   end
 end

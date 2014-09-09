@@ -251,14 +251,14 @@
 		.menu-event {
 			vertical-align: middle;
 			cursor: pointer;
-			line-height: 40px;
+			line-height: 50px;
 			margin-top: 20px;
 			margin-right: auto;
 			margin-left: auto;
-			background-color: #FFF;
+			background-color: #e7e7e7;
 			color: #000;
 			text-decoration: none;
-			font-size: 22px;
+			font-size: 20px;
 			padding: 6px;
 			width: 60%;
 			font-weight: 800;
@@ -267,8 +267,9 @@
 			letter-spacing: 5px;
 		}
 			.menu-event:hover {
-				background-color: #e7e7e7;
-				color:white;
+				background-color: #FFF;
+				color: #000;
+
 			}
 			.menu-event:active {
 				position: relative;
@@ -276,6 +277,21 @@
 			}
 			.menu-event:focus {
 		    outline-width: 0;
+			}
+
+			#menu-header {
+			line-height: 40px;
+			margin-left:16px;
+			color: #000;
+			text-decoration: none;
+			font-size: 23px;
+			padding: 6px;
+			width: 60%;
+			font-weight: 600;
+			border: 2px solid white;
+			border-radius: .05em;
+			letter-spacing: 10px;
+
 			}
 
 
