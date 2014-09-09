@@ -16,18 +16,16 @@ describe 'displaying pledges' do
 
   context 'with pledges' do
     it 'displays the pledge information' do
-      wet_suit = @nyc_marathon.pledges.create(title: "Wet Suit Challenge", amount: 300, info: "I will do a training run in my wetsuit")
+      wet_suit = @nyc_marathon.pledges.create(amount: 300,title: "do the Wet Suit Challenge",  info: "I will do a training run in my wetsuit")
       visit event_path(@nyc_marathon)
       expect(page).to have_content("Once I raise £300, I will do the Wet Suit Challenge")
-      expect(page).to have_content("I will do a training run in my wetsuit")
     end
 
     it 'displays only the pledge closest to the current amount raised' do
       wet_suit = @nyc_marathon.pledges.create(title: "Wet Suit Challenge", amount: 300, info: "I will do a training run in my wetsuit")
-      sausage_challenge = @nyc_marathon.pledges.create(title: "Sausage Challenge", amount: 30, info: "I will do a training run with sausages tied to me")
+      sausage_challenge = @nyc_marathon.pledges.create(amount: 30, title: "do the Sausage Challenge",  info: "I will do a training run with sausages tied to me")
       visit event_path(@nyc_marathon)
       expect(page).to have_content("Once I raise £30, I will do the Sausage Challenge")
-      expect(page).to have_content("I will do a training run with sausages tied to me")
       expect(page).not_to have_content("Wet Suit Challenge")
     end
   end
