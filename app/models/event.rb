@@ -52,14 +52,17 @@ class Event < ActiveRecord::Base
     client.workouts.each do |workout|
     
       workout_date, workout_name = assign_from_hash(workout)
-      return unless valid_new_workout?(workout_date, workout)
-      trainingsession = trainingsessions.new(details: workout_name, sessiondate: workout_date)
-      if route_logged?(workout)
-        trainingsession.mmf_updated_datetime = workout["updated_datetime"]
-        trainingsession.mmf_route_id = (workout['_links']['route'][0]["id"]).to_s
+
+      if valid_new_workout?(workout_date, workout)
+        trainingsession = trainingsessions.new(details: workout_name, sessiondate: workout_date)
+        if route_logged?(workout)
+          trainingsession.mmf_updated_datetime = workout["updated_datetime"]
+          trainingsession.mmf_route_id = (workout['_links']['route'][0]["id"]).to_s
+        end
+        trainingsession.save 
       end
-      trainingsession.save    
     end
+    
   end
 
 private
@@ -87,7 +90,7 @@ private
   end
 
   def valid_new_workout?(workout_date, workout)
-    workout_date >= created_at && !previously_logged?(workout)
+    workout_date.to_date >= created_at.to_date && !previously_logged?(workout)
   end
 
 end

@@ -128,8 +128,8 @@
             <%= @event.user.firstname.capitalize %> promises:
           </p>
           <p class='pledge-information'>
-            "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
-            <%=@event.next_pledge.info%>"
+            "Once I raise £<%=@event.next_pledge.amount%>, I will <%=@event.next_pledge.title%>
+            "
           </p>
         <%else%>
           <p class='pledge-title-empty'>
@@ -154,6 +154,25 @@
   </div>
 </section>
 
+
+    <% @challenges.each do |challenge| %>
+
+      <section class='challenge-display'>
+        <section class='challenge-text'>
+          <p class='challenger-creator'>
+            You've been challenged by <%= challenge.creator %>!
+          </p>
+          <p class='challenger-description'>
+            Challenge: <%= challenge.name %>
+          </p>
+        </section>
+        <section class='challenge-button-container'>
+          <button class='accept-challenge'><i class="fa fa-check"></i></button>
+          <button class='decline-challenge'><i class="fa fa-times"></i></button>
+        </section>
+      </section>
+    <% end %>
+
    <div class='page-divider'></div>
 
     <section class='donations-container'>
@@ -161,18 +180,11 @@
         <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
         <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
     <% else %>
-    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}"}), id: "donate-button" %>
+    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}/donations"}), id: "donate-button" %>
       <%end%>
    </section>
 
   <section class='update-feed'>
-
-
-    <% if @challenges.any? %>
-    <section class='challenge-count'>
-      <%= @challenges.count %> challenge pending
-    </section>
-    <% end %>
 
     <% if @posts.any? %>
     <section id="cd-timeline" class="cd-container">
@@ -188,19 +200,23 @@
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new] do |f| %>
+
+     <section class='pledge-modal-container'>
+        <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
+      </section>
+
+
       <section class='pledge-modal-container'>
-        <%= f.label :title, "What challenge do you promise to do next?", id: 'pledge-modal-label' %>
-        <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'give your challenge a name' %>
+        <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
+        <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
       </section>
 
       <section class='pledge-modal-container'>
-        <%= f.label :info, "More info", id: 'pledge-modal-label' %>
-        <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "tell us more!" %>
+        <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
+        <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "the details go here" %>
       </section>
-      <section class='pledge-modal-container'>
-        <%= f.label :amount, "When will you do this challenge?", id: 'pledge-modal-label' %>
-        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £££ target to hit' %>
-      </section>
+
 
       <section class="pledge-create-modal">
         <%= f.submit 'PROMISE', class: 'modal-button-create' %>
@@ -296,21 +312,14 @@
     <%end%>
   </div>
 
-
-
-  <div id="menu-modal" style="display:none;">
+  <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
+    <p id="menu-header">MENU</p>
     <section class='modal-body'>
-        <%= link_to image_tag("sync.png", id: 'delete-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
-
-         <%= link_to image_tag("log.png", id: 'delete-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
-
-        <%= link_to image_tag("edit.png", id: 'delete-logo')+ "Edit #{@event.name}", edit_event_path(@event), class:"menu-event" %><br>
-
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), class:"menu-event", method: :delete %><br>
-
-         <%= link_to image_tag("my_events.png", id: 'delete-logo')+'My Events', select_events_path, class:"menu-event"%><br>
-
-        <%= link_to image_tag("signout.png", id: 'delete-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
-
+      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
+      <%= link_to "EDIT EVENT", edit_event_path(@event), class:"menu-event" %><br>
+      <%= link_to "DELETE EVENT", event_path(@event),class:"menu-event", method: :delete %><br>
+      <%= link_to "LOG TRAINING", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+      <%= link_to "SYNC MAPMYFITNESS", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
+      <%= link_to'SIGN OUT', destroy_user_session_path, method: :delete, class:"menu-event" %>
     </section>
   </div>

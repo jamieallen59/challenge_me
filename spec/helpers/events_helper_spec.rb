@@ -48,4 +48,14 @@ RSpec.describe EventsHelper, :type => :helper do
 			expect(page).to have_content("Percentage complete: 110%")
 		end
 	end
+
+  describe '#display_if' do
+    it 'should return nothing if test environment is true' do
+      expect(display_if(true)).to eq ''
+    end
+
+    it 'should return display:none if test environment is false' do
+      expect(display_if(false)).to eq 'display:none;'
+    end
+  end
 end
