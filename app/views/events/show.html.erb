@@ -302,18 +302,13 @@
   </div>
 
   <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
+    <p id="menu-header">MENU</p>
     <section class='modal-body'>
-        <%= link_to image_tag("sync.png", id: 'sync-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
-
-         <%= link_to image_tag("log.png", id: 'log-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
-
-        <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit #{@event.name}", edit_event_path(@event), id: 'edit-event', class:"menu-event" %><br>
-
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), id: 'delete-event',class:"menu-event", method: :delete %><br>
-
-         <%= link_to image_tag("my_events.png", id: 'event-logo')+'My Events', select_events_path, class:"menu-event"%><br>
-
-        <%= link_to image_tag("signout.png", id: 'signout-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
-
+      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
+      <%= link_to "EDIT EVENT", edit_event_path(@event), class:"menu-event" %><br>
+      <%= link_to "DELETE EVENT", event_path(@event),class:"menu-event", method: :delete %><br>
+      <%= link_to "LOG TRAINING", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+      <%= link_to "SYNC MAPMYFITNESS", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
+      <%= link_to'SIGN OUT', destroy_user_session_path, method: :delete, class:"menu-event" %>
     </section>
   </div>
