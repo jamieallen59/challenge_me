@@ -12,7 +12,6 @@ class PledgesController < ApplicationController
     @event = Event.find(params[:event_id])
     @pledge = @event.pledges.new(params[:pledge].permit(:caption, :amount, :text))
     if @pledge.save!
-      # @event.posts.create(caption: @pledge.title, text: @pledge.info, user_id: @event.user_id)
       redirect_to event_path(@event)
     else
       render 'new'
