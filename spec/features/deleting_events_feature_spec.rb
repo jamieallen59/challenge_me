@@ -18,7 +18,7 @@ describe 'Deleting Events' do
     end
 
     it 'should allow you to delete the event' do
-      click_link 'Delete'
+      click_link 'DELETE'
       expect(page).to have_content 'Deleted Successfully'
       expect(page).not_to have_content 'Bigfoot Race'
       expect(current_path).to eq events_path
