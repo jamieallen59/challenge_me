@@ -18,7 +18,7 @@
     </section>
 
     <section class='event-details-container'>
-      <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <%= @event.charity %> by <%= @event.name %> on <%= @event.event_date.strftime("%d %B '%y") %></p>
+      <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <strong><%= @event.charity %></strong> by <%= @event.name %> on <strong><%= @event.event_date.strftime("%d %B '%y") %></strong></p>
     </section>
 
     <section class='donate-button-container'>
@@ -37,13 +37,7 @@
         <p id='training-section-headline'>TRAINING</p>
       </section>
 
-      <section class='total-completed-workouts'>
-        <p id='workouts-completed-total-number'>
-           <%= @event.trainingsessions.count%></p>
-        <p id='workouts-completed-total-text'>
-         workouts completed
-        </p>
-      </section>
+
 
     <section class='training-totals'>
       <p id='training-goal-headline'>GOAL</p>
@@ -53,30 +47,39 @@
 
     <section class='workouts-completed-by-user'>
       <p id='workouts-completed-head'>
-       This Week
+        This week is<br>
       </p>
       <p id='workouts-completed-number'>
-
-        <div class="progress-radial progress-<%= @event.percentage_of_weekly_workouts_complete %>">
-          <div class="overlay"><%= @event.percentage_of_weekly_workouts_complete %>%</div>
-
+      <div class="progress-radial progress-<%= @event.percentage_of_weekly_workouts_complete %>">
+        <div class="overlay"><%= @event.percentage_of_weekly_workouts_complete %>%</div>
       </div>
       </p>
       <p id='workouts-completed-footer'>
-          complete
+          done
       </p>
 
     </section>
 
-      <section class='recent-workout-details'>
+ <section class='recent-workout-details'>
         <% if @trainingsessions.any? %>
 
-          <p id='recent-workout-details-head'>LAST <br> WORKOUT
-            <%= @trainingsessions.last.details %>
+          <p id='recent-workout-details-head'><%= @event.user.firstname.upcase %>'S <br>LAST WORKOUT
+            <p id='workouts-completed-footer'><%= @trainingsessions.last.details %></p>
 
           </p>
        <%end%>
     </section>
+
+
+     <section class='total-completed-workouts'>
+        <p id='workouts-completed-total-number'>
+           <%= @event.trainingsessions.count%></p>
+        <p id='workouts-completed-total-text'>
+         workouts completed <br>overall
+        </p>
+      </section>
+
+
   </section>
 </section>
 
