@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20140909143241) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,11 +46,11 @@ ActiveRecord::Schema.define(version: 20140909143241) do
     t.date     "event_date"
     t.string   "charity"
     t.integer  "target"
-    t.float    "amount_raised"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "training"
+    t.float    "amount_raised"
     t.integer  "jg_event_id"
     t.string   "jg_short_name"
     t.integer  "jg_page_id"
@@ -66,6 +68,17 @@ ActiveRecord::Schema.define(version: 20140909143241) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "pledges", force: true do |t|
+    t.string   "title"
+    t.integer  "amount"
+    t.text     "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+  end
+
+  add_index "pledges", ["event_id"], name: "index_pledges_on_event_id", using: :btree
+
   create_table "posts", force: true do |t|
     t.string   "caption"
     t.datetime "created_at"
@@ -80,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140909143241) do
     t.string   "text"
     t.string   "type"
     t.integer  "amount"
+    t.text     "url"
   end
 
   add_index "posts", ["event_id"], name: "index_posts_on_event_id", using: :btree
@@ -112,7 +126,6 @@ ActiveRecord::Schema.define(version: 20140909143241) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
-    t.text     "mmf_token"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

@@ -1,0 +1,23 @@
+<div id="new-pledge-modal" style="display:none;">
+  <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
+  	<p id="menu-header">I PROMISE</p>
+        <section class='pledge-modal-container'>
+            <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
+        </section>
+        
+        <section class='pledge-modal-container'>
+           <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
+           <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
+        </section>
+        
+        <section class='pledge-modal-container'>
+          <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
+          <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
+         </section>
+  
+        <section class="pledge-create-modal">
+          <%= f.submit 'GO', class: 'modal-button-create' %>
+        	<a class='close-modal' href="#" rel="modal:close">Close</a>
+        </section>
+  <%end%>
+</div>

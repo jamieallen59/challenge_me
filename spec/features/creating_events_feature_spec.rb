@@ -31,19 +31,19 @@ describe 'Creating events' do
         click_on 'Add Your Event'
       end
       it 'should show the select page' do
-        expect(page).to have_content 'Which of your justgiving events do you want to view?'
+        expect(page).to have_content 'CHOOSE EVENT'
         expect(current_path).to eq select_events_path
       end
 
       it 'should display the users just giving events as options ' do
-        expect(page).to have_content 'Hot Dog Eating Contest'
-        expect(page).to have_content 'Say Yo'
+        expect(page).to have_content 'HOT DOG EATING CONTEST'
+        expect(page).to have_content 'SAY YO'
       end
 
       describe 'creating a justgiving event' do
         before do
           visit select_events_path
-          click_on 'Hot Dog Eating Contest'
+          click_on 'HOT DOG EATING CONTEST'
         end
 
         it 'selecting a just giving event should auto populate the fields' do
@@ -56,7 +56,7 @@ describe 'Creating events' do
         it 'creating an event from the auto populated data will create the event' do
           choose "4-workouts"
           click_button "Create Event"
-          expect(page).to have_content "Hot Dog Eating Contest"
+          expect(page).to have_content Hot Dog Eating Contest
           expect(page).to have_content "fundraising for Freedom for makers"
           expect(page).to have_content " Fundraising target: £10000"
         end
@@ -65,7 +65,7 @@ describe 'Creating events' do
       context 'invalid data' do
         it 'should display an error' do
           visit select_events_path
-          click_on 'Hot Dog Eating Contest'
+          click_on 'HOT DOG EATING CONTEST'
           fill_in 'Name', with: '12Big Foot'
           click_button 'Create Event'
           expect(page).to have_content 'error'
