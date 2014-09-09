@@ -199,18 +199,16 @@
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
       <section class='pledge-modal-container'>
-        <%= f.label  :caption, "What challenge do you promise to do next?", id: 'pledge-modal-label' %>
-        <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: 'give your challenge a name' %>
-      </section>
-
-      <section class='pledge-modal-container'>
-        <%= f.label :text, "More info", id: 'pledge-modal-label' %>
-        <%= f.text_field :text, id: 'pledge-modal-input', placeholder: "tell us more!" %>
+          <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
       </section>
       <section class='pledge-modal-container'>
-        <%= f.label :amount, "When will you do this challenge?", id: 'pledge-modal-label' %>
-        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £££ target to hit' %>
+            <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
+             <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
       </section>
+      <section class='pledge-modal-container'>
+                 <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
+                <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
+       </section>
 
       <section class="pledge-create-modal">
         <%= f.submit 'PROMISE', class: 'modal-button-create' %>
@@ -235,27 +233,27 @@
     <% end %>
 
       <section class="post-caption-modal">
-        <%= f.label :caption %>
-        <%= f.text_field :caption %>
+        <%= f.label :caption, id: 'pledge-modal-label' %>
+        <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: "write a title for your post here..."%>
       </section>
 
-      Choose the type of post : </br>
+
 
       <section class="post-picture-modal">
-        <%= f.label :picture %>
+        <%= f.label :picture, id: 'pledge-modal-label' %>
         <%= f.file_field :picture %>
       </section>
 
-      or </br>
+
 
       <section class="post-video-modal">
-        <%= f.label :video %>
-        <%= f.text_field :video %>
+        <%= f.label :video, id: 'pledge-modal-label' %>
+        <%= f.text_field :video, id: 'pledge-modal-input',id: 'pledge-modal-input', placeholder: "paste a youtube URL here..." %>
       </section>
-      or </br>
+
       <section class="post-text-modal">
-        <%= f.label :text %>
-        <%= f.text_field :text %>
+        <%= f.label :text, id: 'pledge-modal-label' %>
+        <%= f.text_field :text, id: 'pledge-modal-input', id: 'pledge-modal-input', placeholder: "write some hilarious content here..." %>
       </section>
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
@@ -307,18 +305,14 @@
   </div>
 
   <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
+   <p id="menu-header">MENU</p>
     <section class='modal-body'>
-        <%= link_to image_tag("sync.png", id: 'sync-logo')+ "Sync with Map my Fitness", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
-
-         <%= link_to image_tag("log.png", id: 'log-logo')+"Log training session", new_event_trainingsessions_path(@event), class: 'modal-button', id: 'log-workout', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
-
-        <%= link_to image_tag("edit.png", id: 'edit-logo')+ "Edit #{@event.name}", edit_event_path(@event), id: 'edit-event', class:"menu-event" %><br>
-
-        <%= link_to image_tag("delete.png", id: 'delete-logo') +"Delete #{@event.name}", event_path(@event), id: 'delete-event',class:"menu-event", method: :delete %><br>
-
-         <%= link_to image_tag("my_events.png", id: 'event-logo')+'My Events', select_events_path, class:"menu-event"%><br>
-
-        <%= link_to image_tag("signout.png", id: 'signout-logo')+'Sign Out', destroy_user_session_path, method: :delete, class:"menu-event" %>
+     -      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
+-      <%= link_to "EDIT EVENT", edit_event_path(@event), class:"menu-event" %><br>
+-      <%= link_to "DELETE EVENT", event_path(@event),class:"menu-event", method: :delete %><br>
+-      <%= link_to "LOG TRAINING", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
+-      <%= link_to "SYNC MAPMYFITNESS", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
+-      <%= link_to'SIGN OUT', destroy_user_session_path, method: :delete, class:"menu-event" %>
 
     </section>
   </div>
