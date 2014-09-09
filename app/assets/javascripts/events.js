@@ -1,6 +1,30 @@
+function showMiniProgressBar(miniAmountRaised, miniTargetAmount, eventID) {
+    var minitargetbar = new TargetBar(miniAmountRaised, miniTargetAmount, eventID);
+    var $event = $('[data-event-id=' + eventID + ']')
+
+    var getPercent = (minitargetbar.percentage()) / 100;
+    var getTargetWrapWidth = $('.mini-target-wrap').width();
+    var progressTotal = getPercent * getTargetWrapWidth;
+    var animationLength = 2500;
+
+    // Display target amount
+    $event.find('.mini-target-amount').text(minitargetbar.miniTargetAmount);
+    // Display money raised so far
+    $event.find('.money-raised').text(minitargetbar.amount);
+    // Add current progress as a class to indicate colour of the bar
+    $event.find('.mini-target-wrap').addClass(minitargetbar.progress())
+    
+
+    // on page load, animate percentage bar to current donation percentage
+    // .stop() used to prevent animation queueing
+    console.log($event.html());
+    $event.find('.mini-target-bar').stop().animate({
+        left: progressTotal
+    }, animationLength);
+}
+
 function moveProgressBar() {
     var targetbar = new TargetBar(amountRaised, targetAmount);
-
     var getPercent = (targetbar.percentage()) / 100;
     var getTargetWrapWidth = $('.target-wrap').width();
     var progressTotal = getPercent * getTargetWrapWidth;
