@@ -1,12 +1,12 @@
-<%= form_for [@event, @pledge] do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
+<%= form_for [@event, @pledge], as: :pledge, url: event_pledges_path(@event) do |f| %>
+<%= f.label :caption, 'Title' %>
+<%= f.text_field :caption %>
 
-<%= f.label :amount %>
+<%= f.label :amount, 'Amount' %>
 <%= f.text_field :amount %>
 
-<%= f.label :info %>
-<%= f.text_field :info %>
+<%= f.label :text, 'Info' %>
+<%= f.text_field :text %>
 
 <%= f.submit 'Create Pledge'%>
 

@@ -128,8 +128,8 @@
             <%= @event.user.firstname.capitalize %> promises:
           </p>
           <p class='pledge-information'>
-            "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.title%>
-            <%=@event.next_pledge.info%>"
+            "Once I raise £<%=@event.next_pledge.amount%>, I will do the <%=@event.next_pledge.caption%>
+            <%=@event.next_pledge.text%>"
           </p>
         <%else%>
           <p class='pledge-title-empty'>
@@ -188,15 +188,15 @@
 
 
   <div id="new-pledge-modal" style="display:none;">
-    <%= form_for [@event, @event.pledges.new] do |f| %>
+    <%= form_for [@event, @event.pledges.new], as: :pledge, url: event_pledges_path(@event) do |f| %>
       <section class='pledge-modal-container'>
-        <%= f.label :title, "What challenge do you promise to do next?", id: 'pledge-modal-label' %>
-        <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'give your challenge a name' %>
+        <%= f.label  :caption, "What challenge do you promise to do next?", id: 'pledge-modal-label' %>
+        <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: 'give your challenge a name' %>
       </section>
 
       <section class='pledge-modal-container'>
-        <%= f.label :info, "More info", id: 'pledge-modal-label' %>
-        <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "tell us more!" %>
+        <%= f.label :text, "More info", id: 'pledge-modal-label' %>
+        <%= f.text_field :text, id: 'pledge-modal-input', placeholder: "tell us more!" %>
       </section>
       <section class='pledge-modal-container'>
         <%= f.label :amount, "When will you do this challenge?", id: 'pledge-modal-label' %>

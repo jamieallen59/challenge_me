@@ -1,6 +1,6 @@
-class Pledge < ActiveRecord::Base
+class Pledge < Post
   belongs_to :event
-  validates :title, presence: true
+  validates :caption, presence: true
   validates :amount, presence: true, numericality: true
   validate :pledge_check
 
@@ -10,5 +10,16 @@ class Pledge < ActiveRecord::Base
     end
   end
 
+  def title
+    caption
+  end
+
+  def info
+    text
+  end
+
+  def self.model_name
+    Post.model_name
+  end
 
 end

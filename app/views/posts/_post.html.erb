@@ -33,7 +33,7 @@
         <p><%= post.text %></p>
       </article>
     <%end%>
-    <span class="cd-date">Posted by <%= post.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago
+    <span class="cd-date">Posted by <%= post.event.user.full_name%> <%= time_ago_in_words(post.created_at) %> ago
     </span>
     <section class="comments-container">
       <% if post.comments.any? %>
