@@ -1,4 +1,4 @@
-class Challenge < ActiveRecord::Base
+git class Challenge < ActiveRecord::Base
 	# belongs_to :event
   after_create :create_challenge_post
 

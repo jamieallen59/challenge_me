@@ -65,17 +65,6 @@ ActiveRecord::Schema.define(version: 20140909095917) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
-  create_table "pledges", force: true do |t|
-    t.string   "title"
-    t.integer  "amount"
-    t.text     "info"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "event_id"
-  end
-
-  add_index "pledges", ["event_id"], name: "index_pledges_on_event_id", using: :btree
-
   create_table "posts", force: true do |t|
     t.string   "caption"
     t.datetime "created_at"
