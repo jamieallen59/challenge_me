@@ -22,7 +22,7 @@
     </section>
 
     <section class='donate-button-container'>
-      <% if current_user == @event.user %>
+      <% if @event.is_owner? current_user %>
           <a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a>
      <% else %>
 
@@ -194,7 +194,7 @@
   </section>
 </section>
 
-  <%= render 'pledge_modal' %>
+  <%= render 'events/pledge_modal' %>
 
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
