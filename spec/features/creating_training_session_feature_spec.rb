@@ -12,24 +12,24 @@ describe 'Creating training sessions' do
 
     it "let's the user fill in details about their session" do
       click_link 'MENU'
-        click_link 'Log training session'
+        click_link 'LOG TRAINING'
     	expect(page).to have_content "Training details"
     end
 
     it 'redirects to the mmf authentication page' do
-     
-      click_link 'Sync'
+
+      click_link 'SYNC'
       expect(current_path).to eq '/auth/mapmyfitness'
     end
   end
 
-  context 'with an mmf account previously logged in' do 
+  context 'with an mmf account previously logged in' do
 
     before(:each) do
       client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00", "_links" => {"not_route" => [{"id" => "381958558"}]}}]
       allow(Mmf::Client).to receive(:new).and_return(client)
       visit event_path(@event)
-    end 
+    end
 
     it 'gives the option to log workouts automatically from mapmyfitness' do
       click_link 'Sync'
