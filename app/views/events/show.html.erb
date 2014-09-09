@@ -53,14 +53,19 @@
 
     <section class='workouts-completed-by-user'>
       <p id='workouts-completed-head'>
-        <%= @event.user.firstname.capitalize %> has worked out
+       This Week
       </p>
       <p id='workouts-completed-number'>
-        <%= @event.weekly_training_sessions%>
+
+        <div class="progress-radial progress-<%= @event.percentage_of_weekly_workouts_complete %>">
+          <div class="overlay"><%= @event.percentage_of_weekly_workouts_complete %>%</div>
+
+      </div>
       </p>
       <p id='workouts-completed-footer'>
-          times this week.
+          complete
       </p>
+
     </section>
 
       <section class='recent-workout-details'>

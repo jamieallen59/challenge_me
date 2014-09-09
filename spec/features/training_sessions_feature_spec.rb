@@ -8,7 +8,7 @@ describe 'training sessions' do
 	    @event = create(:event, user: @mary)
 	    @parkrun = @event.trainingsessions.create(details: "I ran through a park")
 			visit event_path(@event)
-			expect(page).to have_content(" Mary has worked out 1 times this week")
+			expect(page).to have_content("1 workouts completed")
 		end
 
 		# it 'should display the % total of workouts completed' do
