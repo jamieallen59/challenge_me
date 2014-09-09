@@ -1,0 +1,5 @@
+<%= form_for @user, url: user_path(@user, event_id: @event_id), html: {method: "patch"}  do |f| %>
+  <%= f.label :avatar, id: 'pledge-modal-label' %>
+  <%= f.file_field :avatar, class: 'modal-button-create' %>
+  <%= f.submit 'Change profile picture', class: 'modal-button-create'  %>
+<% end %>
