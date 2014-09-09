@@ -3,8 +3,8 @@
       <section class='profile-picture' >
         <div id='profile-image'>
             <% if @event.is_owner?(current_user) %>
-              <%= link_to profile_path(current_user, event_id: @event.id) do %>
-                <%= icon('camera', '',class:'icon-camera') %>
+              <%= link_to profile_path(current_user, event_id: @event.id), class: "profilepic-modal-button"  do %>
+                <%= icon('camera', '',class:'icon-camera', data: { :'modal-selector' => '#profilepic-modal' }) %>
               <% end %>
             <% end %>
           <% if @event.user.avatar.present? %>
@@ -216,14 +216,16 @@
         <%= f.label :caption, id: 'pledge-modal-label' %>
         <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: "write a title for your post here..."%>
       </section>
-
+      <br>
+      <button id="post-picture" class="modal-button-create"><%= icon('file-image-o ')%>  PICTURE</button>
+      <button id="post-video" class="modal-button-create"><%= icon('youtube')%>  VIDEO</button>
+      <button id="post-text" class="modal-button-create"><%= icon('pencil')%>  TEXT</button>
 
 
       <section class="post-picture-modal">
         <%= f.label :picture, id: 'pledge-modal-label' %>
         <%= f.file_field :picture %>
       </section>
-
 
 
       <section class="post-video-modal">
@@ -235,11 +237,13 @@
         <%= f.label :text, id: 'pledge-modal-label' %>
         <%= f.text_field :text, id: 'pledge-modal-input', id: 'pledge-modal-input', placeholder: "write some hilarious content here..." %>
       </section>
+      <br>
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
       </section>
     <% end %>
   </div>
+
 
   <div id="ex1" style="display:none;">
     <%= form_for [@event, @trainingsession] do |f| %>
@@ -294,4 +298,8 @@
 -      <%= link_to "SYNC MAPMYFITNESS", mmf_training_path(@event.id), class:"menu-event", method: :post %><br>
 -      <%= link_to'SIGN OUT', destroy_user_session_path, method: :delete, class:"menu-event" %>
     </section>
+  </div>
+
+  <div id="profilepic-modal" style="display:none;">
+    <%= render "users/profilepic" %>
   </div>

@@ -13,7 +13,7 @@ function showMiniProgressBar(miniAmountRaised, miniTargetAmount, eventID) {
     $event.find('.money-raised').text(minitargetbar.amount);
     // Add current progress as a class to indicate colour of the bar
     $event.find('.mini-target-wrap').addClass(minitargetbar.progress())
-    
+
 
     // on page load, animate percentage bar to current donation percentage
     // .stop() used to prevent animation queueing
@@ -36,7 +36,7 @@ function moveProgressBar() {
     $('.money-raised').text(targetbar.amount);
     // Add current progress as a class to indicate colour of the bar
     $('.target-wrap').addClass(targetbar.progress())
-    
+
 
     // on page load, animate percentage bar to current donation percentage
     // .stop() used to prevent animation queueing
@@ -46,7 +46,7 @@ function moveProgressBar() {
 }
 
 $(document).ready(function(){
-  
+
   var addAttribute = function(attributeId, type, label) {
     $(attributeId).attr(type, label);
   }
@@ -111,11 +111,41 @@ $(document).ready(function(){
   $(".new-post-modal-button").on('click', displayModal);
   $(".menu-modal-button").on('click', displayModal);
   $(".challenge-me-button").on('click', displayModal);
+  $(".profilepic-modal-button").on('click', displayModal);
 
 
   moveProgressBar();
+
+  $("#post-picture").click(function(event){
+    event.preventDefault();
+    $(".post-video-modal").hide();
+    $(".post-text-modal").hide();
+    $(".post-picture-modal").show();
+
+  });
+   $("#post-video").click(function(event){
+    event.preventDefault();
+    $(".post-video-modal").show();
+    $(".post-text-modal").hide();
+    $(".post-picture-modal").hide();
+
+  });
+
+  $("#post-text").click(function(event){
+    event.preventDefault();
+    $(".post-video-modal").hide();
+    $(".post-text-modal").show();
+    $(".post-picture-modal").hide();
+
+  });
+
 });
+
 
 $(window).resize(function() {
     moveProgressBar();
 });
+
+
+
+
