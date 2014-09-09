@@ -34,7 +34,7 @@ describe 'Creating training sessions' do
     end
 
     it 'gives the option to log workouts automatically from mapmyfitness' do
-      click_link 'Sync'
+      click_link 'SYNC'
       @event.validate_mmf_data
       expect(@event.trainingsessions.count).to eq 1
       expect(@event.trainingsessions.first.details).to eq("Im running")
