@@ -174,14 +174,7 @@
 
    <div class='page-divider'></div>
 
-    <section class='donations-container'>
-    <% if current_user == @event.user %>
-        <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
-        <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
-    <% else %>
-    <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}/donations"}), id: "donate-button" %>
-      <%end%>
-   </section>
+  <%= render 'update_modal' %>
 
   <section class='update-feed'>
     <% if @posts.any? %>
@@ -194,7 +187,15 @@
   </section>
 </section>
 
-  <%= render 'events/pledge_modal' %>
+<section class='donations-container'>
+<% if current_user == @event.user %>
+    <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
+    <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+<% else %>
+<%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}/donations"}), id: "donate-button" %>
+  <%end%>
+</section>
+
 
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
@@ -288,6 +289,7 @@
 
   <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
    <p id="menu-header">MENU</p>
+
    <% if @event.is_owner?(current_user) %>
       <section class='modal-body'>
        -      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
@@ -299,6 +301,7 @@
   -      <%= link_to'SIGN OUT', destroy_user_session_path, method: :delete, class:"menu-event" %>
       </section>
     <% end %>
+
   </div>
 
   <div id="profilepic-modal" style="<%= display_if(Rails.env.test?) %>">
