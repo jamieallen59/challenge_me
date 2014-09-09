@@ -1,5 +1,0 @@
-<%= form_for @user, url: user_path(@user, event_id: @event_id), html: {method: "patch"}  do |f| %>
-	<%= f.label :avatar %>
-	<%= f.file_field :avatar %>
-	<%= f.submit %>
-<% end %>

@@ -12,9 +12,10 @@ class CommentsController < ApplicationController
       @event = @post.event
       @posts = @event.posts
       @pledges = @event.pledges
-      @challenges = @event.challenges
+      @challenges = @event.challenges.where(status: nil)
       @trainingsessions = @event.trainingsessions
       @trainingsession = @event.trainingsessions.new
+      @user = @event.user
       render 'events/show'
     end
   end

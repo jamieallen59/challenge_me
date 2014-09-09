@@ -15,6 +15,9 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.update_attributes(params[:user].permit(:avatar))
 		flash[:notice] = 'Profile picture updated'
-		redirect_to event_path(params[:event_id])
+
+		if params[:event_id]
+			redirect_to event_path(params[:event_id])
+		end
 	end
 end
