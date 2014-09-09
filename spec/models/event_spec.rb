@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Event, :type => :model do
   context 'Validations' do
-    it 'is not valid with a name of numerical characters' do 
+    it 'is not valid with a name of numerical characters' do
       event = Event.new(name: 12432)
       expect(event).to have(1).error_on(:name)
     end
 
-    it 'is not valid unless all fields are filled in' do 
+    it 'is not valid unless all fields are filled in' do
       event = Event.new(name: 'Slow Race')
       expect(event).to have(1).error_on(:event_date)
       expect(event).to have(1).error_on(:charity)
@@ -20,7 +20,7 @@ RSpec.describe Event, :type => :model do
       expect(event).to have(1).error_on(:name)
     end
 
-    it 'is not valid if the target and actual amounts are not numbers' do 
+    it 'is not valid if the target and actual amounts are not numbers' do
       event = Event.new(target: 'abc', amount_raised: 'abc')
       expect(event).to have(1).error_on(:target)
       expect(event).to have(1).error_on(:amount_raised)
@@ -31,7 +31,7 @@ RSpec.describe Event, :type => :model do
       expect(event).to have(1).error_on(:event_date)
     end
 
-    it 'is not valid if no workout goal is set' do 
+    it 'is not valid if no workout goal is set' do
       event = Event.new(name: "Bigfoot Race", event_date: Date.new(2014, 9, 12), charity: "Red Cross", target: 1000, amount_raised: 10.0)
       expect(event).to have(1).error_on(:training)
     end
@@ -50,7 +50,7 @@ RSpec.describe Event, :type => :model do
       @fred = create(:fred)
       @event = create(:event, user: @mary)
     end
-    it 'should return true if user is owner of the event' do 
+    it 'should return true if user is owner of the event' do
       expect(@event.is_owner?(@mary)).to be true
     end
 
@@ -62,5 +62,20 @@ RSpec.describe Event, :type => :model do
       expect(@event.is_owner?(nil)).to be false
     end
 
+  end
+
+  context '#percentage_of_weekly_workouts_complete' do
+    before do
+      @mary = create(:user)
+      @event = create(:event, user: @mary)
+    end
+    it 'should return 0 for 0' do
+      expect(@event.percentage_of_weekly_workouts_complete).to eq 0
+    end
+
+    it 'should return 25 for 1 workout out of 4' do
+      create(:trainingsession, event: @event)
+      expect(@event.percentage_of_weekly_workouts_complete).to eq 25
+    end
   end
 end

@@ -75,7 +75,11 @@
 	}
 
 		#event-paragraph {
-			font-size: 100%;
+			font-size: 20px;
+		}
+
+		#event-paragraph strong {
+			font-weight: 800;
 		}
 
 
@@ -139,9 +143,9 @@
 			line-height: 40px;
 		}
 		#training-goal-number {
-			font-size: 100px;
+			color:#DB2929;
+			font-size: 120px;
 			font-weight: 600;
-			color: red;
 		}
 		#training-goal-text {
 			font-size: 21px;
@@ -187,7 +191,7 @@
 			border-top: 1px solid #DFDFDF;
 		}
 			#workouts-completed-total-number {
-				font-size: 140px;
+				font-size: 120px;
 				font-weight: 600;
 				margin-top: 10px;
 			}
@@ -253,8 +257,9 @@
 			display: flex;
 			padding-bottom: 10px;
 			border-top: 1px solid #DFDFDF;
+
 		}
 			#recent-workout-details-head {
-
+			font-size: 20px;
 				margin-top: 8px;
 			}

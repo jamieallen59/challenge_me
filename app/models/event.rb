@@ -41,16 +41,15 @@ class Event < ActiveRecord::Base
     ((event_date.to_time - created_at) / 3600) / 24
   end
 
-  def percentage_of_workouts_complete
-    workouts_per_week = (days_to_event / 7) * training
-    ((trainingsessions.count / workouts_per_week) * 100)
+  def percentage_of_weekly_workouts_complete
+    ((self.weekly_training_sessions.to_f / self.training)*100).round
   end
 
   def validate_mmf_data
 
     client = connect_to_api
     client.workouts.each do |workout|
-    
+
       workout_date, workout_name = assign_from_hash(workout)
 
       if valid_new_workout?(workout_date, workout)
@@ -59,10 +58,10 @@ class Event < ActiveRecord::Base
           trainingsession.mmf_updated_datetime = workout["updated_datetime"]
           trainingsession.mmf_route_id = (workout['_links']['route'][0]["id"]).to_s
         end
-        trainingsession.save 
+        trainingsession.save
       end
     end
-    
+
   end
 
 private

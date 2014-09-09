@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe 'users experience' do
-	
+
 	context 'when users is logged out' do
 
 		it 'when visiting challenge.me index page users see homepage' do
 			visit '/'
-			expect(page).to have_content "WE MAKE GIVING FUN COMPLETE CHALLENGES. SMASH TARGETS"
+			expect(page).to have_content "FUNDRAISING JUST GOT FUN"
 		end
 
 		it 'when landing on homepage expect to see search box' do
@@ -26,9 +26,9 @@ describe 'users experience' do
 			login_as @mary
 		end
 
-		it "when landing on homepage expect to see LET'S GO button, takes them to select an event" do
+		it "when landing on homepage expect to see START  button, takes them to select an event" do
 				visit '/'
-				expect(page).to have_link("LET'S GO", href: select_events_path)
+				expect(page).to have_link("START", href: select_events_path)
 		end
 
 		it 'when visiting challenge.me users can log out' do

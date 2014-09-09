@@ -17,7 +17,6 @@ function showMiniProgressBar(miniAmountRaised, miniTargetAmount, eventID) {
 
     // on page load, animate percentage bar to current donation percentage
     // .stop() used to prevent animation queueing
-    console.log($event.html());
     $event.find('.mini-target-bar').stop().animate({
         left: progressTotal
     }, animationLength);
