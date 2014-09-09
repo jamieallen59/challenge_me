@@ -198,21 +198,21 @@
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
+    <p id="menu-header">I PROMISE</p>
       <section class='pledge-modal-container'>
-       <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
+          <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
       </section>
-
       <section class='pledge-modal-container'>
             <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
-   <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
+             <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
       </section>
       <section class='pledge-modal-container'>
-       <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
-      <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
-      </section>
+                 <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
+                <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
+       </section>
 
       <section class="pledge-create-modal">
-        <%= f.submit 'PROMISE', class: 'modal-button-create' %>
+        <%= f.submit 'GO', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
@@ -221,6 +221,7 @@
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
     <%= form_for [@event, @post], html: { multipart: true } do |f| %>
+    <p id="menu-header">UPDATE</p>
       <% if @post.errors.any? %>
       <article class="error_explaination">
         <%= pluralize(@post.errors.count, "error") %>
@@ -234,27 +235,27 @@
     <% end %>
 
       <section class="post-caption-modal">
-        <%= f.label :caption %>
-        <%= f.text_field :caption %>
+        <%= f.label :caption, id: 'pledge-modal-label' %>
+        <%= f.text_field :caption, id: 'pledge-modal-input', placeholder: "write a title for your post here..."%>
       </section>
 
-      Choose the type of post : </br>
+
 
       <section class="post-picture-modal">
-        <%= f.label :picture %>
+        <%= f.label :picture, id: 'pledge-modal-label' %>
         <%= f.file_field :picture %>
       </section>
 
-      or </br>
+
 
       <section class="post-video-modal">
-        <%= f.label :video %>
-        <%= f.text_field :video %>
+        <%= f.label :video, id: 'pledge-modal-label' %>
+        <%= f.text_field :video, id: 'pledge-modal-input',id: 'pledge-modal-input', placeholder: "paste a youtube URL here..." %>
       </section>
-      or </br>
+
       <section class="post-text-modal">
-        <%= f.label :text %>
-        <%= f.text_field :text %>
+        <%= f.label :text, id: 'pledge-modal-label' %>
+        <%= f.text_field :text, id: 'pledge-modal-input', id: 'pledge-modal-input', placeholder: "write some hilarious content here..." %>
       </section>
       <section  class="post-create-modal">
         <%= f.submit 'Create post', class: 'modal-button-create' %>
@@ -284,19 +285,18 @@
 
   <div id="new-challenge-modal" style="display:none;">
     <%= form_for [@event, @event.challenges.new] do |f| %>
-
+<p id="menu-header">SET A CHALLENGE</p>
       <section class="challenge-creator-modal">
-        <%= f.label :creator, 'What is your name?' %>
-        <%= f.text_field :creator %>
+        <%= f.text_field :creator, id: 'pledge-modal-input', placeholder: "What's your name?" %>
       </section>
 
       <section class="challenge-name-modal">
-        <%= f.label :name, 'Describe the challange' %>
-        <%= f.text_field :name %>
+        <%= f.label :name, 'Describe your challenge', id: 'pledge-modal-label' %>
+        <%= f.text_field :name, id: 'pledge-modal-input', placeholder: "what do you want them to do?" %>
       </section>
       <section class="challenge-amount-modal">
-        <%= f.label :amount, 'How much will you donate for completing this challenge?' %>
-        <%= f.text_field :amount %>
+        <%= f.label :amount, 'How much would you donate?',id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: "£££" %>
       </section>
       <section  class="challenge-create-modal">
         <%= f.submit 'Create challenge', class: 'modal-button-create' %>
