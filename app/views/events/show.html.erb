@@ -1,4 +1,4 @@
-  <section class='container-left'>
+  <section class='container-left' id='event-page'>
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -142,18 +142,36 @@
     </section>
   </section>
 
+<!-- Targetbar -->
   <section class="target-bar-container">
-     <%= javascript_tag do %>
-          amountRaised = "<%=j @event.amount_raised.to_s %>";
-          targetAmount = "<%=j @event.target.to_s %>";
-      <% end %>
+          <%= javascript_tag do %>
+            amountRaised = "<%=j @event.amount_raised.to_s %>";
+            targetAmount = "<%=j @event.target.to_s %>";
+          <% end %>
         <div class="target-wrap progress" data-progress-percent="">
-        <div class="target-bar progress">
-        </div>
-        </div>
+      <div class="target-bar progress">
+    </div>
+  </div>
+</section>
 
 
-    </section>
+    <% @challenges.each do |challenge| %>
+
+      <section class='challenge-display'>
+        <section class='challenge-text'>
+          <p class='challenger-creator'>
+            You've been challenged by <%= challenge.creator %>!
+          </p>
+          <p class='challenger-description'>
+            Challenge: <%= challenge.name %>
+          </p>
+        </section>
+        <section class='challenge-button-container'>
+          <button class='accept-challenge'><i class="fa fa-check"></i></button>
+          <button class='decline-challenge'><i class="fa fa-times"></i></button>
+        </section>
+      </section>
+    <% end %>
 
    <div class='page-divider'></div>
 
@@ -167,13 +185,6 @@
    </section>
 
   <section class='update-feed'>
-
-
-    <% if @challenges.any? %>
-    <section class='challenge-count'>
-      <%= @challenges.count %> challenge pending
-    </section>
-    <% end %>
 
     <% if @posts.any? %>
     <section id="cd-timeline" class="cd-container">

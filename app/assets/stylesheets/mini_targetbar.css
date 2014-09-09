@@ -1,20 +1,23 @@
-.target-bar-container {
+.mini-target-bar-container {
   width: 100%;
+  padding-top: 8px;
+  height: 10px;
 }
 
-.progress {
+.mini-progress {
   width: 100%;
-  height: 40px;
+  height: 10px;
+  background-color: white;
 }
 
-.target-wrap {
+.mini-target-wrap {
   border-bottom: 1px solid #DEDEDE;
   overflow: hidden;
   position: relative;
+  border-radius: 5px;
 }
 
-.target-bar {
-    background: #f4f4f4;
+.mini-target-bar {
     left: 0;
     position: absolute;
     bottom: 0;
@@ -28,4 +31,7 @@
 }
 .great {
   background: #2D8735;
+}
+.legendary {
+  background: #ccac00;
 }

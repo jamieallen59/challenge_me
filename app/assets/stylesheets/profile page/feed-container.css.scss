@@ -1,4 +1,65 @@
 /*------ Feed Container -----*/
+
+/*--- Challnge dispaly ---*/
+.challenge-display {
+	width: 35%;
+	border: 1px solid #DEDEDE;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	background: #FFF;
+}
+	.challenge-button-container {
+		display: flex;
+		flex-direction: row;
+		margin-left: 10%;
+		height: 50px;
+	}
+		.challenger-creator {
+			text-align: center;
+			font-weight: 500;
+			color: black;
+		}
+		.accept-challenge {
+			border: 0;
+			cursor: pointer;
+			width: 30%;
+			background-color: #E9E9E9;
+			border: 2px solid white;
+			font-size: 30px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+			.accept-challenge:hover {
+				background-color: #5CB85C;
+			}
+		.decline-challenge {
+			border: 0;
+			cursor: pointer;
+			width: 30%;
+			background-color: #E9E9E9;
+			border: 2px solid white;
+			font-size: 30px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+			.accept-challenge:hover {
+				background-color: #5CB85C;
+			}
+			.decline-challenge:hover {
+				background-color: #D9534F;
+			}
+		.challenge-accepted-highlighting {
+			box-shadow: 0 0 5px #5CB85C;
+			transition: 0.5s ease-in-out;
+		}
+		.challenge-declined-highlighting {
+			box-shadow: 0 0 5px #D9534F;
+			transition: 0.5s ease-in-out;
+		}
+
+/*---- Update Feed ---*/
 .page-divider {
 	width: 88%;
 	height: 1px;
