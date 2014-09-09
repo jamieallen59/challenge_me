@@ -104,7 +104,6 @@
       </section>
       <section class='fundraising-stats-training-goal'>
 
-
          <section class='fundraising-stats-percentage-number'>
             <% if (@event.event_date == Date.today) %>
               <p id='event-today-text'>Today's the day!</p>
@@ -117,10 +116,9 @@
               <p id='fundraising-stats-percentage-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
               <p id='fundraising-stats-percentage-text'>days ago!</p>
             <% end %>
+          </section>
+        </section>
     </section>
-      </section>
-    </section>
-
 
     <section class='pledge-container'>
         <% if @pledges.any? %>
@@ -185,38 +183,17 @@
    </section>
 
   <section class='update-feed'>
-
     <% if @posts.any? %>
     <section id="cd-timeline" class="cd-container">
-        <%= render @posts.reverse %>
+      <%= render @posts.reverse %>
     </section>
     <% else %>
-        There are no posts
+      There are no posts
     <% end %>
   </section>
 </section>
 
-  <div id="new-pledge-modal" style="display:none;">
-    <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
-    <p id="menu-header">I PROMISE</p>
-      <section class='pledge-modal-container'>
-          <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
-      </section>
-      <section class='pledge-modal-container'>
-            <%= f.label :title, "I will...", id: 'pledge-modal-label' %>
-             <%= f.text_field :title, id: 'pledge-modal-input', placeholder: 'what do you promise to do?' %>
-      </section>
-      <section class='pledge-modal-container'>
-                 <%= f.label :info, "Tell us more!", id: 'pledge-modal-label' %>
-                <%= f.text_field :info, id: 'pledge-modal-input', placeholder: "further details go here" %>
-       </section>
-
-      <section class="pledge-create-modal">
-        <%= f.submit 'GO', class: 'modal-button-create' %>
-      <a class='close-modal' href="#" rel="modal:close">Close</a>
-      </section>
-    <%end%>
-  </div>
+  <%= render 'pledge_modal' %>
 
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
