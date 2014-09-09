@@ -3,7 +3,7 @@
       <section class='profile-picture' >
         <div id='profile-image'>
             <% if @event.is_owner?(current_user) %>
-              <%= link_to profile_path(current_user, event_id: @event.id), class: "profilepic-modal-button"  do %>
+              <%= link_to '#', class: "profilepic-modal-button"  do %>
                 <%= icon('camera', '',class:'icon-camera', data: { :'modal-selector' => '#profilepic-modal' }) %>
               <% end %>
             <% end %>
@@ -22,7 +22,7 @@
     </section>
 
     <section class='donate-button-container'>
-      <% if current_user == @event.user %>
+      <% if @event.is_owner? current_user %>
           <a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a>
      <% else %>
 
@@ -194,7 +194,7 @@
   </section>
 </section>
 
-  <%= render 'pledge_modal' %>
+  <%= render 'events/pledge_modal' %>
 
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
@@ -244,7 +244,6 @@
     <% end %>
   </div>
 
-
   <div id="ex1" style="display:none;">
     <%= form_for [@event, @trainingsession] do |f| %>
     <section class='modal-header'>
@@ -291,7 +290,7 @@
    <p id="menu-header">MENU</p>
     <section class='modal-body'>
      -      <%= link_to 'MY EVENTS', select_events_path, class:"menu-event"%><br>
--      <%= link_to "EDIT EVENT", edit_event_path(@event), class:"menu-event" %><br>
+-      <%= link_to "EDIT EVENT", edit_event_path(@event), id: "edit-event", class:"menu-event" if @event.is_owner?(current_user) %><br>
 -      <%= link_to "DELETE EVENT", event_path(@event),class:"menu-event", method: :delete %><br>
 -      <%= link_to "CREATE EVENT", new_event_path,class:"menu-event" %><br>
 -      <%= link_to "LOG TRAINING", new_event_trainingsessions_path(@event), class: 'modal-button', class:"menu-event", data: { :'modal-selector' => '#ex1' }  %><br>
@@ -300,6 +299,6 @@
     </section>
   </div>
 
-  <div id="profilepic-modal" style="display:none;">
+  <div id="profilepic-modal" style="<%= display_if(Rails.env.test?) %>">
     <%= render "users/profilepic" %>
   </div>
