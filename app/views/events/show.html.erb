@@ -198,6 +198,7 @@
 
   <div id="new-pledge-modal" style="display:none;">
     <%= form_for [@event, @event.pledges.new ], as: :pledge, url: event_pledges_path(@event) do |f| %>
+    <p id="menu-header">I PROMISE</p>
       <section class='pledge-modal-container'>
           <%= f.label :amount, "Once I raise...", id: 'pledge-modal-label' %>   <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: 'set a £ amount' %>
       </section>
@@ -211,7 +212,7 @@
        </section>
 
       <section class="pledge-create-modal">
-        <%= f.submit 'PROMISE', class: 'modal-button-create' %>
+        <%= f.submit 'GO', class: 'modal-button-create' %>
       <a class='close-modal' href="#" rel="modal:close">Close</a>
       </section>
     <%end%>
@@ -220,6 +221,7 @@
   <div id="new-post-modal" style="display:none;">
     <% @post = @event.posts.new %>
     <%= form_for [@event, @post], html: { multipart: true } do |f| %>
+    <p id="menu-header">UPDATE</p>
       <% if @post.errors.any? %>
       <article class="error_explaination">
         <%= pluralize(@post.errors.count, "error") %>
@@ -290,7 +292,7 @@
       </section>
 
       <section class="challenge-name-modal">
-        <%= f.label :name, 'Describe the challange' %>
+        <%= f.label :name, 'Describe the challenge' %>
         <%= f.text_field :name %>
       </section>
       <section class="challenge-amount-modal">

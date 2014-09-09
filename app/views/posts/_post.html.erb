@@ -24,11 +24,10 @@
                  allowscriptaccess="always"
                  width="297" height="206"></embed>
         </object>
-
-       
-
          </section>
-      <% elsif post.text.present? %>
+    <%elsif post.url.present? %>
+    <iframe id="mapmyfitness_route" src="<%=post.url%>" height="206px" width="100%" frameborder="0"></iframe>
+    <% elsif post.text.present? %>
       <article class="text-post">
         <p><%= post.text %></p>
       </article>
