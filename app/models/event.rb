@@ -90,7 +90,7 @@ private
   end
 
   def valid_new_workout?(workout_date, workout)
-    workout_date.to_date >= created_at.to_date 
+    workout_date.to_date >= created_at.to_date && !previously_logged?(workout)
   end
 
 end

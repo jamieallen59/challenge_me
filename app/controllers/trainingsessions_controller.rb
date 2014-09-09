@@ -21,8 +21,13 @@ class TrainingsessionsController < ApplicationController
 
   def mmf
   	@event = Event.find(params[:event_id])
-  	@event.validate_mmf_data
-  	redirect_to event_path(@event)
+
+  	if @event.user.identities.find_by(provider: 'mapmyfitness').nil?
+  		redirect_to '/auth/mapmyfitness'
+  	else
+  		@event.validate_mmf_data
+  		redirect_to event_path(@event)
+  	end
   end
 
 end
