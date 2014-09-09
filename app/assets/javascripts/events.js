@@ -1,15 +1,28 @@
+function moveProgressBar() {
+    var targetbar = new TargetBar(amountRaised, targetAmount);
+
+    var getPercent = (targetbar.percentage()) / 100;
+    var getTargetWrapWidth = $('.target-wrap').width();
+    var progressTotal = getPercent * getTargetWrapWidth;
+    var animationLength = 2500;
+
+    // Display target amount
+    $('.target-amount').text(targetbar.targetAmount);
+    // Display money raised so far
+    $('.money-raised').text(targetbar.amount);
+    // Add current progress as a class to indicate colour of the bar
+    $('.target-wrap').addClass(targetbar.progress())
+    
+
+    // on page load, animate percentage bar to current donation percentage
+    // .stop() used to prevent animation queueing
+    $('.target-bar').stop().animate({
+        left: progressTotal
+    }, animationLength);
+}
 
 $(document).ready(function(){
-
-  //gets the donation amount
-  var url = document.URL + '/donations.json';
-  $.get(url, function(data) {
-    var amountRaised = "£" + data.donationTotal + " raised so far"
-    var percentageRaised = data.donationPercentage + "% of fundraising target achieved."
-    $('#amount-raised').text(amountRaised);
-    $('.percentage-completion').text(percentageRaised);
-  });
-
+  
   var addAttribute = function(attributeId, type, label) {
     $(attributeId).attr(type, label);
   }
@@ -73,33 +86,12 @@ $(document).ready(function(){
   $(".pledge-modal-button").on('click', displayModal);
   $(".new-post-modal-button").on('click', displayModal);
   $(".menu-modal-button").on('click', displayModal);
+  $(".challenge-me-button").on('click', displayModal);
 
-moveProgressBar();
-        $(window).resize(function() {
-            moveProgressBar();
-        });
 
-        function moveProgressBar() {
-            var targetbar = new TargetBar(amountRaised, targetAmount);
+  moveProgressBar();
+});
 
-            var getPercent = (targetbar.percentage()) / 100;
-            var getTargetWrapWidth = $('.target-wrap').width();
-            var progressTotal = getPercent * getTargetWrapWidth;
-            var animationLength = 2500;
-
-            // Display target amount
-            $('.target-amount').text(targetbar.targetAmount);
-            // Display money raised so far
-            $('.money-raised').text(targetbar.amount);
-            // Add current progress as a class to indicate colour of the bar
-            $('.target-wrap').addClass(targetbar.progress())
-            
-
-            // on page load, animate percentage bar to current donation percentage
-            // .stop() used to prevent animation queueing
-            $('.target-bar').stop().animate({
-                left: progressTotal
-            }, animationLength);
-        }
-
+$(window).resize(function() {
+    moveProgressBar();
 });
