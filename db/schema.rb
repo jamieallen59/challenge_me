@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 20140909095917) do
     t.date     "event_date"
     t.string   "charity"
     t.integer  "target"
+    t.float    "amount_raised"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "training"
-    t.float    "amount_raised"
     t.integer  "jg_event_id"
     t.string   "jg_short_name"
     t.integer  "jg_page_id"
@@ -64,17 +64,6 @@ ActiveRecord::Schema.define(version: 20140909095917) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
-
-  create_table "pledges", force: true do |t|
-    t.string   "title"
-    t.integer  "amount"
-    t.text     "info"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "event_id"
-  end
-
-  add_index "pledges", ["event_id"], name: "index_pledges_on_event_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "caption"
@@ -122,6 +111,7 @@ ActiveRecord::Schema.define(version: 20140909095917) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
+    t.text     "mmf_token"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
