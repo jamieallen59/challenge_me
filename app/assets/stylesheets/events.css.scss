@@ -11,12 +11,19 @@
   overflow: scroll;
 }
 
+.event-container:hover {
+  background-color: #ececec;
+ }
+ .event-container:active {
+  position: relative;
+  top: 1px;
+ }
 .event-container {
   display: flex;
   flex-direction: column;
   width: 40%;
   border-radius: 3px;
-  background-color: #F4F4F4;
+  background-color: #FFFFFF;
   margin-right: auto;
   margin-left: auto;
   margin-top: 3%;
@@ -56,7 +63,83 @@
     }
   }
 }
+/*--- JG Events Select form ---*/
+.user-welcome-message {
+	color: #FFF;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 40px;
+}
+.select-jg-event-container {
+	background-color: #343434;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+	.select-event-form {
+		width: 40%;
+		border-radius: 3px;
+		background-color: white;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 2%;
+		margin-bottom: 3%;
+		padding: 20px;
+		border: 2px solid #FFF;
+		font-size: 20px;
+		color: black;
+	}
+		#select-event-form-header {
+			margin-bottom: 10px;
+			font-weight: 500;
+			text-align: center;
+			color: black;
+		}
 
+	.jg-events-container {
+		display: flex;
+		flex-direction: column;
+	}
+		#justgiving-logo {
+			margin-left: auto;
+			margin-right: auto;
+			width: 33%;
+		}
+	.event-select-button {
+		cursor: pointer;
+		background-color: #e7e7e7;
+		font-size: 20px;
+		padding: 6px;
+		width: 100%;
+		font-weight: 500;
+		border: 2px solid white;
+		border-radius: .05em;
+		letter-spacing: 1px;
+		color: #343434;
+		padding-left: 18px;
+	}
+			.event-select-button:hover {
+				background-color: #FFF;
+				color: #000;
+			}
+		#events-select-logo {
+			margin: 15px;
+			text-align: center;
+			font-size: 23px;
+			font-weight: 500;
+			margin-bottom: 20px;
+		}
+		#create-new-event-button {
+			margin-left: 25%;
+			padding-right: 15px;
+			border: 1px solid #DEDEDE;
+		}
+		#create-new-event-button:active {
+			position: relative;
+			top: 1px;
+		}
 /*---- The Create Event form ---*/
 
 .new-event-form {
@@ -81,30 +164,24 @@
 	font-weight: 400;
 }
 
-.event-select-button {
-	vertical-align: middle;
-	cursor: pointer;
-	line-height: 40px;
-
-	margin-right: auto;
-	margin-left: auto;
-	background-color: #e7e7e7;
-	font-size: 20px;
-	padding: 6px;
-	width: 60%;
-	font-weight: 800;
-	border: 2px solid white;
-	border-radius: .05em;
-	letter-spacing: 4px;
-	text-decoration: none;
-	text-align: center;
-	color:black;
-}
-
-			.event-select-button:hover {
-				background-color: #FFF;
-				color: #000;
-			}
+// .event-select-button {
+// 	vertical-align: middle;
+// 	cursor: pointer;
+// 	line-height: 40px;
+// 	margin-right: auto;
+// 	margin-left: auto;
+// 	background-color: #e7e7e7;
+// 	font-size: 20px;
+// 	padding: 6px;
+// 	width: 60%;
+// 	font-weight: 800;
+// 	border: 2px solid white;
+// 	border-radius: .05em;
+// 	letter-spacing: 4px;
+// 	text-decoration: none;
+// 	text-align: center;
+// 	color:black;
+// }
 
 			#event-header {
 				vertical-align: middle;

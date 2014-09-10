@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# 
 gem 'rails', '4.1.4'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -19,6 +20,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-mapmyapi-mmf-oauth2', github: 'yoshdog/omniauth-mapmyapi-mmf-oauth2'
 gem 'mmf' 
 gem 'font-awesome-sass'
+gem 'shareable'
 
 group :development, :test do
   gem 'rspec-rails'
