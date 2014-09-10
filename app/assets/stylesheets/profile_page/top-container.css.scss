@@ -50,6 +50,25 @@
 			background-color: #F4F4F4;
 		}
 
+			.event-details-container {
+		background-color: #F4F4F4;
+		color: #343434;
+		display: flex;
+		line-height: 25px;
+		flex-direction: column;
+		margin: 5px;
+		padding: 10px;
+		margin: 0 auto;
+	}
+
+		#event-paragraph {
+			font-size: 20px;
+		}
+
+		#event-paragraph strong {
+			font-weight: 800;
+		}
+
 
 	.pledge-container {
 		display: flex;
