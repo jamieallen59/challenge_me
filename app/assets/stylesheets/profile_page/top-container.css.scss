@@ -135,11 +135,12 @@
 
 
 	.fundraising-stats {
-		flex-direction: row;
+		flex-direction: column;
 		border-top: 1px solid #DFDFDF;
 		display: flex;
 		background: linear-gradient(#F4F4F4, #ECECEC);
 		border-bottom: 1px solid #DFDFDF;
+		height: 200px;
 	}
 		.fundraising-stats-percentage-complete {
 			display: flex;

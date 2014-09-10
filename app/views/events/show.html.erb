@@ -97,18 +97,29 @@
       </section>
     </section>
     <section class='fundraising-stats'>
-    <section id="progress">
 
-<%= javascript_tag do %>
-            amountRaised = "<%=j @event.amount_raised.to_s %>";
-            targetAmount = "<%=j @event.target.to_s %>";
-<% end %>
-  <aside id="bar"></aside>
-  <aside id="bar_000" class="divider"><span>0%</span></aside>
-  <aside id="bar_025" class="divider"><span>25%</span></aside>
-  <aside id="bar_050" class="divider"><span>50%</span></aside>
-  <aside id="bar_075" class="divider"><span>75%</span></aside>
-  <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
+<section id="progress-background">
+<section class='tags'>
+    <aside id="bar_000" class="divider"><span>0%</span></aside>
+    <aside id="bar_025" class="divider"><span>25%</span></aside>
+    <aside id="bar_050" class="divider"><span>50%</span></aside>
+    <aside id="bar_075" class="divider"><span>75%</span></aside>
+    <aside id="bar_100" class="divider"><span>100%</span></aside>
+</section>
+
+    <section id="progress">
+  <%= javascript_tag do %>
+              amountRaised = "<%=j @event.amount_raised.to_s %>";
+              targetAmount = "<%=j @event.target.to_s %>";
+  <% end %>
+
+    <aside id="bar"></aside>
+    <aside id="bar_000" class="divider"><span>0%</span></aside>
+    <aside id="bar_025" class="divider"><span>25%</span></aside>
+    <aside id="bar_050" class="divider"><span>50%</span></aside>
+    <aside id="bar_075" class="divider"><span>75%</span></aside>
+    <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
+  </section>
 </section>
 
    <!--    <section class='fundraising-stats-percentage-complete'>
