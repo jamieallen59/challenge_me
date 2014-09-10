@@ -1,0 +1,5211 @@
+/* line 4, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.main-form-container {
+  background-color: #343434;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
+
+/* line 14, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border-radius: 3px;
+  background-color: #F4F4F4;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 15px;
+  border: 2px solid #FFF;
+}
+/* line 27, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-container h2 {
+  color: #343434;
+  font-size: 23px;
+}
+/* line 32, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-container p {
+  color: #666666;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 39, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-container .event-states ul {
+  padding-top: 5%;
+}
+/* line 41, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-container .event-states ul li {
+  padding-left: 10px;
+  margin-right: 10px;
+  float: left;
+  display: inline-block;
+}
+/* line 47, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-container .event-states ul li strong {
+  padding-bottom: 5px;
+  margin-left: 5%;
+  color: #343434;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+/*---- The Create Event form ---*/
+/* line 62, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.new-event-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border-radius: 3px;
+  background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 15px;
+  border: 2px solid #FFF;
+  letter-spacing: 5px;
+  font-size: 20px;
+  color: black;
+}
+
+/* line 78, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-form-label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+/* line 84, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-select-button {
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #e7e7e7;
+  font-size: 20px;
+  padding: 6px;
+  width: 60%;
+  font-weight: 800;
+  border: 2px solid white;
+  border-radius: .05em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+/* line 104, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-select-button:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+/* line 109, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event-header {
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  background-color: #FFF;
+  font-size: 20px;
+  padding: 6px;
+  width: 60%;
+  font-weight: 800;
+  border: 2px solid white;
+  border-radius: .05em;
+  letter-spacing: 7px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+/* line 129, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-form-input {
+  height: 38px;
+  border: none;
+  width: 99%;
+  padding-left: 8px;
+  line-height: 22px;
+  margin-top: 2px;
+  background-color: #E2E2E2;
+}
+
+/* line 138, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-form-input::-webkit-input-placeholder {
+  font-size: 18px;
+  font-weight: 100;
+  color: #B3B3B3;
+}
+
+/* line 143, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.event-form-input:focus {
+  outline-width: 0;
+}
+
+/* line 147, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.date-select-container {
+  height: 35px;
+}
+
+/* line 150, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event_event_date_1i {
+  border: 0;
+  font-size: 16px;
+  background-color: #e7e7e7;
+  width: 30%;
+  height: 35px;
+}
+
+/* line 157, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event_event_date_1i:focus {
+  outline-width: 0;
+}
+
+/* line 160, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event_event_date_2i {
+  border: 0;
+  font-size: 16px;
+  background-color: #e7e7e7;
+  width: 37%;
+  height: 35px;
+}
+
+/* line 167, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event_event_date_2i:focus {
+  outline-width: 0;
+}
+
+/* line 170, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event_event_date_3i {
+  border: 0;
+  font-size: 16px;
+  background-color: #e7e7e7;
+  width: 30%;
+  height: 35px;
+}
+
+/* line 177, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#event_event_date_3i:focus {
+  outline-width: 0;
+}
+
+/*--- Number of workouts buttons ---*/
+/* line 182, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.workout-selection-text {
+  margin-top: 11px;
+  font-weight: 400;
+  color: #343434;
+  text-align: center;
+}
+
+/* line 189, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.workouts-button-container {
+  width: 100%;
+  height: 90px;
+  margin-top: 11px;
+  flex-direction: row;
+  display: flex;
+}
+
+/* line 196, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+input[type="radio"] {
+  display: none;
+}
+
+/* line 199, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+input[type="radio"] + label {
+  background-color: #e7e7e7;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 18%;
+  color: #575757;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  box-shadow: 2px 2px 1px 0px #A7A7A7;
+}
+
+/* line 211, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+input[type="radio"] + label:hover {
+  background-color: #d0d0d0;
+  color: #0073be;
+}
+
+/* line 215, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+input[type="radio"] + label:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 219, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.label-checked {
+  background-color: #d0d0d0 !important;
+  color: #00B2FF !important;
+}
+
+/* line 224, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#submit-event {
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 40px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #e7e7e7;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 6px;
+  width: 60%;
+  font-weight: 800;
+  border: 2px solid white;
+  border-radius: .05em;
+  letter-spacing: 5px;
+}
+
+/* line 241, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#submit-event:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+/* line 245, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#submit-event:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 249, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#submit-event:focus {
+  outline-width: 0;
+}
+
+/*--- Errors styling ---*/
+/* line 255, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.errors-container {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+/* line 261, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.errors-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* line 265, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.error-message {
+  margin-left: 10px;
+}
+
+/* line 269, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.error-explanation {
+  background-color: #FFF;
+  margin-left: auto;
+  width: 43%;
+  margin-right: auto;
+  text-align: left;
+  font-size: 18px;
+  padding: 13px;
+  border: 3px solid #c75656;
+}
+
+/* line 280, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.menu-event {
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #e7e7e7;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 6px;
+  width: 60%;
+  font-weight: 800;
+  border: 2px solid white;
+  border-radius: .05em;
+  letter-spacing: 5px;
+}
+
+/* line 298, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.menu-event:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+/* line 303, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.menu-event:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 307, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+.menu-event:focus {
+  outline-width: 0;
+}
+
+/* line 311, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/events.css.scss */
+#menu-header {
+  line-height: 40px;
+  color: #000;
+  text-decoration: none;
+  font-size: 18.5px;
+  padding: 6px;
+  width: 60%;
+  font-weight: 600;
+  border: 2px solid white;
+  border-radius: .05em;
+  letter-spacing: 10px;
+}
+video#bgvid {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background-size: cover;
+}
+
+/*---- Upper Container ---*/
+.hp-upper-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+	.hp-cover-image {
+		display: flex;
+		flex-direction: column;
+		background-size: 100%;
+		min-height: 900px;
+		background-repeat: no-repeat;
+	}
+
+	.main-image-search {
+		margin-top: 30px;
+		height: 60px;
+		display: flex;
+		flex-direction: row;
+	}
+		.user-management {
+			margin-right: 35%;
+		}
+			#sign_out {
+			}
+		#search-form {
+			margin-top: -15px;
+			width: 35%;
+			position: absolute;
+			right: 0;
+			margin-right: 0.3%;
+		}
+			input.find_person {
+				background: black;
+		    text-align: left;
+				text-decoration: none;
+				font-size: 1.2em;
+				width: 79%;
+				height: 52px;
+				letter-spacing: 5px;
+				padding: 10px;
+				border: 2px solid white;
+				color: white;
+				margin-right: 4px;
+			}
+			#search_button {
+					color: #333;
+					font-weight: 800;
+					background: white;
+					border: 2px solid white;
+					font-size: 1.2em;
+					height: 52px;
+					cursor: pointer;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border-radius: .05em;
+					box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
+					letter-spacing: 3px;
+				}
+				#search_button:hover {
+					color: #2B1B17;
+					background: rgba(255,255,255,.58);
+				}
+
+
+	h2.main-image-header {
+		text-align: center;
+		color: white;
+		letter-spacing: 15px;
+		word-spacing: 20px;
+		font-size: 65px;
+		font-weight: 600;
+		margin-top: 140px;
+		text-shadow: 0 1px 0 rgba(255,255,255,.8);
+	}
+
+	h5.main-image-text {
+		text-align: center;
+		color:white;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		letter-spacing: 10px;
+		word-spacing: 10px;
+		text-shadow: 0 1px 0 rgba(255,255,255,.8);
+		font-size: 1.5em;
+	}
+
+	.cover-image-button-container {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.lets_go-button {
+		text-decoration: none;
+		color: #2B1B17;
+		font-weight: 800;
+		font-size: 1.4em;
+		background: rgba(255,255,255,.58);
+		border: 2px solid white;
+		padding: 0.5em 1.5em;
+    margin: 0.5em;
+		border-radius: .05em;
+		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) 0 1px 0 rgba(0,0,0,.3);
+		letter-spacing: 10px;
+	}
+	.lets_go-button:hover {
+		background: white;
+		color: #333;
+		font-weight: 800;
+	}
+	.lets_go-button:active {
+    position: relative;
+		top: 1px;
+	}
+	.lets_go-button:focus {
+    outline-width: 0;
+	}
+
+/*---- Middle Container ---
+	.hp-middle-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		margin-top: 40px;
+	}
+
+	.hp-extra-info-box {
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+		.hp-extra-info {
+			width: 250px;
+			height: 250px;
+			background-color: #FFF;
+			margin-left: auto;
+			margin-right: auto;
+		}
+			#hp-tracking-training {
+				background-image: url('http://outsourceworkers.com.au/wp-content/uploads/2014/07/icon_29030.png');
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+				#hp-tracking-training:hover {
+
+				}
+			#hp-setting-challenges {
+
+			}
+				#hp-setting-challenges:hover {
+
+				}
+			#hp-short-term-goals {
+
+			}
+				#hp-short-term-goals:hover {
+
+				}
+
+		.info-box-title {
+			font-size: 20px;
+		}
+
+/*---- Lower Container ---
+/*	.hp-lower-container {
+		width: 100%;
+		display: flex;
+		margin-top: 40px;
+	}*/
+
+
+/*---- Lower Container ---*/
+
+	/*	.hp-lower-right {
+			display: flex;
+			width: 100%;
+			height: 500px;
+		}
+
+			.post-title {
+				margin-top: 20px;
+				text-align: center;
+			}
+.modal {
+  display: none;
+  width: 400px;
+  background: #fff;
+  padding: 15px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+}
+
+.modal a.close-modal {
+  position: absolute;
+  top: -12.5px;
+  right: -12.5px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url(close.png) no-repeat 0 0;
+}
+
+.modal-spinner {
+  display: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -32px;
+  margin-top: -32px;
+  background: url(spinner.gif) #111 no-repeat center center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+  .modal-header {
+    padding-left: 15px;
+  }
+  .modal-body {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .modal-footer {
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+  }
+   .modal-button-create {
+    border: 1px solid #C5C5C5;
+    background-color: #FFF;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-right: 12px;
+    padding: 7px 13px;
+    font-family: sans-serif;
+    font-weight: 300;
+  }
+  .modal-button-create:hover {
+    background-color: #ededed;
+  }
+    .modal-close-button {
+      color: #333;
+      background-color: #fff;
+      border-color: #ccc;
+    }
+
+  #menu-modal {
+    width: 450px;
+  }
+.mini-target-bar-container {
+  width: 100%;
+  padding-top: 8px;
+  height: 10px;
+}
+
+.mini-progress {
+  width: 100%;
+  height: 10px;
+  background-color: white;
+}
+
+.mini-target-wrap {
+  border-bottom: 1px solid #DEDEDE;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+.mini-target-bar {
+    left: 0;
+    position: absolute;
+    bottom: 0;
+  }
+
+.struggling {
+  background: #CC3333;
+}
+.steady {
+  background: #E2790A;
+}
+.great {
+  background: #2D8735;
+}
+.legendary {
+  background: #ccac00;
+}
+/* line 5, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/posts.css.scss */
+.evidence-comments {
+  overflow: scroll;
+}
+
+/* line 9, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/posts.css.scss */
+.post-date {
+  line-height: 1px;
+}
+
+/* line 13, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/posts.css.scss */
+.post-controls {
+  padding-left: 10px;
+}
+/* line 15, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/posts.css.scss */
+.post-controls a {
+  line-height: 1px;
+  color: white;
+  text-decoration: none;
+}
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+/* line 8, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+body {
+  padding: 30px 0;
+  background-color: #f4f4f4;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* line 13, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.wrap {
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+/* line 20, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-radial {
+  float: left;
+  margin-right: 30px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #f4f4f4;
+  background-color: tomato;
+  margin-left: 29%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+/* line 35, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-radial .overlay {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #fffde8;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
+}
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-0 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(90deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-5 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(108deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-10 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(126deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-15 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(144deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-20 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(162deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-25 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(180deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-30 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(198deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-35 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(216deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-40 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(234deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-45 {
+  background-image: linear-gradient(90deg, #f4f4f4 50%, transparent 50%, transparent), linear-gradient(252deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-50 {
+  background-image: linear-gradient(-90deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-55 {
+  background-image: linear-gradient(-72deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-60 {
+  background-image: linear-gradient(-54deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-65 {
+  background-image: linear-gradient(-36deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-70 {
+  background-image: linear-gradient(-18deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-75 {
+  background-image: linear-gradient(0deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-80 {
+  background-image: linear-gradient(18deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-85 {
+  background-image: linear-gradient(36deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-90 {
+  background-image: linear-gradient(54deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-95 {
+  background-image: linear-gradient(72deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+
+/* line 57, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/circle.css.sass */
+.progress-100 {
+  background-image: linear-gradient(90deg, tomato 50%, transparent 50%, transparent), linear-gradient(270deg, tomato 50%, #f4f4f4 50%, #f4f4f4);
+}
+/* line 4, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/create-pledge-modal.css.scss */
+.pledge-modal-container {
+  font-size: 20px;
+}
+
+/* line 7, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/create-pledge-modal.css.scss */
+#pledge-modal-label {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  color: #343434;
+}
+
+/* line 14, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/create-pledge-modal.css.scss */
+#pledge-modal-input {
+  height: 40px;
+  border: none;
+  width: 98%;
+  padding-left: 8px;
+  line-height: 22px;
+  background-color: #E2E2E2;
+}
+
+/* line 22, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/create-pledge-modal.css.scss */
+#pledge-modal-input:focus {
+  outline-width: 0;
+}
+
+/* line 25, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/create-pledge-modal.css.scss */
+#pledge-modal-input::-webkit-input-placeholder {
+  font-size: 18px;
+  font-weight: 100;
+  color: #B3B3B3;
+}
+
+/* line 31, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/create-pledge-modal.css.scss */
+.pledge-create-modal {
+  width: 100%;
+  height: 35px;
+  margin-top: 15px;
+}
+/*------ Feed Container -----*/
+/*--- Challnge dispaly ---*/
+/* line 5, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.challenge-display {
+  width: 35%;
+  border: 1px solid #DEDEDE;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  background: #FFF;
+}
+
+/* line 14, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.challenge-button-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  height: 50px;
+}
+
+/* line 20, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.challenger-creator {
+  text-align: center;
+  font-weight: 500;
+  color: black;
+}
+
+/* line 25, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.accept-challenge {
+  border: 0;
+  cursor: pointer;
+  width: 30%;
+  background-color: #E9E9E9;
+  border: 2px solid white;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 35, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.accept-challenge:hover {
+  background-color: #5CB85C;
+}
+
+/* line 38, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.decline-challenge {
+  border: 0;
+  cursor: pointer;
+  width: 30%;
+  background-color: #E9E9E9;
+  border: 2px solid white;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 48, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.accept-challenge:hover {
+  background-color: #5CB85C;
+}
+
+/* line 51, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.decline-challenge:hover {
+  background-color: #D9534F;
+}
+
+/* line 54, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.challenge-accepted-highlighting {
+  box-shadow: 0 0 5px #5CB85C;
+  transition: 0.5s ease-in-out;
+}
+
+/* line 58, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.challenge-declined-highlighting {
+  box-shadow: 0 0 5px #D9534F;
+  transition: 0.5s ease-in-out;
+}
+
+/*---- Update Feed ---*/
+/* line 65, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-picture-modal {
+  display: none;
+  margin-top: 50px;
+}
+
+/* line 70, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-video-modal {
+  display: none;
+  margin-top: 50px;
+}
+
+/* line 75, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-text-modal {
+  display: none;
+  margin-top: 50px;
+}
+
+/* line 80, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.page-divider {
+  width: 88%;
+  height: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  background-color: #EBEBEB;
+}
+
+/* line 89, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.update-feed {
+  background-color: #fbfbfb;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 97, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.donations-container {
+  color: #343434;
+  display: flex;
+  margin: 5px;
+  height: 40px;
+  margin-top: 1.5em;
+  margin-bottom: 25px;
+}
+
+/* line 105, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#update-sponsers-link {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  text-decoration: none;
+  color: #2B1B17;
+  width: 34.5%;
+  margin-right: 1%;
+  margin-left: auto;
+  font-weight: 800;
+  background-color: #E9E9E9;
+  /* background: rgba(255, 255, 255, 0.58); */
+  border: 2px solid white;
+  border-radius: .05em;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 5px;
+}
+
+/* line 122, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#update-sponsers:hover {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* line 126, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#update-sponsers:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 131, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#make-a-promise-link {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  text-decoration: none;
+  color: #2B1B17;
+  width: 34.5%;
+  margin-right: auto;
+  font-weight: 800;
+  background-color: #E9E9E9;
+  /* background: rgba(255, 255, 255, 0.58); */
+  border: 2px solid white;
+  border-radius: .05em;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 5px;
+}
+
+/* line 147, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#make-a-promise:hover {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* line 151, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#make-a-promise:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 156, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#donate-button {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  text-decoration: none;
+  color: #2B1B17;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 800;
+  background-color: #E9E9E9;
+  /* background: rgba(255, 255, 255, 0.58); */
+  border: 2px solid white;
+  border-radius: .05em;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 5px;
+}
+
+/* line 173, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#donate-button:hover {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* line 177, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#donate-button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 181, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.newpost-separator {
+  background-color: #FFF;
+  width: 1%;
+}
+
+/*--- Individual Posts ---*/
+/* line 190, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  border: 1px solid #DFDFDF;
+  box-shadow: 0px 0px 8px 0px #DEDEDE;
+}
+
+/* line 200, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-content {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  height: 80%;
+}
+
+/* line 207, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-header {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  color: #343434;
+}
+
+/* line 213, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-title {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  height: 35px;
+  text-align: center;
+}
+
+/* line 222, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-controls {
+  padding-left: 10px;
+}
+
+/* line 225, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+a.delete-post {
+  font-size: small;
+  color: #3B5998;
+  cursor: pointer;
+}
+
+/* line 230, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.delete-post:hover {
+  text-decoration: underline;
+}
+
+/* line 233, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+a.edit-post {
+  font-size: small;
+  color: #3B5998;
+  cursor: pointer;
+}
+
+/* line 238, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.edit-post:hover {
+  text-decoration: underline;
+}
+
+/* line 242, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.post-date {
+  font-style: italic;
+  font-size: 14px;
+  width: 100%;
+  height: 25px;
+  text-align: right;
+  line-height: 1px;
+}
+
+/* line 250, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+p.posted-by {
+  margin-right: 8px;
+}
+
+/* line 255, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.uploaded-evidence {
+  display: flex;
+  border: 1px solid #DFDFDF;
+  width: 300px;
+  margin: 3px;
+}
+
+/* line 262, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.comments-container {
+  display: inline-block;
+  font-size: 14px;
+  width: 100%;
+  height: 10%;
+  margin-top: 3px;
+}
+
+/* line 269, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.comments-list {
+  display: inline-block;
+  border-left: 5px solid #dfdfdf;
+  height: 74%;
+  overflow: scroll;
+  padding: 5px;
+  font-size: 12px;
+}
+/* line 277, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.comments-list .comment-text {
+  margin-top: 5px;
+}
+
+/* line 281, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.comments-input-container {
+  width: 80%;
+  height: 43px;
+}
+
+/* line 285, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#comments-placeholder {
+  font-size: 15px;
+  width: 68%;
+  height: 40px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid #dfdfdf;
+  padding-left: 5px;
+  float: left;
+}
+
+/* line 294, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#comments-placeholder:focus {
+  outline-width: 0;
+}
+
+/* line 297, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#comment-submit-button {
+  border: none;
+  width: 20%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  height: 40px;
+  background: linear-gradient(#0073be, #004a7b);
+  color: white;
+  padding-bottom: 1px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 309, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+#comment-submit-button:hover {
+  background: linear-gradient(#4aa7e4, #146092);
+}
+
+/* line 313, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.comment {
+  padding: 2.5px;
+  line-height: 14px;
+}
+/* line 316, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.comment strong {
+  font-weight: bold;
+}
+
+/* line 321, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+.challenge-comment {
+  font-family: 8px;
+  margin: 4px;
+}
+
+/* line 330, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/feed-container.css.scss */
+p.post-caption {
+  text-align: initial;
+}
+/*------ Left Container -----*/
+/* line 4, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.container-left {
+  font-family: "Helvetica Neue", Helvetica;
+  position: absolute;
+  background-color: #F4F4F4;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  width: 260px;
+  height: 2000px;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #DFDFDF;
+  box-shadow: 0px 0px 5px 0px #DEDEDE;
+}
+
+/* line 18, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.picture-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F4F4F4;
+  margin: 5px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* line 29, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.profile-picture {
+  width: 95%;
+  height: 238px;
+  margin: 6px;
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #DFDFDF;
+}
+
+/* line 37, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#profile-image {
+  height: 92%;
+  margin: 4px;
+  /*background-image: url(profile.jpg);*/
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 45, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.icon-camera {
+  color: white;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 3px;
+  z-index: 3;
+}
+
+/* line 55, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#event-user-name {
+  position: absolute;
+  bottom: 0;
+  font-size: 28px;
+  margin-left: 5%;
+  width: 225px;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 68, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.event-details-container {
+  background-color: #F4F4F4;
+  color: #343434;
+  display: flex;
+  line-height: 25px;
+  flex-direction: column;
+  margin: 5px;
+  padding: 10px;
+}
+
+/* line 78, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#event-paragraph {
+  font-size: 20px;
+}
+
+/* line 82, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#event-paragraph strong {
+  font-weight: 800;
+}
+
+/* line 87, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.days-remaining, .training-headline {
+  color: #343434;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #DFDFDF;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+/* line 95, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#event-today-text {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* line 99, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#days-remaining-head {
+  font-size: 21px;
+}
+
+/* line 102, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#days-remaining-number {
+  font-size: 4em;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 108, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#date-remaining-text {
+  font-size: 21px;
+}
+
+/* line 112, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.percentage-completion {
+  flex-direction: column;
+  color: #343434;
+  display: flex;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  border-top: 1px solid #DFDFDF;
+}
+
+/* line 121, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#event-percentage-number {
+  font-size: 4em;
+  font-weight: 600;
+}
+
+/* line 125, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#event-percentage-text {
+  font-size: 21px;
+  line-height: 24px;
+}
+
+/* line 131, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.training-totals {
+  flex-direction: column;
+  color: #343434;
+  text-align: center;
+  display: flex;
+  margin-bottom: 10px;
+  border-top: 1px solid #DFDFDF;
+}
+
+/* line 139, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#training-goal-headline, #training-section-headline, #recent-workout-details-head {
+  font-size: 35px;
+  font-weight: 600;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  line-height: 40px;
+}
+
+/* line 146, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#training-goal-number {
+  color: #DB2929;
+  font-size: 120px;
+  font-weight: 600;
+}
+
+/* line 151, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#training-goal-text {
+  font-size: 21px;
+}
+
+/* line 155, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.training-stats {
+  text-align: center;
+}
+
+/* line 158, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.log-training-button-container {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  height: 50px;
+  background: linear-gradient(#0073be, #004a7b);
+  color: white;
+  padding-bottom: 1px;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+/* line 171, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#log-training-button {
+  cursor: pointer;
+  color: #FFF;
+  font-size: 24px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+/* line 178, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.log-training-button-container:hover {
+  background: linear-gradient(#4aa7e4, #146092);
+}
+
+/* line 181, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#log-training-button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 186, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.total-completed-workouts {
+  flex-direction: column;
+  color: #343434;
+  text-align: center;
+  display: flex;
+  margin-bottom: 10px;
+  border-top: 1px solid #DFDFDF;
+}
+
+/* line 194, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#workouts-completed-total-number {
+  font-size: 120px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* line 199, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#workouts-completed-total-text {
+  font-size: 21px;
+  line-height: 25px;
+}
+
+/* line 204, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.workouts-completed-by-user {
+  flex-direction: column;
+  color: #343434;
+  text-align: center;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #DFDFDF;
+}
+
+/* line 213, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#workouts-completed-head {
+  font-size: 21px;
+  margin-top: 8px;
+}
+
+/* line 217, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#workouts-completed-number {
+  font-size: 100px;
+  font-weight: 600;
+}
+
+/* line 221, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#workouts-completed-footer {
+  font-size: 21px;
+  line-height: 30px;
+}
+
+/* line 226, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.donate-button-container {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  height: 50px;
+  background: linear-gradient(#0073be, #004a7b);
+  color: white;
+  padding-bottom: 1px;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+/* line 239, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#donations-button {
+  cursor: pointer;
+  color: #FFF;
+  font-size: 24px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+/* line 246, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.donate-button-container:hover {
+  background: linear-gradient(#4aa7e4, #146092);
+}
+
+/* line 249, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#donations-button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 254, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+.recent-workout-details {
+  flex-direction: column;
+  color: #343434;
+  text-align: center;
+  display: flex;
+  padding-bottom: 10px;
+  border-top: 1px solid #DFDFDF;
+}
+
+/* line 263, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/left-container.css.scss */
+#recent-workout-details-head {
+  font-size: 20px;
+  margin-top: 8px;
+}
+/* line 1, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+body {
+  font-family: "Helevetica Neue", Helvetica;
+  font-size: 24px;
+  background-color: #FBFBFB;
+}
+
+/* line 7, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.main-content-container {
+  margin-left: 253px;
+  margin-right: -1%;
+  margin-top: -9px;
+  top: 0;
+}
+
+/* line 14, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.map-my-fitness {
+  display: flex;
+  flex-direction: row;
+  width: 575px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 22, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.mapmyfitness-sync-text {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  margin-left: 20px;
+  font-size: 18px;
+  color: #747474;
+}
+
+/* line 30, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.mmf-button {
+  width: 120px;
+  margin-left: 25px;
+  padding: 0px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(#0073be, #004a7b);
+  box-shadow: 0px 1px 1px 2px #DEDEDE;
+}
+
+/* line 39, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.mmf-button:hover {
+  background: linear-gradient(#4aa7e4, #146092);
+}
+
+/* line 42, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.mmf-button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 46, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+#sync-icon {
+  width: 45px;
+  vertical-align: middle;
+  line-height: 55px;
+}
+
+/* line 53, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+.icon {
+  height: 58px;
+  margin-right: 15px;
+  margin-top: -21px;
+  margin-bottom: -6px;
+}
+
+/* line 59, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+#map-my-fitness-button-text {
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 55px;
+  color: #FFF;
+}
+
+/* line 65, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/main-style.css.scss */
+#mmf-logo {
+  width: 55px;
+  height: 55px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+/*----- Top Container --------*/
+/* line 4, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.container-top {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #DFDFDF;
+  background-color: #F4F4F4;
+  padding-top: 14px;
+}
+
+/* line 11, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.event-controls {
+  color: #343434;
+  display: flex;
+  margin-top: 9px;
+  height: 40px;
+  padding-left: 7px;
+  padding-right: 12px;
+}
+
+/* line 19, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+#edit-event {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  text-decoration: none;
+  color: #2B1B17;
+  width: 50%;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.58);
+  border: 2px solid white;
+  border-radius: .05em;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 5px;
+}
+
+/* line 33, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+#edit-event:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+/* line 37, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+#edit-logo {
+  height: 58px;
+  margin-right: 15px;
+  margin-top: -21px;
+  margin-bottom: -6px;
+}
+
+/* line 43, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+#delete-logo {
+  height: 35px;
+  margin-right: 15px;
+  margin-top: 2px;
+  margin-bottom: -6px;
+}
+
+/* line 50, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.eventcontrols-separator {
+  width: 1%;
+  background-color: #F4F4F4;
+}
+
+/* line 56, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-container {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  border-radius: 8px;
+  font-size: 21px;
+  color: #343434;
+  border: 1px solid #DFDFDF;
+  box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
+}
+
+/* line 66, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-title {
+  padding: 10px;
+  width: 185px;
+  text-align: center;
+}
+
+/* line 71, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-information {
+  border-left: 1px solid #DFDFDF;
+  border-right: 1px solid #DFDFDF;
+  box-shadow: inset 0.6px 0.6px 5px #DEDEDE;
+  padding: 10px;
+  width: 75%;
+  font-style: italic;
+  font-size: 18px;
+  background-color: #FFF;
+  text-align: center;
+}
+
+/* line 82, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-title-empty {
+  padding: 10px;
+  width: 185px;
+  vertical-align: middle;
+  line-height: 30px;
+  color: #343434;
+  text-align: center;
+}
+
+/* line 90, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-information-empty {
+  border-left: 1px solid #DFDFDF;
+  border-right: 1px solid #DFDFDF;
+  box-shadow: inset 1px 1px 3px #DEDEDE;
+  padding: 10px;
+  vertical-align: middle;
+  line-height: 40px;
+  color: #343434;
+  width: 75%;
+  text-align: center;
+}
+
+/* line 101, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-modal-button {
+  padding: 10px;
+  width: 185px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 40px;
+  color: #FFF;
+  text-align: center;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background: linear-gradient(#0073be, #004a7b);
+}
+
+/* line 115, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.pledge-modal-button:hover {
+  background: linear-gradient(#4aa7e4, #146092);
+}
+
+/* line 120, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.fundraising-stats {
+  flex-direction: row;
+  border-top: 1px solid #DFDFDF;
+  display: flex;
+  background: linear-gradient(#f4f4f4, #ececec);
+  border-bottom: 1px solid #DFDFDF;
+}
+
+/* line 127, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.fundraising-stats-percentage-complete {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid #DFDFDF;
+}
+
+/* line 134, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.fundraising-stats-target {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid #DFDFDF;
+}
+
+/* line 141, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.fundraising-stats-raised {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid #DFDFDF;
+}
+
+/* line 148, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+.fundraising-stats-training-goal {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+}
+
+/* line 154, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+#fundraising-stats-percentage-number {
+  font-size: 40px;
+  margin-top: 4px;
+  color: #E2790A;
+  padding-bottom: 10px;
+}
+
+/* line 160, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/top-container.css.scss */
+#fundraising-stats-percentage-text {
+  font-size: 15px;
+  color: #8A8A8A;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+/*--- training session modal ---*/
+/* line 3, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_details {
+  width: 100%;
+  height: 100px;
+  font-size: 16px;
+  background-color: #e5e5e5;
+  border: none;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* line 13, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_details:focus {
+  outline-width: 0;
+  background-color: white;
+  transition: 0.15s ease-in-out;
+}
+
+/* line 19, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+.training-date-selector {
+  width: 100%;
+  flex-direction: row;
+  margin-top: 6px;
+}
+
+/* line 25, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_sessiondate_1i {
+  border: 0;
+  font-size: 16px;
+  background-color: #e7e7e7;
+  width: 31%;
+  height: 35px;
+}
+
+/* line 32, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_sessiondate_1i:focus {
+  outline-width: 0;
+}
+
+/* line 36, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_sessiondate_2i {
+  border: 0;
+  font-size: 16px;
+  background-color: #e7e7e7;
+  width: 40%;
+  height: 35px;
+}
+
+/* line 43, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_sessiondate_2i:focus {
+  outline-width: 0;
+}
+
+/* line 47, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_sessiondate_3i {
+  border: 0;
+  font-size: 16px;
+  background-color: #e7e7e7;
+  width: 25%;
+  height: 35px;
+}
+
+/* line 54, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/profile_page/training-session-modal.css.scss */
+#trainingsession_sessiondate_3i:focus {
+  outline-width: 0;
+}
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+
+html,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+.target-bar-container {
+  width: 100%;
+}
+
+.progress {
+  width: 100%;
+  height: 40px;
+}
+
+.target-wrap {
+  border-bottom: 1px solid #DEDEDE;
+  overflow: hidden;
+  position: relative;
+}
+
+.target-bar {
+    background: #f4f4f4;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+  }
+
+.struggling {
+  background: #CC3333;
+}
+.steady {
+  background: #E2790A;
+}
+.great {
+  background: #2D8735;
+}
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Droid Serif", serif;
+  color: #7f8c97;
+  background-color: #e9f0f5;
+}
+
+a {
+  color: #acb7c0;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+header {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  background: #303e49;
+}
+header h1 {
+  color: white;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+@media only screen and (min-width: 1170px) {
+  header {
+    height: 300px;
+    line-height: 300px;
+  }
+  header h1 {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+
+#cd-timeline {
+  position: relative;
+  padding: 2em 0;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+}
+#cd-timeline::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: #d7e4ed;
+}
+@media only screen and (min-width: 1170px) {
+  #cd-timeline {
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+  }
+  #cd-timeline::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+.cd-timeline-block {
+  position: relative;
+  margin: 2em 0;
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-block {
+    margin: 4em 0;
+  }
+  .cd-timeline-block:first-child {
+    margin-top: 0;
+  }
+  .cd-timeline-block:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cd-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+.cd-timeline-img img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+.cd-timeline-img.cd-picture {
+  background: #75ce66;
+}
+.cd-timeline-img.cd-movie {
+  background: #c03b44;
+}
+.cd-timeline-img.cd-location {
+  background: #f0ca45;
+}
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-img {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+  .cssanimations .cd-timeline-img.is-hidden {
+    visibility: hidden;
+  }
+  .cssanimations .cd-timeline-img.bounce-in {
+    visibility: visible;
+    -webkit-animation: cd-bounce-1 0.6s;
+    -moz-animation: cd-bounce-1 0.6s;
+    animation: cd-bounce-1 0.6s;
+  }
+}
+
+@-webkit-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    -moz-transform: scale(1.2);
+  }
+
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.cd-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background: white;
+  border-radius: 0.25em;
+  padding: 1em;
+  box-shadow: 0 3px 0 #d7e4ed;
+}
+.cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-content h2 {
+  color: #303e49;
+}
+.cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+  display: inline-block;
+}
+.cd-timeline-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+.cd-timeline-content .cd-read-more {
+  float: right;
+  padding: .8em 1em;
+  background: #acb7c0;
+  color: white;
+  border-radius: 0.25em;
+}
+.no-touch .cd-timeline-content .cd-read-more:hover {
+  background-color: #bac4cb;
+}
+.cd-timeline-content .cd-date {
+  float: left;
+  padding: .8em 0;
+  opacity: .7;
+}
+.cd-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid white;
+}
+@media only screen and (min-width: 768px) {
+  .cd-timeline-content h2 {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+  .cd-timeline-content p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-content {
+    margin-left: 0;
+    padding: 1.6em;
+    width: 45%;
+  }
+  .cd-timeline-content::before {
+    top: 24px;
+    left: 100%;
+    border-color: transparent;
+    border-left-color: white;
+  }
+  .cd-timeline-content .cd-read-more {
+    float: left;
+  }
+  .cd-timeline-content .cd-date {
+    position: absolute;
+    width: 100%;
+    left: 122%;
+    top: 6px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content {
+    float: right;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    border-color: transparent;
+    border-right-color: white;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+    float: right;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+    left: auto;
+    right: 122%;
+    text-align: right;
+  }
+  .cssanimations .cd-timeline-content.is-hidden {
+    visibility: hidden;
+  }
+  .cssanimations .cd-timeline-content.bounce-in {
+    visibility: visible;
+    -webkit-animation: cd-bounce-2 0.6s;
+    -moz-animation: cd-bounce-2 0.6s;
+    animation: cd-bounce-2 0.6s;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  /* inverse bounce effect on even content blocks */
+  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
+    -webkit-animation: cd-bounce-2-inverse 0.6s;
+    -moz-animation: cd-bounce-2-inverse 0.6s;
+    animation: cd-bounce-2-inverse 0.6s;
+  }
+}
+@-webkit-keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(20px);
+  }
+
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-20px);
+  }
+
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= timeline
+
+
+ */
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/assets/font-awesome/fontawesome-webfont.eot");
+  src: url("/assets/font-awesome/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/font-awesome/fontawesome-webfont.woff") format("woff"), url("/assets/font-awesome/fontawesome-webfont.ttf") format("truetype"), url("/assets/font-awesome/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 4, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_core.scss */
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* makes the font 33% larger relative to the icon container */
+/* line 6, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_larger.scss */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+/* line 11, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_larger.scss */
+.fa-2x {
+  font-size: 2em;
+}
+
+/* line 12, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_larger.scss */
+.fa-3x {
+  font-size: 3em;
+}
+
+/* line 13, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_larger.scss */
+.fa-4x {
+  font-size: 4em;
+}
+
+/* line 14, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_larger.scss */
+.fa-5x {
+  font-size: 5em;
+}
+
+/* line 3, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_fixed-width.scss */
+.fa-fw {
+  width: 1.28571em;
+  text-align: center;
+}
+
+/* line 4, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_list.scss */
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none;
+}
+/* line 8, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_list.scss */
+.fa-ul > li {
+  position: relative;
+}
+
+/* line 10, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_list.scss */
+.fa-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center;
+}
+/* line 16, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_list.scss */
+.fa-li.fa-lg {
+  left: -1.85714em;
+}
+
+/* line 4, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_bordered-pulled.scss */
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
+}
+
+/* line 10, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_bordered-pulled.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 11, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_bordered-pulled.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 14, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_bordered-pulled.scss */
+.fa.pull-left {
+  margin-right: .3em;
+}
+/* line 15, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_bordered-pulled.scss */
+.fa.pull-right {
+  margin-left: .3em;
+}
+
+/* line 4, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_spinning.scss */
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+@-webkit-keyframes fa-spin {
+  /* line 10, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_spinning.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  /* line 14, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_spinning.scss */
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-spin {
+  /* line 21, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_spinning.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  /* line 25, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_spinning.scss */
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/* line 4, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_rotated-flipped.scss */
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* line 5, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_rotated-flipped.scss */
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* line 6, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_rotated-flipped.scss */
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+/* line 8, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_rotated-flipped.scss */
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+/* line 9, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_rotated-flipped.scss */
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+/* line 18, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_rotated-flipped.scss */
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none;
+}
+
+/* line 4, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_stacked.scss */
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+/* line 12, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_stacked.scss */
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 18, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_stacked.scss */
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+/* line 19, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_stacked.scss */
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+/* line 20, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_stacked.scss */
+.fa-inverse {
+  color: white;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+/* line 5, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-glass:before {
+  content: "\f000";
+}
+
+/* line 6, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-music:before {
+  content: "\f001";
+}
+
+/* line 7, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-search:before {
+  content: "\f002";
+}
+
+/* line 8, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-envelope-o:before {
+  content: "\f003";
+}
+
+/* line 9, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-heart:before {
+  content: "\f004";
+}
+
+/* line 10, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-star:before {
+  content: "\f005";
+}
+
+/* line 11, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-star-o:before {
+  content: "\f006";
+}
+
+/* line 12, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-user:before {
+  content: "\f007";
+}
+
+/* line 13, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-film:before {
+  content: "\f008";
+}
+
+/* line 14, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-th-large:before {
+  content: "\f009";
+}
+
+/* line 15, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-th:before {
+  content: "\f00a";
+}
+
+/* line 16, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-th-list:before {
+  content: "\f00b";
+}
+
+/* line 17, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-check:before {
+  content: "\f00c";
+}
+
+/* line 20, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+  content: "\f00d";
+}
+
+/* line 21, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-search-plus:before {
+  content: "\f00e";
+}
+
+/* line 22, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-search-minus:before {
+  content: "\f010";
+}
+
+/* line 23, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-power-off:before {
+  content: "\f011";
+}
+
+/* line 24, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-signal:before {
+  content: "\f012";
+}
+
+/* line 26, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-gear:before,
+.fa-cog:before {
+  content: "\f013";
+}
+
+/* line 27, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-trash-o:before {
+  content: "\f014";
+}
+
+/* line 28, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-home:before {
+  content: "\f015";
+}
+
+/* line 29, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-o:before {
+  content: "\f016";
+}
+
+/* line 30, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-clock-o:before {
+  content: "\f017";
+}
+
+/* line 31, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-road:before {
+  content: "\f018";
+}
+
+/* line 32, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-download:before {
+  content: "\f019";
+}
+
+/* line 33, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-o-down:before {
+  content: "\f01a";
+}
+
+/* line 34, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-o-up:before {
+  content: "\f01b";
+}
+
+/* line 35, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-inbox:before {
+  content: "\f01c";
+}
+
+/* line 36, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-play-circle-o:before {
+  content: "\f01d";
+}
+
+/* line 38, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-rotate-right:before,
+.fa-repeat:before {
+  content: "\f01e";
+}
+
+/* line 39, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-refresh:before {
+  content: "\f021";
+}
+
+/* line 40, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-list-alt:before {
+  content: "\f022";
+}
+
+/* line 41, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-lock:before {
+  content: "\f023";
+}
+
+/* line 42, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-flag:before {
+  content: "\f024";
+}
+
+/* line 43, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-headphones:before {
+  content: "\f025";
+}
+
+/* line 44, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-volume-off:before {
+  content: "\f026";
+}
+
+/* line 45, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-volume-down:before {
+  content: "\f027";
+}
+
+/* line 46, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-volume-up:before {
+  content: "\f028";
+}
+
+/* line 47, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-qrcode:before {
+  content: "\f029";
+}
+
+/* line 48, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-barcode:before {
+  content: "\f02a";
+}
+
+/* line 49, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tag:before {
+  content: "\f02b";
+}
+
+/* line 50, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tags:before {
+  content: "\f02c";
+}
+
+/* line 51, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-book:before {
+  content: "\f02d";
+}
+
+/* line 52, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bookmark:before {
+  content: "\f02e";
+}
+
+/* line 53, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-print:before {
+  content: "\f02f";
+}
+
+/* line 54, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-camera:before {
+  content: "\f030";
+}
+
+/* line 55, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-font:before {
+  content: "\f031";
+}
+
+/* line 56, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bold:before {
+  content: "\f032";
+}
+
+/* line 57, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-italic:before {
+  content: "\f033";
+}
+
+/* line 58, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-text-height:before {
+  content: "\f034";
+}
+
+/* line 59, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-text-width:before {
+  content: "\f035";
+}
+
+/* line 60, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-align-left:before {
+  content: "\f036";
+}
+
+/* line 61, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-align-center:before {
+  content: "\f037";
+}
+
+/* line 62, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-align-right:before {
+  content: "\f038";
+}
+
+/* line 63, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-align-justify:before {
+  content: "\f039";
+}
+
+/* line 64, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-list:before {
+  content: "\f03a";
+}
+
+/* line 66, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-dedent:before,
+.fa-outdent:before {
+  content: "\f03b";
+}
+
+/* line 67, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-indent:before {
+  content: "\f03c";
+}
+
+/* line 68, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-video-camera:before {
+  content: "\f03d";
+}
+
+/* line 71, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-photo:before,
+.fa-image:before,
+.fa-picture-o:before {
+  content: "\f03e";
+}
+
+/* line 72, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pencil:before {
+  content: "\f040";
+}
+
+/* line 73, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-map-marker:before {
+  content: "\f041";
+}
+
+/* line 74, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-adjust:before {
+  content: "\f042";
+}
+
+/* line 75, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tint:before {
+  content: "\f043";
+}
+
+/* line 77, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-edit:before,
+.fa-pencil-square-o:before {
+  content: "\f044";
+}
+
+/* line 78, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-share-square-o:before {
+  content: "\f045";
+}
+
+/* line 79, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-check-square-o:before {
+  content: "\f046";
+}
+
+/* line 80, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrows:before {
+  content: "\f047";
+}
+
+/* line 81, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-step-backward:before {
+  content: "\f048";
+}
+
+/* line 82, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-fast-backward:before {
+  content: "\f049";
+}
+
+/* line 83, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-backward:before {
+  content: "\f04a";
+}
+
+/* line 84, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-play:before {
+  content: "\f04b";
+}
+
+/* line 85, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pause:before {
+  content: "\f04c";
+}
+
+/* line 86, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-stop:before {
+  content: "\f04d";
+}
+
+/* line 87, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-forward:before {
+  content: "\f04e";
+}
+
+/* line 88, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-fast-forward:before {
+  content: "\f050";
+}
+
+/* line 89, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-step-forward:before {
+  content: "\f051";
+}
+
+/* line 90, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-eject:before {
+  content: "\f052";
+}
+
+/* line 91, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-left:before {
+  content: "\f053";
+}
+
+/* line 92, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-right:before {
+  content: "\f054";
+}
+
+/* line 93, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-plus-circle:before {
+  content: "\f055";
+}
+
+/* line 94, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-minus-circle:before {
+  content: "\f056";
+}
+
+/* line 95, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-times-circle:before {
+  content: "\f057";
+}
+
+/* line 96, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-check-circle:before {
+  content: "\f058";
+}
+
+/* line 97, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-question-circle:before {
+  content: "\f059";
+}
+
+/* line 98, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-info-circle:before {
+  content: "\f05a";
+}
+
+/* line 99, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-crosshairs:before {
+  content: "\f05b";
+}
+
+/* line 100, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-times-circle-o:before {
+  content: "\f05c";
+}
+
+/* line 101, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-check-circle-o:before {
+  content: "\f05d";
+}
+
+/* line 102, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ban:before {
+  content: "\f05e";
+}
+
+/* line 103, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-left:before {
+  content: "\f060";
+}
+
+/* line 104, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-right:before {
+  content: "\f061";
+}
+
+/* line 105, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-up:before {
+  content: "\f062";
+}
+
+/* line 106, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-down:before {
+  content: "\f063";
+}
+
+/* line 108, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-mail-forward:before,
+.fa-share:before {
+  content: "\f064";
+}
+
+/* line 109, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-expand:before {
+  content: "\f065";
+}
+
+/* line 110, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-compress:before {
+  content: "\f066";
+}
+
+/* line 111, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-plus:before {
+  content: "\f067";
+}
+
+/* line 112, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-minus:before {
+  content: "\f068";
+}
+
+/* line 113, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-asterisk:before {
+  content: "\f069";
+}
+
+/* line 114, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-exclamation-circle:before {
+  content: "\f06a";
+}
+
+/* line 115, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-gift:before {
+  content: "\f06b";
+}
+
+/* line 116, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-leaf:before {
+  content: "\f06c";
+}
+
+/* line 117, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-fire:before {
+  content: "\f06d";
+}
+
+/* line 118, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-eye:before {
+  content: "\f06e";
+}
+
+/* line 119, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-eye-slash:before {
+  content: "\f070";
+}
+
+/* line 121, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+  content: "\f071";
+}
+
+/* line 122, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-plane:before {
+  content: "\f072";
+}
+
+/* line 123, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-calendar:before {
+  content: "\f073";
+}
+
+/* line 124, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-random:before {
+  content: "\f074";
+}
+
+/* line 125, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-comment:before {
+  content: "\f075";
+}
+
+/* line 126, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-magnet:before {
+  content: "\f076";
+}
+
+/* line 127, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-up:before {
+  content: "\f077";
+}
+
+/* line 128, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-down:before {
+  content: "\f078";
+}
+
+/* line 129, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-retweet:before {
+  content: "\f079";
+}
+
+/* line 130, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-shopping-cart:before {
+  content: "\f07a";
+}
+
+/* line 131, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-folder:before {
+  content: "\f07b";
+}
+
+/* line 132, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-folder-open:before {
+  content: "\f07c";
+}
+
+/* line 133, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrows-v:before {
+  content: "\f07d";
+}
+
+/* line 134, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrows-h:before {
+  content: "\f07e";
+}
+
+/* line 136, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
+  content: "\f080";
+}
+
+/* line 137, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-twitter-square:before {
+  content: "\f081";
+}
+
+/* line 138, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-facebook-square:before {
+  content: "\f082";
+}
+
+/* line 139, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-camera-retro:before {
+  content: "\f083";
+}
+
+/* line 140, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-key:before {
+  content: "\f084";
+}
+
+/* line 142, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-gears:before,
+.fa-cogs:before {
+  content: "\f085";
+}
+
+/* line 143, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-comments:before {
+  content: "\f086";
+}
+
+/* line 144, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-thumbs-o-up:before {
+  content: "\f087";
+}
+
+/* line 145, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-thumbs-o-down:before {
+  content: "\f088";
+}
+
+/* line 146, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-star-half:before {
+  content: "\f089";
+}
+
+/* line 147, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-heart-o:before {
+  content: "\f08a";
+}
+
+/* line 148, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sign-out:before {
+  content: "\f08b";
+}
+
+/* line 149, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-linkedin-square:before {
+  content: "\f08c";
+}
+
+/* line 150, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-thumb-tack:before {
+  content: "\f08d";
+}
+
+/* line 151, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-external-link:before {
+  content: "\f08e";
+}
+
+/* line 152, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sign-in:before {
+  content: "\f090";
+}
+
+/* line 153, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-trophy:before {
+  content: "\f091";
+}
+
+/* line 154, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-github-square:before {
+  content: "\f092";
+}
+
+/* line 155, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-upload:before {
+  content: "\f093";
+}
+
+/* line 156, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-lemon-o:before {
+  content: "\f094";
+}
+
+/* line 157, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-phone:before {
+  content: "\f095";
+}
+
+/* line 158, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-square-o:before {
+  content: "\f096";
+}
+
+/* line 159, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bookmark-o:before {
+  content: "\f097";
+}
+
+/* line 160, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-phone-square:before {
+  content: "\f098";
+}
+
+/* line 161, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-twitter:before {
+  content: "\f099";
+}
+
+/* line 162, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-facebook:before {
+  content: "\f09a";
+}
+
+/* line 163, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-github:before {
+  content: "\f09b";
+}
+
+/* line 164, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-unlock:before {
+  content: "\f09c";
+}
+
+/* line 165, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-credit-card:before {
+  content: "\f09d";
+}
+
+/* line 166, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-rss:before {
+  content: "\f09e";
+}
+
+/* line 167, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hdd-o:before {
+  content: "\f0a0";
+}
+
+/* line 168, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bullhorn:before {
+  content: "\f0a1";
+}
+
+/* line 169, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bell:before {
+  content: "\f0f3";
+}
+
+/* line 170, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-certificate:before {
+  content: "\f0a3";
+}
+
+/* line 171, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hand-o-right:before {
+  content: "\f0a4";
+}
+
+/* line 172, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hand-o-left:before {
+  content: "\f0a5";
+}
+
+/* line 173, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hand-o-up:before {
+  content: "\f0a6";
+}
+
+/* line 174, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hand-o-down:before {
+  content: "\f0a7";
+}
+
+/* line 175, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-left:before {
+  content: "\f0a8";
+}
+
+/* line 176, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-right:before {
+  content: "\f0a9";
+}
+
+/* line 177, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-up:before {
+  content: "\f0aa";
+}
+
+/* line 178, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-down:before {
+  content: "\f0ab";
+}
+
+/* line 179, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-globe:before {
+  content: "\f0ac";
+}
+
+/* line 180, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-wrench:before {
+  content: "\f0ad";
+}
+
+/* line 181, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tasks:before {
+  content: "\f0ae";
+}
+
+/* line 182, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-filter:before {
+  content: "\f0b0";
+}
+
+/* line 183, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-briefcase:before {
+  content: "\f0b1";
+}
+
+/* line 184, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrows-alt:before {
+  content: "\f0b2";
+}
+
+/* line 186, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-group:before,
+.fa-users:before {
+  content: "\f0c0";
+}
+
+/* line 188, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chain:before,
+.fa-link:before {
+  content: "\f0c1";
+}
+
+/* line 189, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cloud:before {
+  content: "\f0c2";
+}
+
+/* line 190, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-flask:before {
+  content: "\f0c3";
+}
+
+/* line 192, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cut:before,
+.fa-scissors:before {
+  content: "\f0c4";
+}
+
+/* line 194, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-copy:before,
+.fa-files-o:before {
+  content: "\f0c5";
+}
+
+/* line 195, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-paperclip:before {
+  content: "\f0c6";
+}
+
+/* line 197, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-save:before,
+.fa-floppy-o:before {
+  content: "\f0c7";
+}
+
+/* line 198, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-square:before {
+  content: "\f0c8";
+}
+
+/* line 201, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  content: "\f0c9";
+}
+
+/* line 202, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-list-ul:before {
+  content: "\f0ca";
+}
+
+/* line 203, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-list-ol:before {
+  content: "\f0cb";
+}
+
+/* line 204, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-strikethrough:before {
+  content: "\f0cc";
+}
+
+/* line 205, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-underline:before {
+  content: "\f0cd";
+}
+
+/* line 206, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-table:before {
+  content: "\f0ce";
+}
+
+/* line 207, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-magic:before {
+  content: "\f0d0";
+}
+
+/* line 208, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-truck:before {
+  content: "\f0d1";
+}
+
+/* line 209, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pinterest:before {
+  content: "\f0d2";
+}
+
+/* line 210, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pinterest-square:before {
+  content: "\f0d3";
+}
+
+/* line 211, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-google-plus-square:before {
+  content: "\f0d4";
+}
+
+/* line 212, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-google-plus:before {
+  content: "\f0d5";
+}
+
+/* line 213, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-money:before {
+  content: "\f0d6";
+}
+
+/* line 214, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-caret-down:before {
+  content: "\f0d7";
+}
+
+/* line 215, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-caret-up:before {
+  content: "\f0d8";
+}
+
+/* line 216, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-caret-left:before {
+  content: "\f0d9";
+}
+
+/* line 217, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-caret-right:before {
+  content: "\f0da";
+}
+
+/* line 218, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-columns:before {
+  content: "\f0db";
+}
+
+/* line 220, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-unsorted:before,
+.fa-sort:before {
+  content: "\f0dc";
+}
+
+/* line 222, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-down:before,
+.fa-sort-desc:before {
+  content: "\f0dd";
+}
+
+/* line 224, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-up:before,
+.fa-sort-asc:before {
+  content: "\f0de";
+}
+
+/* line 225, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+/* line 226, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-linkedin:before {
+  content: "\f0e1";
+}
+
+/* line 228, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: "\f0e2";
+}
+
+/* line 230, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-legal:before,
+.fa-gavel:before {
+  content: "\f0e3";
+}
+
+/* line 232, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: "\f0e4";
+}
+
+/* line 233, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-comment-o:before {
+  content: "\f0e5";
+}
+
+/* line 234, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-comments-o:before {
+  content: "\f0e6";
+}
+
+/* line 236, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-flash:before,
+.fa-bolt:before {
+  content: "\f0e7";
+}
+
+/* line 237, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sitemap:before {
+  content: "\f0e8";
+}
+
+/* line 238, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-umbrella:before {
+  content: "\f0e9";
+}
+
+/* line 240, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-paste:before,
+.fa-clipboard:before {
+  content: "\f0ea";
+}
+
+/* line 241, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-lightbulb-o:before {
+  content: "\f0eb";
+}
+
+/* line 242, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-exchange:before {
+  content: "\f0ec";
+}
+
+/* line 243, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cloud-download:before {
+  content: "\f0ed";
+}
+
+/* line 244, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cloud-upload:before {
+  content: "\f0ee";
+}
+
+/* line 245, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-user-md:before {
+  content: "\f0f0";
+}
+
+/* line 246, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-stethoscope:before {
+  content: "\f0f1";
+}
+
+/* line 247, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-suitcase:before {
+  content: "\f0f2";
+}
+
+/* line 248, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bell-o:before {
+  content: "\f0a2";
+}
+
+/* line 249, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-coffee:before {
+  content: "\f0f4";
+}
+
+/* line 250, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cutlery:before {
+  content: "\f0f5";
+}
+
+/* line 251, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-text-o:before {
+  content: "\f0f6";
+}
+
+/* line 252, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-building-o:before {
+  content: "\f0f7";
+}
+
+/* line 253, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hospital-o:before {
+  content: "\f0f8";
+}
+
+/* line 254, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ambulance:before {
+  content: "\f0f9";
+}
+
+/* line 255, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-medkit:before {
+  content: "\f0fa";
+}
+
+/* line 256, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-fighter-jet:before {
+  content: "\f0fb";
+}
+
+/* line 257, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-beer:before {
+  content: "\f0fc";
+}
+
+/* line 258, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-h-square:before {
+  content: "\f0fd";
+}
+
+/* line 259, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-plus-square:before {
+  content: "\f0fe";
+}
+
+/* line 260, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-double-left:before {
+  content: "\f100";
+}
+
+/* line 261, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-double-right:before {
+  content: "\f101";
+}
+
+/* line 262, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-double-up:before {
+  content: "\f102";
+}
+
+/* line 263, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-double-down:before {
+  content: "\f103";
+}
+
+/* line 264, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-left:before {
+  content: "\f104";
+}
+
+/* line 265, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-right:before {
+  content: "\f105";
+}
+
+/* line 266, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-up:before {
+  content: "\f106";
+}
+
+/* line 267, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angle-down:before {
+  content: "\f107";
+}
+
+/* line 268, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-desktop:before {
+  content: "\f108";
+}
+
+/* line 269, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-laptop:before {
+  content: "\f109";
+}
+
+/* line 270, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tablet:before {
+  content: "\f10a";
+}
+
+/* line 272, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: "\f10b";
+}
+
+/* line 273, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-circle-o:before {
+  content: "\f10c";
+}
+
+/* line 274, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-quote-left:before {
+  content: "\f10d";
+}
+
+/* line 275, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-quote-right:before {
+  content: "\f10e";
+}
+
+/* line 276, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-spinner:before {
+  content: "\f110";
+}
+
+/* line 277, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-circle:before {
+  content: "\f111";
+}
+
+/* line 279, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-mail-reply:before,
+.fa-reply:before {
+  content: "\f112";
+}
+
+/* line 280, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-github-alt:before {
+  content: "\f113";
+}
+
+/* line 281, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-folder-o:before {
+  content: "\f114";
+}
+
+/* line 282, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-folder-open-o:before {
+  content: "\f115";
+}
+
+/* line 283, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-smile-o:before {
+  content: "\f118";
+}
+
+/* line 284, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-frown-o:before {
+  content: "\f119";
+}
+
+/* line 285, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-meh-o:before {
+  content: "\f11a";
+}
+
+/* line 286, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-gamepad:before {
+  content: "\f11b";
+}
+
+/* line 287, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-keyboard-o:before {
+  content: "\f11c";
+}
+
+/* line 288, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-flag-o:before {
+  content: "\f11d";
+}
+
+/* line 289, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-flag-checkered:before {
+  content: "\f11e";
+}
+
+/* line 290, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-terminal:before {
+  content: "\f120";
+}
+
+/* line 291, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-code:before {
+  content: "\f121";
+}
+
+/* line 293, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-mail-reply-all:before,
+.fa-reply-all:before {
+  content: "\f122";
+}
+
+/* line 296, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: "\f123";
+}
+
+/* line 297, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-location-arrow:before {
+  content: "\f124";
+}
+
+/* line 298, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-crop:before {
+  content: "\f125";
+}
+
+/* line 299, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-code-fork:before {
+  content: "\f126";
+}
+
+/* line 301, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: "\f127";
+}
+
+/* line 302, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-question:before {
+  content: "\f128";
+}
+
+/* line 303, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-info:before {
+  content: "\f129";
+}
+
+/* line 304, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-exclamation:before {
+  content: "\f12a";
+}
+
+/* line 305, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-superscript:before {
+  content: "\f12b";
+}
+
+/* line 306, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-subscript:before {
+  content: "\f12c";
+}
+
+/* line 307, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-eraser:before {
+  content: "\f12d";
+}
+
+/* line 308, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-puzzle-piece:before {
+  content: "\f12e";
+}
+
+/* line 309, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-microphone:before {
+  content: "\f130";
+}
+
+/* line 310, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-microphone-slash:before {
+  content: "\f131";
+}
+
+/* line 311, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-shield:before {
+  content: "\f132";
+}
+
+/* line 312, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-calendar-o:before {
+  content: "\f133";
+}
+
+/* line 313, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-fire-extinguisher:before {
+  content: "\f134";
+}
+
+/* line 314, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-rocket:before {
+  content: "\f135";
+}
+
+/* line 315, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-maxcdn:before {
+  content: "\f136";
+}
+
+/* line 316, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-circle-left:before {
+  content: "\f137";
+}
+
+/* line 317, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-circle-right:before {
+  content: "\f138";
+}
+
+/* line 318, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-circle-up:before {
+  content: "\f139";
+}
+
+/* line 319, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-chevron-circle-down:before {
+  content: "\f13a";
+}
+
+/* line 320, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-html5:before {
+  content: "\f13b";
+}
+
+/* line 321, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-css3:before {
+  content: "\f13c";
+}
+
+/* line 322, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-anchor:before {
+  content: "\f13d";
+}
+
+/* line 323, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-unlock-alt:before {
+  content: "\f13e";
+}
+
+/* line 324, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bullseye:before {
+  content: "\f140";
+}
+
+/* line 325, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ellipsis-h:before {
+  content: "\f141";
+}
+
+/* line 326, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ellipsis-v:before {
+  content: "\f142";
+}
+
+/* line 327, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-rss-square:before {
+  content: "\f143";
+}
+
+/* line 328, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-play-circle:before {
+  content: "\f144";
+}
+
+/* line 329, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ticket:before {
+  content: "\f145";
+}
+
+/* line 330, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-minus-square:before {
+  content: "\f146";
+}
+
+/* line 331, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-minus-square-o:before {
+  content: "\f147";
+}
+
+/* line 332, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-level-up:before {
+  content: "\f148";
+}
+
+/* line 333, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-level-down:before {
+  content: "\f149";
+}
+
+/* line 334, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-check-square:before {
+  content: "\f14a";
+}
+
+/* line 335, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pencil-square:before {
+  content: "\f14b";
+}
+
+/* line 336, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+
+/* line 337, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-share-square:before {
+  content: "\f14d";
+}
+
+/* line 338, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-compass:before {
+  content: "\f14e";
+}
+
+/* line 340, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: "\f150";
+}
+
+/* line 342, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: "\f151";
+}
+
+/* line 344, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: "\f152";
+}
+
+/* line 346, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-euro:before,
+.fa-eur:before {
+  content: "\f153";
+}
+
+/* line 347, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-gbp:before {
+  content: "\f154";
+}
+
+/* line 349, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-dollar:before,
+.fa-usd:before {
+  content: "\f155";
+}
+
+/* line 351, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-rupee:before,
+.fa-inr:before {
+  content: "\f156";
+}
+
+/* line 355, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: "\f157";
+}
+
+/* line 358, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: "\f158";
+}
+
+/* line 360, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-won:before,
+.fa-krw:before {
+  content: "\f159";
+}
+
+/* line 362, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: "\f15a";
+}
+
+/* line 363, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file:before {
+  content: "\f15b";
+}
+
+/* line 364, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-text:before {
+  content: "\f15c";
+}
+
+/* line 365, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-alpha-asc:before {
+  content: "\f15d";
+}
+
+/* line 366, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-alpha-desc:before {
+  content: "\f15e";
+}
+
+/* line 367, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-amount-asc:before {
+  content: "\f160";
+}
+
+/* line 368, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-amount-desc:before {
+  content: "\f161";
+}
+
+/* line 369, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-numeric-asc:before {
+  content: "\f162";
+}
+
+/* line 370, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sort-numeric-desc:before {
+  content: "\f163";
+}
+
+/* line 371, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-thumbs-up:before {
+  content: "\f164";
+}
+
+/* line 372, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-thumbs-down:before {
+  content: "\f165";
+}
+
+/* line 373, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-youtube-square:before {
+  content: "\f166";
+}
+
+/* line 374, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-youtube:before {
+  content: "\f167";
+}
+
+/* line 375, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-xing:before {
+  content: "\f168";
+}
+
+/* line 376, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-xing-square:before {
+  content: "\f169";
+}
+
+/* line 377, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-youtube-play:before {
+  content: "\f16a";
+}
+
+/* line 378, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-dropbox:before {
+  content: "\f16b";
+}
+
+/* line 379, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-stack-overflow:before {
+  content: "\f16c";
+}
+
+/* line 380, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-instagram:before {
+  content: "\f16d";
+}
+
+/* line 381, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-flickr:before {
+  content: "\f16e";
+}
+
+/* line 382, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-adn:before {
+  content: "\f170";
+}
+
+/* line 383, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bitbucket:before {
+  content: "\f171";
+}
+
+/* line 384, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bitbucket-square:before {
+  content: "\f172";
+}
+
+/* line 385, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tumblr:before {
+  content: "\f173";
+}
+
+/* line 386, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tumblr-square:before {
+  content: "\f174";
+}
+
+/* line 387, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-long-arrow-down:before {
+  content: "\f175";
+}
+
+/* line 388, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-long-arrow-up:before {
+  content: "\f176";
+}
+
+/* line 389, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-long-arrow-left:before {
+  content: "\f177";
+}
+
+/* line 390, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-long-arrow-right:before {
+  content: "\f178";
+}
+
+/* line 391, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-apple:before {
+  content: "\f179";
+}
+
+/* line 392, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-windows:before {
+  content: "\f17a";
+}
+
+/* line 393, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-android:before {
+  content: "\f17b";
+}
+
+/* line 394, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-linux:before {
+  content: "\f17c";
+}
+
+/* line 395, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-dribbble:before {
+  content: "\f17d";
+}
+
+/* line 396, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-skype:before {
+  content: "\f17e";
+}
+
+/* line 397, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-foursquare:before {
+  content: "\f180";
+}
+
+/* line 398, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-trello:before {
+  content: "\f181";
+}
+
+/* line 399, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-female:before {
+  content: "\f182";
+}
+
+/* line 400, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-male:before {
+  content: "\f183";
+}
+
+/* line 401, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-gittip:before {
+  content: "\f184";
+}
+
+/* line 402, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sun-o:before {
+  content: "\f185";
+}
+
+/* line 403, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-moon-o:before {
+  content: "\f186";
+}
+
+/* line 404, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-archive:before {
+  content: "\f187";
+}
+
+/* line 405, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bug:before {
+  content: "\f188";
+}
+
+/* line 406, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-vk:before {
+  content: "\f189";
+}
+
+/* line 407, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-weibo:before {
+  content: "\f18a";
+}
+
+/* line 408, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-renren:before {
+  content: "\f18b";
+}
+
+/* line 409, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pagelines:before {
+  content: "\f18c";
+}
+
+/* line 410, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-stack-exchange:before {
+  content: "\f18d";
+}
+
+/* line 411, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-o-right:before {
+  content: "\f18e";
+}
+
+/* line 412, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-arrow-circle-o-left:before {
+  content: "\f190";
+}
+
+/* line 414, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: "\f191";
+}
+
+/* line 415, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-dot-circle-o:before {
+  content: "\f192";
+}
+
+/* line 416, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-wheelchair:before {
+  content: "\f193";
+}
+
+/* line 417, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-vimeo-square:before {
+  content: "\f194";
+}
+
+/* line 419, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: "\f195";
+}
+
+/* line 420, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-plus-square-o:before {
+  content: "\f196";
+}
+
+/* line 421, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-space-shuttle:before {
+  content: "\f197";
+}
+
+/* line 422, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-slack:before {
+  content: "\f198";
+}
+
+/* line 423, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-envelope-square:before {
+  content: "\f199";
+}
+
+/* line 424, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-wordpress:before {
+  content: "\f19a";
+}
+
+/* line 425, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-openid:before {
+  content: "\f19b";
+}
+
+/* line 428, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-institution:before,
+.fa-bank:before,
+.fa-university:before {
+  content: "\f19c";
+}
+
+/* line 430, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-mortar-board:before,
+.fa-graduation-cap:before {
+  content: "\f19d";
+}
+
+/* line 431, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-yahoo:before {
+  content: "\f19e";
+}
+
+/* line 432, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-google:before {
+  content: "\f1a0";
+}
+
+/* line 433, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-reddit:before {
+  content: "\f1a1";
+}
+
+/* line 434, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-reddit-square:before {
+  content: "\f1a2";
+}
+
+/* line 435, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-stumbleupon-circle:before {
+  content: "\f1a3";
+}
+
+/* line 436, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-stumbleupon:before {
+  content: "\f1a4";
+}
+
+/* line 437, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-delicious:before {
+  content: "\f1a5";
+}
+
+/* line 438, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-digg:before {
+  content: "\f1a6";
+}
+
+/* line 439, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pied-piper:before {
+  content: "\f1a7";
+}
+
+/* line 440, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pied-piper-alt:before {
+  content: "\f1a8";
+}
+
+/* line 441, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-drupal:before {
+  content: "\f1a9";
+}
+
+/* line 442, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-joomla:before {
+  content: "\f1aa";
+}
+
+/* line 443, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-language:before {
+  content: "\f1ab";
+}
+
+/* line 444, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-fax:before {
+  content: "\f1ac";
+}
+
+/* line 445, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-building:before {
+  content: "\f1ad";
+}
+
+/* line 446, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-child:before {
+  content: "\f1ae";
+}
+
+/* line 447, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-paw:before {
+  content: "\f1b0";
+}
+
+/* line 448, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-spoon:before {
+  content: "\f1b1";
+}
+
+/* line 449, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cube:before {
+  content: "\f1b2";
+}
+
+/* line 450, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cubes:before {
+  content: "\f1b3";
+}
+
+/* line 451, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-behance:before {
+  content: "\f1b4";
+}
+
+/* line 452, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-behance-square:before {
+  content: "\f1b5";
+}
+
+/* line 453, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-steam:before {
+  content: "\f1b6";
+}
+
+/* line 454, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-steam-square:before {
+  content: "\f1b7";
+}
+
+/* line 455, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-recycle:before {
+  content: "\f1b8";
+}
+
+/* line 457, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-automobile:before,
+.fa-car:before {
+  content: "\f1b9";
+}
+
+/* line 459, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cab:before,
+.fa-taxi:before {
+  content: "\f1ba";
+}
+
+/* line 460, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tree:before {
+  content: "\f1bb";
+}
+
+/* line 461, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-spotify:before {
+  content: "\f1bc";
+}
+
+/* line 462, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-deviantart:before {
+  content: "\f1bd";
+}
+
+/* line 463, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-soundcloud:before {
+  content: "\f1be";
+}
+
+/* line 464, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-database:before {
+  content: "\f1c0";
+}
+
+/* line 465, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-pdf-o:before {
+  content: "\f1c1";
+}
+
+/* line 466, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-word-o:before {
+  content: "\f1c2";
+}
+
+/* line 467, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-excel-o:before {
+  content: "\f1c3";
+}
+
+/* line 468, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-powerpoint-o:before {
+  content: "\f1c4";
+}
+
+/* line 471, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-photo-o:before,
+.fa-file-picture-o:before,
+.fa-file-image-o:before {
+  content: "\f1c5";
+}
+
+/* line 473, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-zip-o:before,
+.fa-file-archive-o:before {
+  content: "\f1c6";
+}
+
+/* line 475, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-sound-o:before,
+.fa-file-audio-o:before {
+  content: "\f1c7";
+}
+
+/* line 477, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-movie-o:before,
+.fa-file-video-o:before {
+  content: "\f1c8";
+}
+
+/* line 478, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-file-code-o:before {
+  content: "\f1c9";
+}
+
+/* line 479, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-vine:before {
+  content: "\f1ca";
+}
+
+/* line 480, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-codepen:before {
+  content: "\f1cb";
+}
+
+/* line 481, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-jsfiddle:before {
+  content: "\f1cc";
+}
+
+/* line 486, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-life-bouy:before,
+.fa-life-buoy:before,
+.fa-life-saver:before,
+.fa-support:before,
+.fa-life-ring:before {
+  content: "\f1cd";
+}
+
+/* line 487, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-circle-o-notch:before {
+  content: "\f1ce";
+}
+
+/* line 489, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ra:before,
+.fa-rebel:before {
+  content: "\f1d0";
+}
+
+/* line 491, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ge:before,
+.fa-empire:before {
+  content: "\f1d1";
+}
+
+/* line 492, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-git-square:before {
+  content: "\f1d2";
+}
+
+/* line 493, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-git:before {
+  content: "\f1d3";
+}
+
+/* line 494, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-hacker-news:before {
+  content: "\f1d4";
+}
+
+/* line 495, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tencent-weibo:before {
+  content: "\f1d5";
+}
+
+/* line 496, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-qq:before {
+  content: "\f1d6";
+}
+
+/* line 498, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-wechat:before,
+.fa-weixin:before {
+  content: "\f1d7";
+}
+
+/* line 500, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-send:before,
+.fa-paper-plane:before {
+  content: "\f1d8";
+}
+
+/* line 502, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-send-o:before,
+.fa-paper-plane-o:before {
+  content: "\f1d9";
+}
+
+/* line 503, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-history:before {
+  content: "\f1da";
+}
+
+/* line 504, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-circle-thin:before {
+  content: "\f1db";
+}
+
+/* line 505, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-header:before {
+  content: "\f1dc";
+}
+
+/* line 506, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-paragraph:before {
+  content: "\f1dd";
+}
+
+/* line 507, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-sliders:before {
+  content: "\f1de";
+}
+
+/* line 508, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-share-alt:before {
+  content: "\f1e0";
+}
+
+/* line 509, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-share-alt-square:before {
+  content: "\f1e1";
+}
+
+/* line 510, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bomb:before {
+  content: "\f1e2";
+}
+
+/* line 512, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+  content: "\f1e3";
+}
+
+/* line 513, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-tty:before {
+  content: "\f1e4";
+}
+
+/* line 514, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-binoculars:before {
+  content: "\f1e5";
+}
+
+/* line 515, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-plug:before {
+  content: "\f1e6";
+}
+
+/* line 516, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-slideshare:before {
+  content: "\f1e7";
+}
+
+/* line 517, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-twitch:before {
+  content: "\f1e8";
+}
+
+/* line 518, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-yelp:before {
+  content: "\f1e9";
+}
+
+/* line 519, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-newspaper-o:before {
+  content: "\f1ea";
+}
+
+/* line 520, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-wifi:before {
+  content: "\f1eb";
+}
+
+/* line 521, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-calculator:before {
+  content: "\f1ec";
+}
+
+/* line 522, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-paypal:before {
+  content: "\f1ed";
+}
+
+/* line 523, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-google-wallet:before {
+  content: "\f1ee";
+}
+
+/* line 524, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc-visa:before {
+  content: "\f1f0";
+}
+
+/* line 525, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc-mastercard:before {
+  content: "\f1f1";
+}
+
+/* line 526, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc-discover:before {
+  content: "\f1f2";
+}
+
+/* line 527, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc-amex:before {
+  content: "\f1f3";
+}
+
+/* line 528, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc-paypal:before {
+  content: "\f1f4";
+}
+
+/* line 529, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc-stripe:before {
+  content: "\f1f5";
+}
+
+/* line 530, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bell-slash:before {
+  content: "\f1f6";
+}
+
+/* line 531, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bell-slash-o:before {
+  content: "\f1f7";
+}
+
+/* line 532, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-trash:before {
+  content: "\f1f8";
+}
+
+/* line 533, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-copyright:before {
+  content: "\f1f9";
+}
+
+/* line 534, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-at:before {
+  content: "\f1fa";
+}
+
+/* line 535, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-eyedropper:before {
+  content: "\f1fb";
+}
+
+/* line 536, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-paint-brush:before {
+  content: "\f1fc";
+}
+
+/* line 537, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-birthday-cake:before {
+  content: "\f1fd";
+}
+
+/* line 538, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-area-chart:before {
+  content: "\f1fe";
+}
+
+/* line 539, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-pie-chart:before {
+  content: "\f200";
+}
+
+/* line 540, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-line-chart:before {
+  content: "\f201";
+}
+
+/* line 541, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-lastfm:before {
+  content: "\f202";
+}
+
+/* line 542, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-lastfm-square:before {
+  content: "\f203";
+}
+
+/* line 543, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-toggle-off:before {
+  content: "\f204";
+}
+
+/* line 544, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-toggle-on:before {
+  content: "\f205";
+}
+
+/* line 545, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bicycle:before {
+  content: "\f206";
+}
+
+/* line 546, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-bus:before {
+  content: "\f207";
+}
+
+/* line 547, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-ioxhost:before {
+  content: "\f208";
+}
+
+/* line 548, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-angellist:before {
+  content: "\f209";
+}
+
+/* line 549, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-cc:before {
+  content: "\f20a";
+}
+
+/* line 552, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+  content: "\f20b";
+}
+
+/* line 553, /Users/yoshi/.rvm/gems/ruby-2.1.2/gems/font-awesome-sass-4.2.0/assets/stylesheets/font-awesome/_icons.scss */
+.fa-meanpath:before {
+  content: "\f20c";
+}
+
+/* line 21, /Users/yoshi/dev/challenge-me/app/assets/stylesheets/application.css.scss */
+body {
+  font-family: 'Helvetica Neue';
+  font-size: 1em;
+}
