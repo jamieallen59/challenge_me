@@ -14,6 +14,13 @@
 	border-right: 1px solid #DFDFDF;
 	box-shadow: 0px 0px 5px 0px #DEDEDE;
 }
+	.logo-container {
+		font-size: 31px;
+		margin-top: 10px;
+	}
+		.events-page-logo {
+			color: #343434;
+		}
 	.picture-container {
 		display: flex;
 		flex-direction: column;
@@ -22,6 +29,7 @@
 		margin-right: auto;
 		background-color: #F4F4F4;
 		margin: 5px;
+		margin-top: 4px;
   	font-weight: 800;
   	font-size: 20px;
 	}
@@ -143,7 +151,7 @@
 			line-height: 40px;
 		}
 		#training-goal-number {
-			color:#DB2929;
+			color: #E2790A;
 			font-size: 120px;
 			font-weight: 600;
 		}
