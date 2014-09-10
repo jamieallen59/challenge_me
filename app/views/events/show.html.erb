@@ -164,7 +164,7 @@
         <% else %>
           <section class='challenge-text'>
               <p class='challenger-creator'>
-                You have challenged <%= challenge.creator %>!
+                You have set <%= @event.user.firstname %> a challenge! Will <%= @event.user.firstname %> accept?
               </p>
             </section>
       <%end%>
