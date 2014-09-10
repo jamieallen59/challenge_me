@@ -1,3 +1,5 @@
+@import 'profile_page/global';
+
 /*------ Feed Container -----*/
 
 /*--- Challnge dispaly ---*/
@@ -89,7 +91,8 @@
 	background-color: #fbfbfb;;
 	flex-direction: column;
 	margin-top: 25px;
-	width: 98%;
+	width: 93%;
+	border-radius: 4px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -106,12 +109,12 @@
 			vertical-align: middle;
 			line-height: 40px;
 			text-decoration: none;
-			color: #2B1B17;
+			color: white;
 			width: 34.5%;
 			margin-right: 1%;
 			margin-left: auto;
 			font-weight: 800;
-			background-color: #E9E9E9;
+			background-color: $fourthColor;
 			/* background: rgba(255, 255, 255, 0.58); */
 			border: 2px solid white;
 			border-radius: .05em;
@@ -132,11 +135,11 @@
 			vertical-align: middle;
 			line-height: 40px;
 			text-decoration: none;
-			color: #2B1B17;
+			color: white;
 			width: 34.5%;
 			margin-right: auto;
 			font-weight: 800;
-			background-color: #E9E9E9;
+			background-color: $fourthColor;
 			/* background: rgba(255, 255, 255, 0.58); */
 			border: 2px solid white;
 			border-radius: .05em;
@@ -314,7 +317,7 @@
 					line-height: 14px;
 					strong{
 						font-weight: bold;
-					}	
+					}
 				}
 
 			.challenge-comment {

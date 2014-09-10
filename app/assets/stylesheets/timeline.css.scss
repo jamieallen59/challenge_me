@@ -1,3 +1,5 @@
+@import 'profile_page/global';
+
 /* --------------------------------
 
 Primary style
@@ -22,7 +24,7 @@ body {
 }
 
 a {
-  color: #acb7c0;
+  color: white;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
 }
@@ -155,13 +157,13 @@ header h1 {
   margin-top: -12px;
 }
 .cd-timeline-img.cd-picture {
-  background: #75ce66;
+  background: $fourthColor ;
 }
 .cd-timeline-img.cd-movie {
-  background: #c03b44;
+  background: $fourthColor ;
 }
 .cd-timeline-img.cd-location {
-  background: #f0ca45;
+  background: $fourthColor ;
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-img {
