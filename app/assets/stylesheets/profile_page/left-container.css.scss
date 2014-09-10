@@ -20,10 +20,14 @@
 }
 	.logo-container {
 		font-size: 31px;
-		margin-top: 10px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+
 	}
 		.events-page-logo {
-			color: #343434;
+			color: $txtColor;
+			font-weight:800;
+
 		}
 	.picture-container {
 		display: flex;
