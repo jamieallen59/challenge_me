@@ -50,7 +50,6 @@
 		}
 
 			.event-details-container {
-		background-color: #F4F4F4;
 		color: #343434;
 		display: flex;
 		line-height: 25px;
@@ -69,12 +68,14 @@
 		}
 
 #timeleft-container {
-	font-size: 35px;
+	font-size: 45px;
 font-weight: 600;
-margin-top: 20px;
+margin-top: 32px;
+margin-bottom: 15px;
 letter-spacing: 4px;
 line-height: 40px;
 text-align:center;
+color: $secondColor
 }
 
 
@@ -87,10 +88,10 @@ text-align:center;
 		border: 1px solid #DFDFDF;
 		box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
 		background: $firstColor;
-		margin-top: 10px;
+		margin-top: 20px;
 		margin-bottom: 15px;
-		margin-left: 35px;
-		margin-right: 35px;
+		margin-left: 64px;
+		margin-right: 64px;
 	}
 		.pledge-title {
 			padding: 10px;
@@ -148,11 +149,10 @@ text-align:center;
 
 	.fundraising-stats {
 		flex-direction: row;
-		border-top: 1px solid #DFDFDF;
 		display: flex;
-
 		padding-top:50px;
 		padding-bottom:24px;
+
 	}
 		.fundraising-stats-percentage-complete {
 			display: flex;

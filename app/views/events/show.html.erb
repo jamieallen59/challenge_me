@@ -91,6 +91,25 @@
 
 <section class='main-content-container'>
   <section class='container-top'>
+
+    <section id='timeleft-container'>
+  <section id='timeleft-details-container'>
+   <% if (@event.event_date == Date.today) %>
+      <p>Today's the day!</p>
+    <% elsif (@event.event_date > Date.today) %>
+      <p> <%=  "#{(@event.event_date - Date.today).to_i}" %> DAYS TO GO</p>
+    <% else %>
+      <p>Event completed <%= "#{(Date.today - @event.event_date).to_i}" %></p>days ago!
+    <% end %>
+
+  </section>
+</section>
+  <section class='pledge-container'>
+      <section class='event-details-container'>
+        <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <strong><%= @event.charity %></strong> by <%= @event.name %> on <strong><%= @event.event_date.strftime("%d %B '%y") %></strong></p>
+      </section>
+</section>
+
   <section class='fundraising-stats'>
     <section id="progress">
     <%= javascript_tag do %>
@@ -98,10 +117,10 @@
                 targetAmount = "<%=j @event.target.to_s %>";
     <% end %>
       <aside id="bar"></aside>
-      <aside id="bar_000" class="divider"><span>0%</span></aside>
-      <aside id="bar_025" class="divider"><span>25%</span></aside>
-      <aside id="bar_050" class="divider"><span>50%</span></aside>
-      <aside id="bar_075" class="divider"><span>75%</span></aside>
+      <aside id="bar_000" class="divider"><span>£0</span></aside>
+      <aside id="bar_025" class="divider"><span>£<%= @event.target*0.25 %></span></aside>
+      <aside id="bar_050" class="divider"><span>£<%= @event.target*0.5 %></span></aside>
+      <aside id="bar_075" class="divider"><span>£<%= (@event.target*0.75).to_i %></span></aside>
       <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
     </section>
 
@@ -147,18 +166,10 @@
             </section> -->
     </section>
 
-<section class='pledge-container'>
-      <section class='event-details-container'>
-        <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <strong><%= @event.charity %></strong> by <%= @event.name %> on <strong><%= @event.event_date.strftime("%d %B '%y") %></strong></p>
-      </section>
-</section>
 
-<section id='timeleft-container'>
-  <section id='timeleft-details-container'>
-  20 DAYS TO GO
 
-  </section>
-</section>
+   <div class='page-divider'></div>
+
 
 
 

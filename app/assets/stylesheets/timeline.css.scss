@@ -157,13 +157,13 @@ header h1 {
   margin-top: -12px;
 }
 .cd-timeline-img.cd-picture {
-  background: $fourthColor ;
+  background: $secondColor ;
 }
 .cd-timeline-img.cd-movie {
-  background: $fourthColor ;
+  background: $secondColor ;
 }
 .cd-timeline-img.cd-location {
-  background: $fourthColor ;
+  background: $secondColor ;
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-img {
@@ -246,10 +246,9 @@ header h1 {
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  background: white;
   border-radius: 0.25em;
   padding: 1em;
-  box-shadow: 0 3px 0 #d7e4ed;
+
 }
 .cd-timeline-content:after {
   content: "";
