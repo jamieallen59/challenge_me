@@ -11,6 +11,7 @@ class PledgesController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @pledge = @event.pledges.new(params[:pledge].permit(:caption, :amount, :text))
+    @pledge.text = "Once I raise £#{@pledge.amount}, I will do the #{@pledge.caption}. #{@pledge.text}"
     if @pledge.save!
       redirect_to event_path(@event)
     else

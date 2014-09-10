@@ -13,7 +13,7 @@ describe 'Creating training sessions' do
     it "let's the user fill in details about their session" do
       click_link 'MENU'
       find('#log-workout').click
-    	expect(page).to have_content "Training details"
+    	expect(page).to have_content "about your latest workout"
     end
 
   end
