@@ -44,15 +44,15 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 90%;
   height: 20px;
   margin: auto;
   background: #307E04;
   display: block;
-  
   box-shadow: 0 0 0 5px #FFF,
               0 5px 0 5px #999,
               0 6px 6px 6px #222;
+  width:88%;
+
 }
 /* PROGRESS BAR */
 #progress #bar {
