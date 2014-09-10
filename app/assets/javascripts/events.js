@@ -17,7 +17,6 @@ function showMiniProgressBar(miniAmountRaised, miniTargetAmount, eventID) {
 
     // on page load, animate percentage bar to current donation percentage
     // .stop() used to prevent animation queueing
-    console.log($event.html());
     $event.find('.mini-target-bar').stop().animate({
         left: progressTotal
     }, animationLength);
@@ -99,12 +98,12 @@ $(document).ready(function(){
   });
 
   function displayModal(e){
-  e.preventDefault();
-  $($(e.target).attr('data-modal-selector')).modal({
-      fadeDuration: 500,
-      fadeDelay: 0.30
-  });
-}
+    e.preventDefault();
+    $($(e.target).attr('data-modal-selector')).modal({
+        fadeDuration: 500,
+        fadeDelay: 0.30
+    });
+  }
 
   $(".modal-button").on('click', displayModal);
   $(".pledge-modal-button").on('click', displayModal);
@@ -141,11 +140,6 @@ $(document).ready(function(){
 
 });
 
-
 $(window).resize(function() {
     moveProgressBar();
 });
-
-
-
-

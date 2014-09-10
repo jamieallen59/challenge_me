@@ -186,7 +186,14 @@
 
    <div class='page-divider'></div>
 
-
+  <section class='donations-container'>
+  <% if current_user == @event.user %>
+      <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
+      <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
+  <% else %>
+  <%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}/donations"}), id: "donate-button" %>
+    <%end%>
+  </section>
 
   <section class='update-feed'>
     <% if @posts.any? %>
@@ -199,14 +206,6 @@
   </section>
 </section>
 
-<section class='donations-container'>
-<% if current_user == @event.user %>
-    <%= link_to 'UPDATE SPONSORS', new_event_posts_path(@event), class: 'new-post-modal-button', id: "update-sponsers-link", data: { :'modal-selector' => '#new-post-modal' } %>
-    <%= link_to "MAKE A PROMISE", new_event_pledges_path(@event), class: 'new-post-modal-button', id: "make-a-promise-link", data: { :'modal-selector' => '#new-pledge-modal' } %>
-<% else %>
-<%= link_to 'DONATE', just_giving_fundraising_donation_url("#{@event.jg_page_id}", {exit_url: "#{request.original_url}/donations"}), id: "donate-button" %>
-  <%end%>
-</section>
 
 
   <div id="new-post-modal" style="display:none;">
@@ -279,7 +278,7 @@
 
   <div id="new-challenge-modal" style="display:none;">
     <%= form_for [@event, @event.challenges.new] do |f| %>
-<p id="menu-header">SET A CHALLENGE</p>
+      <p id="menu-header">SET A CHALLENGE</p>
       <section class="challenge-creator-modal">
         <%= f.text_field :creator, id: 'pledge-modal-input', placeholder: "What's your name?" %>
       </section>
@@ -299,6 +298,9 @@
     <%end%>
   </div>
 
+
+  
+
   <div id="menu-modal" style="<%= display_if(Rails.env.test?) %>">
    <p id="menu-header">MENU</p>
 
@@ -315,7 +317,7 @@
     <% end %>
 
   </div>
-
-  <div id="profilepic-modal" style="<%= display_if(Rails.env.test?) %>">
+    <%= render "events/pledge_modal" %>
+    <div id="profilepic-modal" style="<%= display_if(Rails.env.test?) %>">
     <%= render "users/profilepic" %>
   </div>
