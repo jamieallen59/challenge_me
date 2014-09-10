@@ -20,6 +20,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-mapmyapi-mmf-oauth2', github: 'yoshdog/omniauth-mapmyapi-mmf-oauth2'
 gem 'mmf' 
 gem 'font-awesome-sass'
+gem 'shareable'
 
 group :development, :test do
   gem 'rspec-rails'

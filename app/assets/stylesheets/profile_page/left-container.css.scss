@@ -18,6 +18,13 @@
 	box-shadow: 0px 0px 5px 0px #DEDEDE;
 
 }
+	.logo-container {
+		font-size: 31px;
+		margin-top: 10px;
+	}
+		.events-page-logo {
+			color: #343434;
+		}
 	.picture-container {
 		display: flex;
 		flex-direction: column;
@@ -26,6 +33,7 @@
 		margin-right: auto;
 		background-color: #F4F4F4;
 		margin: 5px;
+		margin-top: 4px;
   	font-weight: 800;
   	font-size: 20px;
   	border-radius: 3px;
@@ -247,3 +255,15 @@
 			font-size: 20px;
 				margin-top: 8px;
 			}
+
+
+nav.share {
+	display: inline-flex;
+	border-top: 1px solid #DFDFDF;
+	height: 30px;
+	padding-top: 11px;
+}
+
+.fb_iframe_widget span {
+	vertical-align: top;
+}
