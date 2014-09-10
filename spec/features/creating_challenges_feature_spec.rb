@@ -55,13 +55,15 @@ describe 'Setting your friends a challenge' do
 		end
 
 		# it 'allows the user to accept the challenge' do
-		# 	find('.accept-challenge').click
+		# 	expect(page).to have_css('.accept-challenge')
+		# 	click_link ('i.fa.fa-check')
 		# 	expect(page).to have_css '.challenge-accepted-highlighting'
 		# end
 
 		# it 'allows the user to decline the challenge' do
-		# 	find('.decline-challenge').click
+
+		# 	expect(page).to have_css('.decline-challenge')
+		# 	click_button ('i.fa.fa-times')
 		# 	expect(page).to have_css '.challenge-declined-highlighting'
 		# end
-	end
 end
