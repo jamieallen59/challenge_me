@@ -1,13 +1,22 @@
-<%= form_for [@event, @challenge] do |f| %>
-<%= f.label :creator, 'What is your name?' %>
-<%= f.text_field :creator %>
 
-<%= f.label :name, 'Describe the challange' %>
-<%= f.text_field :name %>
+<div id="new-challenge-modal" style="display:none;">
+  <%= form_for [@event, @event.challenges.new] do |f| %>
+    <p id="menu-header">SET A CHALLENGE</p>
+	    <section class="challenge-creator-modal">
+	      <%= f.text_field :creator, id: 'pledge-modal-input', placeholder: "What's your name?" %>
+	    </section>
 
-<%= f.label :amount, 'How much will you donate for completing this challenge?' %>
-<%= f.text_field :amount %>
+	    <section class="challenge-name-modal">
+	      <%= f.label :name, 'Describe your challenge', id: 'pledge-modal-label' %>
+	      <%= f.text_field :name, id: 'pledge-modal-input', placeholder: "what do you want them to do?" %>
+	    </section>
+	    <section class="challenge-amount-modal">
+	      <%= f.label :amount, 'How much would you donate?',id: 'pledge-modal-label' %>
+	      <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: "£££" %>
+	    </section>
+	    <section  class="challenge-create-modal">
+	      <%= f.submit 'Create challenge', class: 'modal-button-create' %>
+	    </section>
 
-<%= f.submit 'Create challenge'%>
-
-<%end%>
+  <%end%>
+</div>
