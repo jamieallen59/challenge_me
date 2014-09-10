@@ -112,13 +112,14 @@
 </section>
 
   <section class='fundraising-stats'>
+
   <section id="progress-background">
 <section class='tags'>
-    <aside id="bar_000" class="divider"><span>0%</span></aside>
-    <aside id="bar_025" class="divider"><span>25%</span></aside>
-    <aside id="bar_050" class="divider"><span>50%</span></aside>
-    <aside id="bar_075" class="divider"><span>75%</span></aside>
-    <aside id="bar_100" class="divider"><span>100%</span></aside>
+    <aside id="bar_000" class="divider"><span>£0</span></aside>
+    <aside id="bar_025" class="divider"><span>£<%= (@event.target*0.25).to_i %></span></aside>
+    <aside id="bar_050" class="divider"><span>£<%= (@event.target*0.5).to_i %></span></aside>
+    <aside id="bar_075" class="divider"><span>£<%= (@event.target*0.75).to_i %></span></aside>
+    <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
 </section>
 
     <section id="progress">
@@ -134,12 +135,9 @@
     <aside id="bar_075" class="divider"><span>75%</span></aside>
     <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
   </section>
+
+
 </section>
-
-
-
-   <div class='page-divider'></div>
-
 
 
 

@@ -5,7 +5,7 @@ $(document).ready(function(){
 	// var r = function(){
 	// return Math.floor(Math.random() * 360)};
 	// return 'hsla('+r()+',50%, 50%, .8)';};
-	$pro.css({ backgroundColor:'black' });
+	$pro.css({ });
 	// 0%
 
 

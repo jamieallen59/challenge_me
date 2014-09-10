@@ -1,37 +1,4 @@
-/*.target-bar-container {
-  width: 100%;
-}
-
-.progress {
-  width: 100%;
-  height: 40px;
-}
-
-.target-wrap {
-  border-bottom: 1px solid #DEDEDE;
-  overflow: hidden;
-  position: relative;
-}
-
-.target-bar {
-    background: #f4f4f4;
-    left: 0;
-    position: absolute;
-    bottom: 0;
-  }
-
-.struggling {
-  background: #CC3333;
-}
-.steady {
-  background: #E2790A;
-}
-.great {
-  background: #2D8735;
-}
-*/
-
-
+@import 'profile_page/global';
 
 body {
   /*background: #333;*/
@@ -48,7 +15,7 @@ body {
 
   height: 37px;
   margin: auto;
-  background: #307E04;
+  background: $thirdColor;
   display: block;
   border: 5px solid #FFF;
   box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
@@ -168,6 +135,7 @@ body {
   width: 100%;
   height: 100%;
   display: block;
+  background: $backgroundColor;
 }
 /* DIVIDER */
 #progress-background .divider {
