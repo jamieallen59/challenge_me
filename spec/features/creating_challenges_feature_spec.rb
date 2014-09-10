@@ -66,4 +66,5 @@ describe 'Setting your friends a challenge' do
 		# 	click_button ('i.fa.fa-times')
 		# 	expect(page).to have_css '.challenge-declined-highlighting'
 		# end
+	end
 end
