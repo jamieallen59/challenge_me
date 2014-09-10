@@ -17,9 +17,7 @@
       </p>
     </section>
 
-    <section class='event-details-container'>
-      <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <strong><%= @event.charity %></strong> by <%= @event.name %> on <strong><%= @event.event_date.strftime("%d %B '%y") %></strong></p>
-    </section>
+
 
     <section class='donate-button-container'>
       <% if @event.is_owner? current_user %>
@@ -39,11 +37,7 @@
 
 
 
-    <section class='training-totals'>
-      <p id='training-goal-headline'>GOAL</p>
-      <p id='training-goal-number'><%= @event.training %></p>
-      <p id='training-goal-text'>sessions per week.</p>
-    </section>
+
 
     <section class='workouts-completed-by-user'>
       <p id='workouts-completed-head'>
@@ -58,6 +52,12 @@
           done
       </p>
 
+    </section>
+
+     <section class='training-totals'>
+      <p id='training-goal-headline'>GOAL</p>
+      <p id='training-goal-number'><%= @event.training %></p>
+      <p id='training-goal-text'>sessions per week.</p>
     </section>
 
  <section class='recent-workout-details'>
@@ -85,6 +85,27 @@
 
 <section class='main-content-container'>
   <section class='container-top'>
+      <section class='pledge-container'>
+    <section class='event-details-container'>
+      <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <strong><%= @event.charity %></strong> by <%= @event.name %> on <strong><%= @event.event_date.strftime("%d %B '%y") %></strong></p>
+    </section>
+ <!--        <% if @pledges.any? %>
+          <p class='pledge-title'>
+            <%= @event.user.firstname.capitalize %> promises:
+          </p>
+          <p class='pledge-information'>
+            Once I raise £<%= @event.next_pledge.amount %>, I will do the <%= @event.next_pledge.caption %>
+            <%= @event.next_pledge.text %>
+          </p>
+        <%else%>
+          <p class='pledge-title-empty'>
+
+          </p>
+          <p class='pledge-information-empty'>
+            <%= @event.user.firstname.capitalize %> hasn't promised to do anything yet...
+          </p>
+        <%end%> -->
+    </section>
     <section class='fundraising-stats'>
       <section class='fundraising-stats-percentage-complete'>
         <p id='fundraising-stats-percentage-text'>
@@ -128,24 +149,7 @@
         </section>
     </section>
 
-    <section class='pledge-container'>
-        <% if @pledges.any? %>
-          <p class='pledge-title'>
-            <%= @event.user.firstname.capitalize %> promises:
-          </p>
-          <p class='pledge-information'>
-            Once I raise £<%= @event.next_pledge.amount %>, I will do the <%= @event.next_pledge.caption %>
-            <%= @event.next_pledge.text %>
-          </p>
-        <%else%>
-          <p class='pledge-title-empty'>
 
-          </p>
-          <p class='pledge-information-empty'>
-            <%= @event.user.firstname.capitalize %> hasn't promised to do anything yet...
-          </p>
-        <%end%>
-    </section>
   </section>
 
 <!-- Targetbar -->
@@ -270,6 +274,28 @@
     </section>
     <%end%>
 
+  </div>
+
+  <div id="new-challenge-modal" style="display:none;">
+    <%= form_for [@event, @event.challenges.new] do |f| %>
+      <p id="menu-header">SET A CHALLENGE</p>
+      <section class="challenge-creator-modal">
+        <%= f.text_field :creator, id: 'pledge-modal-input', placeholder: "What's your name?" %>
+      </section>
+
+      <section class="challenge-name-modal">
+        <%= f.label :name, 'Describe your challenge', id: 'pledge-modal-label' %>
+        <%= f.text_field :name, id: 'pledge-modal-input', placeholder: "what do you want them to do?" %>
+      </section>
+      <section class="challenge-amount-modal">
+        <%= f.label :amount, 'How much would you donate?',id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: "£££" %>
+      </section>
+      <section  class="challenge-create-modal">
+        <%= f.submit 'Create challenge', class: 'modal-button-create' %>
+      </section>
+
+    <%end%>
   </div>
 
 
