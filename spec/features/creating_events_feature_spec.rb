@@ -31,7 +31,7 @@ describe 'Creating events' do
         click_on 'Add Your Event'
       end
       it 'should show the select page' do
-        expect(page).to have_content 'CHOOSE EVENT'
+        expect(page).to have_content 'Import an event from Just Giving or create a new one with Challenge Me'
         expect(current_path).to eq select_events_path
       end
 
