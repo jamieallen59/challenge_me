@@ -91,62 +91,74 @@
 
 <section class='main-content-container'>
   <section class='container-top'>
-    <section class='pledge-container'>
+  <section class='fundraising-stats'>
+    <section id="progress">
+    <%= javascript_tag do %>
+                amountRaised = "<%=j @event.amount_raised.to_s %>";
+                targetAmount = "<%=j @event.target.to_s %>";
+    <% end %>
+      <aside id="bar"></aside>
+      <aside id="bar_000" class="divider"><span>0%</span></aside>
+      <aside id="bar_025" class="divider"><span>25%</span></aside>
+      <aside id="bar_050" class="divider"><span>50%</span></aside>
+      <aside id="bar_075" class="divider"><span>75%</span></aside>
+      <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
+    </section>
+
+       <!--    <section class='fundraising-stats-percentage-complete'>
+            <p id='fundraising-stats-percentage-text'>
+             Percentage complete:
+            </p>
+            <p id='fundraising-stats-percentage-number'>
+              <%= @event.percentage_of_target %>%
+            </p>
+          </section>
+          <section class='fundraising-stats-target'>
+            <p id='fundraising-stats-percentage-text'>
+             Fundraising target:
+            </p>
+            <p id='fundraising-stats-percentage-number'>
+              £<%= @event.target %>
+            </p>
+          </section>
+          <section class='fundraising-stats-raised'>
+            <p id='fundraising-stats-percentage-text'>
+             Raised so far:
+            </p>
+            <p id='fundraising-stats-percentage-number'>
+              £<%= @event.amount_raised %>
+            </p>
+          </section>
+          <section class='fundraising-stats-training-goal'>
+
+             <section class='fundraising-stats-percentage-number'>
+                <% if (@event.event_date == Date.today) %>
+                  <p id='event-today-text'>Today's the day!</p>
+                <% elsif (@event.event_date > Date.today) %>
+                  <p id='fundraising-stats-percentage-text'>Days to go:</p>
+                  <p id='fundraising-stats-percentage-number'>
+                    <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
+                <% else %>
+                  <p id='fundraising-stats-percentage-text'>Event completed</p>
+                  <p id='fundraising-stats-percentage-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
+                  <p id='fundraising-stats-percentage-text'>days ago!</p>
+                <% end %>
+              </section>
+            </section> -->
+    </section>
+
+<section class='pledge-container'>
       <section class='event-details-container'>
         <p id='event-paragraph'><%= @event.user.firstname.capitalize %> is fundraising for <strong><%= @event.charity %></strong> by <%= @event.name %> on <strong><%= @event.event_date.strftime("%d %B '%y") %></strong></p>
       </section>
-    </section>
-    <section class='fundraising-stats'>
-    <section id="progress">
-  <aside id="bar"></aside>
-  <aside id="bar_000" class="divider"><span>0%</span></aside>
-  <aside id="bar_025" class="divider"><span>25%</span></aside>
-  <aside id="bar_050" class="divider"><span>50%</span></aside>
-  <aside id="bar_075" class="divider"><span>75%</span></aside>
-  <aside id="bar_100" class="divider"><span>£<%= @event.target %></span></aside>
 </section>
 
-   <!--    <section class='fundraising-stats-percentage-complete'>
-        <p id='fundraising-stats-percentage-text'>
-         Percentage complete:
-        </p>
-        <p id='fundraising-stats-percentage-number'>
-          <%= @event.percentage_of_target %>%
-        </p>
-      </section>
-      <section class='fundraising-stats-target'>
-        <p id='fundraising-stats-percentage-text'>
-         Fundraising target:
-        </p>
-        <p id='fundraising-stats-percentage-number'>
-          £<%= @event.target %>
-        </p>
-      </section>
-      <section class='fundraising-stats-raised'>
-        <p id='fundraising-stats-percentage-text'>
-         Raised so far:
-        </p>
-        <p id='fundraising-stats-percentage-number'>
-          £<%= @event.amount_raised %>
-        </p>
-      </section>
-      <section class='fundraising-stats-training-goal'>
+<section id='timeleft-container'>
+  <section id='timeleft-details-container'>
+  20 DAYS TO GO
 
-         <section class='fundraising-stats-percentage-number'>
-            <% if (@event.event_date == Date.today) %>
-              <p id='event-today-text'>Today's the day!</p>
-            <% elsif (@event.event_date > Date.today) %>
-              <p id='fundraising-stats-percentage-text'>Days to go:</p>
-              <p id='fundraising-stats-percentage-number'>
-                <%=  "#{(@event.event_date - Date.today).to_i}" %></p>
-            <% else %>
-              <p id='fundraising-stats-percentage-text'>Event completed</p>
-              <p id='fundraising-stats-percentage-number'><%= "#{(Date.today - @event.event_date).to_i}" %></p>
-              <p id='fundraising-stats-percentage-text'>days ago!</p>
-            <% end %>
-          </section>
-        </section> -->
-    </section>
+  </section>
+</section>
 
 
 
@@ -154,10 +166,7 @@
 
 <!-- Targetbar -->
 <!--   <section class="target-bar-container">
-          <%= javascript_tag do %>
-            amountRaised = "<%=j @event.amount_raised.to_s %>";
-            targetAmount = "<%=j @event.target.to_s %>";
-          <% end %>
+
         <div class="target-wrap progress" data-progress-percent="">
       <div class="target-bar progress">
     </div>
@@ -185,7 +194,7 @@
 
     <% end %>
 
-   <div class='page-divider'></div>
+
 
   <section class='donations-container'>
   <% if current_user == @event.user %>
