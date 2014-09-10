@@ -1,8 +1,8 @@
 @import 'profile_page/global'
 // Colors
-$barColor: $thirdColor
+$barColor: $secondColor
 $overlayColor: #fffde8
-$backColor: #F4F4F4
+$backColor: $fourthColor
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans)
 
@@ -34,15 +34,16 @@ body
  * ------------------------------------- */
 .progress-radial .overlay
   position: absolute
-  width: 60px
-  height: 60px
+  width: 50%
+  height: 50%
   background-color: $overlayColor
   border-radius: 50%
-  margin-left: 20px
-  margin-top: 20px
+  margin-left: 25%
+  margin-top: 25%
   text-align: center
-  line-height: 60px
-  font-size: 16px
+  line-height: 3em
+  font-size: 1em
+  font-weight: 600
   color: black
 
 /* -------------------------------------
@@ -61,4 +62,4 @@ $half: round($loops / 2)
       background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor)
     @else
       $nextdeg: -90deg + ( $increment * ( $i - $half ) )
-      background-image: linear-gradient($nextdeg, $thirdColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor)
+      background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor)
