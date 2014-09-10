@@ -14,7 +14,7 @@ describe 'Deleting Events' do
     end
 
     it 'should have a link to delete the event' do
-      expect(page).to have_css '#delete-event', text: 'Delete'
+      expect(page).to have_css '#delete-event'
     end
 
     it 'should allow you to delete the event' do

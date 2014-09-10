@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users
 
-  resources :users 
+  resources :users
   resources :events do
   	resource :posts
     resource :pledges
@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   end
 
   resources :trainingsessions
-  
+
+  get 'users/:user_id/events', to: 'users#events', as: :user_events
   get 'users/:user_id/profile', to: 'users#profile', as: :profile
   post 'trainingsessions/:event_id/mmf', to: 'trainingsessions#mmf', as: :mmf_training
   post '/challenge/:id/accept', to: 'challenges#accept'

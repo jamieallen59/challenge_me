@@ -16,17 +16,13 @@ describe 'Creating training sessions' do
     	expect(page).to have_content "Training details"
     end
 
-    it 'redirects to the mmf authentication page' do
-
-      click_link 'SYNC'
-      expect(current_path).to eq '/auth/mapmyfitness'
-    end
   end
 
   context 'with an mmf account previously logged in' do
 
     before(:each) do
       @mary = create(:user)
+      login_as @mary
       @event = create(:event, created_at: Date.new(2014, 9, 1), user: @mary)
       client = double :client, :workouts => [{"name" => 'Im running', "start_datetime" => "2014-09-05T17:00:00+00:00", "_links" => {"not_route" => [{"id" => "381958558"}]}}]
       allow(Mmf::Client).to receive(:new).and_return(client)
@@ -34,7 +30,7 @@ describe 'Creating training sessions' do
     end
 
     it 'gives the option to log workouts automatically from mapmyfitness' do
-      click_link 'SYNC'
+      find('#sync-mmf').click
       @event.validate_mmf_data
       expect(@event.trainingsessions.count).to eq 1
       expect(@event.trainingsessions.first.details).to eq("Im running")
@@ -51,7 +47,7 @@ describe 'Creating training sessions' do
 
   	it 'should not have a MENU link to log Workout button or a sync link' do
   		visit event_path(@event)
-    	expect(page).not_to have_content 'MENU'
+    	expect(page).not_to have_css '#log-workout'
   	end
 
   	 it 'you cannot create a workout by hacking the routes' do

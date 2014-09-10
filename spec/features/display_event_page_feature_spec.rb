@@ -23,15 +23,16 @@ describe 'show event page' do
   end
 
  context 'creators can access their other events from profile page' do
-  before do
-    login_as @mary
-  end
-  it 'by clicking my events button' do
-    visit event_path(@event)
-    click_link 'MENU'
-    click_link 'MY EVENTS'
-    expect(current_path).to eq select_events_path
-  end
+    before do
+      login_as @mary
+    end
+    it 'by clicking my events button' do
+      visit event_path(@event)
+      click_link 'MENU'
+      click_link 'MY EVENTS'
+      expect(current_path).to eq user_events_path(@mary)
+      expect(page).to have_content "Bigfoot Race"
+    end
 
- end
+   end
 end

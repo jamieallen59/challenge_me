@@ -15,7 +15,7 @@ describe 'Editing Events' do
 
     it 'should have a link to edit the event' do
       click_link 'MENU'
-      expect(page).to have_css '#edit-event'
+      expect(page).to have_css '#edit-link'
     end
 
     it 'should allow you to edit the event' do
@@ -51,7 +51,7 @@ describe 'Editing Events' do
     end
 
     it 'should not have a link to edit the event' do
-      expect(page).not_to have_css '#edit-event'
+      expect(page).not_to have_css '#edit-link'
     end
 
     it 'should not allow you to edit the event' do
