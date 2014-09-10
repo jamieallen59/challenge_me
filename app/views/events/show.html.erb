@@ -1,6 +1,8 @@
+
   <section class='container-left' id='event-page'>
     <section class='logo-container'><a href='/' class='events-page-logo'>Challenge.Me</a>
     </section>
+
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -19,15 +21,15 @@
       </p>
     </section>
 
-
+   
 
     <section class='donate-button-container'>
       <% if @event.is_owner? current_user %>
           <a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a>
      <% else %>
-
+  
       <section class='challenge-me'>
-        <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button', id: "challenge-me-link", data: { :'modal-selector' => '#new-challenge-modal' } %>
+        <%= link_to 'Challenge Me', '#', class: 'challenge-me-button', id: "challenge-me-link", data: { :'modal-selector' => '#new-challenge-modal' } %>
         </section>
       <% end %>
     </section>
@@ -80,8 +82,10 @@
          workouts completed <br>overall
         </p>
       </section>
-
-
+  
+  <section class='share'>
+   <%= render_shareable buttons: ['twitter', 'facebook'] %>
+  </section>
   </section>
 </section>
 
@@ -278,20 +282,21 @@
 
   </div>
 
-  <div id="new-challenge-modal" style="display:none;">
+  <div id="new-challenge-modal" style="<%= display_if(Rails.env.test?) %>">
     <%= form_for [@event, @event.challenges.new] do |f| %>
       <p id="menu-header">SET A CHALLENGE</p>
       <section class="challenge-creator-modal">
-        <%= f.text_field :creator, id: 'pledge-modal-input', placeholder: "What's your name?" %>
+        <%= f.label :creator, 'Challenger', id: 'pledge-modal-label' %>
+        <%= f.text_field :creator, class: 'pledge-modal-input', placeholder: "What's your name?" %>
       </section>
 
       <section class="challenge-name-modal">
         <%= f.label :name, 'Describe your challenge', id: 'pledge-modal-label' %>
-        <%= f.text_field :name, id: 'pledge-modal-input', placeholder: "what do you want them to do?" %>
+        <%= f.text_field :name, class: 'pledge-modal-input', placeholder: "what do you want them to do?" %>
       </section>
       <section class="challenge-amount-modal">
-        <%= f.label :amount, 'How much would you donate?',id: 'pledge-modal-label' %>
-        <%= f.text_field :amount, id: 'pledge-modal-input', placeholder: "£££" %>
+        <%= f.label :amount, 'How much would you donate?', id: 'pledge-modal-label' %>
+        <%= f.text_field :amount, class: 'pledge-modal-input', placeholder: "£££" %>
       </section>
       <section  class="challenge-create-modal">
         <%= f.submit 'Create challenge', class: 'modal-button-create' %>
