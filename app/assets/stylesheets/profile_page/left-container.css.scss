@@ -15,7 +15,6 @@
 	height: 2000px;
 	float: left;
 	text-align: center;
-	border-right: 1px solid #DFDFDF;
 	box-shadow: 0px 0px 5px 0px #DEDEDE;
 
 }
@@ -29,14 +28,15 @@
 		margin: 5px;
   	font-weight: 800;
   	font-size: 20px;
+  	border-radius: 3px;
 	}
 		.profile-picture {
 			width: 95%;
 			height: 238px;
 			margin: 6px;
-			background-color: #FFF;
+
 			position: relative;
-			border: 1px solid #DFDFDF;
+
 		}
 			#profile-image {
 				height: 92%;
@@ -76,7 +76,7 @@
 		color: $txtColor;
 		display: flex;
 		flex-direction: column;
-		border-top: 1px solid #DFDFDF;
+
 		text-align: center;
 		padding-bottom: 15px;
 	}
@@ -114,7 +114,7 @@
 		text-align: center;
 		display: flex;
 		margin-bottom: 10px;
-		border-top: 1px solid #DFDFDF;
+
 	}
 		#training-goal-headline, #training-section-headline, #recent-workout-details-head {
 			font-size: 35px;
@@ -169,7 +169,7 @@
 			text-align: center;
 			display: flex;
 			margin-bottom: 10px;
-			border-top: 1px solid #DFDFDF;
+
 		}
 			#workouts-completed-total-number {
 				font-size: 120px;
@@ -188,7 +188,7 @@
 			display: flex;
 			padding-top: 10px;
 			padding-bottom: 10px;
-			border-top: 1px solid #DFDFDF;
+
 		}
 			#workouts-completed-head {
 				font-size: 21px;
@@ -205,16 +205,19 @@
 
 		.donate-button-container {
 			border: none;
-			width: 100%;
+			width: 84%;
 			cursor: pointer;
 			font-size: 20px;
 			font-weight: 800;
 			height: 50px;
-			background: linear-gradient(#0073be, #004a7b);
+			background: $thirdColor;
 			color: $txtColor;
 			padding-bottom: 1px;
 			vertical-align: middle;
 			line-height: 50px;
+			margin: 0 auto;
+			margin-top: 15px;
+			border-radius: 5px;
 		}
 			#donations-button {
 					cursor: pointer;
@@ -224,7 +227,7 @@
 					text-decoration: none;
 				}
 					.donate-button-container:hover {
-						background: linear-gradient(#4AA7E4, #146092);
+						background: $thirdColor;
 					}
 					#donations-button:active {
 						position: relative;
@@ -237,7 +240,7 @@
 			text-align: center;
 			display: flex;
 			padding-bottom: 10px;
-			border-top: 1px solid #DFDFDF;
+
 
 		}
 			#recent-workout-details-head {

@@ -1,4 +1,4 @@
-@import 'global';
+@import 'profile_page/global'
 
 /* --------------------------------
 
@@ -24,7 +24,7 @@ body {
 }
 
 a {
-  color: $txtColor;
+  color: white;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
 }
