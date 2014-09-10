@@ -98,6 +98,11 @@
     </section>
     <section class='fundraising-stats'>
     <section id="progress">
+
+<%= javascript_tag do %>
+            amountRaised = "<%=j @event.amount_raised.to_s %>";
+            targetAmount = "<%=j @event.target.to_s %>";
+<% end %>
   <aside id="bar"></aside>
   <aside id="bar_000" class="divider"><span>0%</span></aside>
   <aside id="bar_025" class="divider"><span>25%</span></aside>
@@ -154,10 +159,7 @@
 
 <!-- Targetbar -->
 <!--   <section class="target-bar-container">
-          <%= javascript_tag do %>
-            amountRaised = "<%=j @event.amount_raised.to_s %>";
-            targetAmount = "<%=j @event.target.to_s %>";
-          <% end %>
+
         <div class="target-wrap progress" data-progress-percent="">
       <div class="target-bar progress">
     </div>
