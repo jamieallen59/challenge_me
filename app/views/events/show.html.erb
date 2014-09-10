@@ -144,22 +144,28 @@
 </section>
 
     <% @challenges.each do |challenge| %>
-
-      <section class='challenge-display'>
-        <section class='challenge-text'>
-          <p class='challenger-creator'>
-            You've been challenged by <%= challenge.creator %>!
-          </p>
-          <p class='challenger-description'>
-            Challenge: <%= challenge.name %>
-          </p>
+      <% if current_user == @event.user %>
+        <section class='challenge-display'>
+          <section class='challenge-text'>
+            <p class='challenger-creator'>
+              You've been challenged by <%= challenge.creator %>!
+            </p>
+            <p class='challenger-description'>
+              Challenge: <%= challenge.name %>
+            </p>
+          </section>
+          <section class='challenge-button-container', data-challenge="<%= challenge.id %>">
+            <button class='accept-challenge'><i class="fa fa-check"></i></button>
+            <button class='decline-challenge'><i class="fa fa-times"></i></button>
+          </section>
         </section>
-        <section class='challenge-button-container', data-challenge="<%= challenge.id %>">
-          <button class='accept-challenge'><i class="fa fa-check"></i></button>
-          <button class='decline-challenge'><i class="fa fa-times"></i></button>
-        </section>
-      </section>
-
+        <% else %>
+          <section class='challenge-text'>
+              <p class='challenger-creator'>
+                You have set <%= @event.user.firstname %> a challenge! Will <%= @event.user.firstname %> accept?
+              </p>
+            </section>
+      <%end%>
     <% end %>
 
 
