@@ -1,3 +1,5 @@
+@import 'global';
+
 /* --------------------------------
 
 Primary style
@@ -22,7 +24,7 @@ body {
 }
 
 a {
-  color: #acb7c0;
+  color: $txtColor;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
 }

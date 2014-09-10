@@ -1,9 +1,13 @@
+@import 'global';
+
 /*------ Left Container -----*/
+
+
 
 .container-left {
 	font-family: "Helvetica Neue", Helvetica;
 	position: absolute;
-	background-color: #F4F4F4;
+	background-color: $secondColor;
 	left: 0;
 	top: 0;
 	flex-direction: column;
@@ -13,6 +17,7 @@
 	text-align: center;
 	border-right: 1px solid #DFDFDF;
 	box-shadow: 0px 0px 5px 0px #DEDEDE;
+
 }
 	.picture-container {
 		display: flex;
@@ -42,7 +47,7 @@
 			}
 
 			.icon-camera {
-        color: white;
+        color: $txtColor;
 				position: absolute;
         margin-top: 200px;
         margin-left: 3px;
@@ -58,34 +63,17 @@
 			margin-left: 5%;
       width: 225px;
 			margin-bottom: 15px;
-			color: #FFFFFF;
+			color: $txtColor;
       background-color: rgba(0,0,0,0.3);
       padding-left: 15px;
       padding-right: 15px;
 		}
 
-	.event-details-container {
-		background-color: #F4F4F4;
-		color: #343434;
-		display: flex;
-		line-height: 25px;
-		flex-direction: column;
-		margin: 5px;
-		padding: 10px;
-		margin: 0 auto;
-	}
-
-		#event-paragraph {
-			font-size: 20px;
-		}
-
-		#event-paragraph strong {
-			font-weight: 800;
-		}
 
 
-	.days-remaining, .training-headline {
-		color: #343434;
+
+	.training-headline {
+		color: $txtColor;
 		display: flex;
 		flex-direction: column;
 		border-top: 1px solid #DFDFDF;
@@ -109,15 +97,7 @@
 			font-size: 21px;
 		}
 
-	.percentage-completion {
-		flex-direction: column;
-		color: #343434;
-		display: flex;
-		text-align: center;
-		padding-top: 10px;
-		margin-bottom: 20px;
-		border-top: 1px solid #DFDFDF;
-	}
+
 		#event-percentage-number {
 			font-size: 4em;
 			font-weight: 600;
@@ -130,7 +110,7 @@
 
 	.training-totals {
 		flex-direction: column;
-		color: #343434;
+		color:  $txtColor;
 		text-align: center;
 		display: flex;
 		margin-bottom: 10px;
@@ -144,7 +124,7 @@
 			line-height: 40px;
 		}
 		#training-goal-number {
-			color:#DB2929;
+			color: $txtColor;
 			font-size: 100px;
 			font-weight: 600;
 		}
@@ -163,7 +143,7 @@
 			font-weight: 800;
 			height: 50px;
 			background: linear-gradient(#0073be, #004a7b);
-			color: white;
+			color:  $txtColor;
 			padding-bottom: 1px;
 			vertical-align: middle;
 			line-height: 48px;
@@ -185,7 +165,7 @@
 
 		.total-completed-workouts {
 			flex-direction: column;
-			color: #343434;
+			color: $txtColor;
 			text-align: center;
 			display: flex;
 			margin-bottom: 10px;
@@ -203,7 +183,7 @@
 
 		.workouts-completed-by-user {
 			flex-direction: column;
-			color: #343434;
+			color: $txtColor;
 			text-align: center;
 			display: flex;
 			padding-top: 10px;
@@ -231,14 +211,14 @@
 			font-weight: 800;
 			height: 50px;
 			background: linear-gradient(#0073be, #004a7b);
-			color: white;
+			color: $txtColor;
 			padding-bottom: 1px;
 			vertical-align: middle;
 			line-height: 50px;
 		}
 			#donations-button {
 					cursor: pointer;
-					color: #FFF;
+					color: $txtColor;
 					font-size: 24px;
 					vertical-align: middle;
 					text-decoration: none;
@@ -253,7 +233,7 @@
 
 		.recent-workout-details {
 			flex-direction: column;
-			color: #343434;
+			color: $txtColor;
 			text-align: center;
 			display: flex;
 			padding-bottom: 10px;
