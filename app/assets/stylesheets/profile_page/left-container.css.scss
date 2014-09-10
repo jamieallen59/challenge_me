@@ -264,3 +264,15 @@
 			font-size: 20px;
 				margin-top: 8px;
 			}
+
+
+nav.share {
+	display: inline-flex;
+	border-top: 1px solid #DFDFDF;
+	height: 30px;
+	padding-top: 11px;
+}
+
+.fb_iframe_widget span {
+	vertical-align: top;
+}

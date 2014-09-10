@@ -1,4 +1,4 @@
-  <section class='container-left' id='event-page'>
+<section class='container-left' id='event-page'>
     <section class='picture-container'>
       <section class='profile-picture' >
         <div id='profile-image'>
@@ -17,13 +17,13 @@
       </p>
     </section>
 
-
+   
 
     <section class='donate-button-container'>
       <% if @event.is_owner? current_user %>
           <a href="#menu-modal" rel="modal:open" class='menu-modal-button' >MENU</a>
      <% else %>
-
+  
       <section class='challenge-me'>
         <%= link_to 'Challenge Me', new_event_challenge_path(@event), class: 'challenge-me-button', id: "challenge-me-link", data: { :'modal-selector' => '#new-challenge-modal' } %>
         </section>
@@ -78,8 +78,10 @@
          workouts completed <br>overall
         </p>
       </section>
-
-
+  
+  <section class='share'>
+   <%= render_shareable buttons: ['twitter', 'facebook'] %>
+  </section>
   </section>
 </section>
 
