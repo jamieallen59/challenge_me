@@ -1,15 +1,22 @@
-<section class='new-event-form'>
-
-		<%if @events.any?%>
-		Hello <%= current_user.firstname %>!
-		<div id="event-header">CHOOSE EVENT</div>
+<section class='select-jg-event-container'>
+			<%if @events.any?%>
+			<p class='user-welcome-message'>
+				Hello <%= current_user.firstname %>!
+			</p>
+			<section class='select-event-form'>
+			<div id="select-event-form-header">Import an event from Just Giving or create a new one with Challenge Me.</div>
+			<section class='jg-events-container'>
+			<% if @events.any? %>
+			<img src='http://mastcharity.co.uk/wp-content/uploads/2014/06/JUSTGIVING-LOGO.jpg' id='justgiving-logo'>
+			<% end %>
 		  <% @events.each_with_index do |event, index| %>
-		    <%= link_to "#{event['eventName'].upcase}", new_event_path(page_short_name: event['pageShortName']), class: 'event-select-button' %></br>
+		    <%= link_to "#{event['eventName'].upcase}", new_event_path(page_short_name: event['pageShortName']), class: 'event-select-button' %>
 		  <% end %>
-		  <div id="event-header">OR</div>
-		    <%= link_to 'CREATE EVENT', new_event_path, class: 'event-select-button' %>
-		<%else %>
-		  <%= link_to 'CREATE EVENT', new_event_path, class: 'event-select-button' %>
-		<% end %>
-
+		  </section>
+		  	<div id="events-select-logo">Challenge.Me</div>
+		    <%= link_to 'CREATE NEW EVENT', new_event_path, class: 'event-select-button', id: 'create-new-event-button' %>
+			<%else %>
+		  <%= link_to 'CREATE NEW EVENT', new_event_path, class: 'event-select-button', id: 'create-new-event-button' %>
+			<% end %>
+	</section>
 </section>
