@@ -45,14 +45,16 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 20px;
+
+  height: 37px;
   margin: auto;
   background: #307E04;
   display: block;
-  box-shadow: 0 0 0 5px #FFF,
-              0 5px 0 5px #999,
-              0 6px 6px 6px #222;
+  border: 5px solid #FFF;
+  box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
+  border-radius: 4px;
+  width:100%;
+
 }
 /* PROGRESS BAR */
 #progress #bar {
@@ -70,7 +72,7 @@ body {
   top: 0;
   bottom: 0;
   width: 25%;
-  height: 20px;
+  height: 37px;
   display: block;
 }
 #bar_025,
@@ -112,7 +114,7 @@ body {
   top: -35px;
   left: 0;
   width: 40px;
-  height: 20px;
+  height: 37px;
   margin-left: -2px;
   border-radius: 3px 3px 3px 0;
   background: #FFF;
@@ -173,7 +175,7 @@ body {
   top: 0;
   bottom: 0;
   width: 25%;
-  height: 20px;
+  height: 37px;
   display: block;
 }
 #bar_025,

@@ -116,9 +116,9 @@
 			background-color: $fourthColor;
 			/* background: rgba(255, 255, 255, 0.58); */
 			border: 2px solid white;
-			border-radius: .05em;
 			box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
 			letter-spacing: 5px;
+			border-radius: 5px;
 		}
 			#update-sponsers:hover {
 				background-color: #f9f9f9;
@@ -130,6 +130,7 @@
 			}
 
 			#make-a-promise-link {
+
 			text-align: center;
 			vertical-align: middle;
 			line-height: 40px;
@@ -141,7 +142,7 @@
 			background-color: $fourthColor;
 			/* background: rgba(255, 255, 255, 0.58); */
 			border: 2px solid white;
-			border-radius: .05em;
+			border-radius: 5px;
 			box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) 0 1px 0 rgba(0, 0, 0, 0.3);
 			letter-spacing: 5px;
 		}
