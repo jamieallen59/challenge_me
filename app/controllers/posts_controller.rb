@@ -44,8 +44,5 @@ class PostsController < ApplicationController
 			flash[:alert] = 'You are not the owner of the post'
 			redirect_to root_path
 		end
-
-
-
 	end
 end
