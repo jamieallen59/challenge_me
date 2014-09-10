@@ -1,10 +1,9 @@
-
+@import 'profile_page/global';
 .container-top {
 	display: flex;
 	flex-direction: column;
-	border-bottom: 1px solid #DFDFDF;
-	background-color: #F4F4F4;
-	padding-top: 14px;
+
+
 }
 	.event-controls {
 		color: #343434;
@@ -69,16 +68,29 @@
 			font-weight: 800;
 		}
 
+#timeleft-container {
+	font-size: 35px;
+font-weight: 600;
+margin-top: 20px;
+letter-spacing: 4px;
+line-height: 40px;
+text-align:center;
+}
+
 
 	.pledge-container {
 		display: flex;
 		flex-direction: row;
-		margin: 20px;
 		border-radius: 8px;
 		font-size: 21px;
 		color: #343434;
 		border: 1px solid #DFDFDF;
 		box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
+		background: $firstColor;
+		margin-top: 10px;
+		margin-bottom: 15px;
+		margin-left: 35px;
+		margin-right: 35px;
 	}
 		.pledge-title {
 			padding: 10px;
@@ -141,6 +153,8 @@
 		background: linear-gradient(#F4F4F4, #ECECEC);
 		border-bottom: 1px solid #DFDFDF;
 		height: 200px;
+		padding-top:50px;
+		padding-bottom:24px;
 	}
 		.fundraising-stats-percentage-complete {
 			display: flex;

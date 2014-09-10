@@ -1,4 +1,15 @@
 
+Dummy User
+
+Joe Bloggs
+joe@bloggs.com
+password: 12345678
+
+Event
+London Marathon
+Oxfam
+
+
 slides 
 ------
 
@@ -10,7 +21,20 @@ Screen shot of what Justgiving has on their page.
 2) Fundraising over the last couple of years has declined in real terms by over £1bn
 3) Justgiving say that sharing an interesting post about your event will increase the chances of a friend donating by 20%
 
+Charity has the preconceived status that money is raised because of guilt. We would like this to be fun!
+
+eg: icebucketchallenge / nomakeupselfie
+
+We chose JG becuase its a great platform that demonstrates the power of fundraising through social networks. 
+
+Its a good system but it does not have a fun element that we were looking for. 
+
+We can import live data from your Justgiving page, ask people to donate to your event. Make fundraising fun by getting challenged by your friends to do crazy tasks that are part of your training to encourage more sponsorship. 
+
+We can also import data from Mapmyrun.com that logs your workout and maps the routes that you run. 
+
 To bridge the gap and attempt to address the problem we would like to introduce challenge.me!
+
 ------
 single slide with logo
 ------
@@ -19,7 +43,6 @@ challenge.me is a revolutionary web app that allows you to increase your chances
 
 Until very recently, JustGiving events were automatically setting their fundraising target to £0.00 and 45% people never changed this, seriously hampering their chances of receiving any sponsorship. 
 
-Charity has the preconceived status that money is raised because of guilt. We would like this to be fun!
 
 Lets show you how our friend Joe can make best use of challenge.me. 
 
@@ -31,7 +54,6 @@ Joe is a hip, bearded middle aged dad. He has signed up on Justgiving to run the
 
 He wishes there was a more fun way of raising money!!
 
-Joe has heard about Challenge Me through a friend who was doing some fundraising. Joe challenged him to eat 7 chicken feet in 30 seconds and if he did it, Joe would give him a tenner, and he did!
 
 Joe goes back to find out more about the Challenge Me website
 
@@ -60,5 +82,19 @@ While training Joe has also logged all of his training runs with Map my run and 
 
 (screenshots from mapmyrun to show data being entered)
 
+Technologies Used
+-------------------
+
+The database is built on Rails, a database technology that we have been learning for the last 3 weeks. The platform we have built is designed to sit on top of JustGiving and also communicate with Map My Run to co-ordinate the data in an easy to read format. 
+
+
+What we would like to add
+----------------------
+
+Given more time, we would have liked to have deeper social intergration as Facebook social sharing is one of the most successful ways of raising funds. 
+
+Provide text message and email notification to sponsors when challenges are completed. 
+
+Integrate with other fundraising platforms like Virgin Money Giving
 
 
