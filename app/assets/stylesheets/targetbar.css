@@ -33,27 +33,30 @@
 
 
 
-      #progress {
+body {
+  /*background: #333;*/
+}
 
+/* - - - - - PROGRESS */
+#progress {
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 75%;
   height: 20px;
   margin: auto;
-  background: #222;
+  background: #307E04;
   display: block;
-  position: relative;
-
   box-shadow: 0 0 0 5px #FFF,
               0 5px 0 5px #999,
               0 6px 6px 6px #222;
   width:88%;
+
 }
 /* PROGRESS BAR */
 #progress #bar {
-
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -84,17 +87,14 @@
 /* 25% */
 #bar_025 {
   left: 25%;
-  background: rgba(0, 0, 0, .2);
 }
 /* 50% */
 #bar_050 {
   left: 50%;
-  background: rgba(0, 0, 0, .4);
 }
 /* 75% */
 #bar_075 {
   left: 75%;
-  background: rgba(0, 0, 0, .6);
 }
 /* 100% */
 #bar_100 {
