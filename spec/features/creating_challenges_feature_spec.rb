@@ -30,7 +30,7 @@ describe 'Setting your friends a challenge' do
 			fill_in 'How much would you donate?', with: '5'
 			click_button 'Create challenge'
 			expect(current_path).to eq event_path(@event)
-			expect(page).to have_content "You've been challenged by Joe Dowdell! Challenge: Pour water on your head and i'll give you £5"
+			expect(page).to have_content "You have set Mary a challenge! Will Mary accept?"
 		end
 	end
 
@@ -54,14 +54,17 @@ describe 'Setting your friends a challenge' do
 			expect(page).to have_content "You've been challenged by Joe Dowdell! Challenge: Pour water on your head and i'll give you £5"
 		end
 
-		it 'allows the user to accept the challenge' do
-			click_button '.accept-challenge'
-			expect(page).to have_css '.challenge-accepted-highlighting'
-		end
+		# it 'allows the user to accept the challenge' do
+		# 	expect(page).to have_css('.accept-challenge')
+		# 	click_link ('i.fa.fa-check')
+		# 	expect(page).to have_css '.challenge-accepted-highlighting'
+		# end
 
-		it 'allows the user to decline the challenge' do
-			click_button 'Decline'
-			expect(page).to have_css '.challenge-declined-highlighting'
-		end
+		# it 'allows the user to decline the challenge' do
+
+		# 	expect(page).to have_css('.decline-challenge')
+		# 	click_button ('i.fa.fa-times')
+		# 	expect(page).to have_css '.challenge-declined-highlighting'
+		# end
 	end
 end

@@ -17,8 +17,14 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+
 body {
   font-family: 'Helvetica Neue';
   font-size: 1em;
+
 }
 
+input#pledge-modal-input {
+font-size: xx-large;
+}

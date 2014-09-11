@@ -1,10 +1,9 @@
-
+@import 'profile_page/global';
 .container-top {
 	display: flex;
 	flex-direction: column;
-	border-bottom: 1px solid #DFDFDF;
-	background-color: #F4F4F4;
-	padding-top: 14px;
+
+
 }
 	.event-controls {
 		color: #343434;
@@ -50,16 +49,50 @@
 			background-color: #F4F4F4;
 		}
 
+			.event-details-container {
+		color: #343434;
+		display: flex;
+		line-height: 25px;
+		flex-direction: column;
+		margin: 5px;
+		padding: 10px;
+		margin: 0 auto;
+	}
+
+		#event-paragraph {
+			font-size: 20px;
+		}
+
+		#event-paragraph strong {
+			font-weight: 800;
+		}
+
+#timeleft-container {
+	font-size: 45px;
+font-weight: 600;
+margin-top: 32px;
+margin-bottom: 15px;
+letter-spacing: 4px;
+line-height: 40px;
+text-align:center;
+color: $secondColor
+}
+
 
 	.pledge-container {
 		display: flex;
 		flex-direction: row;
-		margin: 20px;
 		border-radius: 8px;
 		font-size: 21px;
 		color: #343434;
 		border: 1px solid #DFDFDF;
 		box-shadow: 0.5px 0.5px 2px 1px #DEDEDE;
+		background: $firstColor;
+		margin-top: 20px;
+		margin-bottom: 15px;
+		width: 91%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 		.pledge-title {
 			padding: 10px;
@@ -117,10 +150,10 @@
 
 	.fundraising-stats {
 		flex-direction: row;
-		border-top: 1px solid #DFDFDF;
 		display: flex;
-		background: linear-gradient(#F4F4F4, #ECECEC);
-		border-bottom: 1px solid #DFDFDF;
+		padding-top:50px;
+		padding-bottom:24px;
+
 	}
 		.fundraising-stats-percentage-complete {
 			display: flex;
@@ -162,3 +195,6 @@
 				margin-top: 8px;
 				margin-bottom: 5px;
 			}
+
+
+

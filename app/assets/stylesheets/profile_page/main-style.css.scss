@@ -1,7 +1,9 @@
+@import 'profile_page/global';
+
 body {
 	font-family: "Helevetica Neue", Helvetica;
 	font-size: 24px;
-	background-color: #FBFBFB;
+	background-color: $backgroundColor;
 }
 
 .main-content-container {
@@ -9,6 +11,7 @@ body {
 	margin-right: -1%;
 	margin-top: -9px;
 	top: 0;
+	background-color: $backgroundColor;
 }
 
 .map-my-fitness {
