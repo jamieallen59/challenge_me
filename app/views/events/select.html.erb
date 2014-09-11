@@ -1,8 +1,9 @@
-<section class='select-jg-event-container'>
+<section class='select-jg-event-background'>
+	<section class='select-jg-event-container'>
+		<p class='user-welcome-message'>
+			Hello <%= current_user.firstname %>!
+		</p>
 			<%if @events.any?%>
-			<p class='user-welcome-message'>
-				Hello <%= current_user.firstname %>!
-			</p>
 			<section class='select-event-form'>
 			<div id="select-event-form-header">Import an event from Just Giving or create a new one with Challenge Me.</div>
 			<section class='jg-events-container'>
@@ -18,5 +19,6 @@
 			<%else %>
 		  <%= link_to 'CREATE NEW EVENT', new_event_path, class: 'event-select-button', id: 'create-new-event-button' %>
 			<% end %>
+		</section>
 	</section>
 </section>
