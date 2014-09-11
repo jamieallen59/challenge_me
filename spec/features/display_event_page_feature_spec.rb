@@ -18,7 +18,7 @@ describe 'show event page' do
     allow(JustGiving::Fundraising).to receive(:new).and_return(fundraising)
 
     visit event_path(@event)
-    expect(page).to have_content 'Raised so far: £10'
+    expect(page).to have_content '£10 RAISED SO FAR'
   end
 
  context 'creators can access their other events from profile page' do
