@@ -1,7 +1,9 @@
 <% if @users.any? %>
   <section class="main-form-container">
   	<% @users.each do |user| %>
+  	<p class='user-welcome-message'>
       <%= user.firstname.capitalize %> event's </br>
+    </p>
       <%= render user.events %>
   	<% end %>
   </section>

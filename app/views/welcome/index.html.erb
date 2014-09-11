@@ -16,7 +16,7 @@
       </section>
 
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-  			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "LOOKING FOR A FRIEND..?" %>
+  			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "Looking for a friend..?" %>
   			<%= submit_tag "GO", id:'search_button' %>
 			<% end %>
 		</section>
@@ -28,6 +28,7 @@
         <source src="<%= asset_path('ldn_360.mp4') %>" type="video/mp4">
       </video>
 				<%= link_to "START", select_events_path, class: 'lets_go-button' %>
+					<%= link_to "EVENTS", events_path, class: 'lets_go-button' %>
 			</section>
 		</section>
 	</section>
