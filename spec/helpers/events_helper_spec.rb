@@ -11,7 +11,7 @@ RSpec.describe EventsHelper, :type => :helper do
 		it 'provides a countdown of the number of days remaining' do
 			Timecop.freeze(Time.local(2014, 9, 1, 10, 5, 0)) do
 				visit event_path(@race)
-				expect(page).to have_content("Days to go: 11")
+				expect(page).to have_content("11 DAYS TO GO")
 			end
 		end
 
@@ -29,24 +29,6 @@ RSpec.describe EventsHelper, :type => :helper do
 			end
 		end
 
-	end
-
-	describe 'percentage of fundraising target achieved' do
-		before(:each) do
-			@user = create(:user)
-		end
-
-		it 'when the target has not been reached it provides a percentage of the amount raised' do
-			@race = create(:event, user: @user)
-      visit event_path(@race)
-			expect(page).to have_content("Percentage complete: 1%")
-		end
-
-		it 'when the target has been reached it displays the exceeded percentage' do
-			@marathon = create(:event, amount_raised: 1100.0, user: @user)
-			visit event_path(@marathon)
-			expect(page).to have_content("Percentage complete: 110%")
-		end
 	end
 
   describe '#display_if' do
