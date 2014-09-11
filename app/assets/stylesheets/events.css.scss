@@ -224,7 +224,7 @@
 	border: none;
 	width: 99%;
 	padding-left: 8px;
-	margin-bottom: 18px;
+	margin-bottom: 8px;
 	line-height: 22px;
 	margin-top: 2px;
 }
@@ -243,7 +243,7 @@
 	#event_event_date_1i {
 		border: 0;
 		font-size: 16px;
-		background-color: #e7e7e7;
+		background-color: #fff;
 		width: 30%;
 		height: 35px;
 	}
@@ -253,7 +253,7 @@
 	#event_event_date_2i {
 		border: 0;
 		font-size: 16px;
-		background-color: #e7e7e7;
+		background-color: #fff;
 		width: 37%;
 		height: 35px;
 	}
@@ -263,7 +263,7 @@
 	#event_event_date_3i {
 		border: 0;
 		font-size: 16px;
-		background-color: #e7e7e7;
+		background-color: #fff;
 		width: 27%;
 		height: 35px;
 	}
@@ -290,28 +290,28 @@
 		display: none;
 	}
 	input[type="radio"] + label {
-		background-color: #e7e7e7;
+		background-color: #03A08E;
 		cursor: pointer;
 		margin-left: auto;
 		margin-right: auto;
 		width: 18%;
-		color: #575757;
+		color: #FFFDE8;
 		text-align: center;
 		vertical-align: middle;
 		line-height: 90px;
-		box-shadow: 2px 2px 1px 0px #A7A7A7;
+		box-shadow: 1px 1px 0px 0px #A7A7A7;
 	}
 	input[type="radio"] + label:hover {
-		background-color: #d0d0d0;
-		color: #0073be;
+		background-color: #ADD8D6;
+		color: #343434;
 	}
 	input[type="radio"] + label:active {
 		position: relative;
 		top: 1px;
 	}
 	.label-checked {
-		background-color: #d0d0d0 !important;
-		color: #00B2FF !important;
+		background-color: #ADD8D6 !important;
+		color: #343434 !important;
 	}
 
 		#submit-event {
