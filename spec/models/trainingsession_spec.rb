@@ -90,7 +90,7 @@ RSpec.describe Trainingsession, :type => :model do
 
     it 'saves the route details in the post when created with mmf' do
       workout = @event.trainingsessions.create(details: "this is my workout", mmf_route_id: '528534580', mmf_updated_datetime: '2014-09-09T07:45:08+00:00')
-      expect(@event.posts.first.url).to eq 'http://snippets.mapmycdn.com/routes/view/embedded/528534580?width=500&height=400&&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2014-09-09T07:45:08+00:00&show_marker_every=4'
+      expect(@event.posts.first.url).to eq 'http://snippets.mapmycdn.com/routes/view/embedded/528534580?width=500&height=206&&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2014-09-09T07:45:08+00:00&show_marker_every=4'
     end
   end
 

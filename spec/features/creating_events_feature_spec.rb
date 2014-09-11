@@ -58,7 +58,6 @@ describe 'Creating events' do
           click_button "Create Event"
           expect(page).to have_content 'Hot Dog Eating Contest'
           expect(page).to have_content "fundraising for Freedom for makers"
-          expect(page).to have_content " Fundraising target: £10000"
         end
       end
 
