@@ -16,7 +16,7 @@
       </section>
 
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-  			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "LOOKING FOR A FRIEND..?" %>
+  			<%= text_field_tag :search, params[:search], class: 'find_person', placeholder: "Looking for a friend..?" %>
   			<%= submit_tag "GO", id:'search_button' %>
 			<% end %>
 		</section>
@@ -28,58 +28,10 @@
         <source src="<%= asset_path('ldn_360.mp4') %>" type="video/mp4">
       </video>
 				<%= link_to "START", select_events_path, class: 'lets_go-button' %>
+					<%= link_to "EVENTS", events_path, class: 'lets_go-button' %>
 			</section>
 		</section>
 	</section>
-
-
-
-	<!-- <section class='hp-middle-container'>
-		<section class="hp-extra-info-box">
-			<article class="hp-extra-info" id="hp-tracking-training"></article>
-			<p class="info-box-title">Show your sponsors commitment</p>
-		</section>
-
-		<section class="hp-extra-info-box">
-			<article class="hp-extra-info" id="hp-setting-challenges"></article>
-			<p class="info-box-title">Set challenges for friends</p>
-		</section>
-
-		<section class="hp-extra-info-box">
-			<article class="hp-extra-info" id="hp-short-term-goals"></article>
-			<p class="info-box-title">Stay motivated with short term goals</p>
-		</section>
-
-	</section>
-
-	<section class='hp-lower-container'>
-
-
-		<section class='hp-lower-right'>
-			<section class='update-feed'>
-				<article class='post-container'>
-					<header class='post-header'>
-            <section class='post-title'>
-            	Challenges Completed
-            </section>
-          </header>
-          <section class='post-content'>
-          	<object class='uploaded-evidence'>
-
-          	</object>
-          	<article class='evidence-comments'>
-          	</article>
-          </section>
-				</article>
-			</section>
-		</section>
-
-
-	</section>
- -->
-<!-- 	<section class='footer'>
-	</section> -->
-
 
 </body>
 
