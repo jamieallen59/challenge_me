@@ -68,18 +68,28 @@
 }
 /*--- JG Events Select form ---*/
 .user-welcome-message {
-	color: #FFF;
+	color: #343434;
 	text-align: center;
 	margin-top: 20px;
 	font-size: 40px;
+	margin-bottom: 25px;
+	padding-top: 15px;
 }
-.select-jg-event-container {
-	background-color: #343434;
+.select-jg-event-background {
+	background-color: #ADD8D6;
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
+}
+.select-jg-event-container {
+	background-color: #FFFDE8;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	margin-top: 60px;
+	padding-bottom: 20px;
 }
 	.select-event-form {
 		width: 40%;
@@ -112,7 +122,7 @@
 		}
 	.event-select-button {
 		cursor: pointer;
-		background-color: #e7e7e7;
+		background-color: #03A08E;
 		font-size: 20px;
 		padding: 6px;
 		width: 100%;
@@ -123,10 +133,10 @@
 		color: #343434;
 		padding-left: 18px;
 	}
-			.event-select-button:hover {
-				background-color: #FFF;
-				color: #000;
-			}
+			// .event-select-button:hover {
+			// 	background-color: #FFF;
+			// 	color: #000;
+			// }
 		#events-select-logo {
 			margin: 15px;
 			text-align: center;
@@ -136,8 +146,9 @@
 		}
 		#create-new-event-button {
 			margin-left: 25%;
+			color: #FFFDE8;
 			padding-right: 15px;
-			border: 1px solid #DEDEDE;
+			border: 1px solid #03A08E;
 		}
 		#create-new-event-button:active {
 			position: relative;
