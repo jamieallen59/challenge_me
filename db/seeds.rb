@@ -1,5 +1,5 @@
 puts "*" * 80
-piuts "Seeding Data for Challenge.me"
+piuts "Seeding Data for Challenge.Me"
 puts "*" * 80
 
 puts "*** Creating Users ***"
