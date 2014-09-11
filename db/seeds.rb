@@ -12,7 +12,14 @@ ldn_marathon = nicola.events.create(name: "Virgin London Marathon 2015", event_d
 puts "*** Creating Text Posts ***"
 
 puts "*** Creating Video Posts ***"
+# https://www.youtube.com/watch?v=04IsFIQEZBQ
 
 puts "*** Creating Picture Posts ***"
 
 puts "*** Creating Workouts ***"
+
+| id | details                   | event_id | created_at              | updated_at              | sessiondate | mmf_updated_datetime      | mmf_route_id |
++----+---------------------------+----------+-------------------------+-------------------------+-------------+---------------------------+--------------+
+| 35 | Super tiring Victoria ... | 10       | 2014-09-11 16:23:38 UTC | 2014-09-11 16:23:38 UTC | 2014-09-11  | 2014-09-11T16:19:53+00:00 | 493345624    |
+| 36 | My awesome regents par... | 10       | 2014-09-11 16:23:38 UTC | 2014-09-11 16:23:38 UTC | 2014-09-11  | 2014-09-11T16:10:12+00:00 | 528534580    |
+| 37 | Ran 5k                    | 10       | 2014-09-11 17:27:20 UTC | 2014-09-11 17:27:20 UTC | 2014-09-11  |                           |             
