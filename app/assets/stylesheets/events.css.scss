@@ -163,14 +163,14 @@
 	flex-direction: column;
 	width: 40%;
 	border-radius: 3px;
-	background-color: white;
+	background-color: #FFFDE8;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 3%;
 	margin-bottom: 3%;
 	padding: 15px;
 	border: 2px solid #FFF;
-	letter-spacing: 5px;
+	letter-spacing: 1px;
 	font-size: 20px;
 	color:black;
 }
@@ -224,9 +224,9 @@
 	border: none;
 	width: 99%;
 	padding-left: 8px;
+	margin-bottom: 18px;
 	line-height: 22px;
 	margin-top: 2px;
-	background-color: #E2E2E2;
 }
 .event-form-input::-webkit-input-placeholder {
 	font-size: 18px;
@@ -321,9 +321,11 @@
 			margin-top: 20px;
 			margin-right: auto;
 			margin-left: auto;
-			background-color: #e7e7e7;
+			background-color: #03A08E;
 			text-decoration: none;
 			font-size: 22px;
+			text-align: center;
+			color: #FFFDE8;
 			padding: 6px;
 			width: 60%;
 			font-weight: 800;
@@ -332,7 +334,7 @@
 			letter-spacing: 5px;
 		}
 			#submit-event:hover {
-				background-color: #FFF;
+				background-color: #ADD8D6;
 				color: #000;
 			}
 			#submit-event:active {
@@ -342,6 +344,14 @@
 			#submit-event:focus {
 		    outline-width: 0;
 			}
+
+	.devise-log-in {
+		text-align: center;
+	}
+	.devise-links {
+		color: gray;
+		text-align: center;
+	}
 
 /*--- Errors styling ---*/
 
