@@ -185,7 +185,7 @@
   <section class='update-feed'>
     <% if @posts.any? %>
     <section id="cd-timeline" class="cd-container">
-      <%= render @posts.reverse %>
+      <%= render @posts %>
     </section>
     <% else %>
       There are no posts
