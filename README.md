@@ -8,7 +8,7 @@ A working version of the app can be found here: [Challenge Me](http://challenge-
 
 ### Meet the Team: 
 
-  + [Nicola Aitken](https://github.com/naitken22)
+  + [Nicola Aitken](https://github.com/aitkenster)
   + [Toan Nguyen](https://github.com/yoshdog)
   + [Jamie Allen](https://github.com/jamieallen59)
   + [Chloe Donegan](https://github.com/csharpd)
