@@ -36,12 +36,6 @@ RSpec.describe Event, :type => :model do
       expect(event).to have(1).error_on(:training)
     end
 
-    xit 'is not valid if there is a duplicate just giving event for the same user' do
-      user = create(:user)
-      Event.create(name: "Bigfoot Race", event_date: Date.new(2014, 9, 12), charity: "Red Cross", target: 1000, amount_raised: 10.0, user_id: user.id, jg_event_id: 1)
-      event = Event.create(name: "Bigfoot Race", event_date: Date.new(2014, 9, 12), charity: "Red Cross", target: 1000, amount_raised: 10.0, user_id: user.id, jg_event_id: 1)
-      expect(event).to have(1).error_on(:user_id)
-    end
   end
 
   context '#is_owner?' do
