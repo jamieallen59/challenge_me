@@ -5,7 +5,7 @@
 @import 'profile_page/global';
 
 .main-form-container {
-
+  background-color: $thirdColor;
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -15,7 +15,7 @@
 }
 
 .event-container:hover {
-  background-color: #ececec;
+  background-color: $backgroundColor;
  }
  .event-container:active {
   position: relative;
@@ -26,7 +26,7 @@
   flex-direction: column;
   width: 40%;
   border-radius: 3px;
-
+  background-color: $backgroundColor;
   margin-right: auto;
   margin-left: auto;
   margin-top: 3%;
@@ -53,7 +53,7 @@
         margin-right: 10px;
         float: left;
         display: inline-block;
-
+        color: #343434;
         strong {
           padding-bottom: 5px;
           margin-left: 5%;
@@ -68,26 +68,38 @@
 }
 /*--- JG Events Select form ---*/
 .user-welcome-message {
-	color: #FFF;
+	color: #343434;
 	text-align: center;
 	margin-top: 20px;
 	font-size: 40px;
+	margin-bottom: 25px;
+	padding-top: 15px;
 }
-.select-jg-event-container {
-	background-color: #343434;
+.select-jg-event-background {
+	background-color: #ADD8D6;
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
 }
+.select-jg-event-container {
+	background-color: #FFFDE8;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	text-align: center;
+	margin-top: 60px;
+	padding-bottom: 20px;
+}
 	.select-event-form {
-		width: 40%;
+		width: 100%;
 		border-radius: 3px;
-		background-color: white;
+		background-color: #FFFDE8;
 		margin-right: auto;
 		margin-left: auto;
 		margin-top: 2%;
+		text-align: center;
 		margin-bottom: 3%;
 		padding: 20px;
 		border: 2px solid #FFF;
@@ -95,8 +107,9 @@
 		color: black;
 	}
 		#select-event-form-header {
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 			font-weight: 500;
+			margin-top: -25px;
 			text-align: center;
 			color: black;
 		}
@@ -112,7 +125,7 @@
 		}
 	.event-select-button {
 		cursor: pointer;
-		background-color: #e7e7e7;
+		background-color: #03A08E;
 		font-size: 20px;
 		padding: 6px;
 		width: 100%;
@@ -120,12 +133,12 @@
 		border: 2px solid white;
 		border-radius: .05em;
 		letter-spacing: 1px;
-		color: #343434;
+		color: #FFFDE8;
 		padding-left: 18px;
 	}
 			.event-select-button:hover {
-				background-color: #FFF;
-				color: #000;
+				background-color: #ADD8D6;
+				// color: #000;
 			}
 		#events-select-logo {
 			margin: 15px;
@@ -135,9 +148,9 @@
 			margin-bottom: 20px;
 		}
 		#create-new-event-button {
-			margin-left: 25%;
+			color: #FFFDE8;
 			padding-right: 15px;
-			border: 1px solid #DEDEDE;
+			border: 1px solid #03A08E;
 		}
 		#create-new-event-button:active {
 			position: relative;
@@ -251,7 +264,7 @@
 		border: 0;
 		font-size: 16px;
 		background-color: #e7e7e7;
-		width: 29%;
+		width: 27%;
 		height: 35px;
 	}
 		#event_event_date_3i:focus {
