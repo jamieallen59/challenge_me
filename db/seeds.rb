@@ -4,3 +4,11 @@ joe = User.create(firstname: 'Joe', lastname: 'Dowdell', email: 'joedowdell@gmai
 toan = User.create(firstname: 'Toan', lastname: 'Nguyen', email: 'toan@graduate.uwa.edu.au', password: '12345678', password_confirmation: '12345678')
 
 puts "*** Creating Events ***"
+
+puts "*** Creating Text Posts ***"
+
+puts "*** Creating Video Posts ***"
+
+puts "*** Creating Picture Posts ***"
+
+puts "*** Creating Workouts ***"
