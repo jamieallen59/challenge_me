@@ -95,14 +95,16 @@
 
     <section id='timeleft-container'>
   <section id='timeleft-details-container'>
+  <p>
+    £<%=@event.amount_raised.to_i %> RAISED SO FAR - 
    <% if (@event.event_date == Date.today) %>
-      <p>Today's the day!</p>
+      Today's the day!
     <% elsif (@event.event_date > Date.today) %>
-      <p> <%=  "#{(@event.event_date - Date.today).to_i}" %> DAYS TO GO</p>
+       <%=  "#{(@event.event_date - Date.today).to_i}" %> DAYS TO GO
     <% else %>
-      <p>Event completed <%= "#{(Date.today - @event.event_date).to_i}" %></p>days ago!
+      Event completed <%= "#{(Date.today - @event.event_date).to_i}" %> days ago!
     <% end %>
-
+    </p>
   </section>
 </section>
   <section class='pledge-container'>
