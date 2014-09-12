@@ -26,7 +26,7 @@ before_action :authenticate_user!, except: [:index, :show, :donations]
     @event = Event.find(params[:id])
     @event_id = @event.id
     @user = @event.user
-    @posts = @event.posts
+    @posts = @event.posts.order(created_at: :desc)
     @comment = Comment.new
     @pledges = @event.pledges
     @challenges = @event.challenges.where(status: nil)
