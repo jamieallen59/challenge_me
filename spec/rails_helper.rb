@@ -35,6 +35,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each, js: true) do
+    Timecop.return
     DatabaseCleaner.strategy = :truncation
   end
 
