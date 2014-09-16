@@ -3,5 +3,5 @@ require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
-
+  config.before(:suite) { Timecop.freeze(Date.new(2014, 9, 1)) }
 end

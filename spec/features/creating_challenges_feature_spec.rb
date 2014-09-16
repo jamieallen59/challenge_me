@@ -3,9 +3,9 @@ require 'rails_helper'
 describe 'Setting your friends a challenge' do
 
 	before do
-			@mary = create(:user)
-			@event = create(:event, user: @mary)
-		end
+		@mary = create(:user)
+		@event = create(:event, user: @mary)
+	end
 
 	context 'A friend visits your event page' do
 
@@ -53,18 +53,5 @@ describe 'Setting your friends a challenge' do
 		it 'displays challenge on her events page' do
 			expect(page).to have_content "You've been challenged by Joe Dowdell! Challenge: Pour water on your head and i'll give you £5"
 		end
-
-		# it 'allows the user to accept the challenge' do
-		# 	expect(page).to have_css('.accept-challenge')
-		# 	click_link ('i.fa.fa-check')
-		# 	expect(page).to have_css '.challenge-accepted-highlighting'
-		# end
-
-		# it 'allows the user to decline the challenge' do
-
-		# 	expect(page).to have_css('.decline-challenge')
-		# 	click_button ('i.fa.fa-times')
-		# 	expect(page).to have_css '.challenge-declined-highlighting'
-		# end
 	end
 end
