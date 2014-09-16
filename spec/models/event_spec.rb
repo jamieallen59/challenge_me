@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, :type => :model do
+
   context 'Validations' do
     it 'is not valid with a name of numerical characters' do
       event = Event.new(name: 12432)
