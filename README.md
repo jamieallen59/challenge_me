@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/yoshdog/challenge-me/badges/gpa.svg)](https://codeclimate.com/github/yoshdog/challenge-me)
 [![Test Coverage](https://codeclimate.com/github/yoshdog/challenge-me/badges/coverage.svg)](https://codeclimate.com/github/yoshdog/challenge-me)
 
-## Where to see it
+![](app/assets/images/screenshot.png)
 
 A working version of the app can be found here: [Challenge Me](http://challenge--me.herokuapp.com/)
 
